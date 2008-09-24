@@ -1,0 +1,232 @@
+/*
+	Default Styles for Documents
+	Perry Trolard
+	Humanities Digital Workshop
+	Washington University in Saint Louis
+	April 2007
+*/
+
+/* last modified: 2007-08-22 12:08 pjt */
+
+/* main html elements
+------------------------------ */
+
+html
+{
+  color: #222; background-color: #fff;
+}
+
+body
+{
+/*  color: #333; background-color: #e8e8e8; */
+  color: #333; background-color: #fff;
+  margin: 2em auto;
+  padding: 2em;
+  width: 42em;
+  font-family: Georgia, Times, serif;
+  /*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+  font-size: 90%;
+  border: 1px solid #bbb;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  color: #444; background-color: transparent;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+h1
+{
+  font-size: 150%;
+  padding-bottom: 0;
+  border-bottom: 2px solid #333;
+  margin-bottom: 1em;
+  color: #222; background-color: transparent;
+}
+
+h2
+{
+  font-size: 130%;
+  color: #000; background-color: transparent;
+  padding-bottom: 0;
+  border-bottom: 1px solid #555;
+  width: 75%;
+}
+
+h1 + h2
+{
+  border-bottom: 0;
+  color: #222; background-color: transparent;
+  margin-top: -.5em;
+  font-style: italic;
+}
+
+h3
+{
+  font-size: 120%;
+}
+
+h4
+{
+  font-size: 90%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h5
+{
+  font-size: 90%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h6
+{
+  font-size: 90%;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+p, ul
+{
+  line-height: 145%;
+}
+
+ul
+{
+  list-style: none outside url(icons/grey_box_arrow.png);
+}
+
+ul ul
+{
+  list-style: none outside url(icons/circle_arrow.png);
+}
+
+
+ul, ol					/*body > ul, body > ol*/
+{
+  padding-left: 1.5em;
+}
+
+a, a:link, a:active
+{
+  color: #300; background-color: transparent;
+  border-bottom: 1px solid #000;
+  text-decoration: none;
+}
+
+a:visited
+{
+  color: #744; background-color: transparent;
+}
+
+a:hover
+{
+  color: #700; background-color: #ddd;
+  border: none;
+}
+
+code 
+{ 
+  color: #a22; background-color: inherit; 
+}
+
+pre
+{
+  background-color: #f7f7f7;
+  padding: .6em .3em;
+  border: 1px solid #777;
+  overflow: auto;
+}
+
+pre code
+{
+  line-height: 140%;
+  font-size: 93%;
+}
+
+td, th
+{
+  border: 1px solid #999;
+  padding: .3em;
+}
+
+th
+{
+  text-align: left;
+}
+
+thead, thead th
+{
+  background-color: #ddd;
+  text-align: center;
+}
+
+table
+{
+  width: 100%;
+}
+
+/*
+ol { list-style-type: upper-roman; }
+ol ol { list-style-type: lower-roman; }
+ol ol ol { list-style-type: lower-alpha; }
+*/
+
+/* classes
+------------------------------ */
+
+.mod
+{
+  text-align: right;
+  font-style: italic;
+  font-size: 80%;
+}
+	
+.byline
+{
+  margin-left: .5em;
+  font-size: 92%;
+  color: #111; background-color: transparent;
+}
+
+h1 + .byline, h2 + .byline
+{
+  margin: -.5em 0 1.5em .5em;
+}
+
+.important
+{
+  color: #d33; background-color: transparent;
+  font-style: italic;
+}
+
+.topic
+{
+  font-size: 103%;
+  font-weight: bold;
+  color: #a22; background-color: transparent;
+}
+
+.completed
+{
+  text-decoration: strike-through;
+}
+
+.note
+{
+  font-size: 90%;
+  font-style: italic;
+}
+
+a.expand
+{
+  color: #333; background-color: transparent;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: x-small;
+  padding: .3em;
+}
+
