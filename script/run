@@ -1,5 +1,6 @@
 #!/bin/sh
-; Make sure you're in the root Compojure dir
+
+# Make sure you're in the root Compojure dir
 cd `dirname $0`; cd ..
 
 for file in jars/*.jar; do
