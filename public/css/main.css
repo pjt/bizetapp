@@ -232,6 +232,12 @@ a.expand
   padding: .3em;
 }
 
+div.return-chunk
+{
+  font-size: 92%;
+  border-left: .3em solid #777;
+}
+
 div.to-entry
 {
   margin-left: 5em;
