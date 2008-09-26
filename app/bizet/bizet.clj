@@ -128,7 +128,7 @@
             [:p "Search not yet implemented."]))
     (GET "/search/in/"
         (let [tag   (param :tag)
-              terms (str-map downcase (param :terms))
+              terms (param :terms)
               srch  (compile-xpath (format "//%s[contains(.,'%s')]" tag (h terms)))
               results (for [e (vals entries)]
                         {:entry e :hits (srch (:doc e))})
