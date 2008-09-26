@@ -133,7 +133,9 @@
   e.g. :div#content -> [:div  {:id \"content\"}]
        :span.error  -> [:span {:class \"error\"}]"
   [tag attrs]
-  (let [lexer-regex        #"(\\w+)(#(\\w+))?(\\.(\\w+))?"
+                        ;#"(\\w+)(#(\\w+))?(\\.(\\w+))?"
+  (let [lexer-regex     
+            #"([A-Za-z][\\w:-]*)(#([A-Za-z][\\w:-]*))?(\\.([A-Za-z][\\w:-]*))?"
         [_ tag _ id _ cls] (re-matches lexer-regex (str* tag))
         attrs              (merge-id-and-class attrs id cls)]
     [tag attrs]))

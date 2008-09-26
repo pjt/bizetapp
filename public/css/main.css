@@ -54,6 +54,7 @@ h2
   width: 75%;
 }
 
+/*
 h1 + h2
 {
   border-bottom: 0;
@@ -61,6 +62,7 @@ h1 + h2
   margin-top: -.5em;
   font-style: italic;
 }
+*/
 
 h3
 {
@@ -230,3 +232,12 @@ a.expand
   padding: .3em;
 }
 
+div.to-entry
+{
+  margin-left: 5em;
+  padding: .8em;
+}
+div.to-entry a:after
+{
+  content: " \2197";
+}
