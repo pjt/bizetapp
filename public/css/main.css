@@ -234,8 +234,9 @@ a.expand
 
 div.return-chunk
 {
-  font-size: 92%;
-  border-left: .3em solid #777;
+  font-size: 90%;
+  border-left: .4em solid #BBB;
+  padding-left: .6em;
 }
 
 div.to-entry
