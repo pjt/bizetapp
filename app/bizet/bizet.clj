@@ -42,7 +42,7 @@
 (defn templ
     "HTML template."
     [title & body]
-    [{"Content-Type" "text/html;encoding=UTF-8"}
+    [{"Content-Type" "text/html;charset=UTF-8"}
      (html
         (doctype :xhtml-strict)
         [:html
