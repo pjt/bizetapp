@@ -63,50 +63,50 @@
         </revisionDesc>
     </teiHeader>
     <text>
-        <title xml:lang="fr"  type="main">Jeux d’enfants</title>
-        <title  type="sub">suite</title>
+        <title xml:lang="fr" type="main">Jeux d’enfants</title>
+        <title type="sub">suite</title>
         <!--how to distinguish category of composition?-->
         <div xml:id="contents">
             <list type="ordered">
                 <item>
-                    <title rend="italics">L’Escarpolette- Rêverie</title>, <measure quantity="62"
+                    <title xml:lang="fr">L’Escarpolette- Rêverie</title>, <measure quantity="62"
                         unit="bars">62</measure> bars</item>
                 <item>
-                    <title rend="italics">La Toupie - Impromptu</title>, <measure quantity="73"
+                    <title xml:lang="fr">La Toupie - Impromptu</title>, <measure quantity="73"
                         unit="bars">73</measure> bars</item>
                 <item>
-                    <title rend="italics">La Poupée - Berceuse</title>, <measure quantity="48"
+                    <title xml:lang="fr">La Poupée - Berceuse</title>, <measure quantity="48"
                         unit="bars">48</measure> bars</item>
                 <item>
-                    <title rend="italics">Les Chevaux de bois - Scherzo</title>,<measure
+                    <title xml:lang="fr">Les Chevaux de bois - Scherzo</title>,<measure
                         quantity="95" unit="bars"> 95</measure> bars (<measure quantity="75"
                         unit="bars">75</measure> in aut)</item>
                 <item>
-                    <title rend="italics">Le Volant - Fantaisie</title>, <measure quantity="28"
+                    <title xml:lang="fr">Le Volant - Fantaisie</title>, <measure quantity="28"
                         unit="bars">28</measure> bars (<measure quantity="32" unit="bars"
                     >32</measure> in aut)</item>
                 <item>
-                    <title rend="italics">Trompette et tambour - Marche</title>, <measure
+                    <title xml:lang="fr">Trompette et tambour - Marche</title>, <measure
                         quantity="71" unit="bars">71</measure> bars</item>
                 <item>
-                    <title rend="italics">Les Bulles de savon - Rondino</title>, <measure
+                    <title xml:lang="fr">Les Bulles de savon - Rondino</title>, <measure
                         quantity="36" unit="bars">36</measure> bars</item>
                 <item>
-                    <title rend="italics">Les Quatre Coins - Esquisse</title>, <measure
+                    <title xml:lang="fr">Les Quatre Coins - Esquisse</title>, <measure
                         quantity="180" unit="bars">180</measure> bars (<measure quantity="228"
                         unit="bars">228</measure> in aut)</item>
                 <item>
-                    <title rend="italics">Colin-maillard - Nocturne</title>, <measure quantity="35"
+                    <title xml:lang="fr">Colin-maillard - Nocturne</title>, <measure quantity="35"
                         unit="bars">35 </measure>bars</item>
                 <item>
-                    <title rend="italics">Saute-mouton - Caprice</title>, <measure quantity="75"
+                    <title xml:lang="fr">Saute-mouton - Caprice</title>, <measure quantity="75"
                         unit="bars">75</measure> bars</item>
                 <item>
-                    <title rend="italics">Petit mari, petite femme ! - Duo</title>, <measure
+                    <title xml:lang="fr">Petit mari, petite femme ! - Duo</title>, <measure
                         quantity="91" unit="bars">91</measure> bars</item>
                 <item>
-                    <title rend="italics">Le Bal - Galop</title>, <measure quantity="161"
-                        unit="bars">161</measure> bars</item>
+                    <title xml:lang="fr">Le Bal - Galop</title>, <measure quantity="161" unit="bars"
+                        >161</measure> bars</item>
             </list>
             <div xml:id="instrumentation">
                 <p>piano duet</p>
@@ -117,95 +117,103 @@
             <date type="composition">1871</date>. <p>There were originally ten pieces in the
                 sequence 4, 3, 2, 1, 5, 6, 9, 10, 11, 12. Nos 7 and 8 were then added at the end
                 before the final order was arrived at. The original titles of nos 2 and 6 were
-                    <title>La Toupie d’Allemagne</title> and <title>Les Soldats de
-            plomb</title>.</p></div>
+                    <title xml:lang="fr">La Toupie d’Allemagne</title> and <title xml:lang="fr">Les
+                    Soldats de plomb</title>.</p></div>
         <div xml:id="autograph">
-            <msDesc>
-                <head>Autograph score:</head>
 
-                <p><msIdentifier> F-Pn Cons MS 454 (1–12), gift of <acquisition>Jacques
-                        Durand</acquisition>.</msIdentifier>
-                    <objectDesc>12 cahiers enclosed in a wrapper</objectDesc>, <material>30-stave
-                        paper torn in half to make oblong 15-stave paper</material>, <extent>26 f.
-                        (50 p. of music)</extent>. No. 4 has 20 fewer bars than in the printed
-                    version [???]. No. 8 has an additional 48 bars, crossed out, after bar 112.</p>
+            <head>Autograph score:</head>
+            <msDesc>
+                <p><msIdentifier><institution> F-Pn Cons </institution><idno>MS 454 (1–12)</idno>,
+                        gift of <acquisition>Jacques Durand</acquisition>.</msIdentifier>
+                    <physDesc><objectDesc>12 cahiers enclosed in a wrapper</objectDesc>,
+                            <material>30-stave paper torn in half to make oblong 15-stave
+                        paper</material>, <extent>26 f. (50 p. of music)</extent></physDesc>.<note>
+                        No. 4 has 20 fewer bars than in the printed version [???]. No. 8 has an
+                        additional 48 bars, crossed out, after bar 112</note>.</p>
 
                 <msContents>
                     <msItem>
                         <head>Wrapper:</head>
-                        <titlePage rend="italics" xml:lang="fr">
+                        <titlePage xml:lang="fr">
                             <composer>G. Bizet</composer>
-                            <title type="main"> Jeux d’enfants (op. 22)</title>
-                            <title type="sub">Suite de 12 petites pièces</title>
+                            <titlePart type="main"> Jeux d’enfants (op. 22)</titlePart>
+                            <titlePart type="sub">Suite de 12 petites pièces</titlePart>
                             <hi rend="strikethrough">Suite d’orchestre</hi> pour piano à 4
-                        mains</titlePage> [in another hand:] <hi rend="italics">donné par Jacques
-                            Durand, <date>26 octobre 1905</date></hi>.</msItem>
+                        mains</titlePage> [in another hand:] donné par Jacques
+                            Durand, <date>26 octobre 1905</date>.</msItem>
 
 
                     <msItem>
                         <head>Cahier 1:</head>
-                        <title rend="italics"> L’Escarpolette Rêverie</title>
-                        <title rend="italics"> Jeux d’enfants </title>
-                        <composer rend="italics">Georges Bizet</composer>
+                        <title xml:lang="fr" type="main"> L’Escarpolette Rêverie</title>
+                        <title> Jeux d’enfants </title>
+                        <composer>Georges Bizet</composer>
                         <extent>2 f., music p. 1–4</extent>
                     </msItem>
 
                     <msItem>
                         <head>Cahier 2: </head>
-                        <title rend="italics">No. 2<lb/> La Toupie<lb/> Impromptu<lb/></title>
+                        <title xml:lang="fr">No. 2<lb/> La Toupie<lb/> Impromptu<lb/></title>
                         <extent>2 f., music p. 1–4</extent>
                     </msItem>
 
                     <msItem>
                         <head>Cahier 3: </head>
-                        <title rend="italics"> No. 3<lb/> La Poupée <lb/>Berceuse<lb/></title>
+                        <title xml:lang="fr"> No. 3<lb/> La Poupée <lb/>Berceuse<lb/></title>
                         <extent> 2 f., music p. 1–4, with 4 bars crossed out.</extent>
                     </msItem>
 
-                    <msItem> Cahier 4: <title rend="italics"> No. 4<lb/> Les chevaux de bois<lb/> Scherzo<lb/></title>
+                    <msItem> Cahier 4: <title xml:lang="fr"> No. 4<lb/> Les chevaux de bois<lb/>
+                            Scherzo<lb/></title>
                         <extent> 2 f., music p. 1–4, with 11 bars bars covered by a collette of 20
-                            bars</extent>. <p>On the back of the collette is a draft: <hi
-                                rend="italics">par <lb/> Georges Bizet <lb/> op: 26 en deux suites chaque<lb/>
-                            </hi> .</p></msItem>
+                            bars</extent>. <p>On the back of the collette is a draft:<foreign> par <lb/> Georges Bizet <lb/> op: 26 en deux suites
+                                chaque<lb/></foreign>
+                             .</p></msItem>
 
                     <msItem>
                         <head>Cahier 5: </head>
-                        <title rend="italics">No. 5<lb/> Le Volant<lb/> Fantaisie<lb/></title>
+                        <title xml:lang="fr">No. 5<lb/> Le Volant<lb/> Fantaisie<lb/></title>
                         <extent>2 f., music p. 1–4</extent>
                     </msItem>
 
                     <msItem><head>Cahier 6:</head>
-                        <title rend="italics">No. 6 <lb/>Trompettes et Tambours <lb/>Marche<lb/></title>
+                        <title xml:lang="fr">No. 6 <lb/>Trompettes et Tambours <lb/>Marche<lb/></title>
                         <extent>2 f., music p. 1–4</extent>, with many corrections and collettes.</msItem>
 
                     <msItem><head>Cahier 7: </head>
-                        <title rend="italics"><hi rend="strikethrough">No. 11</hi> No. 7<lb/> Les Bulles de Savon<lb/> Rondino<lb/></title>
+                        <title xml:lang="fr"><hi rend="strikethrough">No. 11</hi> No. 7<lb/> Les
+                            Bulles de Savon<lb/> Rondino<lb/></title>
                         <extent>2 f., music p. 1–3</extent>, blank, with some revisions.</msItem>
 
                     <msItem><head>Cahier 8: </head>
-                        <title rend="italics"><hi rend="strikethrough"> No. [12?]</hi> No. 8 <lb/>Les Quatre Coins<lb/> Esquisse<lb/></title> <extent>3
-                        f., music p. 1–6, with many deletions and collettes</extent>.</msItem>
+                        <title xml:lang="fr"><hi rend="strikethrough"> No. [12?]</hi> No. 8
+                            <lb/>Les Quatre Coins<lb/> Esquisse<lb/></title>
+                        <extent>3 f., music p. 1–6, with many deletions and collettes</extent>.</msItem>
 
                     <msItem>
                         <head>Cahier 9:</head>
-                        <title rend="italics"><hi rend="strikethrough">No. 7</hi> No. 9 <lb/>Colin-Maillard<lb/> Nocturne<lb/></title>
+                        <title xml:lang="fr"><hi rend="strikethrough">No. 7</hi> No. 9
+                            <lb/>Colin-Maillard<lb/> Nocturne<lb/></title>
                         <extent>2 f., music p. 1–3</extent>, blank.</msItem>
 
                     <msItem>
                         <head>Cahier 10: </head>
-                        <title rend="italics"><hi rend="strikethrough">No. 8</hi> No. 10<lb/> Saute Mouton<lb/> Caprice<lb/></title>
+                        <title xml:lang="fr"><hi rend="strikethrough">No. 8</hi> No. 10<lb/> Saute
+                            Mouton<lb/> Caprice<lb/></title>
                         <extent>2 f., music p. 1–4.</extent>
                     </msItem>
 
                     <msItem>
                         <head>Cahier 11: </head>
-                        <title rend="italics"><hi rend="strikethrough">No. 9</hi> No. 11 <lb/>Petit mari, petite femme! <lb/>Duo<lb/></title>
+                        <title xml:lang="fr"><hi rend="strikethrough">No. 9</hi> No. 11 <lb/>Petit
+                            mari, petite femme! <lb/>Duo<lb/></title>
                         <extent>2 f., music p. 1–4.</extent>
                     </msItem>
 
                     <msItem>
                         <head> Cahier 12:</head>
-                        <title rend="italics"> <hi rend="strikethrough">No. 10</hi> No. 12<lb/> Le Bal<lb/>Galop<lb/></title>
+                        <title xml:lang="fr">
+                            <hi rend="strikethrough">No. 10</hi> No. 12<lb/> Le Bal<lb/>Galop<lb/></title>
                         <extent>3 f., music p. 1–6.</extent>
                     </msItem>
                 </msContents>
@@ -216,9 +224,9 @@
         <div xml:id="printedTexts">
             <head> Printed scores:</head>
 
-            <list type="ordered">
-                <item>
-                    <titlePage rend="italics"> A Mesdemoiselles<lb/> Marguerite de BEAULIEU et Fanny GOUIN<lb/>
+            <listBibl>
+                <bibl>
+                    <titlePage xml:lang="fr"> A Mesdemoiselles<lb/> Marguerite de BEAULIEU et Fanny GOUIN<lb/>
                         <titlePart type="main"> Jeux<lb/> d’ENFANTS<lb/>
                         </titlePart>
                         <titlePart type="sub"> 12 PIÈCES<lb/> POUR<lb/> Piano à 4 mains<lb/>
@@ -240,61 +248,61 @@
                     </titlePage> pl. no: <idno>D.S. et Cie 1365 (1)–(12) </idno><lb/> pages:
                         <extent>t. p., 2–63, blank</extent><lb/> ann: BF, 20-4-1872 @ 25 fr. for the
                     set, and as separate pieces<lb/> date: <date>1872 </date>(sold to Durand on
-                        <date>28-9-1871</date>) <lb/> copies: <list>
-                        <item>F-Pn X.579 </item>
-                        <item> F-Pn Ac.p.1831(1-12) (stamped <date>1872</date>)</item>
-                        <item>F-Po A 836b</item>
-                        <item>D-Mbs</item>
-                        <item>GB-Lbl (stamped 19-7-1872)</item>
-                        <item>Morssen Catalogue(1962) (inscribed by Bizet)</item>
-                        <item> note: All twelve pieces were issued separately, priced as shown on
-                            the t. p.</item>
-                    </list>
-                </item>
+                        <date>28-9-1871</date>) <lb/> copies: 
+                        <msIdentifier><institution>F-Pn</institution><idno> X.579 </idno></msIdentifier>
+                        <msIdentifier><institution> F-Pn </institution><idno>Ac.p.1831(1-12)</idno><note> (stamped <date>1872</date>)</note></msIdentifier>
+                        <msIdentifier><institution>F-Po </institution><idno>A 836b</idno></msIdentifier>
+                        <msIdentifier><institution>D-Mbs</institution></msIdentifier>
+                        <msIdentifier><institution>GB-Lbl</institution><note> (stamped <date>19-7-1872</date>)</note></msIdentifier>
+                        <msIdentifier><authority>Morssen Catalogue</authority>(<date>1962</date>) <note>(inscribed by Bizet)</note></msIdentifier>
+                        <note> note: All twelve pieces were issued separately, priced as shown on
+                            the t. p.</note>
+                    
+                </bibl>
 
-                <item>
+                <bibl>
                     <p>Reissued by <publisher>A. Durand &amp; Fils</publisher>, pl. no. <idno>D.
                             et F. 1365 (1)–(12)</idno>, with increased prices, after
                         <date>1891</date>, and by <publisher>Durand &amp; Cie</publisher> after
-                            <date>1909</date>. GB-En, US-Wc, US-CAe, HJM. D-Bsb</p>
-                </item>
+                            <date>1909</date>. <msIdentifier><institution>GB-En</institution></msIdentifier>, <msIdentifier><institution>US-Wc</institution></msIdentifier>, <msIdentifier><institution>US-CAe</institution></msIdentifier>, <msIdentifier><institution>HJM</institution></msIdentifier>. <msIdentifier><institution>D-Bsb</institution></msIdentifier></p>
+                </bibl>
 
-                <item>
+                <bibl>
                     <publisher>Hug</publisher>, <publace>Leipzig</publace>, <date>1906</date>. ed.
-                        <editor>Adolf Ruthardt</editor>. D-Bsb</item>
+                        <editor>Adolf Ruthardt</editor>. <msIdentifier><institution>D-Bsb</institution></msIdentifier></bibl>
 
-                <item>
+                <bibl>
                     <p><publisher>Hug</publisher>, <pubPlace>Leipzig</pubPlace>, pl. no.
                         <idno>4120</idno>, <extent>37 p</extent>., <date>1938</date>, ed.
                             <editor>Kurt Herrmann</editor>. Nos. 2, 3, 4, 6, 9, 11, 12 only. D-Bsb,
                         US-unc. Reissued c. <date>1952 </date>from Hug’s Zurich address. Reprinted
                         by <publisher>Edwin Kalmus</publisher>, c. <date>1970</date>.</p>
-                </item>
+                </bibl>
 
-                <item>
+                <bibl>
                     <publisher>International</publisher>, <pubPlace>New York</pubPlace>, <extent>55
-                        p</extent>., <date>1952</date>, ed.<editor> Isidore Philipp.</editor></item>
+                        p</extent>., <date>1952</date>, ed.<editor> Isidore Philipp.</editor></bibl>
 
-                <item>
+                <bibl>
                     <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, <extent>75
-                    p.</extent>, <date>1961</date>, ed. <editor>Walter Frickert</editor>.</item>
+                    p.</extent>, <date>1961</date>, ed. <editor>Walter Frickert</editor>.</bibl>
 
-                <item>
+                <bibl>
                     <p><publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>,<extent> 63
                         p.</extent>, <date>1977</date>, ed. <editor>David Goldberger.</editor>
-                        US-NYp.</p>
-                </item>
+                        <msIdentifier><institution>US-NYp</institution></msIdentifier>.</p>
+                </bibl>
 
-                <item>
+                <bibl>
                     <p><publisher>Éditions Musicales du Marais</publisher>,
                         <pubPlace>Paris</pubPlace>, <extent>68 p</extent>., <date>1990</date>, ed.
-                            <editor>Noël Lee</editor>, in the series ‘Patrimoine’.</p>
-                </item>
+                            <editor>Noël Lee</editor>,<note> in the series ‘<title>Patrimoine</title>’</note>.</p>
+                </bibl>
 
-                <item>
+                <bibl>
                     <publisher>Henle</publisher>, <pubPlace>Munich</pubPlace>, <extent>69
-                    p</extent>., <date>1996</date>, ed. <editor>Egon Voss</editor>.</item>
-            </list>
+                    p</extent>., <date>1996</date>, ed. <editor>Egon Voss</editor>.</bibl>
+            </listBibl>
         </div>
         <div xml:id="arrangements">
             <div>
@@ -308,27 +316,27 @@
             <div>
                 <head>Arrangements, piano solo: </head>
 
-                <list type="ordered">
+                <listBibl>
                     <item>
                         <publisher>Durand, Schoenewerk</publisher>, pl. no. <idno>D.S. &amp; Cie
                             3438–3441</idno>, 3+3+3+5 p., <date>1885</date>, as <title
-                            rend="italics">4 morceaux pour piano </title>(nos. 3, 2, 11 and 12).
-                        GB-Lbl, US-Wc. F-Po (A 836c) (no. 2); CH-Bsacher (no.2) GB-Cu</item>
+                            rend="italics">4 morceaux pour piano </title><note>(nos. 3, 2, 11 and 12)</note>.
+                        <msIdentifier><institution>GB-Lbl</institution></msIdentifier>, <msIdentifier><institution>US-Wc.</institution> <idno>F-Po (A 836c)</idno> <note>(no. 2)</note></msIdentifier>; <msIdentifier><institution>CH-Bsacher</institution> <note>(no.2)</note></msIdentifier> <msIdentifier><institution>GB-Cu</institution></msIdentifier></item>
 
                     <item>
                         <publisher>Hatzfeld</publisher>,<pubPlace> Leipzig</pubPlace>, pl. no.
-                            <idno>D. S. &amp; Cie 3438</idno>, c. <date>1890</date>. D-Mbs has
-                        no. 3</item>
+                            <idno>D. S. &amp; Cie 3438</idno>, c. <date>1890</date>. <note>D-Mbs has
+                        no. 3</note></item>
 
                     <item>
                         <publisher>Rühle</publisher>, <pubPlace>Leipzig</pubPlace>, c.<date>
-                        1908</date> (nos. 2, 3, 11, 12). CH-Bsacher.</item>
+                        1908</date><note> (nos. 2, 3, 11, 12)</note>. <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>.</item>
 
                     <item>
                         <publisher>Durand &amp; Cie</publisher>, pl. no. <idno>D. &amp; F.
-                            13.540</idno>, <extent>44 p</extent>., <date>1952</date>, arr. Lucien
-                        Garban. The complete set of twelve. US-STLhjm.</item>
-                </list>
+                            13.540</idno>, <extent>44 p</extent>., <date>1952</date>,<note> arr. Lucien
+                        Garban. The complete set of twelve</note>. <msIdentifier><institution>US-STLhjm</institution></msIdentifier>.</item>
+                </listBibl>
             </div>
         </div>
         <div xml:id="performances">
@@ -341,18 +349,17 @@
                     (see<title xml:lang="fr"> Petite Suite d’orchestre</title>) and new
                 orchestrations of the remainder, was given by the New York City Ballet on
                     <date>22-11-1955</date>. Nos 6, 3, 11 and 12 were later (<date>30-7-1975</date>)
-                recast as a ballet entitled <title>The Steadfast Tin
-            Soldier</title>.</p>
+                recast as a ballet entitled <title>The Steadfast Tin Soldier</title>.</p>
         </div>
         <div xml:id="documents"><head> Documents: </head><p> Late <date>1871</date>, to
                     <name>Lacombe</name>: ‘<foreign xml:lang="fr">Pasdeloup rejouera, cet hiver, ma
                     symphonie et probablement aussi mes petites suites d’orchestre en cinq morceaux.
                     – Ces morceaux, qui sont de simples esquisses, sont accompagnés de cinq autres.
-                    Durand (Flaxland) m’a acheté le recueil qui sera intitulé: <title
-                        >Jeux d’enfants !</title>...</foreign>
+                    Durand (Flaxland) m’a acheté le recueil qui sera intitulé: <title>Jeux d’enfants
+                        !</title>...</foreign>
             </p>
-            <foreign>
-                <lb rend="italics">Dix morceaux à quatre mains.</lb>
+            <foreign xml:lang="fr">
+                <lb>Dix morceaux à quatre mains.</lb>
                 <lb>1 Les Chevaux de bois Scherzo</lb>
                 <lb>2 La Poupée Berceuse</lb>
                 <lb> 3 La Toupie d’Allemagne Impromptu</lb>
@@ -379,12 +386,12 @@
         <div xml:id="selfBorrowing">
             <head>Self-borrowing (from): </head>
             <p>No. 6 is derived from no. 19 (<title xml:lang="fr">Marche et récit</title>) of
-                    <title>Ivan IV</title>, omitting bars 1–2 and rewriting the
-                middle section and the end. This was in turn orchestrated for the <title
-                    xml:lang="fr">Jeux d’enfants</title> suite in C minor. </p>
+                    <title>Ivan IV</title>, omitting bars 1–2 and rewriting the middle section and
+                the end. This was in turn orchestrated for the <title xml:lang="fr">Jeux
+                d’enfants</title> suite in C minor. </p>
         </div>
-        <div xml:id="opus"><head>Opus no.:</head> 22. A collette in the autograph of no.
-            4 suggests that Bizet once intended this to be op. 26.</div>
+        <div xml:id="opus"><head>Opus no.:</head> 22. A collette in the autograph of no. 4 suggests
+            that Bizet once intended this to be op. 26.</div>
         <div xml:id="notes">
             <head>Note:</head> The first bar of no. 8 is silent. </div>
         <div xml:id="bibliography">

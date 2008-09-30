@@ -72,22 +72,27 @@
 
             <p><measure quantity="71" unit="bars">71</measure> bars </p>
 
-            <div xml:id="instrumentation"> <p>voice and piano</p> </div>
+            <div xml:id="instrumentation">
+                <p>voice and piano</p>
+            </div>
         </div>
 
         <div xml:id="textSource">
-            <head>Poem: </head> Charles-Hubert Millevoye (<date>1782–1816</date>),
-                <title xml:lang="fr">La Fauvette</title> in <title xml:lang="fr">Poésies
-            Légères</title>. <biblStruct><title rend="italics" xml:lang="fr">Œuvres complètes, 3e éd.,
-                    </title><date>1827</date>, <biblScope type="tome">tome I</biblScope>, <biblScope
-                    type="pp">p. 282–23</biblScope>.</biblStruct> The poem is not called Vieille
-            Chanson. </div>
+            <head>Poem: </head>
+            <p><author>Charles-Hubert Millevoye</author> (<date>1782–1816</date>), <title
+                    xml:lang="fr">La Fauvette</title> in <title xml:lang="fr">Poésies
+                Légères</title>. <biblStruct><title rend="italics" xml:lang="fr">Œuvres complètes,
+                        3e éd., </title><date>1827</date>, <biblScope type="tome">tome <num
+                            value="1">I</num></biblScope>, <biblScope type="pp">p.
+                    282–23</biblScope>.</biblStruct> The poem is not called <title>Vieille
+                Chanson</title>.</p>
+        </div>
 
         <div xml:id="history">
             <head>Composition: </head>
-            <p>by <date type="composition">1865</date>, when it was published. The autographs suggest it was originally
-                presented as the work of another. Gaston de Betzi was Bizet’s occasional pseudonym
-                (see Hymne à la paix).</p>
+            <p>by <date type="composition">1865</date>, when it was published. The autographs
+                suggest it was originally presented as the work of another. Gaston de Betzi was
+                Bizet’s occasional pseudonym (see <title>Hymne à la paix</title>).</p>
         </div>
 
         <div xml:id="autograph">
@@ -98,11 +103,14 @@
 
             <list type="ordered">
                 <item>
-                    <msDesc><idno>S-Ssmf MMS 319</idno>. <physDesc><objectDesc>2 f., 2 p. of
-                            music</objectDesc>, <material>30-stave paper</material>, <extent>257 x
-                                338 mm</extent></physDesc>. <msContents>
+                    <msDesc><msIdentifier>
+                            <institution>S-Ssmf </institution>
+                            <idno>MMS 319</idno>
+                        </msIdentifier>. <physDesc><objectDesc>2 f., 2 p. of music</objectDesc>,
+                                <material>30-stave paper</material>, <extent>257 x 338
+                        mm</extent></physDesc>. <msContents>
                             <msItem>
-                                <titlePage rend="italics" xml:lang="fr">
+                                <titlePage xml:lang="fr">
                                     <title>Vieille Chanson</title> Paroles de Millevoye<lb/> Musique
                                     d’Alfred de Neufchâtel<lb/> recueilli et arrangé pour le goût du
                                     jour<lb/> par Gaston de Betzi!..... <lb/> retrouvé et offert à
@@ -111,10 +119,9 @@
                                 </titlePage>
                             </msItem>
 
-                            <p>In a later hand, after ‘Neufchâtel’: (<date rend="italics"
-                                >1807</date>); after ‘Betzi!.....’: (<date rend="italics"
-                                >1839</date>); after ‘Bizet’: (<date rend="italics">186–</date>),
-                                the last figure cut off]</p>
+                            <note>In a later hand, after ‘Neufchâtel’: (<date>1807</date>); after
+                                ‘Betzi!.....’: (<date>1839</date>); after ‘Bizet’:
+                                (<date>186–</date>), the last figure cut off]</note>
                         </msContents>
                         <p> t. p., music [2–3] in A flat, blank</p>
                     </msDesc>
@@ -122,12 +129,13 @@
 
 
                 <item>
-                    <msDesc>Fonds Choudens. <physDesc><objectDesc>2 f., 4 p.</objectDesc>, <material>30-stave
-                            paper</material></physDesc>. <msItem rend="italics" xml:lang="fr"> Vieille Chanson <lb/> Paroles
-                            de Millevoye<lb/> Musique de Alfred de Neufchâtel <lb/> recueillie et
-                            arrangée pour le goût du jour<lb/> par Georges Bizet <lb/></msItem>`
-                            <p>The second line revised in another hand to <foreign rend="italics"
-                                >Poésie de Millevoye Musique de Georges Bizet</foreign></p>
+                    <msDesc>Fonds Choudens. <physDesc><objectDesc>2 f., 4 p.</objectDesc>,
+                                <material>30-stave paper</material></physDesc>. <msItem
+                            xml:lang="fr"> Vieille Chanson <lb/> Paroles de Millevoye<lb/> Musique
+                            de Alfred de Neufchâtel <lb/> recueillie et arrangée pour le goût du
+                            jour<lb/> par Georges Bizet <lb/></msItem>` <p>The second line revised
+                            in another hand to <foreign>Poésie de Millevoye Musique de Georges
+                            Bizet</foreign></p>
                         <p>t. p., music 2–4 in A flat, marked for engraving.</p></msDesc>
                 </item>
             </list>
@@ -136,8 +144,8 @@
 
 
         <div xml:id="printedText">
-            <list type="ordered">
-                <item>
+            <listBibl>
+                <bibl>
                     <titlePage xml:lang="fr" rend="italics"> A MADAME MIOLAN-CARVALHO<lb/>
                         <title>Vieille CHANSON</title><lb/> Poésie de Millevoye<lb/> Musique de<lb/>
                         G. BIZET<lb/> No. 1 No. 2<lb/> Mezzo-Soprano ou Baryton Soprano ou
@@ -149,79 +157,77 @@
                     1201</idno>(2) (higher key)<lb/> pages: <extent>1–5</extent><lb/> date:
                         <date>1865</date><lb/> ann.: BF, 30-9-1865; Le Ménestrel, 17-12-1865;
                     Choudens Catalogue, <date>1867</date>.<lb/>
-                    <list>copies: <item>GB-Lbl H.2476 (high key) (stamped 18/3/67)</item>
-                        <item>F-Pn L13768 (high key) (inscribed by Choudens)</item>
-                        <item>GB-Ob Mus 5.c.B.63 (high key)</item>
-                        <item>F-Pn K.59404 (high)</item>
-                        <item>F-Pn Ac M.2039 (high key)</item>
-                        <item>F-Pn Vm7 32724 (high key)</item>
-                        <item>GB-Lrcm (high key) (3 copies)</item>
-                        <item>US-SLhjm (low key)</item>
-                        <item>Copies at Duke (low) and Kansas State (addresses?)</item></list></item>
+                    copies: <msIdentifier><institution>GB-Lbl </institution><idno>H.2476</idno><note> (high key) (stamped <date>18/3/67</date>)</note></msIdentifier>
+                        <msIdentifier><institution>F-Pn</institution><idno> L13768 </idno><note>(high key) (inscribed by Choudens)</note></msIdentifier>
+                        <msIdentifier><institution>GB-Ob</institution> <idno>Mus 5.c.B.63 </idno><note>(high key)</note></msIdentifier>
+                        <msIdentifier><institution>F-Pn</institution><idno> K.59404</idno> <note>(high)</note></msIdentifier>
+                        <msIdentifier><institution>F-Pn </institution><idno>Ac M.2039</idno> <note>(high key)</note></msIdentifier>
+                        <msIdentifier><institution>F-Pn </institution><idno>Vm7 32724</idno><note> (high key)</note></msIdentifier>
+                        <msIdentifier><institution>GB-Lrcm</institution> <note>(high key) (3 copies)</note></msIdentifier>
+                        <msIdentifier><institution>US-SLhjm</institution> <note>(low key)</note></msIdentifier>
+                        <msIdentifier>Copies at <institution>Duke </institution>(low) and <institution>Kansas State</institution> (addresses?)</msIdentifier></bibl>
 
-                <item>
-                    <publisher>Choudens</publisher>, as no. 3 in <title rend="italics" xml:lang="fr"
-                        >Vingt Mélodies</title> (q. v.), <date>1875</date>. Also issued in F.</item>
+                <bibl>
+                    <publisher>Choudens</publisher>, as no. 3 in <title xml:lang="fr"
+                        >Vingt Mélodies</title> (q. v.), <date>1875</date>. <note>Also issued in F</note>.</bibl>
 
-                <item><publisher>Choudens</publisher> continued to issue the song as a
-                    single item from later addresses. <pubPlace>Fils, 30 Boulevard des
-                    Capucines</pubPlace>. HJM (low key) US-STLgaylord (low key)</item>
+                <bibl><publisher>Choudens</publisher> continued to issue the song as a single item
+                    from later addresses. <pubPlace>Fils, 30 Boulevard des Capucines</pubPlace>. <msIdentifier><institution>HJM</institution>
+                    <note>(low key)</note></msIdentifier> <msIdentifier><institution>US-STLgaylord </institution><note>(low key)</note></msIdentifier></bibl>
 
-                <item><publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, pl.
-                    no. <idno>M. 5698</idno>, <extent>7 p</extent>., [<date>before 1881</date>]. As
-                        <title rend="italics">In the Woods</title>, Eng. (tr. Theo: Marzials) only.
-                    In two keys. GB-Ob (low). Free public performance.</item>
+                <bibl><publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, pl. no. <idno>M.
+                        5698</idno>, <extent>7 p</extent>., [<date>before 1881</date>]. As <title>In the Woods</title>,<note> Eng. (tr. Theo: Marzials) only. In two
+                            keys. Free public performance.</note><msIdentifier><institution>GB-Ob</institution> <note>(low)</note>.</msIdentifier> </bibl>
 
-                <item>
+                <bibl>
                     <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, pl. no. <idno>M.
-                        5709</idno>, 7 p., [1889]. As <title rend="italics">Vieille Chanson. In the
-                        Woods</title>, Fr. and Eng. (tr. Theo: Marzials). In two keys. GB-Ob (high)
-                    Gives the name of Millevoye and restricts public performance</item>
+                        5709</idno>, 7 p., [1889]. As <title>Vieille Chanson. In the
+                            Woods</title>, <note>Fr. and Eng. (tr. Theo: Marzials). In two keys.Gives the name of Millevoye and restricts public performance</note> <msIdentifier><institution>GB-Ob</institution><note> (high)</note></msIdentifier>
+                    </bibl>
 
-                <item>
+                <bibl>
                     <publisher>Hansen</publisher>, <pubPlace>Copenhagen</pubPlace>, pl. no.
-                        <idno>12380</idno>, 5 p., <date>1898</date>. In Fr., Swedish, and Danish.
-                    D-Bsb.</item>
+                        <idno>12380</idno>, 5 p., <date>1898</date>. <note>In Fr., Swedish, and Danish.</note>
+                    <msIdentifier><institution>D-Bsb.</institution></msIdentifier></bibl>
 
-                <item>
+                <bibl>
                     <publisher>Ditson</publisher>, <pubPlace>Boston</pubPlace>, music p. 3-7, 1902.
-                    As <title rend="italics">In the Woods (Vieille Chanson)</title>, Fr. and Eng.
-                    (tr. Isabella G. Parker). US-Wc M1621 .B</item>
+                    As <title>In the Woods (Vieille Chanson)</title>,<note> Fr. and Eng.
+                    (tr. Isabella G. Parker).</note> <msIdentifier><institution>US-Wc </institution><idno>M1621 .B</idno></msIdentifier></bibl>
 
-                <item>
-                    <publisher>Phil. Boner</publisher>, n.d. As ‘<title rend="italics">In the
-                    Woods</title>’. Copies in NUC.</item>
+                <bibl>
+                    <publisher>Phil. Boner</publisher>, n.d. As ‘<title>In the
+                    Woods</title>’. <note>Copies in NUC.</note></bibl>
 
-                <item>
+                <bibl>
                     <publisher>Schlesinger,</publisher>
                     <pubPlace>Berlin</pubPlace>, pl. no. <idno>9373</idno>, 6 p., <date>1906</date>.
-                    As <title rend="italics" xml:lang="de">Altes Lied</title>, Fr. and Ger (tr. Th.
-                    Rehbaum), in two keys. D-Bsb.</item>
+                    As <title xml:lang="de">Altes Lied</title><note>, Fr. and Ger (tr. Th.
+                    Rehbaum), in two keys</note>.<msIdentifier><institution> D-Bsb</institution></msIdentifier>.</bibl>
 
                 <item>
                     <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, <date>1914</date>.
-                    As no. 5 of <title rend="italics" xml:lang="de">Sechs Gesänge</title>, Fr. and
-                    Ger., in two keys.</item>
+                    As no. 5 of <title xml:lang="de">Sechs Gesänge</title>, <note>Fr. and
+                    Ger., in two keys.</note></item>
 
                 <item>
-                    <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>, in <title
-                        rend="italics">The Second Book of Soprano Solos</title>, ed. <editor>Joan
-                        Frey Boytim</editor>, c. 1994.</item>
+                    <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>, in <title>The Second Book of Soprano Solos</title>, ed. <editor>Joan
+                        Frey Boytim</editor>, <date>c. 1994</date>.</item>
 
                 <item>
                     <publisher>Garland</publisher>,<pubPlace> New York</pubPlace>,
-                    <date>1995</date>, in <title rend="italics">Romantic French Song
-                    1830–1870</title>, ed. <editor>David Tunley</editor>, vol. 4, p. 121–27
-                    (facsimile of Choudens 1865 edition).</item>
-            </list>
+                    <date>1995</date>, in <title>Romantic French Song
+                    1830–1870</title>, ed. <editor>David Tunley</editor>,<biblScope type="volume"> vol. 4</biblScope>, <biblScope type="pp">p. 121–27</biblScope>
+                    <note>(facsimile of Choudens 1865 edition).</note></item>
+            </listBibl>
 
         </div>
 
 
         <div xml:id="dedicatees">
             <head>Dedicatee:</head>
-            <p> Caroline Miolan-Carvalho (1827–95), leading soprano during the Second Empire and
-                wife of Léon Carvalho, director of the Théâtre-Lyrique. In 1867 she created the role
+            <p> Caroline Miolan-Carvalho (<date>1827–95</date>), leading soprano during the Second Empire and
+                wife of Léon Carvalho, director of the Théâtre-Lyrique. In <date>1867</date> she created the role
                 of Juliette in Gounod’s <title rend="italics">Roméo et Juliette</title>.</p>
         </div>
 

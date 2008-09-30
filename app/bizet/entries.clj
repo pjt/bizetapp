@@ -51,8 +51,8 @@
     it, & will be evaulated for each key-value pair. Results
     of evaluation should be a vector of new [key val]."
     [hashmap form]
-    `(apply conj {}
-        (map
+    `(apply hash-map
+        (mapcat
             (fn ~'[kv]
                 (let ~'[k (key kv)    
                       v (val kv)]
