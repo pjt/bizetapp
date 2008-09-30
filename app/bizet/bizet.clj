@@ -75,18 +75,21 @@
 (def htmlstyle (compile-xslt "public/bizet.xsl"))
 (dosync (commute entries pull-entries-from-fs))
 
-(def divids 
-    (set-count (mapcat :divids (vals @entries))))
-
-(def all-tags
-    (sort (set (mapcat :tags (vals @entries)))))
+;(def divids 
+;    (set-count (mapcat :divids (vals @entries))))
+;
+;;(def divids 
+;;    ((comp set-count mapcat :divids vals) @entries))
+;
+;(def all-tags
+;    (sort (set (mapcat :tags (vals @entries)))))
                 
     
 
 ;; Servlet def, Route defs
 
 (defservlet bizetapp
-    "Bizet Catalog app."
+    "The Bizet Catalog."
     (GET "/"
         (templ "Bizet Entries" 
             [:h2 "Entries"]
@@ -100,11 +103,13 @@
                 (map 
                     #(link-to (str "/section/" (key %)) 
                         (format "%s (%s)" (key %) (val %)))
-                    divids))
+                    (set-count (mapcat :divids (vals @entries)))))
             [:h2 "Search by Tag"]
             (form-to [GET "/search/in/"]
                 [:p "Search in "
-                    [:select {:name "tag"} (select-options all-tags)]
+                    [:select {:name "tag"} 
+                        (select-options 
+                            (sort (set (mapcat :tags (vals @entries)))))]
                     "with " (text-field :terms)
                     (submit-button "Search")])))
     (GET "/entry/:id" 
@@ -153,7 +158,7 @@
     (GET "/rrr" 
         (templ "Reload"
             [:pre
-                (str (dosync (commute entries pull-entries-from-fs)))]))
+                (dosync (commute entries pull-entries-from-fs))]))
 
     (GET "/*" (serve-file "public" full-path)))
     ;(ANY "/*" (page-not-found)))

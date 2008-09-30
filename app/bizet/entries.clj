@@ -17,7 +17,7 @@
             (comp title->id title-fn) 
             title-fn
             (compile-xpath 
-                "//div[@xml:id='history']/date[@type='composition'][1]/string()")
+                "//div[@xml:id='history']//date[@type='composition'][1]/string()")
             (comp set (compile-xpath "//div/@xml:id/string()"))
             (comp set (compile-xpath "/TEI/text//element()/local-name()"))
             identity)] 
