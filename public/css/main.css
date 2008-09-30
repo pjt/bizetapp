@@ -1,12 +1,13 @@
 /*
-	Default Styles for Documents
+	Default Styles for Bizet App
 	Perry Trolard
 	Humanities Digital Workshop
 	Washington University in Saint Louis
-	April 2007
+	September 2008
 */
 
-/* last modified: 2007-08-22 12:08 pjt */
+/* last modified: Sat 27 Sep 2008 pjt */
+
 
 /* main html elements
 ------------------------------ */
@@ -18,7 +19,6 @@ html
 
 body
 {
-/*  color: #333; background-color: #e8e8e8; */
   color: #333; background-color: #fff;
   margin: 2em auto;
   padding: 2em;
@@ -239,12 +239,12 @@ div.return-chunk
   padding-left: .6em;
 }
 
-div.to-entry
+.to-entry
 {
   margin-left: 5em;
   padding: .8em;
 }
-div.to-entry a:after
+.to-entry a:after
 {
   content: " \2197";
 }

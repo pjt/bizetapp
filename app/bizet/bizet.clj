@@ -42,7 +42,7 @@
 (defn templ
     "HTML template."
     [title & body]
-    [{"Content-Type" "text/html;encoding=UTF8"}
+    [{"Content-Type" "text/html;encoding=UTF-8"}
      (html
         (doctype :xhtml-strict)
         [:html
@@ -73,12 +73,13 @@
 
 (load "entries.clj")
 (def htmlstyle (compile-xslt "public/bizet.xsl"))
+(dosync (commute entries pull-entries-from-fs))
 
 (def divids 
-    (set-count (mapcat :divids (vals entries))))
+    (set-count (mapcat :divids (vals @entries))))
 
 (def all-tags
-    (sort (set (mapcat :tags (vals entries)))))
+    (sort (set (mapcat :tags (vals @entries)))))
                 
     
 
@@ -93,7 +94,7 @@
                 (map 
                     #(link-to (str "/entry/" (:id %)) 
                         (format "%s (%s)" (:title %) (:comp-date %)))
-                    (vals entries)))
+                    (vals @entries)))
             [:h2 "Divisions"]
             (unordered-list 
                 (map 
@@ -108,7 +109,7 @@
                     (submit-button "Search")])))
     (GET "/entry/:id" 
         (templ "Bizet Entry" 
-            (htmlstyle (:doc (get entries (route :id))))))
+            (htmlstyle (:doc (@entries (route :id))))))
     (GET "/section/:name"
         (let [section (route :name)
               div   (compile-xpath (format "//div[@xml:id='%s']" section))
@@ -122,7 +123,7 @@
                                 (html
                                     [:h2 (link-to (format "/entry/%s" id) (:title e))]
                                     (htmlstyle sec)))))
-                    entries))))
+                    @entries))))
     (GET "/search/"
         (templ "Search"
             [:p "Search not yet implemented."]))
@@ -130,7 +131,7 @@
         (let [tag   (param :tag)
               terms (param :terms)
               srch  (compile-xpath (format "//%s[contains(.,'%s')]" tag (h terms)))
-              results (for [e (vals entries)]
+              results (for [e (vals @entries)]
                         {:entry e :hits (srch (:doc e))})
               results (filter :hits results)]
             (templ "Search Results"
@@ -148,6 +149,11 @@
                                     (:hits result))))
                         results)
                     [:p [:em "No results found."]]))))
+
+    (GET "/rrr" 
+        (templ "Reload"
+            [:pre
+                (dosync (commute entries pull-entries-from-fs))]))
 
     (GET "/*" (serve-file "public" full-path)))
     ;(ANY "/*" (page-not-found)))

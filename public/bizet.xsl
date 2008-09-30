@@ -211,6 +211,9 @@
 	</xsl:choose>
   </xsl:template>
 
+  <!-- exlude list heads -->
+  <xsl:template match="tei:list/tei:head | list/head"/>
+
   <!-- do tables -->
   <xsl:template match="tei:table | table">
 	<table>
