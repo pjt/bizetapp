@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI>
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title level="a" type="main" xml:lang="fr">Carmen</title>
+                <author>Georges Bizet</author>
+                <!--"composer" more appropriate here-->
+                <principal/>
+                <respStmt>
+                    <resp>Creation of schema</resp>
+                    <name>The Humanities Digital Workshop, Washington University in St Louis</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Encoder</resp>
+                    <name>Erika Deal</name>
+                </respStmt>
+                <sponsor>The Humanities Digital Workshop, Washington University in St Louis</sponsor>
+                <funder/>
+            </titleStmt>
+            <publicationStmt>
+                <idno/>
+                <authority>Bizet Internet Catalog</authority>
+                <publisher>Washington University in St Louis</publisher>
+                <distributor>
+                    <name>The Humanities Digital Workshop</name>
+                    <name>Arts &amp; Sciences Computing</name>
+                    <address>
+                        <addrLine>Campus Box 1160</addrLine>
+                        <addrLine>One Brookings Drive</addrLine>
+                        <addrLine>Saint Louis, MO 63130-4899</addrLine>
+                    </address>
+                </distributor>
+                <date>2008</date>
+                <availability>
+                    <p>Copyright © 2007 by Washington University in St. Louis, all rights reserved.
+                        Redistribution or republication in any medium, except as allowed under the
+                        Fair Use provisions of U.S. copyright law, requires express written consent
+                        from the editors and advance notification of the publisher, Washington
+                        University in St. Louis.</p>
+                </availability>
+            </publicationStmt>
+            <notesStmt> </notesStmt>
+            <sourceDesc>
+                <bibl>
+                    <title>Carmen</title>
+                    <author>Hugh Macdonald</author>
+                    <date>2008</date>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <classDesc>
+                <taxonomy xml:id="lcsh">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+            </classDesc>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="3-9-2008">
+                <name>Erika Deal</name>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <title type="main"> Carmen</title>
+        <title type="sub" xml:lang="fr">opéra-comique en quatre actes</title>
+
+        <div xml:id="contents">
+            <p>Contents as in 1875 vocal score:</p>
+
+            <list type="ordered">
+                <item>
+                    <head xml:lang="fr">Prélude </head>
+                    <figure>
+                        <graphic>
+                            <figureDesc>several bars of music</figureDesc>
+                        </graphic>
+                    </figure>
+                    <p><measure quantity="148" unit="bars">148</measure> bars (of which <measure
+                            quantity="16" unit="bars">16</measure> are repeated)</p>
+                </item>
+
+                <item>
+                    <head xml:lang="fr">Acte<num value="1"> I</num></head>
+                    <list type="ordered" xml:lang="fr">
+                        <item>
+                            <p><title>Scène et chœur </title>(Micaëla, Moralès, chœur d’hommes)</p>
+                            <figure>
+                                <graphic>
+                                    <figureDesc>several bars of vocal part</figureDesc>
+                                </graphic>
+                            </figure>
+                            <p><measure quantity="197" unit="bars">197</measure> bars</p>
+                        </item>
+                        <item>
+                            <title>Scène et pantomime</title> (Moralès, chœur d’hommes) ‘Attention !
+                            Chut !’ – <measure quantity="122" unit="bars">122 </measure>bars</item>
+                        <item>
+                            <title>Chœur des gamins</title> (Gamins) ‘Avec la garde montante’ –
+                                <measure quantity="122" unit="bars">215</measure> bars<lb/>
+                            Dialogue<lb/></item>
+                        <item>
+                            <title>Chœur des cigarières </title>(Carmen, chœur) ‘La cloche a sonné’
+                            – <measure quantity="164" unit="bars">164</measure> bars</item>
+                        <item> Habanera (Carmen, chœur) ‘L’amour est un oiseau rebelle’ – <measure
+                                quantity="120" unit="bars">120</measure> bars</item>
+                        <item>
+                            <title>Scène</title> (Cigarières, jeunes gens) ‘Carmen, sur tes pas’ –
+                                <measure quantity="51" units="bars">51</measure> bars<lb/>
+                            Dialogue<lb/></item>
+                        <item>
+                            <title>Duo</title> (Micaëla, Don José) ‘Parle-moi de ma mère !’ –
+                                <measure quantity="195" unit="bars">195 </measure>bars<lb/>
+                            Dialogue<lb/></item>
+                        <item>
+                            <title>Chœur</title> (Zuniga, cigarières) ‘Au secours !’ – <measure
+                                quantity="218" unit="bars">218 </measure>bars <lb/> Dialogue<lb/></item>
+                        <item>
+                            <title>Chanson et mélodrame</title> (Carmen) ‘Tra la la la la’ –
+                                <measure quantity="73" unit="bars">73 </measure>bars<lb/>
+                            Dialogue<lb/></item>
+                        <item><title>Séguedille et duo</title> (Carmen, Don José) ‘Près des remparts
+                            de Séville’ – <measure quantity="182" unit="bars">182</measure> bars</item>
+                        <item>
+                            <title>Final </title>(Carmen, Zuniga) ‘Voici l’ordre’ – <measure
+                                quantity="107" unit="bars">107</measure> bars</item>
+                    </list>
+                </item>
+
+                <item><head>Entr’acte</head> – <measure quantity="90" unit="bars">90</measure> bars</item>
+
+                <item>
+                    <head>Acte <num value="2">II</num></head>
+
+                    <list type="ordered" xml:lang="fr">
+                        <item><title>Chanson bohème </title>(Mercédès, Frasquita, Carmen) ‘Les
+                            tringles des sistres tintaient’ – <measure quantity="190" unit="bars"
+                                >190</measure><lb/> bars Dialogue<lb/></item>
+                        <item> <title>Chœur</title> (Mercédès, Frasquita, Carmen, Moralès, Zuniga,
+                            chœur d’hommes) ‘Vivat le toréro !’ – <measure quantity="47" unit="bars"
+                                >47</measure> bars </item>
+                        <item> <title>Couplets </title>(Escamillo, Mercédès, Frasquita, Carmen,
+                            Moralès, Zuniga, chœur d’hommes) ‘Votre toast, je peux vous le rendre’
+                                –<measure quantity="127" unit="bars"> 127</measure> bars</item>
+                        <item> <title>Sortie d’Escamillo</title> –<measure quantity="20"
+                                unit="bars"> 20</measure> bars <lb/> Dialogue<lb/></item>
+                        <item> <title>Quintette</title> (Mercédès, Frasquita, Carmen, le
+                            Remendado, le Dancaïre) ‘Nous avons en tête une affaire’ – <measure
+                                quantity="338" unit="bars">338</measure> bars<lb/> Dialogue<lb/></item>
+                        <item> <title>Chanson </title>(Don José) ‘Halte-là !’ – <measure
+                                quantity="56" unit="bars">56</measure> bars<lb/> Dialogue<lb/></item>
+                        <item> <title>Duo</title> (Carmen, Don José) ‘Je vais danser en votre
+                            honneur’ –<measure quantity="351" unit="bars"> 351</measure> bars </item>
+                        <item> <title>Final </title>(Mercédès, Frasquita, Carmen, Don José, le
+                            Remendado, le Dancaïre, Zuniga, bohémiennes et bohémiens) ‘Holà ! Carmen
+                            ! holà !’ – <measure quantity="190" unit="bars">190</measure>
+                        bars</item>
+                    </list>
+                </item>
+
+                <item><head>Entr’acte</head> – <measure quantity="43" unit="bars">43</measure> bars</item>
+
+                <item>
+                    <head>Acte<num value="3"> III</num></head>
+
+                    <list type="ordered">
+                        <item>19 <title>Sextuor et chœur</title> (Mercédès, Frasquita, Carmen, Don
+                            José, le Remendado, le Dancaïre, bohémiennes et bohémiens) ‘Ecoute,
+                            écoute’ – <measure quantity="109" unit="bars">109</measure> bars<lb/>
+                            Dialogue<lb/></item>
+                        <item>20 <title>Trio</title> (Mercédès, Frasquita, Carmen) ‘Mêlons ! Coupons
+                            !’ – <measure quantity="276" unit="bars">276</measure> bars<lb/>
+                            Dialogue<lb/></item>
+                        <item>21 <title>Morceau d’ensemble</title> (Mercédès, Frasquita, Carmen, le
+                            Remendado, le Dancaïre, chœur) ‘Quant au douanier’ – <measure
+                                quantity="91" unit="bars">91</measure> bars<lb/> Dialogue<lb/></item>
+                        <item>22 <title>Air</title> (Micaëla) <lb/>
+                            <figure>
+                                <graphic>
+                                    <figureDesc>several bars of Michaela'a solo</figureDesc>
+                                </graphic>
+                            </figure>
+                            <measure quantity="71" unit="bars">71</measure> bars <lb/> Dialogue<lb/></item>
+                        <item>23 <title>Duo</title> (Don José, Escamillo) ‘Je suis Escamillo’ –
+                                <measure quantity="179" unit="bars">179</measure> bars</item>
+                        <item>24 <title>Final </title>(Micaëla, Mercédès, Frasquita, Carmen, Don
+                            José, le Remendado, le Dancaïre, bohémiennes et bohémiens) ‘Holà ! holà
+                            ! José !’ – <measure quantity="173" unit="bars">173</measure>
+                        bars</item>
+                    </list>
+                </item>
+                <item>Entr’acte – <measure quantity="163" unit="bars">163</measure> bars</item>
+
+                <item>
+                    <head>Acte <num value="4">IV</num></head>
+
+                    <list>
+                        <item> 25 <title>Chœur</title> (chœur, Funiga, un bohémien) ‘A deux cuartos
+                            !’ – <measure quantity="125" unit="bars">125</measure> bars<lb/>
+                            Dialogue<lb/></item>
+                        <item>26 <title>Marche et chœur </title>(Mercédès, Frasquita, Carmen,
+                            Escamillo, enfants, chœur) ‘Les voici !’ –<measure quantity="324"
+                                unit="bars"> 324 </measure>bars</item>
+                        <item>27 <title>Duo et chœur final </title>(Carmen, Don José, chœur) ‘C’est
+                            toi !’ – <measure quantity="212" unit="bars">212</measure> bars</item>
+                    </list>
+                </item>
+            </list>
+
+            <div xml:id="instrumentation">
+                <list type="voiceparts">
+                    <!--Again, "role"  and perhaps also something denoting voice part or "instrument" (as later)-->
+                    <item> Don José – ténor</item>
+                    <item>Escamillo – baryton</item>
+                    <item>le Dancaïre – ténor</item>
+                    <item>le Remendado – ténor</item>
+                    <item>Moralès, brigadier – baryton</item>
+                    <item>Zuniga, lieutenant – basse</item>
+
+                    <item>Carmen – mezzo-soprano</item>
+                    <item>Micaëla – soprano</item>
+                    <item>Mercédès – soprano</item>
+                    <item>Frasquita – soprano</item>
+
+                    <item>Une marchande d’oranges – soprano</item>
+                    <item>Un bohémien – basse</item>
+                    <item>Lillas Pastia, aubergiste – parlé</item>
+                    <item>Un guide – parlé</item>
+                    <item>Un soldat – parlé</item>
+
+                    <item>Un vieux Monsieur, sa jeune épouse, un jeune homme, l’Alcade – figurants </item>
+                    <item>Soldats, jeunes gens, hommes du peuple, cigarières, bohémiennes,
+                        bohémiens, marchands ambulants, etc – chœur Gamins – chœur d’enfants</item>
+                </list>
+
+                <list type="orchestraParts"><item>2 fl. (2 p. fl.)</item>, <item>2 hb. (1
+                        c.a.)</item>,<item> 2 cl</item>., <item>2 bns</item>, <item>4 cors</item>,
+                        <item>2 c. à p</item>., <item>3 tromb.</item>, <item>timb.</item>,
+                        <item>tambour</item>, <item>tamb. de basque</item>, <item>g. c.</item>,
+                        <item>cymb.</item>,<item> triangle</item>, <item>castagnettes</item>,
+                        <item>harpe</item>, <item>cordes.</item> </list>
+                <list><head>coulisse:</head> <item>2 c. à p.</item>,
+                        <item>3 tromb.</item></list>
+            </div>
+            <!--Suggest glossing of French terms, especially abbreviations-->
+        </div>
+        <div xml:id="textSource">
+            <head>Libretto:</head>
+            <p><author>Ludovic Halévy</author> (<date>1834–1908</date>) and <author>Henri Meilhac</author> (<date>1831–97</date>),
+                after <author>Prosper Mérimée</author>’s <title>Carmen</title> (<date>1845</date>), itself using
+                elements from <author>Mérimée</author>’s translation (1852???) of <author>Pushkin</author>’s poem
+                <title xml:lang="ru">Tsygany</title> (<date>1824</date>). The text of the <title>Habanera</title>
+                is by Bizet himself.</p>
+        </div>
+
+        <div xml:id="history">
+            <head>Composition:</head>
+            <p><date type="composition">Spring 1873–September 1874</date>. After the performances of
+                    <title>Djamileh</title> at the Opéra-Comique in <date>May–June 1872</date>, the
+                theatre’s directors, Du Locle and De Leuven, commissioned a new work from Bizet on a
+                libretto to be written by <author>Meilhac</author> and <author>Halévy</author>. In the spring of <date>1873</date>
+                Bizet himself suggested <author>Mérimée</author>’s novella<title> Carmen </title>as the subject, and
+                the first act was completed by <date>June 1873</date>. The full opera was finished
+                in <date>September 1874</date>. The opera was originally planned in three acts, with
+                the present acts 3 and 4 as the two tableaux of act 3. No. 5, the
+                <title>Habanera</title>, is an adaptation of the song ‘<title xml:lang="sp">El
+                    Areglito</title>’ by <author>Sebastián Yradier </author>(<date>1809–63</date>), published by
+                Heugel in the collection <title xml:lang="fr">Fleurs d’Espagne</title> in 1864. The
+                    <hi rend="italics">Entr’acte</hi> before Act<num value="4"> IV </num>is based on
+                ‘<title>Cuerpo bueno, alma divina</title>’ from <composer>Manuel García</composer>'s light opera of <date>1804</date>,
+                    <title xml:lang="sp">El criado fingido</title>, which was included in the volume
+                    <title xml:lang="fr">Échos d'Espagne</title> (<date>1872</date>). Rehearsals
+                began in <date>October 1874</date>, but the opera was not ready for performance until <date>March 1875</date>.
+               <publisher> Choudens</publisher> published the vocal score to accompany the performances. After Bizet’s
+                death the work was modified by some cuts and by the insertion of recitatives
+                (composed by<composer> Guiraud</composer>) in place of dialogue, and, in some scores, by the insertion of
+                ballets derived from other works by Bizet. In about <date>1886</date> two concert suites were
+                assembled by the <publisher>Choudens</publisher> (later rearranged by <arranged>Breitkopf &amp; Härtel</arranged>), and an
+                immense array of arrangements, fantasies, and other such pieces were derived from
+                the opera as it gained worldwide popularity. </p>
+            <!--tag every instance of author, composer, etc, in these paragraphs?-->
+        </div>
+
+        <div xml:id="autograph">
+            <div xml:id="fullScore">
+                <head>Autograph full scores:</head>
+
+                <msDesc>
+                    <p><msIdentifier><institution>F-Pn</institution> <idno>MS 436–439</idno></msIdentifier>, <acquisition>bequest of Mme
+                            Geneviève Straus</acquisition>. <physDesc><objectDesc>4 cahiers, separately
+                        bound</objectDesc>, <extent>350 x 275 mm., 1192 pp. [Oeser says 23,4 x 53,2
+                            cm, 1109 pages, of which 1079 have music on them, 68 pp of
+                        Guiraud]</extent>, <material>32-stave paper, except the Entr’actes to Acts
+                           <num value="2"> II</num> and <num value="4">IV</num>, which are on 30-stave paper, and <composer>Guiraud</composer>’s recitatives, which
+                            are on 24-stave paper, and his inserted ballets, which are on 30-stave
+                            paper.</material></physDesc> Each number of the opera was written as a separate
+                        manuscript, with its own pagination and its own title-page. Cuts and changes
+                        were made in rehearsal, and further cuts and revisions were made after
+                        Bizet’s death by <composer>Guiraud</composer> on behalf of<publisher> Choudens </publisher>in preparation of the second
+                        edition of the vocal score and the first edition of the full score. As in
+                        all music sources, the dialogues are lacking. The numbering of separate
+                        sections has been revised on each title page in line with the
+                        <date>1875</date> vocal score. The manuscripts of <composer>Guiraud</composer>’s <num value="15">fifteen</num>
+                        recitatives are inserted in their due places, along with the full scores of
+                        two arrangements from <title>L’Arlésienne </title>which Guiraud inserted in
+                        the last act as ballets (the third ballet score is not included). Guiraud
+                        also revised the orchestration at certain points. The manuscript was marked
+                        up by the engravers of the full score in <date>1877</date>, and a continuous
+                        foliation (1–574) of the entire manuscript was added by the Bibliothèque du
+                        Conservatoire when it was added to their collections. Although the autograph
+                        of some passages of the opera are still untraced, those of the two major
+                        cuts made in the second (Guiraud) edition are found in the Fonds Choudens.
+                        The separate volumes of the manuscript are made up as follows:</p>
+<!--from here on, any potential elements without already existing tags will be noted but not tagged, unless previously done-->
+                    <msContents>
+                        <msItem>
+                            <head>Cahier 1 (MS 436):</head>
+
+                            <msItem>
+                                <note>title, not autograph</note>
+                                <titlePage xml:lang="fr">
+                                    <title type="main">Carmen</title><lb/>
+                                    <title type="sub">Opéra en 4 actes</title><lb/> Paroles de M.M.
+                                    Meilhac et Lud: Halévy<lb/> Musique de <composer>G.
+                                    Bizet</composer><lb/> Grande Partition<lb/> 1er
+                                Acte<lb/></titlePage>
+                            </msItem>
+
+
+                            <list type="contents">
+                                <item>
+                                    <title xml:lang="fr">Prélude</title> , pp. 1–26, in a copyist’s
+                                    hand. </item>
+                                <item><title xml:lang="fr">Carmen /<hi rend="strikethrough"> Acte I
+                                            / No 1 </hi>/ Introduction</title> [no. 1], <extent>pp.
+                                        1–48</extent>, blank. Page 16 is covered by a collette in
+                                    Guiraud’s hand. Moralès’s <title xml:lang="fr">Scène et
+                                        pantomime</title> (see Autograph full score 2) was
+                                    originally placed here, and pp. 17–48 were originally numbered
+                                    41–46, 46 bis, 47–71.</item>
+                                <item>For no. 2, <title>Scène et pantomime</title>, see Autograph
+                                    full score 2.</item>
+                                <item><title xml:lang="fr">Carmen / acte I </title>/ [deletion] /
+                                        <title>Marche et chœur de gamins</title>, <extent>pp.
+                                    1–53</extent>. </item>
+                                <item>Guiraud recitative, <extent>4 pp</extent>.</item>
+                                <item>2 blanks. </item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 4 / Chœur des
+                                        cigarières</title>,<extent> pp. 1-27, 36–46</extent>, blank. </item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 5 /
+                                        Havanaise</title>,<extent> pp. 1–25</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 6 /
+                                        Scène</title>,<extent> pp. 1–9</extent>.</item>
+                                <item>Guiraud recitative, <extent>3 pp</extent>., blank.</item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 7 / Duo</title>,
+                                        <extent>pp. 1–46</extent>, blank.</item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 8 / Chœur</title>,
+                                        <extent>pp. 1–42</extent>, blank.</item>
+                                <item>Guiraud recitative version of no. 9, <extent>3 pp</extent>.,
+                                    blank.</item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 9 / Chanson et
+                                        Mélodrame</title>, <extent>pp. 1–19</extent>.</item>
+                                <item>Guiraud recitative, <extent>2pp</extent>. </item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 10 / Seguedille et
+                                        duo</title>, <extent>pp. 1-2, 2bis, 3-35</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / acte I / No 11 /
+                                        Final</title>,<extent> pp. 1–19</extent>.</item>
+                            </list>
+                        </msItem>
+
+                        <msItem>
+                            <head>Cahier 2 (MS 437):</head>
+
+                            <list type="contents">
+                                <item>[<title>Entr’acte</title>], <extent>pp. 1–4</extent></item>
+                                <item><title xml:lang="fr">Carmen / acte 2 / No 12 / chanson
+                                        Bohéme</title>,<extent> pp. 1–40</extent>, blank.</item>
+                                <item>Guiraud recitative, <extent>3 pp.</extent>, blank.</item>
+                                <item>2 blanks.</item>
+                                <item><title xml:lang="fr">Carmen / acte 2 / No 13 / Chœur</title>,
+                                        <extent>pp. 1–4, 4bis, 4–10</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / acte 2 / No 14 /
+                                    Couplets</title>, <extent>pp. 1–37</extent>.</item>
+                                <item>Guiraud recitative, <extent>3 pp</extent>., blank</item>
+                                <item><title xml:lang="fr">Sortie d’Escamillo</title> [no. 14 bis],
+                                    blank, [pp. 1–3 missing], 4–8, blank.</item>
+                                <item>Guiraud recitative, <extent>2 pp</extent>. </item>
+                                <item><title xml:lang="fr">Carmen / acte 2 / No 15 /
+                                    Quintette</title>, <extent>pp. 1–54</extent>, blank</item>
+                                <item>Guiraud recitative, <extent>2 pp</extent>.</item>
+                                <item><title xml:lang="fr">Chanson / No 16</title>, in Guiraud’s
+                                    hand, with 2 pp. cut from 1877 vocal score, blank.</item>
+                                <item>Guiraud recitative,<extent> 3 pp.</extent>, blank.</item>
+                                <item><title xml:lang="fr">Carmen / acte 2 / No 17 / Duo</title>,
+                                        <extent>pp. 1–81</extent>, blank.</item>
+                                <item><title xml:lang="fr">Carmen / acte 2 / No 18 / final</title>,
+                                        <extent>pp. 1–33, 1 unnumbered sheet, 34–35 [sic], 34–42,
+                                        blank</extent>.</item>
+                            </list>
+                        </msItem>
+
+                        <msItem>
+                            <head>Cahier 3 (MS 438):</head>
+
+                            <list type="contents">
+                                <item><title xml:lang="fr">Carmen / Acte III /
+                                        Entr’acte</title>,<extent> pp. 1–11</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / Acte III / No 19 /
+                                    Introduction</title>, <extent>pp. 1–27</extent>.</item>
+                                <item>Guiraud recitative, <extent>7 pp., blank</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / acte 3 / No 20 /
+                                    Terzetto</title>, <extent>pp. 1–53</extent>. </item>
+                                <item>Guiraud recitative, <extent>3 pp</extent>., blank.</item>
+                                <item>2 blanks.</item>
+                                <item><title xml:lang="fr">Carmen / acte 3 (1r tableau) / No 21 /
+                                        morceau d’ensemble</title>,<extent> pp. 1–22, 22bis,
+                                    23–25</extent>.</item>
+                                <item>Guiraud recitative, <extent>3 pp.</extent>, blank.</item>
+                                <item>2 blanks.</item>
+                                <item><title xml:lang="fr">Carmen /acte 3 /No 22 / Air</title>,
+                                        <extent>pp. 1–20, blank</extent>.</item>
+                                <item>Guiraud recitative,<extent> 3 pp., blank</extent>.</item>
+                                <item>2 blanks.</item>
+                                <item><title xml:lang="fr">Carmen / Acte III / No 23 / Duo</title>,
+                                        <extent>pp. 1–29 </extent>(lacking 14 pages, see Autograph
+                                    full scores 3).</item>
+                                <item><title xml:lang="fr">Carmen / acte 3 / No 24 / final</title>,
+                                        <extent>pp. 1–30, 30 [sic]–46, 44, ‘41’, 45,
+                                blank.</extent></item>
+                            </list>
+                        </msItem>
+
+                        <msItem>
+                            <head>Cahier 4 (MS 439):</head>
+
+                            <list type="contents">
+                                <item><title xml:lang="fr">Carmen / entr’acte / à jouer entre le 3me
+                                        et le 4me actes</title>, <extent>pp. 1–18, blank</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / acte <hi rend="strikethrough"
+                                            >3me 2me</hi> tableau 4 / no 25 Chœur</title>,
+                                        <extent>pp. 1–22, blank.</extent></item>
+                                <item>Guiraud ballet B [<title xml:lang="fr">L’Arlésienne</title>]
+                                        <title rend="strikethrough">Farandole</title>, <extent>12
+                                        pp.</extent></item>
+                                <item>Guiraud ballet C [<title xml:lang="fr">L’Arlésienne</title>],
+                                    4 pp.</item>
+                                <item><title xml:lang="fr">Carmen / acte 3 2e tableau / no. 26 / <hi
+                                            rend="strikethrough">Chœur et scène</hi> Marche et
+                                        Chœur</title>,<extent> pp. 1–64, blank</extent>.</item>
+                                <item><title xml:lang="fr">Carmen / acten3 2d tableau / no. 27 / Duo
+                                        et chœur final</title>, <extent>pp. 1–57</extent>.</item>
+                            </list>
+                        </msItem>
+
+                        <msItem>facsimile of Cahier 4, p. 50, in <bibl>Oeser, vol. II, p. 707</bibl>.</msItem>
+                        <msItem>facsimile of cahier 1, f. 52v in<bibl> Schott vocal score, p. 33</bibl></msItem>
+                        <msItem>facsimile of cahier 1, f. 171r in <bibl>Schott vocal score, p. 34</bibl></msItem>
+                        <msItem>facsimile of cahier 3, f. 461v in <bibl>Schott vocal score, p. 35</bibl></msItem>
+                        <msItem>facsimile of cahier 4, f. 571r in <bibl>Schott vocal score, p. 36</bibl></msItem>
+                        <msItem>facsimile of cahier 4, f. 571v in <bibl>Schott vocal score, p. 37</bibl></msItem>
+                    </msContents>
+                </msDesc>
+
+
+                <msDesc>
+                    <p><publisher>Fonds Choudens</publisher>. No. 2 <title xml:lang="fr">Pantomime de Morales</title>.
+                            <physDesc><material>32-stave paper</material>, <objectDesc>13 f. (blank, 25 p. of
+                            music paginated 16–40)</objectDesc></physDesc>, <measure quantity="130" unit="bars"
+                            >130 </measure>bars, eight of which are colletted over. Pages 16–26 were
+                        originally paginated by Bizet 1–11, then revised to 16–26, followed by
+                        27–40, suggesting that Bizet first planned this as no. 2, then decided at
+                        bar 51 to insert it into no. 1. In the vocal score this scene was restored
+                        as no. 2.</p>
+                </msDesc>
+
+                <msDesc>
+                    <p><publisher>Fonds Choudens</publisher>. No. 23,<title> Duo</title>, bars <measure quantity="93"
+                            unit="bars">93</measure>–<measure quantity="160" unit="bars"
+                        >160</measure>. <material>32-stave paper</material>, <objectDesc>7 f. (14 p.
+                            of music, paginated 26–39)</objectDesc>.</p>
+                </msDesc>
+            </div>
+
+            <div xml:id="vocalScore">Autograph vocal score: <msDesc><p><publisher>Fonds Choudens</publisher>. The first
+                    version of Carmen’s opening air, ‘<foreign xml:lang="fr">L’amour est un enfant
+                        de Bohème</foreign>’, arranged for soprano, chorus, and piano, 6/8 C major,
+                    going to a big ending in A minor, <measure quantity="132" unit="bars"
+                    >132</measure> bars. <material>12-stave paper</material>, <objectDesc>9 f. (17
+                        p. of music, blank)</objectDesc>. The piano part only is in Bizet’s hand.
+                    Page 1 is marked A.C. 4923, as if Choudens planned to publish it in c.
+                        <date>1880</date>. See <bibl>Oeser p. 719, 743</bibl>, <bibl>Wright 19CM, 64, 70</bibl>. <bibl>Pigot
+                243-4</bibl>.</p></msDesc></div>
+
+            <div xml:id="libretto">
+                <head>Autograph libretto:</head>
+
+                <p>Formerly Curtiss Collection. 1 p., draft of the first version of Carmen’s opening
+                    air, ‘<foreign xml:lang="fr">L’amour est un enfant de Bohème</foreign>’.
+                    Facsimile in Curtiss, opposite p. 368.</p>
+            </div>
+
+            <div xml:id="album">Autograph albumleaf: <msDesc>Sold at Sotheby’s, London,
+                        <date>1-12-2005</date>. ‘<foreign xml:lang="fr">La fleur que tu m'avais
+                        jetée</foreign>’, from no. 17, inscribed ‘<foreign xml:lang="fr">à Madame
+                        Lhérie, souvenir de Carmen<date> 20 janvier 1875 </date>Georges Bizet</foreign>’, notated
+                    for tenor (Don José) and piano on <material>nine staves</material>, <objectDesc>1 page, oblong
+                        4o</objectDesc>,<extent>180 x 330 mm</extent>. From the album of Madame
+                    Clémence Lhérie, whose husband sang the role of Don José in
+                <date>1875</date>.</msDesc></div>
+        </div>
+        <div xml:id="manuscript">
+            <div xml:id="manuscriptFullScore">Manuscript full scores: <msDesc>
+                    <p><msIdentifier><institution>F-Po</institution> <idno>Rés. 2222A(1–3)</idno></msIdentifier>. Three volumes, with Acts
+                            <num value="3">III</num> and<num value="4"> IV</num> combined in vol. 3.
+                            <extent>260 x 345 mm., 1280 p.</extent> Various copyists, with each
+                        number separately paginated. Vol. 1 was given in <date>1971</date> by <acquisition>M.
+                        Goegel</acquisition>, vols 2 and 3 in <date>1980–2</date>.</p>
+
+                    <titlePage xml:lang="fr">
+                        <title type="main"> Carmen</title><lb/>
+                        <title type="sub">Opéra comique en 4 actes</title><lb/> Paroles de M.M.
+                        Meilhac et Lud. Halévy<lb/> Musique de<composer> M. Bizet</composer><lb/>
+                        Grande Partition<lb/> Orchestre<lb/> 1er acte<lb/>
+                        <date>3 Mars 1875 </date> Mr. Deloffre<lb/> 200me <date>30 janvier 1885
+                        </date> chef d’orchestre<lb/></titlePage>
+
+                    <p>This was the conductor’s full score used at the Opéra-Comique in<date>
+                            1874–75</date> and for the <date>1883</date> revival. It includes many
+                        passages cut during rehearsal and missing from the autograph. Facsimile of
+                        no. 6, p. 8, in <bibl>Oeser, vol. II, p. 708</bibl>. facsimile of vol. 1, f. 43r in
+                      <bibl>  Schott vocal score, p. 38</bibl>. facsimile ofvol. 1, f. 106r in<bibl> Schott vocal
+                        score, p. 39</bibl></p>
+                </msDesc>
+                <msDesc>
+                    <p><msIdentifier><institution>Österreichische Nationalbibliothek, Vienna</institution>, <idno>OA
+                        341</idno></msIdentifier>. <objectDesc>Four volumes</objectDesc>,<extent> 340 x 265
+                            mm., 1203 p</extent>.</p>
+
+                    <titlePage xml:lang="fr">
+                        <title type="main"> Carmen</title><lb/>
+                        <title type="sub">Opéra comique en 4 actes</title><lb/>
+                        <composer>Georges Bizet</composer><lb/> Partition d’orchestre<lb/></titlePage>
+
+                    <p>This score, written by a French copyist, was sent to Vienna by Choudens
+                            on<date> 25-9-1875</date>. Guiraud’s recitatives are included. Facsimile
+                        of no. 27, bars <measure quantity="207" unit="bars">207</measure>–<measure
+                            unit="bars" quantity="210">10</measure>, in Oeser, vol. II, p. 710.</p>
+                </msDesc></div>
+
+
+            <div xml:id="orchestra">Manuscript orchestral parts: <msDesc><msIdentifier>F-Po Mat
+                        F.77(a) (formerly Mat F.221)</msIdentifier>, transferred in
+                    <date>1971–82</date> from the Opéra-Comique, where they were used at least until
+                        <date>1890</date>. Parts for Fl. I–II, Hb. I–II, Cl. I–II, Bns I–II, Cors
+                    III–IV, and Harpe are missing, although they were consulted by Oeser for his
+                        <date>1964</date> edition. The parts are heavily marked, and supply the only
+                    source for certain passages not found in other sources. Facsimile of Vns I part,
+                    no. 16, in <bibl>Oeser, vol. II, p. 709</bibl>.</msDesc></div>
+
+
+            <div xml:id="manuscriptLibretto">Manuscript libretto: <msDesc><msIdentifier><institution>F-Pan </institution><idno>F18 699</idno>.</msIdentifier>
+                    <extent>272 x 203 mm.</extent>, <objectDesc>60 f.</objectDesc> Copyist’s
+                    libretto submitted to the censors’ bureau on<date> 12-2-1875</date>. See <bibl>Wright
+                    19CM</bibl>. Facsimile of two pages in <bibl>Schott vocal score p. 43</bibl></msDesc></div>
+
+
+            <div xml:id="mises">Manuscript mises-en-scène: <msDesc><msIdentifier><institution>Bibliothèque
+                        historique de la ville de Paris (Bibliothèque de l'Association de la régie
+                        théâtrale)</institution>, <idno>C 27(I–IX)</idno>, <idno>Mes 1(1) </idno>and <idno>Mes 10(2)</idno></msIdentifier>. Eleven
+                    librettos (printed, manuscript or typed) marked up with staging plans, all
+                    evidently from the<date> 1880s</date> or later.</msDesc>
+            </div>
+        </div>
+
+        <div xml:id="printedTexts">
+            <div xml:id="printedFullScore">
+                <head>Printed full scores: </head>
+
+                <listBibl>
+
+                    <bibl>
+                        <titlePage xml:lang="fr"> à JULES PASDELOUP<lb/>
+                            <title type="main">CARMEN</title><lb/>
+                            <title type="sub">Opéra en 4 actes</title><lb/> Tiré de la nouvelle<lb/> DE<lb/>
+                            <author>PROSPER MÉRIMÉE</author><lb/> Poème de<lb/>
+                            <author>H. MEILHAC et L. HALÉVY</author><lb/> Musique de<lb/>
+                            <composer>GEORGES BIZET</composer><lb/> Paris, <publisher>CHOUDENS Père
+                                &amp; Fils</publisher>, Editeurs,<lb/>
+                            <pubPlace>Boulevard des Capucines 30<lb/> Près la Rue
+                            Caumartin<lb/></pubPlace></titlePage>
+                        <note type="todo">THIS CAN’T BE THE RIGHT ADDRESS</note> Propriété pr tous
+                        pays<lb/> Droits Réservés<lb/> PARTITION ORCHESTRE 1ER ET 2E [3E ET
+                        4E]ACTES<lb/> pl. no: <idno>A.C. 3795</idno><lb/> pages: <extent>2 vols.
+                            Vol. 1: t. p., blank, Table, blank, music 1–334; vol. 2: t. p., blank,
+                            Table, blank, music 335–579, blank, 581.</extent><lb/> date: <date>1877
+                        </date><lb/> copies:
+                        <msIdentifier><institution>F-Pn</institution> <idno> Rés Vm5 20</idno>. </msIdentifier>
+                        <msIdentifier><institution>F-Po </institution><idno> Rés 2222B</idno><note> (used at the Opéra-Comique from 1891 until 1950)</note></msIdentifier>
+                            <msIdentifier><institution>GB-Lbl </institution><idno>K.10.c.10.</idno><note> [address?] 2 vols</note></msIdentifier>
+                            <msIdentifier><institution>D-Mbs </institution></msIdentifier>
+                            <msIdentifier><institution>US-NYp</institution> </msIdentifier>
+                            <msIdentifier><institution>Harvard</institution> ?(later)</msIdentifier>
+                            <msIdentifier><institution>US-Rsibley</institution> <note>has ballet no. 3, paginated 499–514.</note></msIdentifier>
+
+                        <note>Are all of these in two volumes?</note>
+                        <p>The recitatives are by Guiraud, and the version accords with the revised
+                            edition (in 363 p.) of the vocal score (see below). In addition Guiraud
+                            retouched the orchestration, especially the horn parts in no. 7 and at
+                            the beginning of no. 25. Three ballets have been inserted in the last
+                            act, as nos 25B, 25C, and 25D, on p. 481–514. the first two adapted from
+                            nos. 19 and 2 of <title xml:lang="fr">L’Arlésienne</title>, FARANDOLE IN
+                            D AND LA LA LA LA A MAJOR CHECK and the third is the <title
+                                xml:lang="fr">Danse bohémienne</title> from <title xml:lang="fr"
+                                >Scènes bohémiennes</title>. On p. 372, at bar 186 of no. 20, a
+                            footnote allows for a transposition up a semitone for Carmen’s ‘<title>En vain
+                            pour éviter</title>’. The return transposition in the three bars 228–30 is
+                            provided for with four bars shown at the end of the score on p. 581 (580
+                            being blank)</p>.</bibl>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, Editeur, <pubPlace>30, Boulevard des
+                            Capucines</pubPlace>, pl. no. <idno>A.C.3795</idno>, <extent>579
+                        p.</extent> (in one volume), after<date> 1892</date>. Copies: <idno>GB-Lbl Hirsch
+                        II 66</idno>. <idno>US-Bp</idno> (lacks TP), <idno>US-NYpm</idno> (seen). Lisa Cox Cat 39 (2001). <idno>US-Wc M1500
+                        B622</idno> </bibl>
+                    <item><publisher>Choudens</publisher>, ‘In die Edition Peters aufgenommen’, pl.
+                            no.<idno> 9028</idno>, <extent>574</extent> p., [1905], in German (tr.
+                        Julius Hopp) only. This edition includes Guiraud’s recitatives but omits the
+                        third ballet, no. 25C. <msIdentifier><institution>F-Pn</institution> <idno>Vmb 5389</idno></msIdentifier>, <msIdentifier><institution>GB-Lbl</institution></msIdentifier>; <msIdentifier><institution>S-Ssmf. IU</institution></msIdentifier>.</item>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, <pubPlace>Paris</pubPlace>, and
+                            <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, <extent>574
+                            pp</extent>., [<date>1933</date>], a re-issue of the previous edition,
+                        ed. <editor>Kurt Soldan</editor>. </bibl>
+
+                    <bibl>
+                        <publisher>International Music Company</publisher>, <pubPlace>New
+                        York</pubPlace>, <date>1950</date>, <extent>574 p</extent>., reprinted from
+                        the <date>1905</date> edition,<note> with French text only.</note></bibl>
+                    <bibl>
+                        <publisher>Alkor-Edition</publisher>, <pubPlace>Kassel</pubPlace>,<extent> 2
+                            vols, 793 p.</extent>, <date>1964</date>, ed. <editor>Fritz
+                        Oeser</editor>,<note> in French and German (tr. Walter Felsenstein). This edition
+                        was based on manuscript sources not previously consulted, and included many
+                        rejected passages and variants both in the main text and in the supplement.</note></bibl>
+
+                    <bibl>
+                        <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>,
+                        <date>1988</date>, <extent>574 pp.</extent>, reprinted from the<date>
+                        1933</date> ed., <editor>rev. Joachim-Dietrich Link</editor>.</bibl>
+
+                    <bibl><publisher> International Music Co</publisher>., <pubPlace>New
+                        York</pubPlace>, <idno>no. 2000</idno>, <extent>574 p.</extent>, n. d.,
+                        reprinted from Peters<date> 1933</date> edition.</bibl>
+
+                    <bibl>
+                        <publisher>Dover</publisher>, <pubPlace>New York</pubPlace>, <extent>574
+                        p</extent>., <date>1989</date>, reprinted from the Peters <date>1933
+                        </date>edition.</bibl>
+
+                    <bibl>
+                        <publisher>Schott</publisher>, <pubPlace>Mainz</pubPlace>,
+                        <date>1992</date>.</bibl>
+
+                    <bibl>
+                        <publisher>Eulenburg</publisher>, <pubPlace>London</pubPlace>,<idno> no.
+                            8062</idno>, <extent>XVIII + 603 p</extent>., <date>2003</date>, in
+                        French and German (tr. Josef Heinzelmann), ed. Robert Didion. This edition
+                        is based on the <date>1875</date> Choudens vocal score, with the optional
+                        addition of<measure quantity="42" unit="bars"> 42</measure> bars in no. 3,
+                            <measure unit="bars" quantity="36">36</measure> bars in no. 4, <measure
+                            quantity="56" unit="bars">56</measure> bars in no. 8, <measure
+                            unit="bars" quantity="29">29</measure> bars in no. 13, and <measure
+                            quantity="14" unit="bars">14</measure> bars in no. 17. </bibl>
+                </listBibl>
+            </div>
+
+
+            <div xml:id="printedOrchestra">
+                <head>Printed orchestral parts: </head>
+
+                <listBibl>
+                    <bibl><publisher>Choudens</publisher>, pl. no. <idno>A.C. 3276</idno>,
+                            <date>1875</date>. <idno>F-Po Mat. F.133</idno> (used at the
+                        Opéra-Comique from <date>1891</date> until<date> 1950</date>);<msIdentifier> <institution>Stadt- und
+                        Universitätsbibliothek Frankfurt </institution>(<idno>Mus Hs Opern 68 </idno><note>(7 and 11) (acquired
+                            in<date> 1881</date></note>)</msIdentifier>. <msIdentifier><institution>US-NYmet</institution></msIdentifier></bibl>
+
+
+                    <bibl><publisher>Schott</publisher>, <pubPlace>Mainz</pubPlace>, 199</bibl>
+
+                </listBibl>
+            </div>
+
+
+            <div xml:id="printedChorus">
+                <head>Printed chorus score:</head>
+                <listBibl>
+                    <bibl>
+                        <publisher>Choudens</publisher>, pl. no. <idno>A.C. 3572</idno>(1) (women)
+                        and <idno>A.C. 3572</idno>(2) (men), [<date>1876</date>].</bibl>
+
+                    <bibl><publisher> Schirmer</publisher>, <pubPlace>New York</pubPlace>, pl. no.
+                            <idno>36806</idno>, <extent>79 p.</extent>, c. <date>1895</date>.
+                    <msIdentifier><institution>US-IU.</institution></msIdentifier></bibl>
+                </listBibl>
+            </div>
+
+
+            <div xml:id="printedVocal">
+                <head>Printed voice score (vocal lines only, without accompaniment):</head>
+
+                <bibl><publisher>Choudens père et fils</publisher>, pl. no. <idno>A.C. 4934</idno>,
+                        <extent>171 p</extent>., c. <date>1889</date>, with Guiraud’s recitatives.
+                    <msIdentifier><institution>US-NYp</institution></msIdentifier>. <note>Five in NUC</note>. <msIdentifier><institution>S-Skma</institution></msIdentifier>. <msIdentifier><institution>US-Wc</institution></msIdentifier>. <msIdentifier><institution>US-NypmFuld</institution> <note>(later address)</note></msIdentifier></bibl>
+            </div>
+
+
+            <div xml:id="printedLibretto">
+                <head>Printed librettos:</head>
+<!--Figure out a system for identifying the language of the text as well as the translator-->
+                <listBibl>
+                    <bibl><titlePage xml:lang="fr">
+                            <titlePart type="main">CARMEN</titlePart><lb/>
+                            <titlePart type="sub">OPÉRA-COMIQUE EN QUATRE ACTES</titlePart><lb/>
+                            TIRÉ DE LA NOUVELLE DE<lb/>
+                            <author>PROSPER MÉRIMÉE</author><lb/> PAR<lb/> HENRY MEILHAC ET LUDOVIC
+                            HALÉVY<lb/> MUSIQUE DE<lb/>
+                            <composer>GEORGES BIZET</composer><lb/> MISE EN SCÈNE DE M. CHARLES
+                            PONCHARD<lb/> M.L.<lb/>
+                            <docImprint>PARIS<lb/>
+                                <editor>MICHEL LÉVY FRÈRES</editor>, ÉDITEURS<lb/> RUE AUBER, 3,
+                                PLACE DE L’OPÉRA<lb/> LIBRAIRIE NOUVELLE<lb/> BOULEVARD DES
+                                ITALIENS, 15, AU COIN DE LA RUE GRAMMONT<lb/></docImprint>
+                            <date>1875</date><lb/> Droits de reproduction, de traduction et de
+                            représentation réservés.<lb/></titlePage>
+                        <!--titlePart?  Check that the others look the same--> pages: <extent>68</extent>
+                        <lb/> date: <date>1875 </date><lb/>
+
+copies: 
+                            <msIdentifier><institution>F-Pn</institution> <idno>8o Yth 2694</idno></msIdentifier>
+                            <msIdentifier><institution>GB-Lbl </institution><idno>11739.e.32</idno></msIdentifier>
+                            <msIdentifier><institution>US-BE</institution> <idno>ML50 B54 C3 case X</idno></msIdentifier>
+                            <msIdentifier><institution>US-NYpmFuld</institution><note> (inscribed by Meilhac and Halévy to F. Sarcey)</note></msIdentifier>
+                            <msIdentifier><institution>US-Princeton </institution><idno>ML50.B625 C22 1875</idno></msIdentifier>
+                            <note>facsimile of p. 41 in <bibl>Oeser, vol. II, p. 713</bibl>.</note>
+</bibl>
+
+                    <bibl>
+                        <publisher>KK Hof-Operntheater</publisher>, <pubPlace>Vienna</pubPlace>,
+                            <date>1875</date>, <note>in German (tr. Julius Hopp).</note> <msIdentifier><institution>US-Wc</institution> <note>(Schatz
+                        Collection)</note>.</msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Rullman</publisher>, <pubPlace>New York</pubPlace>, <extent>30
+                        p.</extent>, [<date>1878</date>]<note> in English and Italian</note>.</bibl>
+
+                    <bibl>
+                        <publisher>French</publisher>, <pubPlace>London</pubPlace>, <extent>26
+                        p.</extent>, [<date>1878</date>], <note>in English and Italian</note>.<msIdentifier><institution> US-Uof I</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Dickens &amp; Evans</publisher>,<pubPlace> London</pubPlace>,
+                            <extent>35 p.</extent>, [<date>1879</date>],<note> in English (tr. Henry
+                        Hersee)</note>. <msIdentifier><institution>GB-Lbl</institution></msIdentifier> </bibl>
+
+                    <bibl>
+                        <publisher>Milan</publisher>, <date>1881</date>, <note>in Italian</note>. <msIdetnifier><institution>US-Wc</institution> <note>(Schatz
+                        Collection)</note></msIdetnifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Calmann-Lévy</publisher>, <extent>68 p.</extent>,
+                        <date>1883</date>, <note>nouvelle éd. US-AA</note>; <msIdentifier><institution>US-CHH</institution></msIdentifier>, <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>, <msIdentifier><institution>D-Bsb</institution><note>.(says
+                        1882)</note></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Ahn</publisher>, <pubPlace>Cologne</pubPlace>, <extent>46
+                        p.</extent>, <date>1885</date> <note>in German (tr. Julius Hopp). D-Bsb. Reprinted
+                        <date>1906</date>. D-Bsb also. [CH-Bsacher. says ?1916][U of I has a 54-p ed.]</note></bibl>
+
+                    <bibl>
+                        <publisher>Vluda</publisher>, <pubPlace>Madrid</pubPlace>,
+                        <date>1888</date>,<note> in Spanish.</note><msIdentifier><institution> UNC</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Argus</publisher>,<pubPlace> Cape Town</pubPlace>, <extent>28
+                        p</extent>., <date>1895</date>. <msIdentifier><institution>GB-Lbl</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Calmann-Lévy</publisher>, <extent>87 p.</extent>,
+                        <date>1897</date>, nouvelle éd. US-AA; Us-’MiDW’ [?]; <msIdentifier><institution>US-COu</institution></msIdentifier>; <msIdentifier><institution>ODW (NUC)</institution></msIdentifier>, <msIdentifier><institution>IU</institution></msIdentifier>,
+                        <msIdentifier><institution>D-Bsb </institution><note>(gives <date>1894</date> as the date)</note></msIdentifier>.<msIdentifier><institution>F-Pn</institution></msIdentifier>, </bibl>
+
+                    <bibl>
+                        <publisher>Calmann-Lévy</publisher>, <pubPlace>Théâtre de Meilhac et
+                        Halévy</pubPlace>, t. VII, <date>1902</date>. <msIdentifier><institution>F-Pn</institution></msIdentifier> </bibl>
+
+                    <bibl>
+                        <publisher>Wajner</publisher>, <pubPlace>Warsaw</pubPlace>, <extent>15
+                        p</extent>., <date>1917</date>, <note>in Polish (tr. B. Drzewiecka)</note>. <msIdentifier><institution>D-Bsb.</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Ditson</publisher>, <pubPlace>Boston</pubPlace>, <extent>52
+                        p.</extent>,<note> in French and English</note>. <msIdentifier><institution>US-AA</institution></msIdentifier>, <msIdentifier><institution>US-Nyp</institution></msIdentifier>. </bibl>
+
+                    <bibl>
+                        <publisher>Fürstner</publisher>, <pubPlace>Berlin</pubPlace>, <extent>42
+                        p.</extent>, n.d. <title xml:lang="de">Arien und Gesänge</title>. <note>German tr. D. Louis (i.e. Julius Hopp).</note>
+                        <msIdentifier><institution>D-Bsb</institution></msIdentifier>, <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>, <msIdentifier><institution>F-Pn</institution> <idno>Th B 2643</idno></msIdentifier>,<msIdetnifier><institution> F-Pn </institution><idno>8o Yth 29812</idno></msIdetnifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Steyrermühl</publisher>, <pubPlace>Vienna</pubPlace>, <extent>72
+                            p.</extent>, <date>1925</date>, <note>in German</note>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Elkin Matthews &amp; Marrot</publisher>,
+                        <pubPlace>London</pubPlace>, <extent>80 p.</extent>, <date>1932</date>, <note>in
+                        English (tr. John and Ada Galsworthy). No. 7 of an edition limited to 650
+                        copies, signed by the authors</note>. <msIdentifier><institution>US-Stu</institution></msIdentifier>. <msIdentifier><institution>US-Wc</institution></msIdentifier>. </bibl>
+
+                    <bibl>
+                        <publisher>Universal</publisher>,<pubPlace> Vienna</pubPlace>, <extent>64
+                        p.</extent>, <date>1937</date>. <note>German tr. Gustav Brecher</note>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>, <extent>25
+                            p.</extent>, <date>1959</date>, in French and English (tr. Ruth and
+                        Thomas Martin). <publisher>Kalmus</publisher>,<extent> 55 p.</extent><note>, n.d.,
+                        in French and English.</note></bibl>
+
+                    <bibl>
+                        <publisher>Calmann-Lévy</publisher>, <date>1968</date>, <extent>96
+                        p.</extent></bibl>
+
+                    <bibl>
+                        <publisher>Dover</publisher>, <pubPlace>New York</pubPlace>, <extent>222
+                        p.</extent>, <date>1970</date>, in French and English (tr. Ellen H.
+                        Bleiler), with additions from the <date>1875 </date>version.</bibl>
+
+                    <bibl>
+                        <title>L’Avant-scène</title>, no. 26, <date>1993</date>, <extent>p.
+                        27–94.</extent></bibl>
+
+                    <bibl>
+                        <publisher>English National Opera</publisher>,<pubPlace> London</pubPlace>,
+                            <date>1982</date>, <note>in French and English (tr. Nell and John
+                    Moody).</note></bibl>
+                </listBibl>
+            </div>
+
+
+
+            <div xml:id="printedAffiche">
+                <head>Printed affiche: </head>
+
+                <p><publisher>Choudens</publisher>, <date>1875</date>. Prudent Leray, lithography in
+                    black and white, <extent>70 x 50 cm.</extent></p>
+            </div>
+
+
+            <div xml:id="vocalFull">
+                <head>Printed vocal scores:</head>
+
+
+                <listBibl>
+                    <bibl>
+                        <titlePage> à JULES PASDELOUP<lb/>
+                            <titlePart type="main">CARMEN</titlePart><lb/>
+                            <titlePart type="sub">Opéra Comique en 4 actes</titlePart><lb/> Tiré de
+                            la nouvelle<lb/> DE<lb/>
+                            <author>PROSPER MÉRIMÉE</author><lb/> Poème de<lb/> H. MEILHAC et L.
+                            HALÉVY<lb/> Musique de<lb/>
+                            <composer>GEORGES BIZET</composer><lb/>
+                            <docImprint>PARIS: <publisher>CHOUDENS PÈRE ET FILS, ÉDITRS</publisher>,<lb/>
+                                <pubPlace>Rue St Honoré, 265, près l’Assomption</pubPlace><lb/>
+                                propriété pr tous pays<lb/> Droits Réservés<lb/> PARTITION Chant et
+                                Piano arrangée par l’AUTEUR<lb/></docImprint></titlePage> pl. no:
+                            <idno>A.C. 3082</idno><lb/> pages: <extent>t. .p, blank,
+                            <foreign>Table</foreign>, blank, music 1–351</extent><lb/> adv:
+                            <title>Le Ménestrel</title>, <date>14-3-1875</date>; BF, <date>17-4-1875
+                        </date>@ 15 fr.<lb/> date: <date>3-1875 </date><lb/>
+                            copies:
+                            <msIdentifier><institution>F-Pn</institution> <idno>Rés. 2694</idno> <note>(proofs of 20 pages as separate
+                                sheets, corrected by Bizet). Facsimile of p. 18 in <bibl>Curtiss</bibl>,
+                                facsimile no. 22. facsimile of p. 190 in <bibl>Schott vocal score p. 40</bibl>.</note></msIdentifier>
+                            <msIdentifier><institution>F-Po</institution> <idno>Rés.1088</idno><note> (inscribed “<foreign>au parrain de mes
+                                    quatre enfants avec les témoignages de ma meilleure
+                                affection</foreign>” </note></msIdentifier>
+                            <msIdentifier><institution>F-Pn</institution> <idno>Vm5 873</idno> <note>(dépôt légal <date>18-3-75</date>)</note></msIdentifier>
+                            <msIdentifier>
+                                <institution>GB-Lbl </institution><idno>F.119.c </idno>
+                            </msIdentifier>
+                            <msIdentifier>
+                                <institution>GB-Ob</institution> <idno>Mus.22 d.1056</idno>
+                            </msIdentifier>
+                            <msIdentifier><institution>S-Ssmf</institution> <note>(inscribed by Bizet to Mademoiselle Marquet)</note></msIdentifier>
+                            <msIdentifier><insitution>Us-NYp </insitution>(seen)</msIdentifier>
+                            <msIdentifier>
+                                <institution>US-CAe</institution> <idno>Mus 629.1.661 PHI </idno>
+                            </msIdentifier>
+                            <msIdentifier><institution>US-CAharvard Houghton</institution> *<idno>93B-78F</idno></msIdentifier>
+                        <msIdentifier><institution>US-NYpm</institution> <idno>PMC 52</idno><note> (seen)</note></msIdentifier>
+                            <msIdentifier><institution>US-NYpm</institution><note>(Fuld) (seen) </note></msIdentifier>
+                        <msIdentifier><institution>US-Wc</institution> <idno>M1503 B625 C1875 </idno><note>(seen) (with the telegram sent
+                                by Ludovic Halévy to Hippolyte Rodrigues, on <date>June 3
+                                1875</date>)</note></msIdentifier>
+                            <msIdetnifier><idno>Baron Cat. 71</idno> <note>(<date>1967</date>) (inscribed to Mme
+                                Trélat)</note></msIdetnifier>
+                            <msIdentifier>Sotheby’s, London,<date> 4-12-2007</date> [= Lisa Cox Cat Feb 2008
+                                @ £1200 ]</msIdentifier>
+                        </bibl>
+
+                    <bibl>
+                        <p>A second issue offers options for cuts on p. 20 and p. 276, and has the
+                            page number 175 corrected to 195 in the <foreign>Table</foreign>.
+                            Copies: <institution>GB-Llloyd-Jones</institution>, <institution>US-CAe</institution><idno> Mus 629.1.661.1 PHI</idno>, [The following
+                            copies have not been checked for which issue they are </p> <msIdentifier><institution>US-BE</institution></msIdentifier><lb/>
+                        <msIdentifier><institution>US-STu</institution></msIdentifier><lb/><msIdentifier> <institution>D-Mbs</institution> <idno>4 Mus.pr. 63558</idno></msIdentifier><lb/> another S-Ssmfcopy <lb/> <msIdentifier><insitution>US-CHH </insitution></msIdentifier><lb/>
+                        Rokahr <lb/> Baron cat.154 @ £850<lb/> <msIdentifier><institution>U of Wisconsin, Madison</institution></msIdentifier><lb/> <msIdentifier><institution>U of
+                        London, Senate House</institution></msIdentifier><lb/> <msIdentifier><institution>U of Notre Dame</institution></msIdentifier><lb/></bibl>
+
+
+
+                    <bibl>
+                        <p><publisher>Choudens père et fils</publisher>, <pubPlace>265 rue St
+                            Honoré</pubPlace>, pl. no. <idno>A.C. 3082</idno>, <extent>363
+                            p</extent>., c. <date>1875</date>. Lots in NUC. <msIdentifier><institution>GB-Lbl </institution><idno>R.M. 9.b.19</idno></msIdentifier>;
+                            <msIdentifier><institution>US-CAe </institution><idno>Mus 629.1.661.3 PHI </idno><note>(seen “opéra”)</note></msIdentifier> 34 363-page scores in WorldCat
+                            This and all subsequent Choudens editions (and those derived from them)
+                            include fifteen passages of recitative by Ernest Guiraud, and certain
+                            cuts were made. Some of the recitatives are newly numbered as 3bis,
+                            6bis, 7bis, 12bis, 14bis (Bizet’s 14bis became 14ter), 14quater, 15bis,
+                            16bis, 19bis, 20bis and 22bis; additional recitatives were added to nos.
+                            3, 9, 16 and 22. The Réplique cues nevertheless still appear on those
+                            pages which followed dialogue in the original version. No. 2 was omitted
+                            (with the Prélude assigned the number 1 to align with the numbering of
+                            scene nos 3–27), bars 91–169 were cut from no. 23, and no. 25 was
+                            provided with an alternative text for chorus alone for those theatres
+                            that chose to insert a ballet to follow it, also a repeat of 41 bars.
+                            The ballet music shown in the Choudens full score was not inserted in
+                            the vocal score, however. No. 25 has the note ‘<foreign>Les théâtres qui
+                            voudraient intercaler un ballet au 4e acte feront chanter ce Chœur avec
+                            le texte en italique [‘Dansez ! dansez !’] en supprimant la partie de
+                            Zuniga. Si l’on exécute ce morceau sans la danse, il ne faut pas faire
+                            la reprise indiquée à la page 321</foreign>.’ This repeat was applied to bars
+                            57–98. The ballets found in the full score after no. 25 are not shown.
+                            Higher alternative notes were supplied throughout Carmen’s role. The
+                            first state of this edition has ‘opéra-comique’ on the t. p., the second
+                            state has ‘opéra’. [The full score shows the same cuts as the 363-page
+                            edition of the vocal score, i.e. no. 2 (complete), bars 90–160 of no.
+                            24, and bars 111–125 of no. 25]</p>
+                    </bibl>
+<!--is identifying bars worth it here, and can it be done in reference to the numbers of pieces?-->
+                    <bibl>
+                        <publisher>Choudens père et fils</publisher>, <pubPlace>265 rue St
+                            Honoré</pubPlace>,<idno> A.C. 3554</idno>, <extent>375 p</extent>.,
+                            <date>1877</date> , <note>in German (tr. D. Louis [i. e. Julius Hopp] and
+                        Italian (tr. Achille de Lauzières). This score corresponds to the 363-page
+                        French score. This was issued by Choudens from its later addresses with
+                        different imprints. After <date>1886</date> it was described as a
+                        ‘<foreign>nouvelle édition</foreign>’.</note><msIdentifier><institution>US-STu</institution> <note>(with Galli-Marié’s notes)</note></msIdentifier>,<msIdentifier><institution>F-Pn </institution><idno>Vm5 877</idno></msIdentifier>; <msIdentifier><institution>US-NYp</institution></msIdentifier>;
+                        <msIdentifier><institution>US-PHci</institution></msIdentifier>;<msIdentifier> <institution>US-PHu</institution><note>[?]</note></msIdentifier>;<msIdentifier><institution>GB-Omusfac</institution></msIdentifier> <msIdentifier><institution>D-Mbs</institution></msIdentifier> <msIdentifier><institution>GB-Lbl</institution></msIdentifier>. <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>. 6 copies in WorldCat
+                        <msIdentifier><institution>D-Bsb</institution>.<note>(2 copies)</note></msIdentifier> </bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, pl. no.
+                            <idno>5209</idno>, <extent>230 p.</extent>, <date>1879</date>, <note>in
+                        English (tr. Henry Hersee)</note>. <msIdentifier><institution>GB-Lbl </institution><idno>F.119.f.</idno> </msIdentifier>. <msIdentifier><institution>GB-Ob</institution><idno>Mus 22 d.66</idno></msIdentifier>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>. </bibl>
+
+                    <bibl>
+                        <publisher>Ditson</publisher>, <pubPlace>Boston</pubPlace>, <extent>312
+                        p.</extent>, <date>1879</date>, <note>with recitatives, in English and Italian
+                        (tr. anon)</note>. <msIdentifier><institution>GB-Ob</institution></msIdentifier>., <msIdentifier><institution>US-Wc</institution></msIdentifier>. <msIdentifier><institution>US-Uof I</institution></msIdentifier>. </bibl>
+
+                    <bibl>
+                        <publisher>Gutheil</publisher>, <pubPlace>Moscow</pubPlace>,
+                        <date>1887</date>, <note>in Russian (tr. G. Lishina), French and Italian</note>. <msIdentifier><institution>D-Bsb </institution><idno>Kb
+                        535/2</idno></msIdentifier> </bibl>
+
+                    <bibl>
+                        <publisher>Jurgenson</publisher>, <pubPlace>Moscow</pubPlace>, pl. no.<idno>
+                            13941–13967</idno>, <extent>299 p.</extent>, <date>1888</date>, <note>in
+                        French and Russian (tr. anon).</note> Copy: <msIdetnifier><institution>US-CAe </institution></msIdetnifier></bibl>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, <extent>205 p.</extent>, in Russian (tr. A.
+                        Gornakova). <msIdentifier><institution>US-NYp</institution> <idno>JMF 74-375</idno></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>, pl. no.
+                            <idno>12117</idno>, <extent>391 p.</extent>, <date>1895</date>, <note>in
+                        French and English (tr. Th. Baker). Reprinted in
+                        1923.</note><msIdentifier><institution>GB-Lbl</institution></msIdentifier>. <msIdentifier><institution>US-Wc</institution></msIdentifier> <msIdentifier><institution>US-U of I</institution></msIdentifier>.  </bibl>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, <pubPlace>Paris</pubPlace>, and
+                            <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, pl. no.
+                            <idno>8750</idno>, <extent>274 p.</extent>, [<date>1901</date>],<note> ed.
+                        Gustav F. Kogel, in German (tr. Julius Hopp)</note>. <msIdentifier><institution>D-Bsb</institution><idno> Kb 525/4</idno></msIdentifier>. <msIdentifier><institution>D-Bsb </institution><idno>4o
+                        N.Mus. 3560</idno>.</msIdentifier> <msIdentifier><institution>US-unc</institution></msIdentifier>. <msIdentifier><institution>Gaylord</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, <extent>346
+                        p.</extent>, <date>1909</date>, <note>in English (tr. H. Klein). GB-Lbbc has one
+                        copy with English translation by Christopher Hassall, and one copy with
+                        English translation by John and Ada Galsworthy</note>.</bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, <extent>200
+                        p.</extent>, <date>1911</date>,<note> arr. Emil Kreuz, in English (tr. Henry
+                        Hershee)</note>. <msIdentifier><institution>GB-Lbbc</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Universal Edition</publisher>, <pubPlace>Vienna</pubPlace>, pl.
+                        no. <idno>U.E. 954</idno>, <extent>296 p.</extent>,<note> n. d., ed. Wilhelm
+                        Kienzl, in German</note>. <msIdentifier><institution>S-Ssmf</institution></msIdentifier>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Ditson</publisher>, <pubPlace>Boston</pubPlace>, <extent>389
+                        p.</extent>, <date>1914</date>.<msIdentifier><institution> US-Wc</institution></msIdentifier>. <note>It looks as if GB-Ob has a Ditson
+                        edition with 312 pp.</note></bibl>
+
+                    <bibl>
+                        <publisher>Ricordi</publisher>, <pubPlace>Milan</pubPlace>, pl. no.
+                            <idno>115470</idno>, <extent>377 p</extent>,. <note>in Italian only, derived
+                        from Choudens 1877 edition</note>. <msIdentifier><institution>US-CAe</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Novello</publisher>, <pubPlace>London</pubPlace>, <extent>152
+                        p.</extent>, <date>1926</date>, ed. <editor>William McNaught</editor>,<note> in
+                        English (tr. Lucia Young)</note>. <msIdentifier><institution>GB-Lbbc</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Winthrop Rogers</publisher>, <pubPlace>London</pubPlace>,
+                            <extent>152 p.</extent>, <date>1926</date>, ed.<editor> Maurice
+                        Besly</editor>,<note> in English (tr. Theo. Baker)</note>. </bibl>
+
+                    <bibl>
+                        <publisher>Barich</publisher>, <pubPlace>Milan</pubPlace>,
+                        <date>1927</date>, <note>in Italian (tr. N.N.).</note> <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Urbánek</publisher>, <pubPlace>Prague</pubPlace>, <extent>295
+                        p.</extent>, <date>1927</date>,<note> in Czech (tr. Eliska Krásnohorska)</note>.<msIdentifier><institution> D-Bsb</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <pubPlace>Leipzig</pubPlace>, Lyra. <extent>198 p.</extent>,
+                        <date>1927</date>. <note>German</note>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, <pubPlace>Paris</pubPlace>, and<publisher>
+                            Peters</publisher>, <pubPlace>Leipzig</pubPlace>, Edition Peters<idno>
+                            8750</idno>. <extent>274 pp.</extent>, [<date>1933</date>]<note>. Ed. Kurt
+                        Soldan. German tr. by Julius Hopp.. This drops the ballets and corrects some
+                        previous mistakes.</note></bibl>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, <pubPlace>Paris</pubPlace>, and
+                            <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>.<foreign> Neu
+                        revidiert von Gustav F. Kogel</foreign>. <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>. </bibl>
+
+                    <bibl>
+                        <publisher>Boosey &amp; Hawkes</publisher>, <pubPlace>New
+                        York</pubPlace>, pl. no. <idno>US Bk. 251</idno>, <extent>401 p.</extent>,
+                            <date>1954</date>,<note> in French and English (tr. Virginia Card and George
+                        Houston)</note>.</bibl>
+
+                    <bibl>
+                        <publisher>Cramer</publisher>, <pubPlace>London</pubPlace>, <extent>348
+                        p.</extent>, <date>1954</date>.<note> English tr. by Hermann Klein and Henry
+                        Hersee, rev. R. Barclay Wilson. See <bibl>Metzler <date>1909</date></bibl></note></bibl>
+
+                    <bibl>
+                        <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>, pl. no.
+                            <idno>12117</idno>, <extent>391 p.</extent>, [<date>1958</date>],<note> in
+                        English (tr. Ruth and Thomas Martin)</note>.</bibl>
+
+                    <bibl>
+                        <publisher>Ahn &amp; Simrock</publisher>, <pubPlace>Berlin and
+                        Wiesbaden</pubPlace>, pl. no.<idno> A&amp;S 354</idno>, <extent>405
+                        p.</extent>, <date>1961</date>, ed. <editor>Pierre Stoll</editor>, <note>in German
+                        (tr. Heinrich Strobel).</note> </bibl>
+
+                    <bibl>
+                        <publisher>Alkor-Edition</publisher>, <pubPlace>Kassel</pubPlace>,
+                            <extent>[12] + 414 p.</extent>, <date>1964</date>, ed. <editor>Fritz
+                            Oeser</editor>, <note>in French and German (tr. Walter Felsenstein). This
+                        edition was based on the early sources, but it does not correspond with
+                        Bizet’s 1875 score. It includes both dialogues and Guiraud’s recitatives.</note></bibl>
+
+                    <bibl>
+                        <publisher>Alkor-Edition</publisher>, <pubPlace>Kassel</pubPlace>, no.
+                            <idno>AE 129a</idno>, <extent>[14] + 414 p.</extent>, <date>1969</date>,
+                        ed. <editor>Oeser</editor>, revised edn. </bibl>
+
+                    <bibl>
+                        <publisher>Schott</publisher>, <pubPlace>Mainz</pubPlace>, no.
+                        <idno>7965</idno>, <extent>490 p</extent>., <date>2000</date>, ed.
+                            <editor>Robert Didion</editor>,<note> in French and German (tr. Josef
+                        Heinzelmann). This is the first modern edition to be based on the 1875 vocal
+                        score, although a number of passages from earlier sources are shown in their
+                        proper place: 42 bars in no. 3, 36 bars in no. 4, 56 bars in no. 8, 29 bars
+                        in no. 13, and 14 bars in no. 17. It restored the accompaniment of
+                        melodramas in nos. 3 and 13. It matches the Eulenburg full score shown
+                        above.</note></bibl>
+
+                    <bibl>
+                        <publisher>Dover</publisher>, <pubPlace>Mineola</pubPlace>, <extent>391
+                        p.</extent>, <date>2002</date>, in French and English (tr. Baker), reprinted
+                        from <publisher>Schirmer</publisher> <date>1895</date>. </bibl>
+                </listBibl>
+            </div>
+
+
+            <div xml:id="vocalExtracts">
+                <head>Printed vocal score, extracts:</head>
+
+                <listBibl>
+                    <bibl>
+                        <p><publisher> Choudens</publisher>,<pubPlace> 265 faubourg St
+                            Honoré</pubPlace>, pl. no. <idno>A.C. 3106 – 3123</idno>, <date>1875
+                            </date>(ann: BF, 15-5-1875). 24 separate numbers: </p>
+
+                        <list type="contents">
+                            <item>1 <title>Chœur des gamins</title> ( = no. 3)</item>
+                            <item>2 <title>Chœur des cigarières</title> ( = no. 4)</item>
+                            <item>3 <title>Habanera</title> ( = no. 5)</item>
+                            <item>3bis <title>Habanera </title>( = no. 5 in E minor)</item>
+                            <item>4 <title>Duo</title> ( = no. 7)</item>
+                            <item>5 <title>Séguedille</title> ( = no. 10)</item>
+                            <item>5bis <title>Séguedille</title> ( = no. 10 in E)</item>
+                            <item>6 <title>Chanson bohème </title>( = no. 12)</item>
+                            <item>7 <title>Chanson du Toréador</title> ( = no. 14)</item>
+                            <item>7bis <title>Chanson du Toréador</title> ( = no. 14 in G)</item>
+                            <item>7ter <title>Chanson du Toréador</title> ( = no. 14 in A)</item>
+                            <item>8 <title>Quintette</title> ( = no. 15)</item>
+                            <item>9 <title>Chanson</title> ( = no. 16)</item>
+                            <item>10 <title>Duo </title>( = no. 17)</item>
+                            <item>11 <title>Cantabile</title> (‘La fleur’ from no. 17)</item>
+                            <item>11bis <title>Cantabile</title> (‘La fleur’ from no. 17 in B flat)</item>
+                            <item>12 <title>Duo </title>( = no. 20)</item>
+                            <item>13 <title>Strophes</title> (‘En vain pour éviter’ from no. 20) 19</item>
+                            <item>14 <title>Trio</title> ( = no. 21)</item>
+                            <item>14bis <title>Trio</title> ( = no. 21 in E flat)</item>
+                            <item>15 <title>Cavatine</title> ( = no. 22)</item>
+                            <item>15bis <title>Cavatine</title> ( = no. 22 in C)</item>
+                            <item>16 <title>Duo</title> ( = no. 23)</item>
+                            <item>17 <title>Duo</title> ( = no. 27)</item>
+                        </list>
+
+                        <note>Later added:</note>
+
+                        <list type="contents">
+                            <item> 18 <title>Couplets de la Messagère</title> (‘Votre mère avec moi’
+                                from no. 7)</item>
+                            <item>18bis <title>Couplets de la Messagère</title> (‘Votre mère avec
+                                moi’ from no. 7 in E flat)</item>
+                        </list>
+
+                        <p>Fuld (no. 7) US-NYpmFuld (habanera - high and low), US-NYpmFuld
+                            (Toreador, AC 3113). Duke (no.13, pl. no. 3119)</p>
+
+                        <p>Choudens continued to offer extracts in a variety of different forms,
+                            from all their later addresses. Some of these are shown below. It is
+                            possible that these extracts were also issued as voice parts only. Nos.
+                            3 and 9 were issued in this form between <date>1889</date> and
+                                <date>1892</date> with pl. nos. A.C. <idno>3177</idno> and
+                                <idno>6036</idno>, 2 p. <msIdentifier><institution>F-Pn</institution> <idno>4o Vm7 2057(51 and 58)</idno></msIdentifier>. The first pl.
+                            no. suggests an original issue in <date>1875</date>. </p>
+                    </bibl>
+
+
+                    <bibl>
+                        <p><publisher>Choudens</publisher>, pl. no. <idno>3815 – A.C. 3838</idno>,
+                                <date>1877</date>, in German and Italian, 24 extracts derived from
+                            the Choudens <date>1877</date> vocal score.</p>
+
+
+                        <p><msIdentifier><institution>US-NYp</institution> <note>(nos 3 and 3bis)</note></msIdentifier>. <msIdentifier><institution>US-Duke</institution> <note>(no. 3, pl. no. 3817)</note></msIdentifier>. <msIdentifier><institution>Gaylord </institution>no 3,
+                            <idno>3817 5 p.</idno></msIdentifier> </p>
+                    </bibl>
+
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, pl. no. <idno>A.C. 4046–4048</idno>, c.
+                            <date>1877</date>, extracts nos 5, 5bis and 6. <hi rend="bold">in
+                            Italiand and German</hi>? US-STLgaylord (No. 6, pl. no. 4048, 5 p., No.
+                        5 pl. no. 4046, 5 p. US-STLgaylord. No. 5bis:
+                        <publisher>Choudens</publisher>, pl. no. A.C. <date>4047</date>, Ger and
+                        Italian tr. D-Bsb.</bibl>
+
+                    <bibl>
+                        <publisher>Choudens, père et fils</publisher>, <pubPlace>265 rue St
+                        Honoré</pubPlace>, pl. no. <idno>A.C. 4334–4338</idno>, extract nos 12–17.
+                        4338, 9 p., no. 17, Us-STL gaylord. Pl. no. 4334, 7 p., no. 12,
+                        US-STLgaylord. <publisher>Choudens</publisher>, <pubPlace>30 Boulevard des
+                            Capucines</pubPlace>, after <date>1886</date>. <msIdentifier><institution>GB-Ob</institution><note> (3bis, 15)</note></msIdentifier>; </bibl>
+
+                    <bibl>
+                        <publisher>Choudens fils</publisher>, <pubPlace>30 Boulevard des
+                            Capucines</pubPlace>,<idno> A.C. 3082</idno>, certain extracts issued as
+                        large-format reprints from the 1875 vocal score. no. 2, US-STLgaylord. Also
+                        no. 10 (17 of the opera) on 24 p., US-STLgaylord. Also no. 4 (= no 7) 15 p.,
+                        US-STLgaylord </bibl>
+
+                    <bibl>
+                        <publisher>Choudens</publisher>, pl. no.<idno> A.C. 6074</idno>, <extent>5
+                            p.</extent>,<date> c. 1883</date>, extract no. 1. <msIdentifier><institution>US-IUlilly</institution></msIdentifier>
+                       <msIdentifier><institution> US-STLgaylord</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>,<pubPlace> London</pubPlace>, with
+                            <publisher>Choudens</publisher> pl. no. <idno>A.C. 3946</idno>,
+                            <extent>5 p.</extent>, <date>1878</date>, extract no. 3 as ‘Love the
+                        Vagrant, The Celebrated Havanera in Carmen’, in English (tr. H.B. Farnie).
+                        In two keys (D minor and E minor). GB-Lbl H.2476 (high Key) (stamped
+                        <date>20-7-1878</date>). <msIdentifier><institution>GB-En</institution></msIdentifier>,<msIdentifier><institution> GB-Ob</institution> <note>(high key)</note></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, pl. no.
+                            <idno>M. 5076</idno>, <extent>7 p.</extent>, <date>1878</date>,<note> extract
+                        no. 7 ‘Chanson du Toréador’ in Italian (tr. A. de Lauzières), in two keys</note>.
+                        <msIdentifier><institution>GB-Lbl</institution></msIdentifier>, <msIdentifier><institution>GB-Ob </institution><note>(low key)</note></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>,<pubPlace> London</pubPlace>, pl. no.
+                            <idno>M. 5193</idno>, <extent>9 p.</extent>, <date>1879</date>,<note> extract
+                        no. 7 ‘Sirs, your Toast’, in English (tr. Henry Hersee), in three keys.</note>
+                        <msIdetnifier><institution>GB-Lbl</institution></msIdetnifier>, <msIdentifier><institution>GB-Ob</institution> <note>(low key)</note></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Ditson</publisher>, <pubPlace>Boston</pubPlace>, pl. no<idno>.
+                            46713</idno>, <extent>9 p.</extent>, <date>1878</date>, <note>extract no. 7,
+                        as ‘Tis of her thou art speaking’, and extract no. 14, in French and English
+                        (tr. L. C. Elson).</note><msIdentifier><institution> US-Free Library of Philadelphia.</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Wm. A. Pond</publisher>, <pubPlace>New York</pubPlace>,
+                            <date>1879</date>, <note>extracts nos 3, 7 and 10, in French, English and
+                        Italian.</note> <msIdentifier><institution>US-IUlilly</institution></msIdentifier>.</bibl>
+
+
+                    <bibl>
+                        <publisher>Balmer &amp; Weber</publisher>, <pubPlace>St
+                        Louis</pubPlace>, pl. no. <idno>3759</idno>, <extent>9 p.</extent>,
+                            <date>1879</date>,<note> extract no. 14, in English (tr. C. Lange), Germand
+                        and Italian</note>. <msIdentifier><institution>US-STLgaylord</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>W.A. Evans</publisher>, <pubPlace>Boston</pubPlace>,<date> c.
+                            1890</date>, extract no. 3, as ‘<title>Love, the Vagrant</title>’, <note>in French, English
+                        (tr. H.B. Farnie) and Italian. </note></bibl>
+
+                    <bibl>
+                        <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>,<note> n. d.,
+                        extracts nos 5, 6, 7, 14 and 15, in French, English (tr. F.W. Rosier) and
+                        Italian, some in two keys</note>.</bibl>
+
+                    <bibl>
+                        <publisher>Century Music Publishing Co.</publisher>, <pubPlace>New
+                        York</pubPlace>, pl. no. <idno>738</idno>, <extent>9 p.</extent>, n. d.,
+                        extract no. 7, as ‘<title>Song of the Toreador</title>’,<note> in English (tr. H. Millard).</note>
+                       <msIdentifier><institution> US-IUlilly</institution></msIdentifier></bibl>
+                </listBibl>
+            </div>
+        </div>
+
+
+        <div xml:id="arrangements">
+            <div xml:id="pianoSolo">
+                <head>Arrangement for piano solo: </head>
+
+                <listBibl>
+                    <bibl>
+                        <p><publisher>Choudens</publisher>, <pubPlace>265 rue St-Honoré</pubPlace>,
+                                <idno>A.C. 3169</idno>,<extent> 191 p.</extent>, <date>1875</date>
+                            (ann: <title>Le Ménestrel</title>, 12-9-1875, BF, 6-11-1875), arr.
+                            Antony Choudens. This version, not quite the same as the second edition
+                            of the vocal score, lacks no. 2, the second couplet of the Habanera,
+                            bars <measure quantity="124" units="bars">124</measure>–<measure
+                                quantity="164" units="bars">64</measure> of no. 12, bars <measure
+                                quantity="330" units="bars">330</measure>–<measure quantity="337"
+                                units="bars">37 </measure>of no. 16, one couplet of no. 16, and bars
+                                <measure quantity="91" units="bars">91</measure>–<measure
+                                quantity="161" units="bars">161</measure> of no. 23. This was
+                            re-issued by Choudens from later addresses.</p>
+
+                        <p><msIdentifier><institution>F-Pn</institution> <idno>Vm5 876</idno></msIdentifier>, <msIdentifier><institution>D-Mbs</institution></msIdentifier> <msIdentifier><institution>US-LAu</institution></msIdentifier>, <msIdentifier><institution>F-Po</institution></msIdentifier>, <msIdentifier><institution>Rokahr</institution></msIdentifier>,<msIdentifier><institution> S-Ssmf</institution> <note>(Choudens Fils)</note></msIdentifier>,
+                            <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>.9 copies in WorldCat. </p>
+                    </bibl>
+
+                    <bibl>
+                        <publisher>Sonzogno</publisher>, <pubPlace>Milan</pubPlace>, <extent>191
+                        p.</extent>, <date>1877</date>, reprinted from Choudens plates. <msIdentifier><institution>US-Queen’s
+                        Coll. NY</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, <extent>191
+                        p.</extent>,<note> reprinted from Choudens plates</note>. <msIdentifier><institution>Gb-Lbl</institution></msIdentifier>, <msIdentifier><institution>GB-En</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Gehrman</publisher>, <pubPlace>Stockholm</pubPlace>, <extent>191
+                            p.</extent>, dated<date> 5-9-1890</date>, <note>reprinted from Choudens
+                        plates</note>. <msIdentifier><institution>S-Ssmf</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, pl. no.
+                            <idno>9040</idno>,<note> arr. Otto SinGerman </note><msIdentifier><institution>CH-Bsacher</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, and
+                            <publisher>Choudens</publisher>, <extent>155 p</extent>.,
+                        <date>1902</date>, arr. Adolf Ruthardt. <msIdentifier><institution>D-Mbsb</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Gutheil</publisher>,<pubPlace> Moscow</pubPlace>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Jurgenson</publisher>, <pubPlace>Moscow</pubPlace>, pl. no.
+                            <idno>15738</idno>, <extent>157 p. </extent> <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Litolff</publisher>, <pubPlace>Braunschweig</pubPlace>, pl. no.
+                            <idno>2381</idno>. <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Peters</publisher>, <pubPlace>Leipzig</pubPlace>, no.
+                        <idno>9040</idno>, <extent>135 p.</extent>, <note>with German text over the piano
+                        part.</note> <msIdentifier><institution>S-Ssmf</institution></msIdentifier>.</bibl>
+
+                    <bibl>
+                        <publisher>Universal Edition</publisher>, <pubPlace>Vienna</pubPlace>, <note>with
+                        German text over the piano part. </note><msIdentifier><institution>US-LArokahr</institution></msIdentifier>.</bibl>
+
+
+                    <bibl>
+                        <publisher>Litolff</publisher>,<pubPlace> Braunschweig</pubPlace>, arr. Max
+                        Schultze. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+                </listBibl>
+            </div>
+            <div xml:id="soloExtracts">
+                <head>Arrangements for piano solo, extracts:</head>
+
+                <listBibl>
+                    <bibl><publisher>Choudens</publisher>, pl. no.<idno> A.C. 6252</idno>, <extent>9
+                            p.</extent>, [<date>1884</date>], extract no. 7. <msIdentifier><institution>US-IUlilly</institution></msIdentifier>.</bibl>
+
+                    <bibl><publisher>Wm. A. Pond</publisher>, <pubPlace>New York</pubPlace>, pl. no.
+                            <idno>9768</idno>, <extent>7 p.</extent>, <date>1878</date>, <note>extract no.
+                        7, as chorus ‘<foreign>Con vos ber affé</foreign>’ and march. </note><msIdentifier><institution>US-IUlilly</institution></msIdentifier>.</bibl>
+                </listBibl>
+            </div>
+
+
+            <div xml:id="pianoDuet">
+                <head>Arrangements for piano duet: </head>
+
+                <p><publisher>Choudens</publisher>, <idno>A.C. 4823</idno>, <date>c. 1879</date>,
+                    arr. Renaud de Vilbac. <msIdentifier><institution>US-CA</institution></msIdentifier>, <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>..</p>
+            </div>
+
+            <div xml:id="duetExtracts">
+                <head>Arrangement for piano duet, extract:</head>
+
+                <p><publisher>Choudens</publisher>, <idno>A.C. 4823</idno>, Prélude issued
+                    separately, 7 p., <msIdentifier><institution>US-STLgaylord</institution></msIdentifier></p>
+            </div>
+
+
+            <div xml:id="suiteOneScore">
+                <head><title xml:lang="fr">Suite de Concert</title> no. 1, printed score:</head>
+
+                <list type="contents">
+                    <item> 1 <title xml:lang="fr">Prélude</title> [ = <title xml:lang="fr"
+                        >Prélude</title> bars 121–48]</item>
+                    <item>2 <title xml:lang="fr">Aragonaise</title> [ = <title xml:lang="fr"
+                            >Entr’acte</title> before Act IV]</item>
+                    <item>3 <title xml:lang="fr">Intermezzo </title>[ = <title xml:lang="fr"
+                            >Entr’acte</title> before Act III]</item>
+                    <item>4 <title xml:lang="fr">Les Dragons d’Alcala</title> [ = <title
+                            xml:lang="fr">Entr’acte</title> before Act II]</item>
+                    <item>5 <title xml:lang="fr">Final (Les Toréadors)</title> [ =<title
+                            xml:lang="fr"> Prélude</title> bars 1–119]</item>
+                </list>
+
+                <listBibl>
+                    <bibl><publisher>Choudens père et fils</publisher>, <pubPlace>26 Bd des
+                            Capucines</pubPlace>, pl. no.<idno> A.C. 6459</idno>, <extent>33
+                        p.</extent>, <date>1885</date>. <note>Some pages, derived from the score of the
+                        complete opera, have the pl. no. <idno>A.C. 3795</idno></note>. <msIdentifier><institution>US-NYp </institution><note>(photocopy
+                        of ?)</note></msIdentifier>; <msIdentifier><institution>US-AA</institution></msIdentifier>; <msIdentifier><institution>GB-Lbl</institution></msIdentifier>.</bibl>
+
+                    <bibl><publisher>Breitkopf &amp; Härtel</publisher>,
+                        <pubPlace>Leipzig</pubPlace>, n.d., ed. <editor>Fritz Hoffmann</editor>.
+                        <note>This version added the <title xml:lang="fr">Séguedille</title> [ = no. 10,
+                        bars 1–81, 162–82, rescored] after the <title>Intermezzo</title>. This
+                        edition has been reprinted by <publisher>Kalmus, Bellwyn Mills and
+                        Dover</publisher>.</note></bibl>
+                </listBibl>
+            </div>
+
+            <div xml:id="suiteOneOrch">
+                <head><title xml:lang="fr">Suite de Concert</title> no. 1, printed orchestral parts:</head>
+
+                <listBibl>
+                    <bibl><publisher>Choudens</publisher>, <idno>A.C. 3276 </idno>and <idno>A.C.
+                            6460</idno>, <date>1886</date>, partly derived from parts of the
+                        complete opera. GB-Lbbc NUC OCl 3 sets of sccores and parts in WorldCat:
+                        Michigan, ClevelandPL, Upenn</bibl>
+<!--msidentifier in above entry?-->
+                    <bibl>
+                        <publisher>Breitkopf &amp; Härtel</publisher>,
+                        <pubPlace>Leipzig</pubPlace>, n.d., ed. <editor>Fritz
+                    Hoffmann</editor>.</bibl>
+                </listBibl>
+            </div>
+
+            <div xml:id="suiteOnePiano">
+                <head><title xml:lang="fr">Suite de Concert</title> no. 1, arranged for piano solo:</head>
+
+                <bibl><publisher>Choudens</publisher>,<idno> A.C. 6434</idno>, <extent>16 p.</extent>,
+                        <date>c. 1885</date>,<note> derived from piano arrangement of the complete opera.</note>
+                    <msIdentifier><msIdentifier>F-Pn </msIdentifier><idno>Rés.2366 </idno><note>(corrected proof)</note></msIdentifier>.</bibl>
+            </div>
+
+            <div xml:id="suiteTwoScore">
+                <head><title xml:lang="fr">Suite de Concert </title>no. 2, printed score:</head>
+
+                <listBibl>
+                    <bibl><publisher>Choudens père et fils</publisher>, pl. no. <idno>A.C. 7394</idno>,
+                        <extent>70 p</extent>., <date>c. 1886</date>. The contents (below) are
+                    incorrectly listed on the t. p.: <list type="contents">
+                        <item>
+                            <title xml:lang="fr">Marche des contrebandiers</title> [ = no. 19,
+                            rescored]</item>
+                        <item>
+                            <title xml:lang="fr">Habanera</title> [ = no. 5, one couplet only,
+                            rescored]</item>
+                        <item>
+                            <title xml:lang="fr">Nocturne</title> [ = no. 22, rescored]</item>
+                        <item>
+                            <title xml:lang="fr">La Garde montante </title>[ = no. 3, rescored]</item>
+                        <item>
+                            <title xml:lang="fr">Danse bohème </title>[ = no. 12, rescored]</item>
+                    </list> <msIdentifier><institution>US-NYp</institution></msIdentifier>; <msIdentifier><institution>US-AA</institution></msIdentifier>; <msIdentifier><institution>GB-Lbl</institution></msIdentifier>. <msIdentifier><institution>GB-Lbbc</institution></msIdentifier> </bibl>
+                    <bibl>
+                        <publisher>Breitkopf &amp; Härtel</publisher>,
+                        <pubPlace>Leipzig</pubPlace>, n.d., ed. <editor>Fritz Hoffmann</editor>.
+                        <note>This version added the <title xml:lang="fr">Chanson du Toréador</title> [ =
+                        no. 14, bars 1–58, 117–27, rescored] after the<title xml:lang="fr">
+                        Nocturne</title>. This edition has been reprinted by <publisher>Kalmus,
+                            Bellwyn Mills and Dover</publisher>.</note></bibl></listBibl>
+            </div>
+
+            <div xml:id="suiteTwoOrch">
+                <head><title xml:lang="fr">Suite de Concert</title> no. 2, printed orchestral parts:</head>
+
+                <listBibl>
+                    <bibl>
+                        <publisher>Choudens</publisher>, <date>1886</date>. <msIdentifier><institution>NUC OCl</institution></msIdentifier>. <msIdentifier><institution>GB-Lbbc</institution></msIdentifier></bibl>
+
+                    <bibl>
+                        <publisher>Breitkopf &amp; Härtel</publisher>,
+                        <pubPlace>Leipzig</pubPlace>, n.d., ed.<editor> Fritz
+                    Hoffmann</editor>.</bibl>
+                </listBibl>
+            </div>
+            <div xml:id="suiteTwoPiano">
+                <head><title xml:lang="fr">Suite de Concert </title>no. 2, arranged for piano solo:</head>
+
+                <bibl>
+                    <publisher>Choudens père et fils</publisher>, pl. no. <idno>A.C.
+                        5406</idno>,<extent> 9 p.</extent>, <note>arr. Renaud de Vilbac</note>. <msIdentifier><institution>US-CHua</institution></msIdentifier></bibl>
+            </div>
+
+            <div xml:id="other">
+                <head>Other arrangements:</head>
+
+                <listBibl>
+                    <bibl><arranged>E.M. Delaborde</arranged>, <title xml:lang="fr">Grande Fantaisie
+                            de concert sur Carmen de G. Bizet pour piano.</title>
+                        <foreign>‘A mon ami Antonin [?] Marmontel professeur au Conservatoire, <date>Sept.
+                            1879</date></foreign>’. MS autographe, Vente Drouot <date>26-3-1996</date>.
+                        Apparently published by <publisher>Choudens</publisher> in
+                        <date>1879</date>.</bibl>
+                    <bibl><arranged>Sydney Smith</arranged>, <title xml:lang="fr">Fantaisie de
+                            concert</title>.<pubPlace> London</pubPlace>, <date>1884</date>. <msIdentifier><institution>GB-En</institution></msIdentifier>,
+                        <msIdentifier><institution>GB-Ob</institution></msIdentifier></bibl>
+                    <bibl><title>Carmen Potpourri</title> arr. by <arranged>Chas. E.
+                        Owen</arranged>, M. Gray, <pubPlace>San Francisco</pubPlace>, no.
+                        <idno>1594</idno>, <extent>13 p.</extent>, <date>1879</date>. <msIdentifier><institution>US-BE</institution></msIdentifier>.</bibl>
+                    <bibl><title>Carmen Potpourri</title> piano solo arr. <arranged>H.
+                        Maylath</arranged>, Schuberth, <pubPlace>New York</pubPlace>, pl. no.
+                            <idno>E.S. &amp; Co. 293</idno>, <extent>14 p.</extent>,
+                        <date>1878</date>. <msIdentifier><institution>US-STLgaylord</institution></msIdentifier></bibl>
+                    <bibl><arranged>Sarasate</arranged>, <title xml:lang="fr">Fantaisie de
+                        Concert</title> for violin and piano, op. 25.<publisher>
+                        Choudens</publisher>, pl. no.<idno> A.C. 5558</idno>, <extent>21 p.</extent>,
+                        <date>c.1882</date>.</bibl>
+                    <bibl><title>Andantino, prelude to Act III</title>, arr for piano, harmonium and violin by
+                        Siegfried Karg-Elert, Leipzig Hug, 1907</bibl>
+                </listBibl>
+
+
+                <note type="todo">+ huge list ....... </note>
+            </div>
+        </div>
+
+        <div xml:id="performanceList">
+            <head>Performances (up to 1900, not including revivals):</head>
+
+            <list>
+                <item>
+                    <date>3-3-1875</date>
+                    <p>Paris, Opéra-Comique, mise-en-scène Charles Ponchard and Camille du Locle,
+                        décors Emile Daran, Marcel Jambon and Alexandre Bailly, costumes Georges
+                        Clairin and Édouard Detaille (36 performances in that season, 12 more in
+                        1875–76 beginning on 15-11-1875 and until 15-2-1876) </p>
+
+                    <list>
+                        <item>
+                            <role>Don José</role>
+                            <actor>MM. Lhérie</actor>
+                        </item>
+                        <item>
+                            <role>Escamillo</role>
+                            <actor>Bouhy</actor>
+                        </item>
+                        <item>
+                            <role>La Dancaïre</role>
+                            <actor>Potel</actor>
+                        </item>
+                        <item>
+                            <role>Le Remendado</role>
+                            <actor>Barnolt</actor>
+                        </item>
+                        <item>
+                            <role>Moralès </role>
+                            <actor>Duvernoy</actor>
+                        </item>
+                        <item>
+                            <role>Zuniga</role>
+                            <actor>Dufriche</actor>
+                        </item>
+                        <item>
+                            <role>Lillas Pastia</role>
+                            <actor>Nathan</actor>
+                        </item>
+                        <item>
+                            <role>Un Guide</role>
+                            <actor>Teste</actor>
+                        </item>
+                        <item>
+                            <role>Carmen </role>
+                            <actor>Mme Galli-Marié</actor>
+                        </item>
+                        <item>
+                            <role>Micaëla</role>
+                            <actor>Mlles Chapuy</actor>
+                        </item>
+                        <item>
+                            <role>Frasquita </role>
+                            <actor>Ducasse</actor>
+                        </item>
+                        <item>
+                            <role>Mercédès</role>
+                            <actor>Chevalier</actor>
+                        </item>
+
+                        <row>
+                            <conductor>cond.</conductor>
+                            <name>Jules Deloffre</name>
+                        </row>
+                    </list>
+                </item>
+                <!--The above section would probably be better off as a table-->
+                <item><date>23-10-1875</date> Vienna, Operntheater, in German (tr. Julius Hopp) with
+                    some cuts, and ballets by Carl Telle, but without Guiraud’s recitatives.</item>
+                <item><date>3-2-1876</date> Brussels, 25 performances (500th performance 11-10-1913)</item>
+                <item><date>1-4-1876</date> Antwerp, in French </item>
+                <item><date>28-10-1876</date> Budapest, in Hungarian (tr. K. Abrányi)</item>
+                <item><date>28-2-1878</date> St Petersburg, in Italian (tr. A. de Lauzières)</item>
+                <item><date>22-3-1878</date>Stockholm, in Swedish (tr. F.T. Hedberg)</item>
+                <item><date>22-6-1878</date> London, Her Majesty’s Theatre, in Italian</item>
+                <item><date>9-9-1878</date> Dublin, in Italian</item>
+                <item><date>23-10-1878</date> New York, Academy of Music, in Italian</item>
+                <item><date>25-10-1878</date> Philadelphia, in Italian</item>
+                <item><date>9-11-1878</date> Baltimore</item>
+                <item><date>23-11-1878</date> New York</item>
+                <item><date>7-12-1878</date> Chicago</item>
+                <item><date>1878</date> Marseille and Lyon </item>
+                <item><date>3-1-1879</date> Boston</item>
+                <item><date>5-2-1879</date> London, Her Majesty’s Theatre, in English (tr. H.
+                    Hersee)</item>
+                <item><date>3-1879</date> Melbourne, in English</item>
+                <item><date>15-11-1879</date> Naples, Teatro Bellini, in Italian</item>
+                <item><date>c. 1880 </date> San Francisco, Ghent, Hanover, Mainz, Madrid </item>
+                <item><date>c. 1880</date> Genoa, Lyon, Liège </item>
+                <item><date>c. 1880</date> Boston, Philadelphia, Chicago, New Orleans </item>
+                <item><date>31-1-1880</date> Hamburg, in German</item>
+                <item><date>12-3-1880</date> Berlin, in German</item>
+                <item><date>29-3-1880</date> Prague, in German</item>
+                <item><date>5-1880</date> Strasbourg</item>
+                <item><date>16-12-1880</date> Milan, Teatro del Verme, in Italian</item>
+                <item><date>24-12-1880</date> Geneva</item>
+                <item><date>early 1881</date> Florence</item>
+                <item><date>19-1-1881</date> Zurich, in German</item>
+                <item><date>11-2-1881</date> Mexico</item>
+                <head><date>2-3-1881</date> New York, in English</head>
+                <item><date>24-3-1881</date> Frankfurt, in German </item>
+                <item><date>23-5-1881</date> Rio de Janeiro</item>
+                <item><date>2-8-1881</date> Barcelona</item>
+                <item><date>9-8-1881</date> Buenos Aires</item>
+                <item><date>18-8-1881</date> Dieppe </item>
+                <item><date>1881</date> Malta, in Italian</item>
+                <item><date>Carnival 1881Turin</date>, in Italian</item>
+                <item><date>2-1882</date> Cairo</item>
+                <item><date>2-5-1882</date> New York, in Fr.</item>
+                <item><date>27-5-1882</date> London, Covent Garden</item>
+                <item><date>Summer 1882</date>Parma</item>
+                <item><date>11-1882</date> Treviso</item>
+                <item><date>before 1883</date> Bordeaux </item>
+                <item><date>3-1883</date> Rouen, Théâtre des Arts</item>
+                <item><date>21-4-1883</date> Paris, Opéra-Comique (500th performance on 23-10-1891,
+                    1000th performance on 23-12-1904)</item>
+                <item><date>13-5-1883</date> Riga, in German </item>
+                <item><date>7-6-1883</date> Mexico, in Spanish (tr. A. Chavero)</item>
+                <item><date>16-6-1883</date> Buenos Aires, in Italian</item>
+                <item><date>9-1883</date> Milan, Teatro Carcano</item>
+                <item><date>1883</date> Santiago, in Italian</item>
+                <item><date>3-1-1884</date> Prague, in Czech (tr. E. Krásnohorská) </item>
+                <item><date>9-1-1884</date> New York, Metropolitan</item>
+                <item><date>2-1884 </date> St Petersburg, in Italian</item>
+                <item><date>13-12-1884</date> Sydney, in English</item>
+                <item><date>13-12-1884</date> Temesvar, in German</item>
+                <item><date>12-3-1885</date> Reval, in German (Estonian, acc Curtiss 435)</item>
+                <item><date>12-10-1885</date> St Petersburg, in Russian (tr. A.A. Gorchakova)</item>
+                <item><date>25-11-1885</date> New York, Metropolitan, in German</item>
+                <item><date>11-1885</date> Lisbon, in Italian</item>
+                <item><date>26-12-1885</date> Milan, La Scala</item>
+                <item><date>8-11-1886</date> London, Her Majesty’s Theatre, in French</item>
+                <item><date>22-1-1887</date> Amsterdam, in Dutch</item>
+                <item><date>24-4-1887</date> Copenhagen, in Danish (tr. E. Bøgh and H.-P. Holst)</item>
+                <item><date>1888</date> Geneva </item>
+                <item><date>10-2-1889</date> Helsinki, in Russian</item>
+                <item><date>14-3-1889</date> Helsinki, in Swedish</item>
+                <item><date>1890</date> Casale Monferrato</item>
+                <item><date>21-12-1891</date> Berlin, in German</item>
+                <item><date>18-6-1893</date> Zagreb, in Croatian (tr. A. Harambašič)</item>
+                <item><date>1894</date> Lyublyana, in German</item>
+                <item><date>1895</date> Cape Town, in Italian</item>
+                <item><date>1896</date> Lyublyana, in Slovenian</item>
+                <item><date>7-5-1900</date> Christiania, in Norwegian</item>
+                <item><date>26-5-1900</date> Vienna, in German (with Guiraud’s recitatives, cond.
+                    Mahler)</item>
+
+                <item><date>21-12-1907</date> Paris, Opéra</item>
+            </list>
+        </div>
+
+        <div xml:id="dedicatee">
+            <head>Dedicatee:</head>
+            <p>Jules-Étienne Pasdeloup (<date>1819–87</date>), since <date>1861</date> conductor of
+                the <foreign>Concerts Populaires</foreign> and director of the<foreign>
+                    Théâtre-Lyrique</foreign> from <date>1868 </date>to <date>1870</date>.</p>
+        </div>
+
+        <div xml:id="documents">
+            <head>Letters:</head>
+
+            <list>
+                <item>
+                    <date>5-1872</date>, to <name>Lacombe</name>: ‘<foreign xml:lang="fr">De Leuven
+                        et Du Locle m’ont commandé trois actes. Meilhac et Halévy seront mes
+                        collaborateurs. Ils vont me faire une chose gaie que je traiterai aussi
+                        serré que possible. – La tâche est difficile; mais j’espère en
+                    sortir</foreign>.’ (<bibl>Imbert, p. 189</bibl>) wrong</item>
+                <item><date>17-6-1872</date>, to<name> Galabert</name>: ‘<foreign xml:lang="fr">On
+                        vient de me commander trois actes à l’Opéra-Comique. – Meilhac et Halévy
+                        font ma pièce. – Ce sera gai, mais d’une gaieté qui permet le
+                    style</foreign>.’ (<bibl>Galabert, p. 199</bibl>) </item>
+                <item><date>before 8-6-1873</date>, to <name>Lacombe</name>: ‘<foreign xml:lang="fr"
+                        >J’ai fini le premier acte de Carmen ; j’en suis assez content</foreign>.’
+                        (<bibl>Imbert, p. 197</bibl>)</item>
+                <item>n. d. (?<date>9-1873</date>), to <name>Lacombe</name>: ‘<foreign xml:lang="fr"
+                        >Carmen s’achève. – J’entrerai en répétitions en décembre</foreign>.’
+                        (<bibl>Imbert, p. 193</bibl>) </item>
+                <item>n. d. <date>[1874</date>], to <name>Lacombe</name>: ‘<foreign xml:lang="fr"
+                        >J’y [à Bougival] vais terminer Carmen qui entre en répétition au mois
+                        d’août pour passer fin novembre ou commencement décembre</foreign>.’
+                        (<bibl>Imbert, p. 198</bibl>)</item>
+                <item>n. d. [<date>1874</date>], to<name> Lacombe</name>: ‘<foreign xml:lang="fr"
+                        >J’entre en répétition dans quelques jours. Ma Carmen passera fin novembre
+                        ou commencement décembre. Je viens de passer deux mois à orchestrer les 1200
+                        pages que renferme ma partition</foreign>.’ (<bibl>Imbert, p. 199</bibl>)</item>
+                <item><date>25-1-1875</date>, to <name>Ambroise Thomas</name>: ‘<foreign
+                        xml:lang="fr">Carmen ne me laisse plus un instant de repos. J’accompagne
+                        moi-même, je réduis moi-méme</foreign>.’ (Wright, p. 41)</item>
+                <item>c. <date>10-3-1875</date>, to <name>Saint-Saëns</name>: ‘<foreign
+                        xml:lang="fr">Cher, Ces trois lignes, signées d’un maître, d’un galant homme
+                        comme toi, me consolent outre-mesure des injures des Comettant, des
+                        Lauzières et d’autres postérieurs. Tu m’as fait un crâne plaisir et je
+                        t’embrasse de tout mon cœur</foreign>.’ (<bibl>F-Musée de Dieppe</bibl>)</item>
+                <item><date>3-1875</date>, to <name>Steemann</name>: ‘<foreign xml:lang="fr"
+                        >Voulez-vous redire encore une fois à vos courageux artistes des chœurs de
+                        l’Opéra-Comique tous mes remerciements pour le grand travail que ma Carmen
+                        leur a imposé ? Sans leur sympathie, sans leur extrême obligeance, nous ne
+                        serions jamais arrivés à la bonne exécution que nous avons
+                    obtenue</foreign>.’ (<bibl>Wright, p. 42</bibl>)</item>
+                <item>n. d. [<date>1875</date>], to <name>Steeman</name>: ‘<foreign xml:lang="fr"
+                        >Votre talent et votre zèle vous assurent de ma reconnaissance. Voulez-vous
+                        remercier les dames et les messieurs de leur très bonne
+                    exécution</foreign>.’ (Stargardt Cat. 565) </item>
+
+                <p><bibl>F-Pn, n.a.fr. <idno>14346</idno>, <extent>f. 38-65</extent></bibl>, is a
+                    collection of twenty letters from Galli-Marié mostly addressed to Bizet in the
+                    period <date>1873–75</date>, for example <date>21-10-1873</date>: ‘<foreign
+                        xml:lang="fr">M. Du Locle ... me parle de Carmen</foreign>.’</p>
+            </list>
+
+            <head>Documents:</head>
+
+            <list>
+                <item>The Registre des Répétitions of the Opéra-Comique for <date>1874–75</date>
+                    (F-Po) records the rehearsals for the first production. </item>
+                <item>Bizet’s contract with Choudens (Fonds Choudens) is dated<date>
+                    15-1-1875</date>. The opera was sold for <measure quantity="25000" unit="francs"
+                        >25,000</measure> francs, made up as <measure unit="francs" quantity="750"
+                        >750</measure> francs for every<num value="5"> five</num> performances up to
+                    the <num type="ordinal">30th</num> (<measure quantity="4500" unit="francs"
+                    >4500</measure> francs), then <measure quantity="1500" unit="francs"
+                    >1500</measure> francs for every<num value="10"> ten</num> performances up to
+                    the <num type="ordinal">100th</num> (<measure quantity="10500" unit="francs"
+                        >10,500</measure> francs), then <measure quantity="2000" unit="francs"
+                    >2000</measure> for every <num value="10">ten</num> performances up to the <num
+                        type="ordinal">150th</num> (<measure quantity="10000" unit="francs"
+                    >10,000</measure> francs). A receipt for <measure quantity="3000" unit="francs"
+                        >3000</measure> francs was signed by Bizet on <date>2-2-1875</date>.</item>
+            </list>
+        </div>
+
+        <div xml:id="selfBorrowing">
+            <head>Self-borrowing (from): </head>
+
+            <list type="ordered">
+                <item>Don José’s ‘<title xml:lang="fr">La fleur que tu m’as jetée</title>’ at bar
+                        <measure quantity="173" unit="bars">173</measure> of the<hi rend="italics">
+                        Duo</hi>, no. 17, is found in the key of C on p. 6 of the sketches of <title
+                        xml:lang="fr">Grisélidis</title> (see Curtiss, facsimile 21). </item>
+
+                <item>2 Micaela’s ‘<title xml:lang="fr">Je dis que rien ne m’épouvante</title>’ (no.
+                    22) is derived from Grisélidis (Pigot p. 320). Its accompaniment figure in the
+                    cellos is found in the vision scene from Act II of<title xml:lang="fr"> La Coupe
+                        du roi de Thulé</title>. </item>
+            </list>
+        </div>
+
+
+        <div xml:id="bibliography">
+            <head>Bibliography: </head>
+
+            <list>
+                <item>Pigot</item>
+                <item>Curtiss</item>
+                <item>Dean</item>
+                <item>Lacombe 7-10, 12, 58, </item>
+            </list>
+
+
+            <list>
+                <head>1875 reviews in Lesley Wright, Carmen : dossier de presse parisienne (1875),
+                    Weinsberg, 2001), including:</head>
+
+                <item>François Oswald, <title xml:lang="fr">Le Gaulois</title>,
+                    <date>6-3-1875</date></item>
+                <item>Léon Escudier, <title xml:lang="fr">L’art musical</title>, <date>11-3-1875, p.
+                        73–74</date></item>
+            </list>
+
+            <listBibl>
+                <head>Selected articles:</head>
+
+                <biblStruct><analytic>‘<title xml:lang="de">Die Komische Oper in
+                    Paris</title>’</analytic>, <monogr><title xml:lang="de">Allgemeine musikalische
+                            Zeitung</title>, <date>26-5-1875</date></monogr></biblStruct>
+                <biblStruct><author>Clément et Larousse</author>, <title xml:lang="fr">Dictionnaire
+                        Lyrique, Troisième Supplément</title>, <date>1877</date>, <biblScope>p.
+                        835–37</biblScope></biblStruct>
+                <biblStruct><analytic>‘<title>The first performance of Carmen</title>’</analytic>,
+                            <monogr><title>Musical Courier</title>, <biblScope type="volume"
+                        >27/25</biblScope> (<date>1893</date>), <biblScope type="pp">p.
+                        31–32</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>Ludovic Halévy</author>, ‘<title xml:lang="fr">La
+                            millième représentation de Carmen</title>’</analytic>,<monogr>
+                        <title xml:lang="fr">Le Théâtre</title> (<date>1-1905</date>),<biblScope> p.
+                            5–14</biblScope></monogr>
+                </biblStruct>
+                <biblStruct><author>Max Chop</author>, <title>Georges Bizet: Carmen</title>,<imprint>
+                        <pubPlace>Leipzig</pubPlace>
+                        <date>1907</date>
+                    </imprint>.</biblStruct>
+                <biblStruct><author>Hugo Daffner</author>, <title xml:lang="de">Friedrich Nietzsches
+                        Randglossen zu Bizets Carmen</title>,<imprint>
+                        <pubPlace> Regensburg</pubPlace>
+                        <date>1912</date>
+                    </imprint>.</biblStruct>
+                <biblSTruct><analytic><author>Edgar Istel</author>, ‘<title>Carmen: novel and
+                            libretto: a dramaturgical analysis</title>’</analytic>,
+                            <monogr><title>Musical Quarterly</title>, <biblScope type="volume">7
+                            </biblScope>(<date>1921</date>), <biblScope type="pp">p.
+                        493–510</biblScope></monogr></biblSTruct>
+
+                <biblStruct><analytic><author>Julien Tiersot</author>, ‘<title>Bizet and Spanish
+                            Music</title>’, (tr. Theodore Baker)</analytic>, <monogr><title>Musical
+                            Quarterly</title><biblScope type="volume"> 13</biblScope>
+                            (<date>1927</date>),<biblScope type="pp"> p. 566–81</biblScope>
+                        (originally published in French in 1925.) </monogr>
+                </biblStruct>
+                <biblStruct><author>Charles Gaudier</author>, <title xml:lang="fr">Carmen de Bizet:
+                        étude historique et critique</title>, <imprint>
+                        <pubPlace>Paris </pubPlace>
+                        <date>1922</date>
+                    </imprint>.</biblStruct>
+                <biblStruct><author>Raoul Laparra</author>, <title xml:lang="fr">Bizet et
+                    l’Espagne</title>, <imprint>
+                        <pubPlace>Paris </pubPlace>
+                        <date>1935</date>
+                    </imprint>.</biblStruct>
+                <biblStruct><analytic><author>Friedrich Herzfeld</author>, ‘<title xml:lang="de">Die
+                            Urfassung der Carmen</title>’</analytic>,<monogr>
+                        <title xml:lang="de">Allgemeine Musikzeitung</title>, <biblScope
+                            type="volume">64</biblScope> (<date>1937</date>), <biblScope type="pp"
+                            >p. 3.</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>Studer Weingartner</author>, ‘<title xml:lang="de">Die
+                            Urgestalt von Bizets Carmen</title>’</analytic>,<monogr>
+                        <title xml:lang="de">Allgemeine Musikzeitung</title>, <biblScope
+                            type="volume">64</biblScope> (<date>1937</date>), <biblScope type="pp"
+                            >p. 38–39</biblScope>.</monogr></biblStruct>
+
+                <biblStruct><analytic><author>Albert Carré</author>, '<title xml:lang="fr">La
+                            Légende de Carmen</title>'</analytic>, <monogr><title xml:lang="fr">Le
+                            Journal</title>, <date>4-10-1938</date></monogr></biblStruct>
+                <biblStruct><analytic><author>Winton Dean</author>, ‘<title>Carmen: an attempt at a
+                            true evaluation</title>’</analytic>,<monogr><title> Music
+                        Review</title>, <date>1946</date>, <biblScope>p.
+                    209–20</biblScope></monogr>.</biblStruct>
+                <biblStruct><author>Martin Cooper</author>, <title>Bizet: Carmen</title>,<imprint>
+                        <pubPlace> London</pubPlace>
+                        <date>1947</date>
+                    </imprint>.</biblStruct>
+                <biblStruct><analytic><author>Domenico de Paoli</author>, ‘<title>Bizet and his
+                            Spanish Sources</title>’</analytic>, <monogr><title>Chesterian</title>,
+                            <date>1-1948</date>, <biblScope>p. 68–70</biblScope></monogr>.</biblStruct>
+                <biblStruct><author>H. Muller</author>, <title xml:lang="ne">De opera Carmen van
+                        Georges Bizet</title>, <pubPlace>Utrecht</pubPlace>
+                    <date>1948</date>. </biblStruct>
+                <biblStruct><author>John W. Klein</author>, ‘<title>The two versions of Carmen</title>’,<monogr>
+                        <title>Musical Opinion</title>, <date>3-1949</date>, <biblScope>p.
+                        291–93</biblScope>.</monogr></biblStruct>
+                <biblStruct><author>Henri Malherbe</author>, <title>Carmen</title>, <imprint>
+                        <pubPlace>Paris</pubPlace>
+                        <date>1951</date>
+                    </imprint>.</biblStruct>
+                <biblStruct><analytic><author>E. Downes</author>, ‘<title>The First Edition of
+                            Carmen</title>’</analytic>, <monogr><title>Opera</title>, <biblScope
+                            type="volume">4</biblScope> (<date>8-11-1953</date>), <biblScope
+                            type="pp">p. 665</biblScope></monogr></biblStruct>
+                <biblStruct><title>Opera News</title>, <biblScope>complete issue</biblScope>,
+                        <date>29-3-1954</date></biblStruct>
+                <biblStruct><analytic><title>H.-L. de La Grange</title>, ‘<title>Carmen and the
+                            French Tradition</title>’</analytic>, <monogr><title>Opera News</title>,
+                            <biblScope type="volume">18 </biblScope>(<date>1954</date>), <biblScope
+                            type="pp">p. 3–7</biblScope></monogr></biblStruct>
+                <biblStruct><title>Opera News</title>, <biblScope>complete issue</biblScope>,<date>
+                        7-1-1957</date></biblStruct>
+                <biblStruct><analytic><author>J.W. Klein</author>, ‘<title>The Spoken Dialogue in
+                            Carmen</title>’</analytic>, <monogr><title>Chesterian</title>,
+                            <biblScope type="volume">33</biblScope> (<date>Spring
+                            1959</date>),<biblScope type="pp"> p. 109–13</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>Fritz Oeser</author>, ‘<title xml:lang="de">Neu
+                            entdeckte “Carmen”</title>’</analytic>,<monogr>
+                        <title>Musica</title>, <biblScope type="volume">18
+                        </biblScope>(<date>1964</date>), <biblScope type="pp">p.
+                    108–14</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>Winton Dean</author>, ‘<title>The True
+                        Carmen?</title>’</analytic>, <monogr><title>Musical Times</title>,
+                            <biblScope type="volume">106</biblScope> (<date>1965</date>), <biblScope
+                            type="pp">p. 846–55</biblScope>, <bibl>reprinted in <author>Winton
+                            Dean</author>, <title>Essays on Opera</title>, <pubPlace>Oxford
+                                </pubPlace><date>1990</date>,<biblScope type="pp"> p.
+                            281–300</biblScope></bibl></monogr></biblStruct>
+                <biblStruct><analytic><author>Rudolf Klein</author>, ‘<title xml:lang="de">Eine neue
+                            Carmen?</title>’</analytic>,<monogr>
+                        <title xml:lang="de">Österreichische Musikzeitung</title>, <biblScope
+                            type="volume">21</biblScope> (<date>1966</date>), <biblScope type="pp"
+                            >p. 380–90</biblScope>.</monogr></biblStruct>
+                <biblStruct><analytic><author>Winton Dean</author>, ‘<title>The Corruption of
+                            Carmen: or the Perils of Pseudo-Musicology</title>’</analytic>,
+                            <monogr><title>Musical Newsletter</title>, <biblScope type="volume"
+                        >3</biblScope> (<date>10-1973</date>),<biblScope type="pp"> p.
+                        7–12</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>Michel Poupet</author>: ‘<title xml:lang="fr">A propos
+                            de deux fragments de la partition originale de
+                    Carmen</title>’</analytic>, <monogr><title xml:lang="fr">Revue de
+                        musicologie</title>, <biblScope type="volume">62
+                        </biblScope>(<date>1976</date>), <biblStruct type="pp">p.
+                        139–43</biblStruct></monogr></biblStruct>
+                <biblStruct><analytic><author>Jean Gribenski</author>, ‘<title xml:lang="fr">Autour
+                            d’un fragment de la partition originale de Carmen</title>’</analytic>,
+                            <monogr><title xml:lang="fr">Revue de musicologie</title>, <biblStruct
+                            type="volume">64 </biblStruct>(<date>1978</date>),<biblStruct type="pp">
+                            p. 109–11</biblStruct></monogr></biblStruct>
+                <biblStruct><analytic><author>Lesley A. Wright</author>, ‘<title>A New Source for
+                            Carmen</title>’</analytic>, <monogr><title>19th Century Music</title>,
+                            <biblScope type="volume">2/1 </biblScope>(<date>1978</date>), <biblScope
+                            type="pp">p. 61–71</biblScope></monogr></biblStruct>
+                <biblStruct><title>Carmen: Bizet, English National Opera Guide</title>, ed.
+                        <editor>Nicholas John</editor>, <biblScope type="volume">vol. 13</biblScope>
+                        (<pubPlace>London</pubPlace>:<publisher> John Calder</publisher>,
+                    <date>1982</date>), </biblStruct>
+                <biblStruct><analytic><author>Evan Baker</author>, ‘<title>The Scene designs for the
+                            First Performances of Bizet’s Carmen</title>’</analytic>,
+                            <monogr><title>19th Century Music</title>, <biblScope type="volume"
+                        >13</biblScope> (<date>1990</date>), <biblScope type="pp">p.
+                        230–42</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>Stephen Huebner</author>, ‘<title>Carmen as “corrida
+                            de toros”</title>’</analytic>, <monogr><title>Journal of Musicological
+                            Research</title>, <biblScope type="volume">13/1–2
+                            </biblScope>(<date>1993</date>), <biblScope type="pp">p.
+                        3–29</biblScope></monogr></biblStruct>
+                <biblStruct><analytic><author>J. Parakilas</author>, ‘<title>The Soldier and the
+                            Exotic: Variations on a Theme of Racial Encounter, part
+                    I</title>’</analytic>, <monogr><title>Opera Quarterly</title>, <biblScope
+                            type="volume">10 </biblScope>(<date>1993–94</date>), <biblScope
+                            type="pp">p. 31–56</biblScope></monogr></biblStruct>
+                <biblStruct><title>L’avant-scène Opéra</title>, <biblStruct type="volume"
+                    >26</biblStruct> (<date>3/4-1980</date>), Carmen issue</biblStruct>
+                <biblStruct><author>A.D.P. Briggs</author>, ‘<title>Did Carmen come from
+                    Russia?</title>’, English National Opera programme, n. d.</biblStruct>
+                <biblStruct><analytic><author>Ralph Locke</author>, ‘<title>What Are These Women
+                            Doing in Opera?</title>’</analytic>, in <monogr><title>En travesti:
+                            Women, Gender Subversion, Opera</title>, ed. <editor>Corinne
+                        Blackmer</editor> and<editor> Patricia Juliana Smith</editor>,
+                                <imprint><pubPlace>New York</pubPlace>
+                            <date>1995</date>)</imprint>, <biblStruct>p. 59–98</biblStruct></monogr>
+                </biblStruct>
+                <biblStruct><author>Mary Dibbern</author>, <title>Carmen: A Performance
+                    Guide</title>, <imprint>
+                        <publisher>Hillsdale</publisher>
+                        <date> 2000</date>
+                    </imprint></biblStruct>
+                <biblStruct><analytic><author>Lesley A. Wright</author>, ‘<title xml:lang="fr">Une
+                            critique revisitée : réflexions sur l’accueil de Carmen à Paris en
+                        1883</title>’</analytic>, in <monogr><title>Musique , Esthétique et Société
+                            au XIXe siècle</title>, ed.<editor> Colas</editor>,
+                        <editor>Gétreau</editor> and <editor>Haine</editor>, <editor>Wavre</editor>
+                        <date>2007</date>, <biblStruct>p. 187–97</biblStruct></monogr></biblStruct>
+                <biblStruct><analytic><author>Ralph Locke</author>, ‘<title>A Broader View of
+                            Musical Exoticism</title>’</analytic>, <monogr><title>Journal of
+                            Musicology</title>
+                        <biblScope type="volume">24/4</biblScope> (<date>2007</date>)</monogr></biblStruct>
+                <biblStruct><analytic><author>Richard Langham-Smith</author>, ‘<title>Taming Two
+                            Spanish Women: Reflections on Editing Opera</title>’</analytic>, in
+                            <monogr><title>Berlioz and Debussy: Sources, Contexts and
+                        Legacies</title>, ed. <editor>Barbara l. Kelly</editor> and <editor>Kerry
+                            Murphy</editor>, <editor>Aldershot</editor>
+                        <date>2007</date>, <biblStruct>p. 83–102</biblStruct></monogr></biblStruct>
+                <biblStruct><author>James J. Fuld</author>, <title>The Book of World Famous
+                    Music</title>, <imprint>
+                        <pubPlace>New York</pubPlace>
+                        <date>1966</date>
+                    </imprint>, <biblScope>p. 476</biblScope></biblStruct>
+            </listBibl>
+        </div>
+
+
+        <div xml:id="discography">
+            <head>Discography:</head>
+            <note type="todo">to be continued </note>
+
+            <list>
+                <item>Berlin Grammophon O, Seidl-Winkler, <date>1908</date> (Destinn)</item>
+                <item>Opéra-Comique, Rühlmann, <date>1911 </date>(Mérentié)</item>
+                <item>Columbia Records, <date>1919 </date>(Anitua)</item>
+                <item>La Scala, Molajoli, <date>1928 </date>(Buades)</item>
+                <item>Opéra-Comique, Cohen, <date>1928</date></item>
+                <item>Opéra-Comique, Coppola, <date>1930 </date>(Perelli)</item>
+                <item>La Scala, Sabajno,<date> 1931</date> (Besanzoni)</item>
+                <item>Metropolitan, Hasselmans,<date> 1936</date> (Ponselle)</item>
+                <item>Metropolitan, Papi, <date>1937</date> (Ponselle)</item>
+                <item>Marseilles, Ingelbrecht, <date>1942</date></item>
+                <item>Rome Opera, Bellezza, <date>1949</date> (Stignani)</item>
+                <item>Netherlands PO, Goehr, <date>1950 </date>(Meyer)</item>
+                <item>Opéra-Comique, Cluytens, <date>1950</date> (Michel)</item>
+                <item>Opéra-Comique, Wolff, <date>1951 </date>(Juyol)</item>
+                <item>RCA Victor O, Reiner, <date>1951</date> (Stevens)</item>
+                <item>Bolshoi, Nebolsin,<date> 1952</date> (Borisenko)</item>
+                <item>Vienna SO, Karajan, <date>1954</date></item>
+                <item>La Scala, Karajan, <date>1955</date> (Simionato)</item>
+                <item>Opéra-Comique, Coppola, <date>1956</date> (Brothier)</item>
+                <item>Italian TV, Sanzogno, <date>1956</date> (video)</item>
+                <item>Rome Opera, Questa, <date>1957</date> (Simionato)</item>
+                <item>Metropolitan, Mitropoulos, <date>1957 </date>(Stevens)</item>
+                <item>Vienna Volksoper, Quadri, <date>1958</date> (Draksler)</item>
+                <item>Bolshoi, Melik-Pashayev, <date>1959</date> (Arkhipova)</item>
+                <item>Paris RTF, Beecham, <date>1959 </date>(de los Angeles)</item>
+                <item>Concerts de Paris, Le Conte, <date>1959 </date>(Rubio)</item>
+                <item>Radio Leipzig, Kegel, <date>1960</date> (Cervena)</item>
+                <item>Berlin SO, Stein, <date>1961</date> (Ludwig)</item>
+                <item>Sadler’s Wells, Davis, <date>1962</date> (Johnson)</item>
+                <item>Suisse Romande, Schippers, <date>1963 </date>(Reznik)</item>
+                <item>Bolshoi, Melik-Pachayev, <date>1963</date> (Arkhipova)</item>
+                <item>Paris Opéra, Prêtre, <date>1964</date> (Callas)</item>
+                <item>Vienna PO, Karajan, <date>1964 </date>(Price)</item>
+                <item>Vienna SO, Karajan,<date> 1967 </date>(video)</item>
+                <item>Paris Opéra, Frühbeck de Burgos, <date>1970</date> (Bumbry)</item>
+                <item>La Fenice, Maag,<date> 1971</date> (Cossotto)</item>
+                <item>Metropolitan, Bernstein, <date>1972</date> (Horne)</item>
+                <item>Berlin Opera, Maazel,<date> 1973</date> (Moffo)</item>
+                <item>LPO, Solti, <date>1976 </date>(Troyanos)</item>
+                <item>Strasbourg PO, Lombard, <date>1975</date> (Crespin)</item>
+                <item>LSO, Abbado, <date>1977</date> (Berganza)</item>
+                <item>Peking Opera, Perisson, <date>1982</date></item>
+                <item>Madrid SO, Navarro<date>, 1982</date></item>
+                <item>Paris Opéra, Karajan, <date>1982</date></item>
+                <item>Berlin PO, Karajan, <date>1983</date> (Baltsa)</item>
+                <item>French Nat O, Maazel, <date>1984</date></item>
+                <item>Fr Nat O, Ozawa,<date> 1984</date></item>
+                <item>Nat P O, Delacôte, <date>1989</date></item>
+                <item>Bordeaux Aquitaine O, Lombard, <date>1995</date></item>
+                <item>Bavarian State Opera, Sinopoli, <date>1997</date></item>
+                <item>ON de France, Maazel,<date> 2001</date> (video)</item>
+                <item>Metropolitan, Levine, <date>2001</date> (video)</item>
+                <item>Toulouse Capitole, Plasson, <date>2002</date> (Gheorghiu)</item>
+                <item>Philharmonia, Parry, <date>2002</date></item>
+                <item>LPO, Jordan, <date>2002 </date>(video)</item>
+            </list>
+
+            <list>
+                <head>Suite no. 1</head>
+                <item>LPO, Beecham, <date>1939</date></item>
+                <item>Columbia SO, Beecham, <date>1949</date></item>
+                <item>LPO, Collins, <date>1950</date></item>
+                <item>LSO, Previtali, <date>1953</date></item>
+                <item>St Louis SO, Golschmann, <date>1954</date></item>
+                <item>RPO, Beecham, <date>1957</date></item>
+                <item>Bamberg SO, Couraud, <date>1957</date></item>
+                <item>Suisse Romande O, Ansermet, <date>1958</date></item>
+                <item>Lamoureux O, Markevitch, <date>1959</date></item>
+                <item>Lamoureux O, Dorati,<date> 1959</date></item>
+                <item>Hampshire PO, Holloway, <date>1959</date></item>
+                <item>Philharmonia, Karajan, <date>1958</date></item>
+                <item>Detroit SO, Paray, <date>1957</date></item>
+                <item>Philharmonia, Galliera, <date>1959</date></item>
+                <item>Oslo PO, Grüner-Hegge, <date>1959</date></item>
+                <item>Philharmonia, Wallberg, <date>1961</date></item>
+                <item>French NRO, Beecham, <date>1961</date></item>
+                <item>Vienna State Opera, Rudel, <date>1961</date></item>
+                <item>The Hague PO, van Otterloo, <date>1963</date></item>
+                <item>New Philharmonia, Munch,<date> 1964</date></item>
+                <item>Royal Opera House O, Gibson, <date>1965</date></item>
+                <item>New Philharmonia, Munch, <date>1967</date></item>
+                <item>Berlin PO, Karajan, <date>1971</date></item>
+                <item>O de Paris, Barenboim, <date>1972</date></item>
+                <item>NYPO, Bernstein, <date>1972</date></item>
+                <item>Philharmonia Promenade O, Wallberg, <date>1974</date></item>
+                <item>National PO, Stokowski, <date>1977</date></item>
+                <item>ASMF, Marriner, <date>1979</date></item>
+                <item>St Louis SO, Slatkin, <date>1979</date></item>
+                <item>LSO, Abbado, <date>1981</date></item>
+                <item>Bamberg SO, Prêtre, <date>1986</date>
+                </item>
+                <item>Montreal SO, Dutoit, <date>1988</date></item>
+                <item>LSO, Frühbeck de Burgos, <date>1988</date></item>
+                <item>Ulster O, Tortelier, <date>1989</date></item>
+                <item>Budapest PO, Sándor, <date>1990</date></item>
+                <item>Slovak PO, Bramhall,<date> 1990</date></item>
+                <item>Cincinnati SO, López-Cobos,<date> 1990</date></item>
+                <item>Bastille O, Chung, <date>1991</date></item>
+                <item>O de Paris, Bychkov, <date>1994</date></item>
+                <item>RPO, Ermler, <date>1994</date></item>
+            </list>
+
+            <list>
+                <head>Suite no. 2</head>
+
+                <item>Lamoureux, Dorati,<date> 1959</date></item>
+                <item>Vienna State Opera, Rudel, <date>1961</date></item>
+                <item>The Hague PO, van Otterloo, <date>1963</date></item>
+                <item>New Philharmonia, Munch, <date>1967</date></item>
+                <item>NYPO, Bernstein, <date>1972</date></item>
+                <item>National PO, Stokowski, <date>1977</date></item>
+                <item>ASMF, Marriner, <date>1979</date></item>
+                <item>St Louis SO, Slatkin, <date>1979</date></item>
+                <item>Bamberg SO, Prêtre, <date>1986 </date></item>
+                <item>Montreal SO, Dutoit, <date>1988</date></item>
+                <item>Ulster O, Tortelier, <date>1989</date></item>
+                <item>Budapest PO, Sándor, <date>1990</date></item>
+                <item>Slovak PO, Bramhall, <date>1990</date></item>
+                <item>Cincinnati SO, López-Cobos, <date>1990</date></item>
+                <item>O de Paris, Bychkov, <date>1994</date></item>
+                <item>RPO, Ermler,<date> 1994</date></item>
+                <item>Ulster O, Tortelier, <date>1998</date></item>
+            </list>
+        </div>
+        <!--the tags actor, role, arranged, and composer are made up for the time being to represent tags that may be created in the future-->
+    </text>
+</TEI>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI>
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title level="a" type="main" xml:lang="fr">Adieux de l’hôtesse arabe</title>
+                <author>Georges Bizet</author>
+                <!--"composer" more appropriate here-->
+                <principal/>
+                <respStmt>
+                    <resp>Creation of schema</resp>
+                    <name>The Humanities Digital Workshop, Washington University in St Louis</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Encoder</resp>
+                    <name>Erika Deal</name>
+                </respStmt>
+                <sponsor>The Humanities Digital Workshop, Washington University in St Louis</sponsor>
+                <funder/>
+            </titleStmt>
+            <publicationStmt>
+                <idno/>
+                <authority>Bizet Internet Catalog</authority>
+                <publisher>Washington University in St Louis</publisher>
+                <distributor>
+                    <name>The Humanities Digital Workshop</name>
+                    <name>Arts &amp; Sciences Computing</name>
+                    <address>
+                        <addrLine>Campus Box 1160</addrLine>
+                        <addrLine>One Brookings Drive</addrLine>
+                        <addrLine>Saint Louis, MO 63130-4899</addrLine>
+                    </address>
+                </distributor>
+                <date>2008</date>
+                <availability>
+                    <p>Copyright © 2007 by Washington University in St. Louis, all rights reserved.
+                        Redistribution or republication in any medium, except as allowed under the
+                        Fair Use provisions of U.S. copyright law, requires express written consent
+                        from the editors and advance notification of the publisher, Washington
+                        University in St. Louis.</p>
+                </availability>
+            </publicationStmt>
+            <notesStmt> </notesStmt>
+            <sourceDesc>
+                <bibl>
+                    <title>Adieux de l’hôtesse arabe</title>
+                    <author>Hugh Macdonald</author>
+                    <date>2008</date>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <classDesc>
+                <taxonomy xml:id="lcsh">
+                    <bibl>Library of Congress Subject Headings</bibl>
+                </taxonomy>
+            </classDesc>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="26-8-2008">
+                <name>Erika Deal</name>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <title type="main" xml:lang="fr">Adieux de l’hôtesse arabe</title>
+        <title type="sub" xml:lang="fr">mélodie</title>
+
+
+        <div xml:id="contents">
+            <p><measure quantity="156" units="bars">156</measure> bars</p>
+
+            <div xml:id="instrumetnation">
+                <p>mezzo-soprano or baritone and piano, or soprano or tenor and piano</p>
+            </div>
+        </div>
+
+        <div xml:id="textSource">
+            <head> Poem:</head>
+            <p><author>Victor Hugo </author>(<date>1802–85</date>), no.<num value="24"> XXIV</num>
+                    from<title xml:lang="fr"> Les Orientales </title>(1829), dated
+                <date>24-11-1828</date>. Bizet set only the first third, fourth and seventh of
+                Hugo's eight stanzas, fashioning a refrain ('<foreign>Hélas, adieu ! beau voyageur
+                </foreign>!') of his own.</p>
+        </div>
+
+        <div xml:id="history">
+            <head>Composition:</head>
+            <p>
+                <date type="composition">late 1866</date>, for publication by Choudens.</p>
+        </div>
+
+        <div xml:id="autograph">
+            <head>Autograph score:</head>
+            <p> not known</p>
+        </div>
+
+        <div xml:id="printedTexts">
+            <div xml:id="printedScores"><head>Printed scores:</head> 
+                <listBibl>
+                    <bibl> <titlePage>A MADAME CAROLINE CARVALHO <lb/> <titlePart type="main">Adieux</titlePart> <lb/> <titlePart type="sub">DE L’HÔTESSE ARABE</titlePart><lb/>
+                        POÉSIE DE VICTOR HUGO <lb/> MUSIQUE DE <lb/> PR: 5F G. BIZET PR: 5F<lb/>
+                        1–Mezzo-Soprano ou Baryton. 2–Soprano our Ténor.<lb/> <docImprint>Paris, CHOUDENS,
+                        Editeur, Rue Saint-Honoré, 265, (pr`s l’Assomption)</docImprint>.<imprimatur> Propriété pr tous Pays</imprimatur>.</titlePage>
+                            <p> pl. no.: <idno>A.C. 1401(1) </idno>(low key),<idno> A.C. 1401(2)</idno> (high key)</p>
+                        <p>pages:<extent> t. p., blank, 1–7, blank </extent></p>
+                        <p>date: <date>1866</date></p>
+                        <p>ann.: BF, <date>2-3-1867 </date>@ 5 fr.; Choudens 1867 Catalogue @ 5 fr.</p>
+                        <p>copies: <msIdentifier><institution>F-Pn </institution><idno>L 13773</idno><note> (high key) (inscribed by Bizet)</note></msIdentifier><msIdentifier> <institution>F-Pn </institution><idno>Vm7 32671</idno> <note>(low
+                            key) (stamped <date>1866</date>)</note></msIdentifier><msIdentifier><institution> F-Pn</institution> <idno>MS.6779(1)</idno> <note>(high key)</note></msIdentifier> <msIdentifier><institution>F-Pn</institution> <idno>K.37997</idno> <note>(high key)</note></msIdentifier>
+                            <msIdentifier><institution>GB-Lbl</institution><idno> H.2476 </idno><note>(lower key) (stamped <date>18-3-1867</date>) </note></msIdentifier><msIdentifier><institution>GB-Lrcm</institution> <note>(both keys)</note></msIdentifier>
+                            <msIdentifier><institution>GB-Lbbc</institution> <note>(high key)</note></msIdentifier> <msIdentifier><institution>US-hjm</institution><note> (low key, lacks title page)</note></msIdentifier> <msIdentifier><institution>US-Duke </institution><note>(low key)</note>
+                            Stellenbosch</msIdentifier></p>
+                        <note>note: the lower key is A minor; it is not known which key is the
+                        original</note></bibl>
+
+                    <bibl>  <publisher>Choudens</publisher>, <date>1873</date>, as no.4 in <title>Vingt Mélodies (q. v.)</title>, <biblScope>p. 21–27</biblScope>, <note>in two
+                        keys</note>.</bibl>
+
+                    <bibl> <publisher>Choudens</publisher>, <note>re-issued from later addresses. D-Bsb has one. 4252/1</note>.</bibl>
+
+                    <bibl><publisher> Metzler</publisher>, <pubPlace>London</pubPlace>, pl. no. <idno>M.5722</idno>, <extent>9 p</extent>., [before <date>1881</date>],<note> as <title>The Arabian
+                        Girl, Song</title>, in English (tr. Theo: Marzials), in two keys</note>. ?<msIdentifier><institution>GB-Lbl</institution></msIdentifier>, <msIdentifier><institution>GB-Ob</institution>
+                        <note>(high key) ?</note></msIdentifier><msIdentifier><institution>GB-En</institution></msIdentifier></bibl>
+
+                    <bibl> <publisher>Metzler</publisher>, <pubPlace>London</pubPlace>, pl. no.<idno> M.5722</idno>, <extent>9 p.</extent>, [<date>1882</date>], <note>as <title>The Arabian Girl,
+                        Song</title>, in French and English (tr. Theo: Marzials), in two keys. The second issue identifies the
+                        author as Victor Hugo and restricts public performance, stated to be free in
+                        the first issue.</note>?<msIdentifier><institution>GB-Lbl</institution></msIdentifier>,
+                        <msIdentifier><institution>GB-Ob</institution> <note>(high key)(stamped <date>11-1889</date>)</note></msIdentifier>, ?<msIdentifier><institution>GB-En</institution></msIdentifier>. </bibl>
+
+                    <bibl><publisher> Ditson</publisher>,<pubPlace> Boston</pubPlace>, as <title>The Arabian Girl</title>, in the series <title>Songs and Ballads</title>
+                        from the<title> London Ballad Concerts</title>, <note>in English (tr. Theo: Marzials)</note>. <msIdentifier><institution>US-NYp</institution></msIdentifier>. </bibl>
+
+                    <bibl> <publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>, pl. no. <idno>3527</idno>, <extent>7 p.</extent>, <date>1884</date>, as <title>Arabia</title>,<note> in French and
+                        English (tr. Charlotte H. Coursen), in two keys. NUC. Four copies in
+                        WorldCat (incl.WashU)</note></bibl>
+
+                    <bibl>  <publisher>Jurgenson</publisher>, <pubPlace>Moscow</pubPlace>, pl. no. <idno>13664</idno>,<extent> 9 p.</extent>, [<date>1888</date>], <note>in French and Russian
+                        (tr. A. Gorchakova), in two keys</note>. <msIdentifier><institution>US-Wc </institution><idno>M1619 A43</idno><note> case</note></msIdentifier>. </bibl>
+
+                    <bibl> <publisher>Hansen</publisher>, <pubPlace>Copenhagen</pubPlace>, pl. no. <idno>12381</idno>,<extent> 9 p.</extent>, <date>1898</date>, <note>in Swedish, French and
+                        Danish</note>. <msIdentifier><institution>D-Bsb</institution></msIdentifier>.</bibl>
+
+                    <bibl> <publisher>Garland</publisher>, <pubPlace>New York</pubPlace>, <date>1995</date>, in <title>Romantic French Song 1830–1870</title>, ed. <editor>David
+                        Tunley</editor>, <biblScope type="volume">vol. 4</biblScope>, <biblScope type="pp">p. 129–37 </biblScope><note>(facsimile of Choudens 1866 edition)</note>.</bibl>
+                </listBibl>
+            </div>
+            <div xml:id="printedArrangements">
+                <head type="main">Printed arrangements:</head>
+
+                <head type="sub"> piano solo:</head>
+
+                <listBibl>
+                    <bibl>  <publisher>Choudens</publisher>,<date> 1886</date>, in <title>Classe supérieure du piano</title>, <biblScope type="volume">2e vol.</biblScope>, <biblScope type="pp">p. 7–12</biblScope>, as
+                        <title>Chanson arabe</title>.</bibl>
+
+                    <bibl>  <publisher>Choudens</publisher>, <date>1886</date>, no. 5 in <title>Chansons-mélodies</title>, as <title>Chanson arabe</title>. <msIdentifier><institution>F-Pn</institution>
+                        <idno>Ac.p.1822(5)</idno></msIdentifier></bibl>
+                </listBibl>
+            </div>
+        </div>
+
+
+        <div xml:id="letters">
+            <head>Letters: </head>
+            <p><date>7-1866</date>, to Galabert: ‘<foreign>Il est vrai que j’ai à composer des mélodies pour Choudens. Je
+                vous enverrai tout cela dès que ce sera publié</foreign>.’ (<bibl><author>Galabert </author><biblScope>p. 65</biblScope></bibl>) </p>
+            <p><date>7-1866</date>, to Déaddé: '<foreign>... ajoutez à cela [La Jolie Fille de Perth][à composer] trois
+                mélodies chez Choudens...</foreign>' (<bibl><author>Lacombe</author>, <biblScope>p. 360</biblScope></bibl>)</p>
+            <p><date>1867</date>, to Choudens: ‘<foreign>Vous seriez bien aimable en me donnant encore [...] Adieux de
+                l’hôtesse No 1 2 exemplaires, Adieux de l’hôtesse No 2 10 exemplaires. C’est pour
+                envoyer à Gounod, Reyer, Mme Sabatier, Mme de Grandval, Mme Carvalho, Melle Nilsson,
+                Guiraud, Faure, Lefort, Melle Wertheimber, Capoul, Mme Garcia, Mme Crépet-Garcia,
+                Michot, Achard, Mme Trélat et Meynard, et quelques amis intimes. Vous voyez que tous
+                ces exemplaires seront bien placés.</foreign>’ (copy at F-Po) </p>
+            <p>n. d., to a lady: ‘<foreign>Venez donc me chanter l’hôtesse arabe chez moi soit mardi à 2 h.
+                1/2, soit jeudi de 3 h. à 6 h. [...] Je serai enchanté de vous entendre murmurer mon
+                Ghazel favori.</foreign>’ (formerly Macnutt Collection)</p>
+        </div>
+
+        <div xml:id="dedicatee">
+            <head>Dedicatee:</head>
+            <p> Caroline Miolan-Carvalho (<date>1827–95</date>), leading soprano during the Second Empire and
+                wife of Léon Carvalho, director of the Théâtre-Lyrique. In <date>1867</date> she created the role
+                of Juliette in Gounod’s Roméo et Juliette.</p>
+        </div>
+
+        <div xml:id="discography">
+            <head>Discography:</head>
+
+            <list>
+                <item>C. Supervia, 78</item>
+                <item>Jenny Tourel, George Reeves, <date>1949</date></item>
+                <item> Irma Kolasi, n. d.</item>
+                <item> S. Couderc, <date>1955</date></item>
+                <item>Marilyn Horne, Martin Katz, <date>1973</date></item>
+                <item>Jill Gomez, John Constable, <date>1974</date></item>
+                <item> Elly Ameling, Rudolf Jansen, <date>1985</date></item>
+                <item>Felicity Lott, Graham Johnson, <date>1985</date></item>
+                <item>Barbara Hendricks, Michel Dalberto, <date>1996</date> </item>
+                <item> Cecilia Bartoli, Myung-Whun Chung, <date>1996</date></item>
+                <item>Sylvia McNair, Roger Vignoles, <date>1997</date></item>
+                <item> Ann Murray, Graham Johnson, <date>1998</date></item>
+            </list>
+        </div>
+
+        <div xml:id="bibliography">
+            <head> Bibliography: </head>
+
+            <bibl>
+                <author> Lacombe</author>
+                <biblScope>360-62, 367-68</biblScope>
+            </bibl>
+        </div>
+
+    </text>
+</TEI>
