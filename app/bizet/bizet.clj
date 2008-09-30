@@ -153,7 +153,7 @@
     (GET "/rrr" 
         (templ "Reload"
             [:pre
-                (dosync (commute entries pull-entries-from-fs))]))
+                (str (dosync (commute entries pull-entries-from-fs)))]))
 
     (GET "/*" (serve-file "public" full-path)))
     ;(ANY "/*" (page-not-found)))
