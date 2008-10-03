@@ -41,6 +41,36 @@
   <!-- default behavior is to ignore comment nodes -->
 
   <!--
+      =============
+      Search-term 
+        highlighting
+      =============
+  -->
+  <xsl:param name="search-terms"/>
+  <xsl:variable name="clean-terms" 
+        select="replace($search-terms,'[.$^*]','\\$0')"/>
+  <xsl:param name="flags">i</xsl:param>
+
+  <xsl:template match="text()">
+    <xsl:choose>
+        <xsl:when test="$search-terms">
+            <xsl:analyze-string select="." regex="{$clean-terms}" flags="{$flags}">
+              <xsl:matching-substring>
+                <span class="search-match">
+                  <xsl:value-of select="."/>
+                </span>
+              </xsl:matching-substring>
+              <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+              </xsl:non-matching-substring>
+            </xsl:analyze-string>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="."/>
+        </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <!--
 	  ============================================================
 	  Implement changes.
 	  ============================================================

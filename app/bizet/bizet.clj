@@ -73,6 +73,19 @@
 
 (load "entries.clj")
 (def htmlstyle (compile-xslt "public/bizet.xsl"))
+
+(let [replace-fn (compile-xslt "public/text-replace.xsl")]
+    (defn txt-replace
+        "Replaces instances of pat (string-representation of
+        regex) with repl (replacement string, with $N for 
+        matched groups, governed by any flags ('i' for case-
+        insensitive, 'm' for multi-line, etc.)."
+        [xml pat repl & flags]
+        (replace-fn xml 
+            {:target-pattern pat
+             :replace-pattern repl
+             :flags (or (and flags (first flags)) "")})))
+
 (dosync (commute entries pull-entries-from-fs))
 
 ;(def divids 
@@ -96,7 +109,9 @@
             (unordered-list 
                 (map 
                     #(link-to (str "/entry/" (:id %)) 
-                        (format "%s (%s)" (:title %) (:comp-date %)))
+                        (format "%s" (:title %)) 
+                        (and (:comp-date %) 
+                             (format " (%s)" (:comp-date %))))
                     (vals @entries)))
             [:h2 "Divisions"]
             (unordered-list 
@@ -135,12 +150,15 @@
     (GET "/search/in/"
         (let [tag   (param :tag)
               terms (param :terms)
-              srch  (compile-xpath (format "//%s[contains(.,'%s')]" tag (h terms)))
+              srch  (compile-xpath (format "//%s[matches(.,'%s','i')]" tag (h terms)))
               results (for [e (vals @entries)]
                         {:entry e :hits (srch (:doc e))})
               results (filter :hits results)]
             (templ "Search Results"
-                [:h1 (format "Results for \"%s\" in &lt;%s&gt;" terms tag)]
+                [:h1 (format "Results for \"%s\" in &lt;%s&gt;: %d" 
+                        terms 
+                        tag 
+                        (count (mapcat :hits results)))]
                 (if results
                     (str-map
                         (fn [result]
@@ -149,7 +167,8 @@
                                     (link-to (format "/entry/%s" (:id e)) (:title e))]
                                 (str-map
                                     #(html
-                                        [:div.return-chunk (htmlstyle %)]
+                                        [:div.return-chunk 
+                                            (htmlstyle % {:search-terms terms})]
                                         [:div.to-entry to-entry])
                                     (:hits result))))
                         results)
@@ -158,7 +177,12 @@
     (GET "/rrr" 
         (templ "Reload"
             [:pre
-                (dosync (commute entries pull-entries-from-fs))]))
-
-    (GET "/*" (serve-file "public" full-path)))
-    ;(ANY "/*" (page-not-found)))
+                (str-map
+                    (fn [[k,v]] 
+                        (let [m (meta v)]
+                            (format "%-30s: %tc\n"
+                                (:file m)
+                                (:modified m)))) 
+                    (dosync (commute entries pull-entries-from-fs)))]))
+    (GET "/*" (or (serve-file "public" full-path) :next))
+    (ANY "/*" (page-not-found)))

@@ -1,6 +1,6 @@
 (in-ns 'bizet)
 
-(defstruct entry :id :title :comp-date :divids :tags :doc :file :modified)
+(defstruct entry :id :title :comp-date :divids :tags :doc)
 
 (def mod (memfn lastModified))
 
@@ -26,15 +26,16 @@
         "Builds an individual entry struct."
         [file]
         (let [doc (compile-file (str file))]
-            (struct entry
-                ((:id entry-fns) doc)
-                ((:title entry-fns) doc)
-                ((:comp-date entry-fns) doc)
-                ((:divids entry-fns) doc)
-                ((:tags entry-fns) doc)
-                ((:doc entry-fns) doc)
-                file                 ; special cases (file metadata)
-                (mod file))))) 
+            (with-meta
+                (struct entry
+                    ((:id entry-fns) doc)
+                    ((:title entry-fns) doc)
+                    ((:comp-date entry-fns) doc)
+                    ((:divids entry-fns) doc)
+                    ((:tags entry-fns) doc)
+                    ((:doc entry-fns) doc))
+                    ; metadata
+                    {:file file :modified (mod file)})))) 
             
 
 (def #^{:private true} 
@@ -53,10 +54,8 @@
     [hashmap form]
     `(apply hash-map
         (mapcat
-            (fn ~'[kv]
-                (let ~'[k (key kv)    
-                      v (val kv)]
-                      ~form))
+            (fn ~'[[k,v]]
+                ~form)
             (seq ~hashmap))))
 
 (defn pull-entries-from-fs
@@ -64,12 +63,12 @@
     filesystem; if entry already exists for file & file hasn't
     been modified, keeps existing entry & doesn't read file."
     [entries]
-    (let [e-with-file (transform-keyval entries [(:file v) v])
+    (let [e-with-file (transform-keyval entries [(:file (meta v)) v])
           mod (memfn lastModified)]
         (apply conj {}
             (map
                 #(let [e (find e-with-file %)]
-                    (if (and e (>= (:modified (val e)) (mod %)))
+                    (if (and e (>= (:modified (meta (val e))) (mod %)))
                         [(:id (val e)) (val e)]
                         (let [new-entry (entry-builder %)]
                             [(:id new-entry) new-entry])))
@@ -91,7 +90,3 @@
 ;    the filesystem to check for changes to existing, or
 ;    new, files."
 ;    [])
-
-;; Entries try 2
-
-        

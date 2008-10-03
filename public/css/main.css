@@ -248,3 +248,8 @@ div.return-chunk
 {
   content: " \2197";
 }
+
+.search-match
+{
+  border-bottom: 2px solid red;
+}

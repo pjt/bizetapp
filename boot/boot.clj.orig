@@ -4,14 +4,15 @@
 ;; An example boot setup is included below:
 (use 'compojure.jetty)
 
-;; Load app/example/example.clj
-(use 'example)
+;; Load app/... code
+(require 'bizet)
 
 ;; Define a new HTTP server on port 8080, with the hello-world servlet
 ;; defined in app/example.clj
 (defserver server
   {:port 8080}
-  "/*" example-servlet)
+  ;"/*" example/hello-world)
+  "/*" bizet/bizetapp)
 
 ;; Start the server
 (start server)
