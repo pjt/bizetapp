@@ -1,5 +1,7 @@
 (ns bizet
-    (:use (compojure html http str-utils) saxon))
+    (:use (compojure html http str-utils) 
+          (clojure.contrib str-utils)
+          saxon))
 
 (defn set-count
     "Reduces collection to a hash whose keys are the unique items
@@ -68,6 +70,16 @@
     "Makes first character of string uppercase."
     [#^String s]
     (apply str (upcase (first s)) (rest s)))
+
+(defn combo-if-vec
+    "Concatenates vector items, if arg is vector;
+    otherwise returns string argument. Takes optional
+    separator argument."
+    ([arg] (combo-if-vec " " arg))
+    ([sep arg]
+        (if (vector? arg)
+            (str-join sep arg)
+            arg)))
 
 ;; Docs
 
@@ -148,8 +160,8 @@
         (templ "Search"
             [:p "Search not yet implemented."]))
     (GET "/search/in/"
-        (let [tag   (param :tag)
-              terms (param :terms)
+        (let [tag   (combo-if-vec (params :tag))
+              terms (combo-if-vec (params :terms))
               srch  (compile-xpath (format "//%s[matches(.,'%s','i')]" tag (h terms)))
               results (for [e (vals @entries)]
                         {:entry e :hits (srch (:doc e))})
