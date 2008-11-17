@@ -9,14 +9,11 @@
     item appears. Hash is sorted by number, descending."
     [coll]
     (sort-by
-        #(val %)                        ; grab val of hash item
+        val                             ; grab val of hash item
         (fn [x y] (- (compare x y)))    ; descending order
         (reduce
             (fn [accum item]
-                (merge-with 
-                    +
-                    accum
-                    {item 1}))
+                (assoc accum item (inc (accum item 0))))
             {} 
             coll)))
 
@@ -71,32 +68,30 @@
     [#^String s]
     (apply str (upcase (first s)) (rest s)))
 
-(defn combo-if-vec
-    "Concatenates vector items, if arg is vector;
-    otherwise returns string argument. Takes optional
-    separator argument."
-    ([arg] (combo-if-vec " " arg))
+(defn cat-if-vec
+    "Concatenates vector items to string, if arg is vector; 
+    otherwise returns argument. Takes optional separator 
+    argument."
+    ([arg] (cat-if-vec " " arg))
     ([sep arg]
-        (if (vector? arg)
-            (str-join sep arg)
-            arg)))
+        (let [f (if (vector? arg)
+                    (partial str-join sep)
+                    identity)]
+            (f arg))))
+
+(defn first-if-vec
+    "Returns first item in vector, if arg is vector; 
+    otherwise returns argument."
+    [arg]
+        (let [f (if (vector? arg)
+                    first
+                    identity)]
+            (f arg)))
 
 ;; Docs
 
 (load "entries.clj")
 (def htmlstyle (compile-xslt "public/bizet.xsl"))
-
-(let [replace-fn (compile-xslt "public/text-replace.xsl")]
-    (defn txt-replace
-        "Replaces instances of pat (string-representation of
-        regex) with repl (replacement string, with $N for 
-        matched groups, governed by any flags ('i' for case-
-        insensitive, 'm' for multi-line, etc.)."
-        [xml pat repl & flags]
-        (replace-fn xml 
-            {:target-pattern pat
-             :replace-pattern repl
-             :flags (or (and flags (first flags)) "")})))
 
 (dosync (commute entries pull-entries-from-fs))
 
@@ -134,9 +129,8 @@
             [:h2 "Search by Tag"]
             (form-to [GET "/search/in/"]
                 [:p "Search in "
-                    [:select {:name "tag"} 
-                        (select-options 
-                            (sort (set (mapcat :tags (vals @entries)))))]
+                    (drop-down :tag
+                        (sort (set (mapcat :tags (vals @entries)))))
                     "with " (text-field :terms)
                     (submit-button "Search")])))
     (GET "/entry/:id" 
@@ -160,8 +154,8 @@
         (templ "Search"
             [:p "Search not yet implemented."]))
     (GET "/search/in/"
-        (let [tag   (combo-if-vec (params :tag))
-              terms (combo-if-vec (params :terms))
+        (let [tag   (first-if-vec (params :tag))
+              terms (cat-if-vec (params :terms))
               srch  (compile-xpath (format "//%s[matches(.,'%s','i')]" tag (h terms)))
               results (for [e (vals @entries)]
                         {:entry e :hits (srch (:doc e))})
