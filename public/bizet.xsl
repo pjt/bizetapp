@@ -40,7 +40,8 @@
   <!-- default behavior is to copy text nodes -->
   <!-- default behavior is to ignore comment nodes -->
 
-  <!--
+
+ <!--
       =============
       Search-term 
         highlighting
@@ -70,6 +71,7 @@
         </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+
   <!--
 	  ============================================================
 	  Implement changes.
@@ -85,25 +87,13 @@
 	</p>
   </xsl:template>
   <xsl:template match="tei:list[@type='unordered']|tei:list | list">
-    <xsl:if test="head | tei:head">
-        <span class="head">
-          <xsl:apply-templates select="head/@*|tei:head/@*"/>
-          <xsl:value-of select="head | tei:head"/>
-        </span>
-    </xsl:if>
-	<ul>
+	<ul style="list-style-type:none">
 	  <xsl:apply-templates select="@*"/>
 	  <xsl:apply-templates/>
 	</ul>
   </xsl:template>
   <xsl:template match="tei:list[@type='ordered'] | list[@type='ordered']">
-    <xsl:if test="head | tei:head">
-        <span class="head">
-          <xsl:apply-templates select="head/@*|tei:head/@*"/>
-          <xsl:value-of select="head | tei:head"/>
-        </span>
-    </xsl:if>
-	<ol>
+	<ol style="list-style-type:I">
 	  <xsl:apply-templates select="@*"/>
 	  <xsl:apply-templates/>
 	</ol>
@@ -145,9 +135,9 @@
 	<xsl:apply-templates/>
   </xsl:template>
   <xsl:template match="tei:lb | lb">
-	<br>
+	<p>
 	  <xsl:apply-templates/>
-	</br>
+	</p>
   </xsl:template>
   <xsl:template match="tei:ref">
 	<a>
@@ -225,7 +215,7 @@
 		</xsl:element>
 	  </xsl:when>
 	  <xsl:when test="//div">
-		<xsl:variable name="level" select="string(count(ancestor::tei:div) + 1)"/>
+		<xsl:variable name="level" select="string(count(ancestor::div) + 1)"/>
 		<xsl:element name="{concat('h', $level)}">
 		  <xsl:apply-templates select="@*"/>
 		  <xsl:apply-templates/>
@@ -241,10 +231,17 @@
 	</xsl:choose>
   </xsl:template>
 
-  <!-- exlude list heads -->
-  <xsl:template match="tei:list/tei:head | list/head"/>
+	<!-- do letters -->
+	<xsl:template match="div[@xml:id='letters']//cit">
+		<p class="letter"><xsl:apply-templates/></p>
+		
+	</xsl:template>
+	
+	<xsl:template match="div[@xml:id='letters']//cit/date">
+		<strong><xsl:apply-templates/></strong>
+	</xsl:template>
 
-  <!-- do tables -->
+<!-- do tables -->
   <xsl:template match="tei:table | table">
 	<table>
 	  <xsl:apply-templates select="@*"/>
@@ -315,13 +312,11 @@
   <!-- msContents -->
   <xsl:template match="tei:msContents | msContents">
     <div class="{local-name(.)}">
-      <xsl:if test="tei:head[1] | head[1]">
-        <strong><xsl:value-of select="tei:head[1] | head[1]"/></strong>
-      </xsl:if>
-      <ul>
-          <xsl:apply-templates select="@*"/>
-          <xsl:apply-templates/>
-      </ul>
+      <strong><xsl:value-of select="tei:head[1] | head[1]"/></strong>
+        <ul>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates/>
+        </ul>
     </div>
   </xsl:template>
   <xsl:template match="tei:msItem | msItem">
@@ -337,6 +332,18 @@
       <br/>
     </span>
   </xsl:template>
+
+<!--titlePage-->
+
+<xsl:template match="tei:floatingText | floatingText">
+	<center>
+		<xsl:apply-templates select="//titlePage"/>
+	</center>
+</xsl:template>
+	
+<xsl:template match="//titlePage">
+	<em><xsl:apply-templates></xsl:apply-templates></em>
+</xsl:template>
 
   <!-- 
        TODO
