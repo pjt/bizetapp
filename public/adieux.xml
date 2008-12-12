@@ -66,70 +66,88 @@
         <title type="main" xml:lang="fr">Adieux à Suzon</title>
         <title type="sub" xml:lang="fr"> mélodie</title>
 
-        <div xml:id="contents">
-            <p> [Incipit] <measure quantity="210" units="bars">210 </measure>bars</p>
+        <div xml:id="summary">
+            <div xml:id="contents">
+                <p> [Incipit] <measure quantity="210" units="bars">210 </measure>bars</p>
 
-            <p>high key is D, low key is unknown</p>
-
-
+                <p>high key is D, low key is unknown</p>
+            </div>
             <div xml:id="instrumentation">
                 <p>tenor or soprano and piano baritone or contralto and piano</p>
             </div>
+
+
+
+            <div xml:id="composition">
+                <head>Poem:</head><p> by <author>Alfred de Musset</author> (<date>1810–57</date>),
+                        <title xml:lang="fr">Adieux à Suzon</title>, first published in the <title
+                        xml:lang="fr">Revue de Paris</title> in <date>May 1852</date> and collected
+                    in the <date>1852</date> edition of his <title xml:lang="fr">Poésies
+                    nouvelles</title>. ‘Suzon’ was the daughter of the préfet of the Vosges, M. de
+                    la Bergerie, when de Musset was visiting in <date>1845</date></p>.
+                    <head>Composition:</head>
+                <p><date type="composition">September 1866 </date>for publication by Heugel in
+                        <title xml:lang="fr">Feuilles d’album</title>. </p>
+                <head>Dedicatee:</head>
+                <p> Hermann Léon (<date>1814–1858</date>) was a baritone, who sang at the Opéra and
+                    the Opéra-Comique, but the dedication must be to his son, whose career is
+                    unknown.</p>
+            </div>
         </div>
-
-        <div xml:id="textSource">
-            <head>Poem:</head><p> by <author>Alfred de Musset</author> (<date>1810–57</date>), <title xml:lang="fr">Adieux à Suzon</title>, first published in
-                the <title xml:lang="fr">Revue de Paris</title> in <date>May 1852</date> and collected in the <date>1852</date> edition of his <title xml:lang="fr">Poésies
-                nouvelles</title>. ‘Suzon’ was the daughter of the préfet of the Vosges, M. de la Bergerie,
-                when de Musset was visiting in <date>1845</date></p>. </div>
-
-        <div xml:id="history">
-            <head>Composition:</head>
-            <p><date type="composition">September 1866 </date>for publication by Heugel in <title xml:lang="fr">Feuilles d’album</title>. </p>
-        </div>
-
-        <div>
+        <div xml:id="autograph">
             <head>Autograph score: </head>
             <p>not known</p>
         </div>
 
-        <div xml:id="printedTexts">
+        <div xml:id="publication">
             <head>Printed scores:</head>
 
             <listBibl>
-                <bibl> <publisher>Heugel</publisher>,<pubPlace> rue Vivienne 2bis</pubPlace>, pl. no. <idno>H. 3367(1)</idno> (high),<idno> H. 3367(2)</idno> (low), <extent>9
-                    p</extent>., <date>1867</date>,<note> as no. 2 of Feuilles d’album (q. v.).This song
-                    was sold separately @ 6 fr</note>. Copies: <msIdentifier><institution>F-Pn</institution> <idno>Vm7 8275(2) </idno>(high
-                    key)</msIdentifier>, <msIdentifier><institution>GB-Lbl </institution><idno>H.2476</idno> (high key)</msIdentifier>, <msIdentifier><institution>US-Stu (low) key)</institution></msIdentifier>, <msIdentifier><institution>US-Duke (low key)</institution></msIdentifier>.  </bibl>
+                <bibl>
+                    <publisher>Heugel</publisher>,<pubPlace> rue Vivienne 2bis</pubPlace>, pl. no.
+                        <idno>H. 3367(1)</idno> (high),<idno> H. 3367(2)</idno> (low), <extent>9
+                    p</extent>., <date>1867</date>,<note> as no. 2 of Feuilles d’album (q. v.).This
+                        song was sold separately @ 6 fr</note>. Copies: F-Pn Vm7 8275(2) (high key),
+                    GB-Lbl H.2476 (high key), US-Stu (low) key), US-Duke (low key). This song was
+                    sold separately @ 6 fr. . </bibl>
 
-                <bibl> <publisher>Heugel</publisher>, reprinted<date> c. 1922</date>. <msIdentifier><institution>US-Wc</institution> (high key)</msIdentifier>.</bibl>
+                <bibl>
+                    <publisher>Heugel</publisher>, reprinted<date> c. 1922</date>. US-Wc (high
+                    key)..</bibl>
 
-                <bibl> <publisher>Garland</publisher>, <pubPlace>New York</pubPlace>, <date>1995</date>, in <title>Romantic French Song 1830–1870</title>, ed. <editor>David
-                    Tunley</editor>, <biblScope type="volume">vol. 4</biblScope>, <biblScope type="pp">p. 228–35</biblScope> (facsimile of Heugel edition).</bibl>
+                <bibl>
+                    <publisher>Garland</publisher>, <pubPlace>New York</pubPlace>,
+                    <date>1995</date>, in <title>Romantic French Song 1830–1870</title>, ed.
+                        <editor>David Tunley</editor>, <biblScope type="volume">vol. 4</biblScope>,
+                        <biblScope type="pp">p. 228–35</biblScope> (facsimile of Heugel
+                edition).</bibl>
             </listBibl>
         </div>
 
-        <div xml:id="dedicatee">
-            <head>Dedicatee:</head>
-            <p> Hermann Léon (<date>1814–1858</date>) was a baritone, who sang at the Opéra and the
-                Opéra-Comique, but the dedication must be to his son, whose career is unknown.</p>
-        </div>
 
-        <div xml:id="letters">
-            <head>Letter:</head>
-            <p><date>9-1866</date>, to Galabert: ‘<foreign>Je viens de faire au galop six mélodies pour Heugel. Je crois
-                que vous n’en serez pas mécontent. J’ai bien choisi mes paroles: [...] Je n’ai pas
-                supprimé une strophe, j’ai tout mis. Ce n’est pas aux musiciens à mutiler les
-                poètes.</foreign>’ (<bibl><author>Galabert</author>, <biblScope>p. 77</biblScope></bibl>).</p>
-        </div>
 
-        <div xml:id="bibliography">
-            <head>Bibliography: </head>
 
-            <bibl>
-                <author>Lacombe</author>
-                <biblScope>364-5</biblScope>
-            </bibl>
+
+        <div xml:id="references">
+            <div xml:id="letters">
+                <head>Letter:</head>
+                <cit><date>9-1866</date>, to <name>Galabert</name>: ‘<quote>Je viens de faire au galop six
+                        mélodies pour Heugel. Je crois que vous n’en serez pas mécontent. J’ai bien
+                        choisi mes paroles: [...] Je n’ai pas supprimé une strophe, j’ai tout mis.
+                        Ce n’est pas aux musiciens à mutiler les poètes.</quote>’
+                            (<bibl><author>Galabert</author>, <biblScope>p.
+                77</biblScope></bibl>).</cit>
+            </div>
+
+
+            <div xml:id="bibliography">
+                <head>Bibliography: </head>
+
+                <bibl>
+                    <author>Lacombe</author>
+                    <biblScope>364-5</biblScope>
+                </bibl>
+            </div>
         </div>
 
     </text>

@@ -66,8 +66,8 @@
         <title xml:lang="fr" type="main">Jeux d’enfants</title>
         <title type="sub">suite</title>
         <!--how to distinguish category of composition?-->
-        <div xml:id="contents">
-            <list type="ordered">
+        <div xml:id="summary">
+            <div xml:id="contents"><list type="ordered">
                 <item>
                     <title xml:lang="fr">L’Escarpolette- Rêverie</title>, <measure quantity="62"
                         unit="bars">62</measure> bars</item>
@@ -107,18 +107,34 @@
                 <item>
                     <title xml:lang="fr">Le Bal - Galop</title>, <measure quantity="161" unit="bars"
                         >161</measure> bars</item>
-            </list>
+            </list></div>
             <div xml:id="instrumentation">
                 <p>piano duet</p>
             </div>
-        </div>
-        <div xml:id="history">
+        
+        <div xml:id="composition">
             <head>Composition:</head>
             <date type="composition">1871</date>. <p>There were originally ten pieces in the
                 sequence 4, 3, 2, 1, 5, 6, 9, 10, 11, 12. Nos 7 and 8 were then added at the end
                 before the final order was arrived at. The original titles of nos 2 and 6 were
                     <title xml:lang="fr">La Toupie d’Allemagne</title> and <title xml:lang="fr">Les
-                    Soldats de plomb</title>.</p></div>
+                    Soldats de plomb</title>.</p>
+       
+            <head>Dedicatees: </head>
+            <p>Marguerite de Beaulieu was the daughter of Geneviève’s cousin, Mme de Beaulieu; Fanny
+                Gouin was the daughter of Geneviève’s friends the Gouins.</p>
+        
+        
+            <head>Self-borrowing (from): </head>
+            <p>No. 6 is derived from no. 19 (<title xml:lang="fr">Marche et récit</title>) of
+                <title>Ivan IV</title>, omitting bars 1–2 and rewriting the middle section and
+                the end. This was in turn orchestrated for the <title xml:lang="fr">Jeux
+                    d’enfants</title> suite in C minor. </p>
+        
+        <head>Opus no.:</head> 22. A collette in the autograph of no. 4 suggests
+            that Bizet once intended this to be op. 26.
+        
+            <head>Note:</head> The first bar of no. 8 is silent.</div></div>
         <div xml:id="autograph">
 
             <head>Autograph score:</head>
@@ -221,41 +237,43 @@
 
             <note type="todo">2 pp. WHICH???in facsimile in the modern edition (1990).</note>
         </div>
-        <div xml:id="printedTexts">
+        <div xml:id="publication"><div xml:id="printedOriginal">
             <head> Printed scores:</head>
-
+<floatingText>
+    <front><titlePage xml:lang="fr"> A Mesdemoiselles<lb/> Marguerite de BEAULIEU et Fanny GOUIN<lb/>
+        <docTitle><titlePart type="main"> Jeux<lb/> d’ENFANTS<lb/>
+        </titlePart>
+        <titlePart type="sub"> 12 PIÈCES<lb/> POUR<lb/> Piano à 4 mains<lb/>
+        </titlePart></docTitle> PAR<lb/> GEORGES BIZET<lb/> OP. 22. <lb/> 1 L’Escarpolette,
+        Reverie 5f<lb/> 2 La Toupie, Impromptu 5f<lb/> 3 La Poupée, Berceuse 5f<lb/>
+        4 Les Chevaux de bois - Scherzo 6f <lb/> 5 Le Volant - Fantaisie 5f<lb/> 6
+        Trompette et Tambour - Marche 6f<lb/> 7 Les Bulles de Savon - Rondino
+        5f<lb/> 8 Les Quatre Coins - Esquisse 6f<lb/> 9 Colin-Maillard - Nocturne
+        5f<lb/> 10 Saute-Mouton - Caprice 5f<lb/> 11 Petit mari, Petite femme - Duo
+        5f<lb/> 12 Le Bal - Galop 6f<lb/> Les 12 Nos réunis 25F.<lb/> Les Nos 2, 3,
+        6, 11, 12, sont exécutés comme Suite d’Orchestre<lb/>
+        <docImprint>
+            <pubPlace>Paris</pubPlace>,<publisher> Maison G. FLAXLAND</publisher><lb/>
+            <publisher> DURAND, SCHŒNEWERK &amp; Cie<lb/> Successeurs<lb/>
+            </publisher>
+            <pubPlace>4, Place de la Madeleine, 4</pubPlace>
+            <lb/>
+        </docImprint> Propriété pr tous pays<lb/>
+    </titlePage></front><body><gap/></body>
+</floatingText>
             <listBibl>
                 <bibl>
-                    <titlePage xml:lang="fr"> A Mesdemoiselles<lb/> Marguerite de BEAULIEU et Fanny GOUIN<lb/>
-                        <titlePart type="main"> Jeux<lb/> d’ENFANTS<lb/>
-                        </titlePart>
-                        <titlePart type="sub"> 12 PIÈCES<lb/> POUR<lb/> Piano à 4 mains<lb/>
-                        </titlePart> PAR<lb/> GEORGES BIZET<lb/> OP. 22. <lb/> 1 L’Escarpolette,
-                        Reverie 5f<lb/> 2 La Toupie, Impromptu 5f<lb/> 3 La Poupée, Berceuse 5f<lb/>
-                        4 Les Chevaux de bois - Scherzo 6f <lb/> 5 Le Volant - Fantaisie 5f<lb/> 6
-                        Trompette et Tambour - Marche 6f<lb/> 7 Les Bulles de Savon - Rondino
-                        5f<lb/> 8 Les Quatre Coins - Esquisse 6f<lb/> 9 Colin-Maillard - Nocturne
-                        5f<lb/> 10 Saute-Mouton - Caprice 5f<lb/> 11 Petit mari, Petite femme - Duo
-                        5f<lb/> 12 Le Bal - Galop 6f<lb/> Les 12 Nos réunis 25F.<lb/> Les Nos 2, 3,
-                        6, 11, 12, sont exécutés comme Suite d’Orchestre<lb/>
-                        <docmprint>
-                            <publace>Paris</publace>,<publisher> Maison G. FLAXLAND</publisher><lb/>
-                            <publisher> DURAND, SCHŒNEWERK &amp; Cie<lb/> Successeurs<lb/>
-                            </publisher>
-                            <pubPlace>4, Place de la Madeleine, 4</pubPlace>
-                            <lb/>
-                        </docmprint> Propriété pr tous pays<lb/>
-                    </titlePage> pl. no: <idno>D.S. et Cie 1365 (1)–(12) </idno><lb/> pages:
+                     pl. no: <idno>D.S. et Cie 1365 (1)–(12) </idno><lb/> pages:
                         <extent>t. p., 2–63, blank</extent><lb/> ann: BF, 20-4-1872 @ 25 fr. for the
                     set, and as separate pieces<lb/> date: <date>1872 </date>(sold to Durand on
                         <date>28-9-1871</date>) <lb/> copies: 
-                        <msIdentifier><institution>F-Pn</institution><idno> X.579 </idno></msIdentifier>
-                        <msIdentifier><institution> F-Pn </institution><idno>Ac.p.1831(1-12)</idno><note> (stamped <date>1872</date>)</note></msIdentifier>
-                        <msIdentifier><institution>F-Po </institution><idno>A 836b</idno></msIdentifier>
-                        <msIdentifier><institution>D-Mbs</institution></msIdentifier>
-                        <msIdentifier><institution>GB-Lbl</institution><note> (stamped <date>19-7-1872</date>)</note></msIdentifier>
-                        <msIdentifier><authority>Morssen Catalogue</authority>(<date>1962</date>) <note>(inscribed by Bizet)</note></msIdentifier>
-                        <note> note: All twelve pieces were issued separately, priced as shown on
+                    F-Pn X.579 
+                    F-Pn Ac.p.1831(1-12) (stamped 1872)
+                    F-Po A 836b
+                    D-Mbs
+                    GB-Lbl (stamped 19-7-1872)
+                    Morssen Catalogue(1962) (inscribed by Bizet)
+                    <note> note: All twelve pieces were issued separately, priced as shown on
                             the t. p.</note>
                     
                 </bibl>
@@ -264,12 +282,12 @@
                     <p>Reissued by <publisher>A. Durand &amp; Fils</publisher>, pl. no. <idno>D.
                             et F. 1365 (1)–(12)</idno>, with increased prices, after
                         <date>1891</date>, and by <publisher>Durand &amp; Cie</publisher> after
-                            <date>1909</date>. <msIdentifier><institution>GB-En</institution></msIdentifier>, <msIdentifier><institution>US-Wc</institution></msIdentifier>, <msIdentifier><institution>US-CAe</institution></msIdentifier>, <msIdentifier><institution>HJM</institution></msIdentifier>. <msIdentifier><institution>D-Bsb</institution></msIdentifier></p>
+                        <date>1909</date>. GB-En, US-Wc, US-CAe, HJM. D-Bsb</p>
                 </bibl>
 
                 <bibl>
                     <publisher>Hug</publisher>, <publace>Leipzig</publace>, <date>1906</date>. ed.
-                        <editor>Adolf Ruthardt</editor>. <msIdentifier><institution>D-Bsb</institution></msIdentifier></bibl>
+                        <editor>Adolf Ruthardt</editor>. D-Bsb</bibl>
 
                 <bibl>
                     <p><publisher>Hug</publisher>, <pubPlace>Leipzig</pubPlace>, pl. no.
@@ -290,7 +308,7 @@
                 <bibl>
                     <p><publisher>Schirmer</publisher>, <pubPlace>New York</pubPlace>,<extent> 63
                         p.</extent>, <date>1977</date>, ed. <editor>David Goldberger.</editor>
-                        <msIdentifier><institution>US-NYp</institution></msIdentifier>.</p>
+                        US-NYp.</p>
                 </bibl>
 
                 <bibl>
@@ -321,7 +339,7 @@
                         <publisher>Durand, Schoenewerk</publisher>, pl. no. <idno>D.S. &amp; Cie
                             3438–3441</idno>, 3+3+3+5 p., <date>1885</date>, as <title
                             rend="italics">4 morceaux pour piano </title><note>(nos. 3, 2, 11 and 12)</note>.
-                        <msIdentifier><institution>GB-Lbl</institution></msIdentifier>, <msIdentifier><institution>US-Wc.</institution> <idno>F-Po (A 836c)</idno> <note>(no. 2)</note></msIdentifier>; <msIdentifier><institution>CH-Bsacher</institution> <note>(no.2)</note></msIdentifier> <msIdentifier><institution>GB-Cu</institution></msIdentifier></item>
+                        GB-Lbl, US-Wc.  F-Po (A 836c) (no. 2); CH-Bsacher (no.2) GB-Cu</item>
 
                     <item>
                         <publisher>Hatzfeld</publisher>,<pubPlace> Leipzig</pubPlace>, pl. no.
@@ -330,16 +348,16 @@
 
                     <item>
                         <publisher>Rühle</publisher>, <pubPlace>Leipzig</pubPlace>, c.<date>
-                        1908</date><note> (nos. 2, 3, 11, 12)</note>. <msIdentifier><institution>CH-Bsacher</institution></msIdentifier>.</item>
+                        1908</date><note> (nos. 2, 3, 11, 12)</note>. CH-Bsacher.</item>
 
                     <item>
                         <publisher>Durand &amp; Cie</publisher>, pl. no. <idno>D. &amp; F.
                             13.540</idno>, <extent>44 p</extent>., <date>1952</date>,<note> arr. Lucien
-                        Garban. The complete set of twelve</note>. <msIdentifier><institution>US-STLhjm</institution></msIdentifier>.</item>
+                        Garban. The complete set of twelve</note>. US-STLhjm.</item>
                 </listBibl>
             </div>
-        </div>
-        <div xml:id="performances">
+        </div></div>
+        <div xml:id="references"><div xml:id="performances">
             <head>Performances: </head>
 
             <p> Boris Kochno’s ballet <title xml:lang="fr">Jeux d’enfants</title> with choreography
@@ -351,13 +369,13 @@
                     <date>22-11-1955</date>. Nos 6, 3, 11 and 12 were later (<date>30-7-1975</date>)
                 recast as a ballet entitled <title>The Steadfast Tin Soldier</title>.</p>
         </div>
-        <div xml:id="documents"><head> Documents: </head><p> Late <date>1871</date>, to
-                    <name>Lacombe</name>: ‘<foreign xml:lang="fr">Pasdeloup rejouera, cet hiver, ma
+        <div xml:id="documents"><head> Documents: </head><cit> Late <date>1871</date>, to
+                    <name>Lacombe</name>: ‘<quote xml:lang="fr">Pasdeloup rejouera, cet hiver, ma
                     symphonie et probablement aussi mes petites suites d’orchestre en cinq morceaux.
                     – Ces morceaux, qui sont de simples esquisses, sont accompagnés de cinq autres.
                     Durand (Flaxland) m’a acheté le recueil qui sera intitulé: <title>Jeux d’enfants
-                        !</title>...</foreign>
-            </p>
+                        !</title>...</quote>
+            
             <foreign xml:lang="fr">
                 <lb>Dix morceaux à quatre mains.</lb>
                 <lb>1 Les Chevaux de bois Scherzo</lb>
@@ -371,37 +389,22 @@
                 <lb> 9 Petit Mari – Petite Femme Duo </lb>
                 <lb>10 Le Bal Galop </lb> La suite d’orchestre est composée des nos 1, 2, 3, 9 et
                 10, dont j’ai supprimé les titres trop enfantins.</foreign>’
-                (<bibl><author>Imbert</author>, p. <pp>192</pp></bibl>) <date> 9-1871</date>, to
-                <name>Galabert</name>: ‘<foreign xml:lang="fr">Je publie en ce moment chez Durand
+                (<bibl><author>Imbert</author>, p. <pp>192</pp></bibl>) </cit><cit><date> 9-1871</date>, to
+                <name>Galabert</name>: ‘<quote xml:lang="fr">Je publie en ce moment chez Durand
                 [...] un recueil de dix morceaux à quatre mains intitulé : Jeux d’enfants. J’en suis
-                assez content.</foreign>’ (<bibl><author>Galabert</author>, p. <pp>197</pp></bibl>)
-            Bizet signed a contract with <name>Durand</name> on <date>28-9-1871</date>, giving him
+                assez content.</quote>’ (<bibl><author>Galabert</author>, p. <pp>197</pp></bibl>)</cit>
+           <p> Bizet signed a contract with <name>Durand</name> on <date>28-9-1871</date>, giving him
                 <measure quantity="600" unit="francs">600</measure> francs for both piano and
-            orchestral versions. </div>
-        <div xml:id="dedicatees">
-            <head>Dedicatees: </head>
-            <p>Marguerite de Beaulieu was the daughter of Geneviève’s cousin, Mme de Beaulieu; Fanny
-                Gouin was the daughter of Geneviève’s friends the Gouins.</p>
-        </div>
-        <div xml:id="selfBorrowing">
-            <head>Self-borrowing (from): </head>
-            <p>No. 6 is derived from no. 19 (<title xml:lang="fr">Marche et récit</title>) of
-                    <title>Ivan IV</title>, omitting bars 1–2 and rewriting the middle section and
-                the end. This was in turn orchestrated for the <title xml:lang="fr">Jeux
-                d’enfants</title> suite in C minor. </p>
-        </div>
-        <div xml:id="opus"><head>Opus no.:</head> 22. A collette in the autograph of no. 4 suggests
-            that Bizet once intended this to be op. 26.</div>
-        <div xml:id="notes">
-            <head>Note:</head> The first bar of no. 8 is silent. </div>
+            orchestral versions.</p> </div>
+        
         <div xml:id="bibliography">
             <head>Bibliography: </head>
 
-            <lb>Pigot</lb>
-            <lb>Curtiss</lb>
-            <lb> Dean</lb>
-            <lb>Lacombe</lb>
-        </div>
+            <bibl>Pigot</bibl>
+            <bibl>Curtiss</bibl>
+            <bibl> Dean</bibl>
+            <bibl>Lacombe</bibl>
+        </div></div>
         <div xml:id="discography">
             <head>Discography: </head>
             <list>

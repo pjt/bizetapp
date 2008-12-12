@@ -65,76 +65,77 @@
     <text>
         <title type="main" xml:lang="fr">A Une Fleur</title>
         <title type="sub" xml:lang="fr">mélodie</title>
-        <div xml:id="contents">
-            <figure>
-                <graphic>
-                    <figureDesc>Several bars of music</figureDesc>
-                </graphic>
-            </figure>
-            <p>
-                <measure quantity="143" unit="bars">143 </measure>bars</p>
+        <div xml:id="summary">
+            <div xml:id="contents">
+                <figure>
+                    <graphic>
+                        <figureDesc>Several bars of music</figureDesc>
+                    </graphic>
+                </figure>
+                <p>
+                    <measure quantity="143" unit="bars">143 </measure>bars</p>
+            </div>
 
             <div xml:id="instrumentation">
                 <p>mezzo-soprano or baryton and piano</p>
             </div>
+            <div xml:id="composition">
+                <head>Poem:</head>
+                <p>by <author>Alfred de Musset </author>(<date>1810–1857</date>), <title
+                        xml:lang="fr">A Une Fleur</title>, first published in the <title
+                        xml:lang="fr">Revue des deux mondes</title>,<date> 1-12-1841</date>, with
+                    the title, <title xml:lang="fr">A une fleur envoyée</title>. Collected in <title
+                        xml:lang="fr">Poésies nouvelles </title>(<bibl><pubPlace>Paris</pubPlace>,
+                            <date>1850</date></bibl>).</p>
+
+
+
+                <head>Composition:</head>
+                <p><date type="composition"> September 1866</date>, for publication by
+                        <publisher>Heugel</publisher> in <title xml:lang="fr">Feuilles
+                    d’album</title>.</p>
+
+                <head>Dedicatee: </head>
+                <p>Marie Cinti-Damoreau, adopted daughter of the singer Laure Cinti-Damoreau
+                    (1801–63) and wife of the composer and editor J.-B. Weckerlin (1821–1910).</p>
+
+            </div>
         </div>
 
-        <div xml:id="textSource">
-            <head>Poem:</head>
-            <p>by <author>Alfred de Musset </author>(<date>1810–1857</date>), <title xml:lang="fr">A
-                    Une Fleur</title>, first published in the <title xml:lang="fr">Revue des deux
-                    mondes</title>,<date> 1-12-1841</date>, with the title, <title xml:lang="fr">A
-                    une fleur envoyée</title>. Collected in <title xml:lang="fr">Poésies nouvelles
-                        </title>(<bibl><pubPlace>Paris</pubPlace>, <date>1850</date></bibl>).</p>
-        </div>
 
-        <div xml:id="history">
-            <head>Composition:</head>
-            <p><date type="composition"> September 1866</date>, for publication by
-                <publisher>Heugel</publisher> in <title xml:lang="fr">Feuilles d’album</title>.</p>
-        </div>
 
         <div xml:id="autograph">
             <head>Autograph score:</head>
             <p>not known</p>
         </div>
 
-        <div xml:id="printedTexts">
+        <div xml:id="publication">
             <head>Printed scores:</head>
 
             <listBibl>
                 <bibl><publisher>Heugel</publisher>, <pubPlace>rue Vivienne 2bis</pubPlace>, pl. no.
                         <idno>H. 3366</idno>, <extent>7 p.</extent>, <date>1867</date>, <note>as no.
-                        1 of Feuilles d’album (q. v.) This song was sold separately @ 3 fr. </note>. Copies:<msIdentifier>
-                        <institution>F-Pn</institution>
-                        <idno>Ac.m.3108 </idno>(inscribed by Bizet to Guiraud)</msIdentifier>,<msIdentifier>
-                        <institution>F-Pn</institution>
-                        <idno>Vm7 8275(1)</idno>
-                    </msIdentifier>, <msIdentifier>
-                        <institution>GB-Lbl </institution>
-                        <idno>H.2476(1)</idno>
-                    </msIdentifier>, <msIdentifier>
-                        <institution>US-STu</institution>
-                    </msIdentifier>, <msIdentifier>
-                        <institution>US-Wc</institution>
-                    </msIdentifier>.</bibl>
+                        1 of Feuilles d’album (q. v.) This song was sold separately @ 3 fr. </note>.
+                    Copies:F-Pn Ac.m.3108 (inscribed by Bizet to Guiraud), F-Pn Vm7 8275(1), GB-Lbl
+                    H.2476(1), US-STu, US-Wc. This song was sold separately @ 3 fr. </bibl>
 
-                <bibl><publisher>Garland</publisher>, <pubPlace>New York</pubPlace>, <date>1995</date>, in <title>Romantic French Song 1830–1870</title>, ed. <editor>David Tunley</editor>,
-                    <biblScope type="volume">vol. 4</biblScope>, <biblScope type="pp">p. 219-27</biblScope> (facsimile of Heugel edition).</bibl>
+                <bibl><publisher>Garland</publisher>, <pubPlace>New York</pubPlace>,
+                    <date>1995</date>, in <title>Romantic French Song 1830–1870</title>, ed.
+                        <editor>David Tunley</editor>, <biblScope type="volume">vol. 4</biblScope>,
+                        <biblScope type="pp">p. 219-27</biblScope> (facsimile of Heugel
+                edition).</bibl>
             </listBibl>
         </div>
 
-        <div xml:id="dedicatee">
-            <head>Dedicatee: </head>
-            <p>Marie Cinti-Damoreau, adopted daughter of the singer Laure Cinti-Damoreau (1801–63)
-                and wife of the composer and editor J.-B. Weckerlin (1821–1910).</p>
-        </div>
+
 
         <div xml:id="documents">
-            <head>Letter:</head> <date>9-1866</date>, to Galabert: ‘<foreign>Je viens de faire au galop six mélodies pour
-            Heugel. Je crois que vous n’en serez pas mécontent. J’ai bien choisi mes paroles: [...]
-            une petite mièvrerie gracieuse de Millevoye [...] Je n’ai pas supprimé une strophe, j’ai
-            tout mis. Ce n’est pas aux musiciens à mutiler les poètes.</foreign>’ (<bibl><author>Galabert</author>, <biblScope>p. 77</biblScope></bibl>)</div>
+            <head>Letter:</head>
+            <cit><date>9-1866</date>, to <name>Galabert</name>: ‘<quote>Je viens de faire au galop six mélodies pour
+                Heugel. Je crois que vous n’en serez pas mécontent. J’ai bien choisi mes paroles:
+                [...] une petite mièvrerie gracieuse de Millevoye [...] Je n’ai pas supprimé une
+                strophe, j’ai tout mis. Ce n’est pas aux musiciens à mutiler les poètes.</quote>’
+                    (<bibl><author>Galabert</author>, <biblScope type="pp">p. 77</biblScope></bibl>)</cit></div>
 
         <div xml:id="bibliography">
             <head>Bibliography: </head>
@@ -142,7 +143,7 @@
 
             <bibl>
                 <author>Lacombe</author>
-                <biblScope>364–65</biblScope>
+                <biblScope type="pp">364–65</biblScope>
             </bibl>
         </div>
 

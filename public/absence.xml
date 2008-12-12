@@ -66,31 +66,33 @@
         <title type="main" xml:lang="fr"> Absence</title>
         <title type="sub" xml:lang="fr">mélodie</title>
 
-        <div xml:id="contents">
-            <figure>
-                <graphic>
-                    <figureDesc>bars of music</figureDesc>
-                </graphic>
-            </figure>
-            <p><measure quantity="84" units="bars">84</measure> bars</p>
-
+        <div xml:id="summary">
+            <div xml:id="contents">
+                <figure>
+                    <graphic>
+                        <figureDesc>bars of music</figureDesc>
+                    </graphic>
+                </figure>
+                <p><measure quantity="84" units="bars">84</measure> bars</p>
+            </div>
             <div xml:id="instrumentation">
                 <p>voice and piano</p>
             </div>
-        </div>
 
-        <div xml:id="textSource">
-            <head> Poem:</head>
-            <p>by <author>Théophile Gautier</author> (<date>1811–72</date>), <bibl>no. 37 of the
-                        <title xml:lang="fr">Poésies diverses</title> in <title xml:lang="fr">La Comédie de la mort</title>
-                        (<pubPlace>Paris</pubPlace>,<date> 1838</date>)</bibl>. The same poem was
-                set by <composer>Berlioz</composer> in his <bibl><title xml:lang="fr">Les Nuits d’été</title>
-                        (<date>1841</date>)</bibl>.</p>
-        </div>
+            <div xml:id="composition">
+                <head> Poem:</head>
+                <p>by <author>Théophile Gautier</author> (<date>1811–72</date>), <bibl>no. 37 of the
+                            <title xml:lang="fr">Poésies diverses</title> in <title xml:lang="fr">La
+                            Comédie de la mort</title> (<pubPlace>Paris</pubPlace>,<date>
+                        1838</date>)</bibl>. The same poem was set by <composer>Berlioz</composer>
+                    in his <bibl><title xml:lang="fr">Les Nuits d’été</title>
+                    (<date>1841</date>)</bibl>.</p>
+                <head>Composition:</head>
+                <p>before <date type="composition">1872</date>, for publication by Choudens.</p>
 
-        <div xml:id="history">
-            <head>Composition:</head>
-            <p>before <date>1872</date>, for publication by Choudens.</p>
+                <head>Dedicatee: </head>
+                <p>Alexandre de Goldschmidt , whose identity is not known.</p>
+            </div>
         </div>
 
         <div xml:id="autograph">
@@ -98,51 +100,59 @@
             <p>not known</p>
         </div>
 
-        <div xml:id="printedTexts">
-            <p>Printed score:</p>
+        <div xml:id="publication">
+            <head>Printed score:</head>
 
-
+            <floatingText>
+                <front>
+                    <titlePage xml:lang="fr"> A Monsieur<lb/> ALEXANDRE de GOLDSCHMIDT<lb/>
+                        <docTitle> ABSENCE</docTitle><lb/> Poésie de Théophile GAUTIER<lb/>
+                        <byline> MUSIQUE DE<lb/> GEORGES BIZET</byline><lb/> Prix: 5f:<lb/>
+                        <docImprint> Paris, CHOUDENS Editeur. 265, rue Saint Honoré, 265, Près
+                            l’Assomption</docImprint><lb/></titlePage>
+                </front>
+                <body>
+                    <gap/>
+                </body>
+            </floatingText>
             <listBibl>
                 <bibl>
-                    <msDesc>
-                        <titlePage xml:lang="fr"> A Monsieur<lb/> ALEXANDRE de GOLDSCHMIDT<lb/>
-                            <docTitle> ABSENCE</docTitle><lb/> Poésie de Théophile GAUTIER<lb/>
-                            <byline> MUSIQUE DE<lb/> GEORGES BIZET</byline><lb/> Prix: 5f:<lb/>
-                            <docImprint> Paris, CHOUDENS Editeur. 265, rue Saint Honoré, 265, Près
-                                l’Assomption</docImprint><lb/></titlePage>
 
-                        <p> pl. no: <idno>A.C. 2082</idno> (high key)</p>
-                        <p>pages: <extent>1–5</extent></p>
-                        <p>date: <date>1872</date> (from pl. no.)</p>
-                        <p>copies: <institution>F-Pn</institution>
-                            <idno>Vm7 32670</idno>
-                            <institution>GB-Lbl</institution>
-                            <idno>H.2476</idno> (stamped<date> 11-5-1873</date>)</p>
-                    </msDesc>
+                    <p> pl. no: <idno>A.C. 2082</idno> (high key)</p>
+                    <p>pages: <extent>1–5</extent></p>
+                    <p>date: <date>1872</date> (from pl. no.)</p>
+                    <p>copies: F-Pn Vm7 32670 GB-Lbl H.2476 (stamped 11-5-1873) </p>
                 </bibl>
 
-                <bibl> <publisher>Choudens</publisher>, <date>1873</date>, as no. 13 in <title>Vingt Mélodies</title>, <biblScope>p. 66–74</biblScope>, <note>in two keys (the low
-                    key is E flat)</note>.</bibl>
+                <bibl>
+                    <publisher>Choudens</publisher>, <date>1873</date>, as no. 13 in <title>Vingt
+                        Mélodies</title>, <biblScope>p. 66–74</biblScope>, <note>in two keys (the
+                        low key is E flat)</note>.</bibl>
 
-                <bibl> <publisher>Choudens</publisher>,<note> reissused from later addresses, in two keys</note>. <msIdentifier><institution>GB-Lbbc</institution> (low key)</msIdentifier></bibl>
+                <bibl>
+                    <publisher>Choudens</publisher>,<note> reissused from later addresses, in two
+                        keys</note>. GB-Lbbc (low key)</bibl>
 
-                <bibl> <publisher>Metzler</publisher>,<pubPlace> London</pubPlace>, pl. no.<idno> M. 7171</idno>, <extent>2–7 p.</extent>, <date>1890</date>, <note>in French and English (tr.
-                Mary Chater). High key</note>. Copies: <msIdentifier><institution>GB-Lbl</institution></msIdentifier>; <msIdentifier><institution>GB-Ob</institution><note>(stamped <date>1890</date>)</note></msIdentifier>; <msIdentifier><institution>GB-En</institution> <note>in F</note></msIdentifier> </bibl>
-                
-                <bibl> <publisher>Hansen</publisher>, <pubPlace>Copenhagen</pubPlace>, pl. no. <idno>12389</idno>, <extent>9 p.</extent>,<date> 1898</date>, <note>in Swedish, French and Danish.</note>
-                   <msIdentifier><institution> D-Bsb</institution></msIdentifier>.</bibl>
+                <bibl>
+                    <publisher>Metzler</publisher>,<pubPlace> London</pubPlace>, pl. no.<idno> M.
+                        7171</idno>, <extent>2–7 p.</extent>, <date>1890</date>, <note>in French and
+                        English (tr. Mary Chater). High key</note>. Copies: GB-Lbl; GB-Ob(stamped
+                    1890); GB-En in F </bibl>
+
+                <bibl>
+                    <publisher>Hansen</publisher>, <pubPlace>Copenhagen</pubPlace>, pl. no.
+                        <idno>12389</idno>, <extent>9 p.</extent>,<date> 1898</date>, <note>in
+                        Swedish, French and Danish.</note> D-Bsb.</bibl>
             </listBibl>
         </div>
 
 
 
-        <div xml:id="dedicatee">
-            <head>Dedicatee: </head>
-            <p>Alexandre de Goldschmidt , whose identity is not known.</p>
-        </div>
+        <div xml:id="references">
 
-        <div xml:id="bibliography">
-            <head>Bibliography:</head>
+            <div xml:id="bibliography">
+                <head>Bibliography:</head>
+            </div>
         </div>
 
         <div xml:id="discography">
