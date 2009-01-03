@@ -90,7 +90,7 @@
 
 ;; Docs
 
-(load "entries.clj")
+(load "bizet/entries.clj")
 (def htmlstyle (compile-xslt "public/bizet.xsl"))
 
 (dosync (commute entries pull-entries-from-fs))

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Make sure you're in the root Compojure dir
+cd `dirname $0`
+
+for file in `find . -name *.jar`; do
+    jars=$jars:$file
+done
+
+classpath=app:$jars
+
+if which rlwrap > /dev/null; then
+   $rlwrap=rlwrap
+else
+   $rlwrap=
+
+if [ $# -gt 1 ]; then
+   rlwrap java -cp $classpath clojure.lang.Repl boot.clj
+else
+   java -cp $classpath clojure.lang.Script boot.clj
