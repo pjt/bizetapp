@@ -1,6 +1,6 @@
-(use 'compojure.jetty)
-
-(require 'bizet)
+(ns boot
+   (:use compojure.jetty)
+   (:require bizet))
 
 (defserver server
   {:port 8080}

@@ -1,21 +1,20 @@
 (ns bizet
     (:use (compojure html http str-utils) 
           (clojure.contrib str-utils)
-          saxon))
+          saxon)
+    (:load "bizet/entries"))
 
 (defn set-count
     "Reduces collection to a hash whose keys are the unique items
     in the collection & whose values are the number of times the
     item appears. Hash is sorted by number, descending."
     [coll]
-    (sort-by
-        val                             ; grab val of hash item
+    (sort-by val                        ; sort by val of hash item
         (fn [x y] (- (compare x y)))    ; descending order
         (reduce
             (fn [accum item]
                 (assoc accum item (inc (accum item 0))))
-            {} 
-            coll)))
+            {} coll)))
 
 
 ;; HTML funcs
@@ -90,7 +89,7 @@
 
 ;; Docs
 
-(load "bizet/entries.clj")
+;(load "bizet/entries")
 (def htmlstyle (compile-xslt "public/bizet.xsl"))
 
 (dosync (commute entries pull-entries-from-fs))
@@ -145,7 +144,7 @@
                 (str-map
                     (fn [entry] 
                         (let [[id e] entry]
-                            (if-let sec (div (:doc e))
+                            (if-let [sec (div (:doc e))]
                                 (html
                                     [:h2 (link-to (format "/entry/%s" id) (:title e))]
                                     (htmlstyle sec)))))

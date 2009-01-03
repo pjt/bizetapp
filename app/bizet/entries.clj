@@ -1,4 +1,4 @@
-(in-ns 'bizet)
+(ns bizet)
 
 (defstruct entry :id :title :comp-date :divids :tags :doc)
 
@@ -11,7 +11,7 @@
 
 (let 
     [title-fn (compile-xpath 
-                "/TEI/teiHeader/fileDesc/titleStmt/title[@type='main'][1]/string()")
+                  "/TEI/teiHeader/fileDesc/titleStmt/title[@type='main'][1]/string()")
      entry-fns
         (struct entry
             (comp title->id title-fn) 

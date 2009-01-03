@@ -1,23 +1,33 @@
-(ns saxon
+; Copyright (c) December 2008, Perry Trolard, Washington University in Saint Louis.
+; 
+; The use and distribution terms for this software are covered by the MIT 
+; Licence (http://opensource.org/licenses/mit-license.php), which can be found 
+; in the file MIT.txt at the root of this distribution. Use of the software 
+; counts as agreeing to be bound by the terms of this license. You must not 
+; remove this notice from this software.
 
-;; Saxon Clojure wrapper
-;; Requires that the saxon9.jar & the saxon9-s9api.jar be on classpath
+(ns saxon
+   ; Saxon Clojure wrapper
+   ; Requires the saxon9.jar & the saxon9-s9api.jar on classpath
 
     (:import 
         (java.io File)
         (javax.xml.transform.stream StreamSource)
         (net.sf.saxon.s9api 
+            Axis
             Processor 
             Serializer 
             Serializer$Property
             XPathCompiler
+            XPathSelector
             XdmDestination
             XdmValue
             XdmItem
             XdmNode
             XdmNodeKind
             XdmAtomicValue
-            QName)))
+            QName)
+        (net.sf.saxon.om Navigator NodeInfo)))
 
 ;;
 ;; Private functions
@@ -28,8 +38,7 @@
     generator class for documents, stylesheets, & XPaths.
     Creates & defs the Processor if not already created."
     []
-    (defonce #^{:private true} *p* (Processor. false))
-    *p*)
+    (defonce #^{:private true} *p* (Processor. false)) *p*)
 
 ;; Well, except this is public -- maybe doesn't need to be
 (defn atomic?
@@ -38,27 +47,20 @@
     [#^XdmItem val]
     (.isAtomicValue val))
 
-(defn- wrap-xdm-val
-    "Makes an XdmValue Clojure-friendly. A Saxon value 
-    (XdmValue) is a sequence of zero or more items, where 
-    an item is either an atomic value (number, string, 
-    URI) or a node. 
+(defn- unwrap-xdm-items
+    "Makes XdmItems Clojure-friendly. A Saxon XdmItem is either 
+    an atomic value (number, string, URI) or a node. 
     
-    This function makes sequences greater than one into 
-    Clojure seqs, and turns XdmAtomicValues into their
-    corresponding Java datatypes (Strings, the numeric
-    types)."
-    [#^XdmValue val]
-    (let    
-        [size   (.size val)
-         unwrap-atom #(if (atomic? %) (.getValue #^XdmAtomicValue %) %)]
-        (cond 
-            (= size 0)
-                nil
-            (= size 1)
-                (unwrap-atom val)
-            :default
-                (map unwrap-atom val))))
+    This function returns an unwrapped item or a sequence of them, 
+    turning XdmAtomicValues into their corresponding Java datatypes 
+    (Strings, the numeric types), leaving XdmNodes as nodes."
+    [sel]
+    (let [result 
+            (map #(if (atomic? %) (.getValue #^XdmAtomicValue %) %)
+               sel)]
+      (if (rest result)
+         result
+         (first result))))
 
 ;;
 ;; Public functions
@@ -66,36 +68,51 @@
 
 (defn compile-file
     "Compiles XML file into an XdmNode, the Saxon 
-    currency for in-memory tree representation."
-    [#^String path]
-    (.. (get-proc) (newDocumentBuilder) (build (File. path))))
+    currency for in-memory tree representation. Takes
+    pathname or java.io.File."
+    [f]
+    (.. #^Processor (get-proc) (newDocumentBuilder) 
+                    (build (if (string? f)
+                                (File. #^String f)
+                                #^File f))))
     ;(StreamSource. (File. path)))
 
-(defn compile-xslt
-    "Compiles stylesheet (given as path to file), returns 
-    function that applies it to XML doc or node."
-    [xslt-file]
-    (let    [proc   (get-proc)
-             comp   (.newXsltCompiler proc)
-             exe    (.compile comp (StreamSource. (File. xslt-file)))]
+(defn compile-string
+    "Compiles XML string into an XdmNode, the Saxon currency 
+    for in-memory tree representation. Takes string, or, 
+    optionally, java.io.InputStream or java.io.Reader."
+    [s]
+    (.. #^Processor (get-proc) (newDocumentBuilder) 
+                        (build (StreamSource. 
+                                 (if (string? s) 
+                                        (java.io.StringReader. #^String s)
+                                        s)))))
 
-        (fn [xml & params]
-            (let    [xml    (if (string? xml) 
-                                (compile-file xml) 
-                                xml)
-                     xdm-dest    (XdmDestination.)
+(defn compile-xslt
+    "Compiles stylesheet (given as pathname or java.io.File), 
+    returns function that applies it to compiled doc or node."
+    [f]
+    (let    [proc   #^Processor (get-proc)
+             comp   (.newXsltCompiler proc)
+             exe    (.compile comp (StreamSource. 
+                                    (if (string? f)
+                                        (File. #^String f)
+                                        #^File f)))]
+
+        (fn [#^XdmNode xml & params]
+            (let    [xdm-dest    (XdmDestination.)
                      transformer (.load exe)] ; created anew, is thread-safe
                 (when params
                     (let [prms  (first params)
                           ks    (keys prms)]
-                        (doseq k ks
+                        (doseq [k ks]
                             (.setParameter transformer
-                                (QName. (name k))
+                                (QName. #^String (name k))
                                 (XdmAtomicValue. (k prms))))))
                 (doto transformer
-                    (setInitialContextNode xml)
-                    (setDestination xdm-dest)
-                    (transform))
+                    (.setInitialContextNode xml)
+                    (.setDestination xdm-dest)
+                    (.transform))
                 (.getXdmNode xdm-dest)))))
 
 ; helper for compile-xpath
@@ -103,29 +120,26 @@
     "Adds namespaces to XPathCompiler from map. Returns same 
     XPathCompiler."
     [#^XPathCompiler xp-compiler ns-map]
-    (doseq [pre uri] ns-map
+    (doseq [[pre uri] ns-map]
         (.declareNamespace xp-compiler (name pre) uri))
     xp-compiler)
         
 (defn compile-xpath
     "Compiles XPath expression (given as string), returns
-    function that applies it to XML doc or node. Takes optional
-    map of prefixes (as keywords) and namespace URIs."
+    function that applies it to compiled doc or node. Takes 
+    optional map of prefixes (as keywords) and namespace URIs."
     [#^String xpath & ns-map]
-    (let    [proc   (get-proc)
+    (let    [proc   #^Processor (get-proc)
              comp   (.newXPathCompiler proc) 
              comp   (if ns-map 
                         (add-ns-to-xpath comp (first ns-map)) 
                         comp)
-             exe    (.compile comp xpath)
+             exe    (.compile #^XPathCompiler comp xpath)
              selector (.load exe)]
 
-        (fn [xml]
-            (let [xml (if (string? xml) 
-                        (compile-file xml) 
-                        xml)]
-                (.setContextItem selector xml)
-                (wrap-xdm-val (.evaluate selector)))))) 
+        (fn [#^XdmNode xml] 
+            (.setContextItem selector xml)
+            (unwrap-xdm-items selector))))
 
 ;; Node functions
 
@@ -143,7 +157,7 @@
     "Returns the namespace of the node or node name."
     [q]
     (if (= (class q) QName)
-        (.getNamespaceURI q)
+        (.getNamespaceURI #^QName q)
         (node-ns (node-name q))))
 
 (def #^{:private true} 
@@ -160,6 +174,34 @@
     "Returns keyword corresponding to node's kind."
     [#^XdmNode nd]
     (node-kind-map (.getNodeKind nd)))
+
+(defn node-path
+    "Returns XPath to node."
+    [#^XdmNode nd]
+    (Navigator/getPath (.getUnderlyingNode nd)))
+
+;(def #^{:private true} 
+;    axis-map
+;        {:ancestor            Axis/ANCESTOR           
+;         :ancestor-or-self    Axis/ANCESTOR_OR_SELF   
+;         :attribute           Axis/ATTRIBUTE          
+;         :child               Axis/CHILD              
+;         :descendant          Axis/DESCENDANT         
+;         :descendant-or-self  Axis/DESCENDANT_OR_SELF 
+;         :following           Axis/FOLLOWING          
+;         :following-sibling   Axis/FOLLOWING_SIBLING  
+;         :parent              Axis/PARENT             
+;         :preceding           Axis/PRECEDING          
+;         :preceding-sibling   Axis/PRECEDING_SIBLING  
+;         :self                Axis/SELF               
+;         :namespace           Axis/NAMESPACE})
+;
+;(defn axis-seq
+;   "Returns sequences of nodes on given axis."
+;   ([#^XdmNode nd axis]
+;    (.axisIterator nd #^Axis (axis-map axis)))
+;   ([#^XdmNode nd axis name]
+;    (.axisIterator nd #^Axis (axis-map axis) (QName. #^String name))))
 
 ; Node-kind predicates
 
