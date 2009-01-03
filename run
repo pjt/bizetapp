@@ -10,11 +10,14 @@ done
 classpath=app:$jars
 
 if which rlwrap > /dev/null; then
-   $rlwrap=rlwrap
+   rlwrap=rlwrap
 else
-   $rlwrap=
+   rlwrap=
+fi
 
-if [ $# -gt 1 ]; then
-   rlwrap java -cp $classpath clojure.lang.Repl boot.clj
+if [ $# -gt 0 ]; then
+   $rlwrap java -cp $classpath clojure.main -i boot.clj --repl 
 else
-   java -cp $classpath clojure.lang.Script boot.clj
+   java -cp $classpath clojure.main boot.clj
+fi
+
