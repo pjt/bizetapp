@@ -3,7 +3,7 @@
 # Make sure you're in the root Compojure dir
 cd `dirname $0`
 
-for file in `find . -name *.jar`; do
+for file in `find deps -name *.jar`; do
     jars=$jars:$file
 done
 

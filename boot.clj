@@ -1,5 +1,5 @@
 (ns boot
-   (:use compojure.jetty)
+   (:use compojure)
    (:require bizet))
 
 (defserver server
