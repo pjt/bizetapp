@@ -12,21 +12,22 @@
 /* main html elements
 ------------------------------ */
 
-html
+body { position: relative; }
+
+div.container
 {
-  color: #222; background-color: #fff;
+  color: #000; background-color: #fff;
+  font-family: Georgia, Times, serif;
+  font-size: 90%;
+  line-height: 1.3em;
 }
 
-body
-{
-  color: #333; background-color: #fff;
-  margin: 2em auto;
-  padding: 2em;
-  width: 42em;
-  font-family: Georgia, Times, serif;
-  /*font-family: Verdana, Arial, Helvetica, sans-serif;*/
-  font-size: 90%;
-  border: 1px solid #bbb;
+#margin {
+   height: 100%;
+   line-height: inherit;
+   font-family: Palatino, "Palatino Linotype", Georgia, serif;
+   font-size: 90%;
+   color: #9E0100;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -170,12 +171,6 @@ table
   width: 100%;
 }
 
-/*
-ol { list-style-type: upper-roman; }
-ol ol { list-style-type: lower-roman; }
-ol ol ol { list-style-type: lower-alpha; }
-*/
-
 /* classes
 ------------------------------ */
 
@@ -252,4 +247,16 @@ div.return-chunk
 .search-match
 {
   border-bottom: 2px solid red;
+}
+
+.with-marg-name
+{
+   background-color: #B0D4EE;
+   padding: .1em 0;
+}
+
+.with-marg-name span
+{
+   background-color: #9CBCD3;
+   border: 1px dotted #FFF;
 }

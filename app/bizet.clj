@@ -1,53 +1,21 @@
 (ns bizet
-    (:use (bizet entries utilities)
+    (:use (bizet entries utilities web-utilities)
           (clojure.contrib str-utils)
           (clojure.contrib [shell-out :only (sh)])
           compojure
           saxon))
 
-;; HTML funcs
-
-(defn css-path
-    "Concatenate file with path prefix for CSS files. File
-    should be given as string or keyword, without .css suffix."
-    [file]
-    (let    [prefix "/css/"
-             file (str* file)]
-        (str prefix file ".css")))
-
-(defmacro nav
-    "Navigation section."
-    [heading & items]
-    `(html
-        [:div {:class "nav"}
-            [:strong ~heading]
-            [:ul
-                ~@(for [[path label] items] 
-                    [:li (link-to path label)])]]))
-
-(defn templ
-    "HTML template."
-    [title & body]
-    [{"Content-Type" "text/html;charset=UTF-8"}
-     (html
-        (doctype :xhtml-strict)
-        [:html
-          [:head
-            [:link {:rel "stylesheet" :type "text/css" :href (css-path :main)}]
-            [:title title]]
-          [:body
-            body]])])
-
 ;; Docs
 
-(def htmlstyle (compile-xslt (java.io.File. "public/bizet.xsl")))
-
-(dosync (commute entries pull-entries-from-fs))
+(def entries (ref {}))
+(dosync 
+  (commute entries pull-entries-from-fs))
 
 ;; Servlet def, Route defs
 
 (defservlet bizetapp
   "The Bizet Catalog."
+
   (GET "/"
     (templ "Bizet Entries" 
         [:h2 "Entries"]
@@ -73,7 +41,7 @@
                 (submit-button "Search")])))
   (GET "/entry/:id" 
     (templ "Bizet Entry" 
-        (htmlstyle (:doc (@entries (route :id))))))
+        (htmlify (:doc (@entries (route :id))))))
   (GET "/section/:name"
     (let [section (route :name)
           div   (compile-xpath (format "id('%s')" section))
@@ -86,7 +54,7 @@
                         (if-let [sec (div (:doc e))]
                             (html
                                 [:h2 (link-to (format "/entry/%s" id) (:title e))]
-                                (htmlstyle sec)))))
+                                (htmlify sec)))))
                 @entries))))
   (GET "/search/"
     (templ "Search"
@@ -104,15 +72,15 @@
                     tag 
                     (count (mapcat :hits results)))]
             (if results
-                (mapcat; str
+                (mapcat
                     (fn [result]
                         (let [e (:entry result)
                               to-entry 
                                 (link-to (format "/entry/%s" (:id e)) (:title e))]
-                            (map; str
+                            (map
                                 #(html
                                     [:div.return-chunk 
-                                        (htmlstyle % {:search-terms terms})]
+                                        (htmlify % {:search-terms terms})]
                                     [:div.to-entry to-entry])
                                 (:hits result))))
                     results)
@@ -130,5 +98,5 @@
                               (:file m)
                               (:modified m)))) 
                   (dosync (commute entries pull-entries-from-fs)))])))
-  (GET "/*" (or (serve-file "public" path) :next))
+  (GET "/*" (trimming-serve-file "public" path))
   (ANY "/*" (page-not-found)))

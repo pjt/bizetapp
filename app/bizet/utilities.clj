@@ -62,3 +62,53 @@
                   identity)]
       (f arg)))
 
+
+;; -- path utilities --
+
+(defn trim-right
+    "Removes s2 from right of s1."
+    [#^String s1 #^String s2]
+    (if (.endsWith s1 s2)
+        (.substring s1 0 (- (count s1) (count s2)))
+        s1))
+
+(defn trim-left
+    "Removes s2 from left of s1."
+    [#^String s1 #^String s2]
+    (if (.startsWith s1 s2)
+        (.substring s1 (count s2))
+        s1))
+
+(defn basename
+    "Like Unix basename: returns last portion of path."
+    ([path & suffix]
+        (let [result (get (re-find #"([^/]+)/?$" path) 1 "")]
+            (if suffix
+                (trim-right result (first suffix))
+                result))))
+
+(defn dirname
+    "Like Unix dirname: returns all but last portion of path."
+    [path]
+    (let [path    (trim-right path "/")
+          base    (basename path)
+          dirname (trim-right path base)]
+        (trim-right dirname "/")))
+
+(defn dirname-seq
+    "Returns a lazy-seq of path and successive calls of dirname on path,
+    e.g. /home/bin/text => (/home/bin/text /home/bin /home)."
+    [path]
+    (when (not= path "")
+        (lazy-seq (cons path (dirname-seq (dirname path))))))
+
+(defn reduce-path-by
+    "Trims path from the left with another path. E.g. 
+    /home/dir/file.txt reduced by /home is dir/file.txt."
+    [path #^String screen]
+    (if (= path screen) ""
+      (let [screen 
+              (if (.endsWith screen "/")
+                  screen
+                  (str screen "/"))]
+          (trim-left path screen))))

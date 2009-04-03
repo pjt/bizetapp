@@ -57,5 +57,3 @@
                 [(:id new-entry) new-entry])))
         (.listFiles (java.io.File. *data-dir*) dot-xml)))))
  
-(def entries (ref {}))
-

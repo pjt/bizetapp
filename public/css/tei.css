@@ -1,0 +1,144 @@
+/* TEI-in-HTML block, inline styles */
+
+span { 
+   display: block; 
+}
+
+span.tei-reg, 
+span.tei-corr, 
+span.tei-orig, 
+span.tei-sic,
+span.tei-abbr,
+span.tei-expan,
+span.tei-choice, 
+span.tei-app,
+span.tei-rdg,
+span.tei-lem,
+span.tei-unclear,
+span.tei-persName,
+span.tei-addName,
+span.tei-name,
+span.tei-date,
+span.tei-bibl,
+span.tei-biblScope,
+span.tei-author,
+span.tei-composer,
+span.tei-editor,
+span.tei-title,
+span.tei-place,
+span.tei-pubPlace,
+span.tei-publisher,
+span.tei-institution,
+span.tei-idno,
+span.tei-extent,
+span.tei-measure,
+span.tei-msIdentifier,
+span.tei-foreign,
+span.tei-hi { 
+   display: inline; 
+}
+
+span.tei-lg,
+span.tei-p,
+span.tei-respStmt,
+span.tei-argument {
+   margin: .7em 0 1em;
+}
+
+span.tei-div,
+span.tei-front,
+span.tei-body,
+span.tei-back,
+span.tei-group,
+span.tei-titlePage {
+   margin: 2em 0;
+}
+
+span.tei-item {
+   display: list-item;
+}
+
+span.tei-listBibl > span.tei-bibl {
+   display: list-item;
+}
+
+span.tei-reg,
+span.tei-corr,
+span.tei-expan {
+   border-bottom: 1px dotted #777;
+}
+
+span.tei-orig, 
+span.tei-sic,
+span.tei-abbr { 
+   color: #777; 
+   font-style: italic;
+   font-size: 93%;
+}
+span.tei-orig:before,
+span.tei-sic:before {
+   content: "[";
+}
+span.tei-orig:after,
+span.tei-sic:after {
+   content: "]";
+}
+span.tei-abbr:before {
+   content: "\2329";
+}
+span.tei-abbr:after {
+   content: "\232A";
+}
+span.tei-rdg {
+   color: #992F36;
+   font-size: 96%;
+}
+span.tei-rdg:before {
+   content: "\00B7  ";
+}
+span.tei-lem {
+   border-bottom: 1px solid #444;
+}
+
+/* TEI-in-HTML special styles */
+
+span.tei-teiHeader {
+}
+
+span.tei-fw {
+   display: block;
+   font-size: 90%;
+   padding: .5em .25em .25em .25em;
+   color: #7b7b7b;
+   text-align: right;
+}
+span.tei-fw ~ .tei-fw {
+   padding: .25em;
+}
+span.tei-fw.teiatt-type\=head {
+   text-align: center;
+}
+span.tei-pb,
+span.tei-milestone {
+   /* What to do; how to make visible? */
+}
+
+span.tei-titlePage {
+   text-align: center;  
+   font-size: 110%;
+}
+span.tei-head {
+   text-align: center;
+   font-size: 107%;
+   margin: .5em 0 1em;
+}
+
+span.tei-note.teiatt-place\=marg {
+	line-height: inherit;
+	font-size: 85%;
+	text-align: right;
+	clear: both;
+	float: left;
+	margin: 0 -11em 0 -12em;
+	width: 11em;
+}
