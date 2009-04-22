@@ -18,27 +18,37 @@
 
   (GET "/"
     (templ "Bizet Entries" 
-        [:h2 "Entries"]
-        (unordered-list 
+        #_(unordered-list 
             (map 
                 #(link-to (str "/entry/" (:id %)) 
                     (format "%s" (:title %)) 
                     (and (:comp-date %) 
                          (format " (%s)" (:comp-date %))))
                 (vals @entries)))
-        [:h2 "Divisions"]
-        (unordered-list 
-            (map 
-                #(link-to (str "/section/" (key %)) 
-                    (format "%s (%s)" (key %) (val %)))
-                (set-count (mapcat :divids (vals @entries)))))
         [:h2 "Search by Tag"]
         (form-to [GET "/search/in/"]
             [:p "Search in "
                 (drop-down :tag
                     (sort (set (mapcat :tags (vals @entries)))))
                 "with " (text-field :terms)
-                (submit-button "Search")])))
+                (submit-button "Search")])
+        [:h2 "Divisions"]
+        (unordered-list 
+            (map 
+                #(link-to (str "/section/" (key %)) 
+                    (format "%s (%s)" (key %) (val %)))
+                (set-count (mapcat :divids (vals @entries)))))))
+  (GET "/entries/"
+    (templ "Entries"
+       [:h2 "Catalog Entries"]
+        (unordered-list 
+            (map 
+                #(link-to (str "/entry/" (:id %)) 
+                    (format "%s" (:title %)) 
+                    (and (:comp-date %) 
+                         (format " (%s)" (:comp-date %))))
+                (sort-by #(:modified (meta %)) (comp - compare)
+                  (vals @entries))))))
   (GET "/entry/:id" 
     (templ "Bizet Entry" 
         (htmlify (:doc (@entries (route :id))))))

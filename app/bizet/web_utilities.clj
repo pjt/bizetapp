@@ -24,11 +24,9 @@
   "Navigation section."
   [heading & items]
   `(html
-    [:div {:class "nav"}
-      [:strong ~heading]
-      [:ul
-        ~@(for [[path label] items] 
-            [:li `(link-to path label)])]]))
+    (if (not= "" ~heading) [:strong ~heading] "")
+    [:ul
+     (map (fn [[label# path#]] [:li (link-to path# label#)]) ~(vec items))]))
 
 (defn templ
   "HTML template."
@@ -42,13 +40,18 @@
        [:title title]]
       [:body
        [:div.container
-         [:div.nav.column.span-3 "Navigation"]
+         [:div#nav.column.span-3 
+            (nav "" ["Home" "/"] ["Entries" "/entries/"])]
          [:div.column.span-18 body]
          [:div#margin.column.prepend-1.span-2.last]]]))])
 
 ;; Docs
 
-(def htmlify (compile-xslt (compile-file "public/tei-to-html.xsl")))
+(def htmlify 
+  (comp (fn [nd] (let [sw (java.io.StringWriter.)]
+                   (serialize nd sw {:method "xhtml"})
+                   (str sw)))
+    (compile-xslt (compile-file "public/tei-to-html.xsl"))))
 
 
 ;; Error handling
