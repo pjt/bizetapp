@@ -13,7 +13,7 @@
 
 ;; Servlet def, Route defs
 
-(defservlet bizetapp
+(defroutes bizetapp
   "The Bizet Catalog."
 
   (GET "/"
@@ -51,9 +51,9 @@
                   (vals @entries))))))
   (GET "/entry/:id" 
     (templ "Bizet Entry" 
-        (htmlify (:doc (@entries (route :id))))))
+        (htmlify (:doc (@entries ((:route-params request) :id))))))
   (GET "/section/:name"
-    (let [section (route :name)
+    (let [section ((:route-params request) :name)
           div   (compile-xpath (format "id('%s')" section))
           section (first-upcase section)]
         (templ (format "%s Sections" section)
@@ -108,5 +108,5 @@
                               (:file m)
                               (:modified m)))) 
                   (dosync (commute entries pull-entries-from-fs)))])))
-  (GET "/*" (trimming-serve-file "public" path))
+  (GET "/*" (trimming-serve-file "public" (:uri request)))
   (ANY "/*" (page-not-found)))

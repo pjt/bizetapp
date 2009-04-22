@@ -4,7 +4,7 @@
 
 (defserver server
   {:port 8080}
-  "/*" bizet/bizetapp)
+  "/*" (servlet bizet/bizetapp))
 
 ;; Start the server
 (start server)
