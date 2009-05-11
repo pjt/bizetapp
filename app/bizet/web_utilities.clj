@@ -48,11 +48,9 @@
 ;; Docs
 
 (def htmlify 
-  (comp (fn [nd] (let [sw (java.io.StringWriter.)]
-                   (serialize nd sw {:method "xhtml"})
-                   (str sw)))
-    (compile-xslt (compile-file "public/tei-to-html.xsl"))))
-
+  (comp str 
+        #(serialize % (java.io.StringWriter.) {:method "xhtml"})
+        (compile-xslt (compile-file "public/tei-to-html.xsl"))))
 
 ;; Error handling
 

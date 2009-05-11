@@ -26,7 +26,7 @@
                          (format " (%s)" (:comp-date %))))
                 (vals @entries)))
         [:h2 "Search by Tag"]
-        (form-to [GET "/search/in/"]
+        (form-to [:get "/search/in/"]
             [:p "Search in "
                 (drop-down :tag
                     (sort (set (mapcat :tags (vals @entries)))))
@@ -51,9 +51,9 @@
                   (vals @entries))))))
   (GET "/entry/:id" 
     (templ "Bizet Entry" 
-        (htmlify (:doc (@entries ((:route-params request) :id))))))
+        (htmlify (:doc (@entries (params :id))))))
   (GET "/section/:name"
-    (let [section ((:route-params request) :name)
+    (let [section (params :name)
           div   (compile-xpath (format "id('%s')" section))
           section (first-upcase section)]
         (templ (format "%s Sections" section)
