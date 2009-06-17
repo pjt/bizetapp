@@ -1,10 +1,10 @@
 (ns boot
-   (:use compojure)
+   (:use compojure [bizet.web-utilities :only (with-context)])
    (:require bizet))
 
 (defserver server
   {:port 8080}
-  "/*" (servlet bizet/bizetapp))
+  "/*" (servlet (with-context "" bizet/bizetapp)))
 
 ;; Start the server
 (start server)

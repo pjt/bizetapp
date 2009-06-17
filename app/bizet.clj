@@ -1,9 +1,9 @@
 (ns bizet
-    (:use (bizet entries utilities web-utilities)
-          (clojure.contrib str-utils)
-          (clojure.contrib [shell-out :only (sh)])
-          compojure
-          saxon))
+  (:use (bizet entries queries utilities web-utilities)
+        (clojure.contrib str-utils)
+        (clojure.contrib [shell-out :only (sh)])
+        compojure
+        saxon))
 
 ;; Docs
 
@@ -18,95 +18,70 @@
 
   (GET "/"
     (templ "Bizet Entries" 
-        #_(unordered-list 
-            (map 
-                #(link-to (str "/entry/" (:id %)) 
-                    (format "%s" (:title %)) 
-                    (and (:comp-date %) 
-                         (format " (%s)" (:comp-date %))))
-                (vals @entries)))
-        [:h2 "Search by Tag"]
-        (form-to [:get "/search/in/"]
-            [:p "Search in "
-                (drop-down :tag
-                    (sort (set (mapcat :tags (vals @entries)))))
-                "with " (text-field :terms)
-                (submit-button "Search")])
-        [:h2 "Divisions"]
-        (unordered-list 
-            (map 
-                #(link-to (str "/section/" (key %)) 
-                    (format "%s (%s)" (key %) (val %)))
-                (set-count (mapcat :divids (vals @entries)))))))
+      [:h2 "Search by Tag"]
+      (search-in-form @entries)
+      [:h2 "Divisions"]
+      (unordered-list 
+        (map 
+          #(ctx-link-to (str "/section/" (key %)) 
+            (format "%s (%s)" (key %) (val %)))
+          (set-count (mapcat :divids (vals @entries)))))))
   (GET "/entries/"
     (templ "Entries"
        [:h2 "Catalog Entries"]
         (unordered-list 
             (map 
-                #(link-to (str "/entry/" (:id %)) 
+                #(ctx-link-to (str "/entry/" (:id %)) 
                     (format "%s" (:title %)) 
                     (and (:comp-date %) 
                          (format " (%s)" (:comp-date %))))
-                (sort-by #(:modified (meta %)) (comp - compare)
-                  (vals @entries))))))
+                (by-modified-date @entries)))))
   (GET "/entry/:id" 
     (templ "Bizet Entry" 
         (htmlify (:doc (@entries (params :id))))))
   (GET "/section/:name"
-    (let [section (params :name)
-          div   (compile-xpath (format "id('%s')" section))
-          section (first-upcase section)]
-        (templ (format "%s Sections" section)
-            [:h1 (format "%s Sections" section)]
-            (map; str
-                (fn [entry] 
-                    (let [[id e] entry]
-                        (if-let [sec (div (:doc e))]
-                            (html
-                                [:h2 (link-to (format "/entry/%s" id) (:title e))]
-                                (htmlify sec)))))
-                @entries))))
+    (let [section   (params :name)
+          sections  (section-for-each @entries section)
+          title     (format "%s Sections" (first-upcase section))]
+        (templ title
+            [:h1 title]
+            (map (fn [[entry sec]] 
+                  [[:h2 (ctx-link-to 
+                          (format "/entry/%s" (:id entry) (:title entry)))] 
+                   sec]))
+                sections)))
   (GET "/search/"
     (templ "Search"
         [:p "Search not yet implemented."]))
   (GET "/search/in/"
     (let [tag   (first-if-vec (params :tag))
           terms (cat-if-vec (params :terms))
-          srch  (compile-xpath (format "//%s[matches(.,\"%s\",'i')]" tag (h terms)))
-          results (for [e (vals @entries)]
-                    {:entry e :hits (srch (:doc e))})
-          results (filter :hits results)]
-        (templ "Search Results"
-            [:h1 (format "Results for \"%s\" in &lt;%s&gt;: %d" 
-                    terms 
-                    tag 
-                    (count (mapcat :hits results)))]
-            (if results
-                (mapcat
-                    (fn [result]
-                        (let [e (:entry result)
-                              to-entry 
-                                (link-to (format "/entry/%s" (:id e)) (:title e))]
-                            (map
-                                #(html
-                                    [:div.return-chunk 
-                                        (htmlify % {:search-terms terms})]
-                                    [:div.to-entry to-entry])
-                                (:hits result))))
-                    results)
-                [:p [:em "No results found."]]))))
+          {:keys (n results-map)}
+                (search-in-tag @entries tag terms)]
+      (templ "Search Results"
+        [:h1 (format "Results for \"%s\" in &lt;%s&gt;: %d" terms tag n)]
+        (if results-map
+          (mapcat
+            (fn [[entry results]]
+              (let [to-entry (ctx-link-to 
+                               (format "/entry/%s" (:id entry)) (:title entry))]
+                (map #(html
+                        [:div.return-chunk %]
+                        [:div.to-entry to-entry])
+                  results)))
+            results-map)
+          [:p [:em "No results found."]]))))
 
   (GET "/rrr" 
     (do
       (sh "svn" "up" *data-dir*)
       (templ "Reload"
-          [:pre
-              (map; str
+          [:pre (map
                   (fn [[k,v]] 
                       (let [m (meta v)]
                           (format "%-30s: %tc\n"
                               (:file m)
                               (:modified m)))) 
                   (dosync (commute entries pull-entries-from-fs)))])))
-  (GET "/*" (trimming-serve-file "public" (:uri request)))
-  (ANY "/*" (page-not-found)))
+  (GET "*" (trimming-serve-file "public" (:uri request)))
+  (ANY "*" (page-not-found)))

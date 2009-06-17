@@ -80,28 +80,29 @@
         s1))
 
 (defn basename
-    "Like Unix basename: returns last portion of path."
-    ([path & suffix]
-        (let [result (get (re-find #"([^/]+)/?$" path) 1 "")]
-            (if suffix
-                (trim-right result (first suffix))
-                result))))
+  "Like Unix basename: returns last portion of path."
+  [path & suffix]
+  (let [result (get (re-find #"(/|[^/]+)/?$" path) 1 "")]
+    (if suffix (trim-right result (first suffix)) result)))
 
 (defn dirname
-    "Like Unix dirname: returns all but last portion of path."
-    [path]
+  "Like Unix dirname: returns all but last portion of path."
+  [path]
+  (if (= path "/")
+    path
     (let [path    (trim-right path "/")
-          base    (basename path)
-          dirname (trim-right path base)]
-        (trim-right dirname "/")))
+          dirname (trim-right path (basename path))]
+      (if (> (count dirname) 1)
+        (trim-right dirname "/")
+        dirname))))
 
 (defn dirname-seq
-    "Returns a lazy-seq of path and successive calls of dirname on path,
-    e.g. /home/bin/text => (/home/bin/text /home/bin /home)."
-    [path]
-    (when (not= path "")
-        (lazy-seq (cons path (dirname-seq (dirname path))))))
-
+  "Returns a lazy-seq of path and successive calls of dirname on path,
+  e.g. /home/bin/text => (/home/bin/text /home/bin /home /)."
+  [path]
+  (when (not= path "")
+    (lazy-seq (cons path (when (not= "/" path)
+                            (dirname-seq (dirname path)))))))
 (defn reduce-path-by
     "Trims path from the left with another path. E.g. 
     /home/dir/file.txt reduced by /home is dir/file.txt."

@@ -6,17 +6,36 @@
 
 ;; HTML funcs
 
-(def *context* nil)
+(declare *context*) 
 
-(defn context-path
-  [path]
-  (str (or *context* "") path))
+(defn with-context 
+  "Wrap handler in URL-context code, making routes match only URLs that begin
+  with ctx, & binding *context* to the value of ctx. (ctx should not contain the
+  trailing slash.)
+
+  Written by James Reeves, compojure mailing list, 04 April 2009."
+  [ctx & route-seq] 
+  (let [handler (apply routes route-seq) 
+        pattern (re-pattern (str "^" ctx "(/.*)?"))] 
+    (fn [request] 
+      (if-let [[_ uri] (re-matches pattern (:uri request))] 
+        (binding [*context* ctx] 
+          (handler (assoc request :uri uri))))))) 
+
+(defn url [path] 
+  "Make url relative to *context*."
+  (str *context* path))
+
+(defn ctx-link-to
+  "Like Compojure's link-to, but with *context*-sensitive path."
+  [path & content]
+  (apply link-to (url path) content))
 
 (defn css-path
   "Concatenate file with path prefix for CSS files. File
   should be given as string or keyword, without .css suffix."
   [file]
-  (let  [prefix (context-path "/css/")
+  (let  [prefix (url "/css/")
          file (str* file)]
     (str prefix file ".css")))
 
@@ -26,7 +45,7 @@
   `(html
     (if (not= "" ~heading) [:strong ~heading] "")
     [:ul
-     (map (fn [[label# path#]] [:li (link-to path# label#)]) ~(vec items))]))
+     (map (fn [[label# path#]] [:li (ctx-link-to path# label#)]) ~(vec items))]))
 
 (defn templ
   "HTML template."
@@ -36,7 +55,7 @@
     (xhtml-tag "en"
       [:head
        (apply include-css (map css-path [:main :tei :liquid-blueprint]))
-       (apply include-js (map context-path ["/js/jquery.js" "/js/bizet.js"]))
+       (apply include-js (map url ["/js/jquery.js" "/js/bizet.js"]))
        [:title title]]
       [:body
        [:div.container
