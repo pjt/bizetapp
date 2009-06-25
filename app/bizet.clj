@@ -25,17 +25,16 @@
         (map 
           #(ctx-link-to (str "/section/" (key %)) 
             (format "%s (%s)" (key %) (val %)))
-          (set-count (mapcat :divids (vals @entries)))))))
+          (set-count (mapcat :sections (vals @entries)))))))
   (GET "/entries/"
     (templ "Entries"
        [:h2 "Catalog Entries"]
         (unordered-list 
-            (map 
-                #(ctx-link-to (str "/entry/" (:id %)) 
+            (map #(ctx-link-to (str "/entry/" (:id %)) 
                     (format "%s" (:title %)) 
                     (and (:comp-date %) 
                          (format " (%s)" (:comp-date %))))
-                (by-modified-date @entries)))))
+                (by-composition-date @entries)))))
   (GET "/entry/:id" 
     (templ "Bizet Entry" 
         (htmlify (:doc (@entries (params :id))))))

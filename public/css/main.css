@@ -176,7 +176,9 @@ div.return-chunk {
 
 .with-marg-name {
    background-color: #B0D4EE;
+   /*
    padding: .1em 0;
+   */
 }
 
 .with-marg-name span {

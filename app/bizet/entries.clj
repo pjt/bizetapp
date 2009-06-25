@@ -3,7 +3,7 @@
 
 (def *data-dir* "../bz-repos/xml")
 
-(defstruct entry :id :title :comp-date :divids :tags :doc)
+(defstruct entry :id :title :comp-date :sections :tags :doc)
 
 (defn last-mod [#^java.io.File f] (.lastModified f))
 
@@ -20,8 +20,8 @@
           (comp title->id title-fn) 
           title-fn
           (compile-xpath 
-              "//div[@xml:id='composition']//date[@type='composition'][1]/string()")
-          (comp set (compile-xpath "/TEI/text/div/@xml:id/string()"))
+              "//date[@type='composition'][1]/@when/string()")
+          (comp set (compile-xpath "/TEI/text/div/@type/string()"))
           (comp set (compile-xpath "/TEI/text//element()/local-name()"))
           identity)] 
 
@@ -34,7 +34,7 @@
           ((:id entry-fns) doc)
           ((:title entry-fns) doc)
           ((:comp-date entry-fns) doc)
-          ((:divids entry-fns) doc)
+          ((:sections entry-fns) doc)
           ((:tags entry-fns) doc)
           ((:doc entry-fns) doc))
           ; metadata

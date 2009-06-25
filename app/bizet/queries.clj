@@ -11,6 +11,10 @@
         "with " (text-field :terms)
                 (submit-button "Search")]))
 
+(defn by-composition-date
+  [entries]
+  (sort-by #(:comp-date (meta %)) (comp - compare) (vals entries)))
+
 (defn by-modified-date
   [entries]
   (sort-by #(:modified (meta %)) (comp - compare) (vals entries)))

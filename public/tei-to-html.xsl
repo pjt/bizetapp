@@ -11,8 +11,8 @@
      ============================================================
      Perry Trolard
      Humanities Digital Workshop
-     30 April 2007
-     last modified: Tue 31 Mar 2009 19:26
+     Wed 15 Apr 2009 
+     last modified: Tue 23 Jun 2009 12:04
      ============================================================
   -->
 
@@ -22,6 +22,8 @@
      omit-xml-declaration="no"
      indent="yes"/>
 
+  <xsl:param name="with-xpath" select="false"/>
+
   <!-- identity transform for comment, atts -->
   <xsl:template match="comment()|@*">
      <xsl:copy>
@@ -30,10 +32,8 @@
    </xsl:copy>
   </xsl:template>
 
-  <!-- kill pi's -->
   <xsl:template match="processing-instruction()"/>
 
-  <!-- elements -->
   <xsl:template name="xpath_for_html">
      <xsl:param name="path"/>
      <xsl:value-of select="concat('path',
@@ -52,14 +52,17 @@
               <xsl:value-of select="concat(' teiatt-',name(),'=',replace(.,' ','__'))"/>
            </xsl:for-each>
         </xsl:attribute>
-        <xsl:attribute name="id">
-           <xsl:call-template name="xpath_for_html">
-              <xsl:with-param name="path" select="nav:getPath(.)"/>
-           </xsl:call-template>
-        </xsl:attribute>
+	<xsl:if test="$with-xpath">
+		<xsl:attribute name="id">
+		   <xsl:call-template name="xpath_for_html">
+		      <xsl:with-param name="path" select="nav:getPath(.)"/>
+		   </xsl:call-template>
+		</xsl:attribute>
+	</xsl:if>
         <xsl:apply-templates/>
      </span>
   </xsl:template>
+
 
   <!--
        =============
