@@ -29,7 +29,7 @@
   (GET "/entries/"
     (templ "Entries"
        [:h2 "Catalog Entries"]
-        (unordered-list 
+        (ordered-list 
             (map #(ctx-link-to (str "/entry/" (:id %)) 
                     (format "%s" (:title %)) 
                     (and (:comp-date %) 
@@ -78,7 +78,7 @@
           [:pre (map
                   (fn [[k,v]] 
                       (let [m (meta v)]
-                          (format "%-30s: %tc\n"
+                          (format "%s\n\t%tc\n"
                               (:file m)
                               (:modified m)))) 
                   (dosync (commute entries pull-entries-from-fs)))])))

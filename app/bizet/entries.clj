@@ -1,11 +1,12 @@
 (ns bizet.entries
-  (:use bizet.utilities saxon))
+  (:use bizet.utilities saxon)
+  (:import java.io.File java.util.Date))
 
 (def *data-dir* "../bz-repos/xml")
 
 (defstruct entry :id :title :comp-date :sections :tags :doc)
 
-(defn last-mod [#^java.io.File f] (.lastModified f))
+(defn last-mod [#^File f] (.lastModified f))
 (defn compile-tei-q 
   [q] (compile-xquery (with-default-ns "http://www.tei-c.org/ns/1.0" q)))
 
@@ -33,7 +34,7 @@
           (comp title->id title-fn) 
           title-fn
           (compile-tei-q
-              "//date[@type='composition'][1]/@when/string()")
+              "//date[@type='composition'][1]/(@when|@notBefore|@from)/string()")
           (comp set (compile-tei-q "/TEI/text/div/@type/string()"))
           (comp set (compile-tei-q "/TEI/text//element()/local-name()"))
           identity)] 

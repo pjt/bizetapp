@@ -13,7 +13,7 @@
 
 (defn by-composition-date
   [entries]
-  (sort-by #(:comp-date (meta %)) (comp - compare) (vals entries)))
+  (sort-by #(:comp-date %) (vals entries)))
 
 (defn by-modified-date
   [entries]
