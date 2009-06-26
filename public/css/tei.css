@@ -368,3 +368,48 @@ span.tei-div.teiatt-type\=documents span.tei-cit span.tei-bibl:before {
 span.tei-div.teiatt-type\=documents span.tei-cit span.tei-bibl:after {
     content:" ]";
 }
+
+/* MS ITEM TEMP DISPLAY */
+
+
+span.tei-div.teiatt-type\=manuscripts span.tei-msItem span.tei-title{
+
+    display: block;
+    font-weight: 600;
+    font-style: italic;
+    text-align: left;
+    margin: 1em 0em 0em 2.5em;
+
+}
+span.tei-div.teiatt-type\=manuscripts span.tei-msItem span.tei-locus{
+
+    display: inline;
+    font-weight: 400;
+    text-align: left;
+    margin: .3em 0em 1em 2.5em;
+
+}
+
+span.tei-div.teiatt-type\=manuscripts span.tei-msContents > span.tei-note{
+
+    display: inline;
+    font-weight: 400;
+    text-align: left;
+    margin: 2em 0em 2em 2.5em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

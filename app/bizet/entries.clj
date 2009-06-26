@@ -6,29 +6,42 @@
 (defstruct entry :id :title :comp-date :sections :tags :doc)
 
 (defn last-mod [#^java.io.File f] (.lastModified f))
+(defn compile-tei-q 
+  [q] (compile-xquery (with-default-ns "http://www.tei-c.org/ns/1.0" q)))
 
-(defn- title->id
-  [title]
-  ((comp downcase (partial apply str))
-      (remove #(Character/isWhitespace %) title)))
+(let [specials {\á \a, \à \a, \â \a, \ä \a
+                \é \e, \è \e, \ê \e, \ë \e
+                \í \i, \ì \i, \î \i, \ï \i
+                \ó \o, \ò \o, \ô \o, \ö \o
+                \ú \u, \ù \u, \û \u, \ü \u
+                \æ "ae", \œ "oe"}
+      conv    #(get specials % %)]
+
+  (def title->id
+    (comp (partial apply str)
+          (partial map conv)
+          (partial filter #(Character/isLetterOrDigit %))
+          downcase)))
 
 (let 
-  [title-fn (compile-xpath 
-                "/TEI/teiHeader/fileDesc/titleStmt/title[@type='main'][1]/string()")
+  [title-fn (compile-tei-q
+                "/TEI/teiHeader/fileDesc/titleStmt/title[1]/string()")
+   compile-tei-file
+            (comp (compile-xslt (compile-file "public/into-tei-ns.xsl")) compile-file)
    entry-fns
       (struct entry
           (comp title->id title-fn) 
           title-fn
-          (compile-xpath 
+          (compile-tei-q
               "//date[@type='composition'][1]/@when/string()")
-          (comp set (compile-xpath "/TEI/text/div/@type/string()"))
-          (comp set (compile-xpath "/TEI/text//element()/local-name()"))
+          (comp set (compile-tei-q "/TEI/text/div/@type/string()"))
+          (comp set (compile-tei-q "/TEI/text//element()/local-name()"))
           identity)] 
 
   (defn- entry-builder
     "Builds an individual entry struct."
     [file]
-    (let [doc (compile-file (str file))]
+    (let [doc (compile-tei-file (str file))]
       (with-meta
         (struct entry
           ((:id entry-fns) doc)
