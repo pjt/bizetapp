@@ -69,8 +69,7 @@
 (def htmlify 
   (comp str 
         #(serialize % (java.io.StringWriter.) {:method "xhtml"})
-        (compile-xslt (compile-file "public/tei-to-html.xsl"))
-        (compile-xslt (compile-file "public/name-gen.xsl"))))
+        (compile-xslt (compile-file "public/tei-to-html.xsl"))))
 
 ;; Error handling
 

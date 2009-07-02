@@ -33,7 +33,7 @@
   where :results-map is a map from entry to seq of htmlized nodes, with 
   highlighting."
   [entries tag q]
-  (let [srch  (compile-xpath (format "//%s[matches(.,\"%s\",'i')]" tag (h q)))
+  (let [srch    (compile-tei-q (format "//%s[matches(.,\"%s\",'i')]" tag (h q)))
         results (for [e (vals entries)]
                   {:entry e :hits (srch (:doc e))})
         results (filter :hits results)]

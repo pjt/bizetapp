@@ -1,5 +1,5 @@
 (ns bizet.utilities
-  (:use clojure.contrib.str-utils))
+  (:use saxon clojure.contrib.str-utils))
 
 (def dot-xml
     (proxy [java.io.FilenameFilter] []
@@ -113,4 +113,14 @@
                   screen
                   (str screen "/"))]
           (trim-left path screen))))
+
+
+; XML
+
+(defn compile-tei-q "Compile XQuery with TEI ns as default." 
+  [q] (compile-xquery (with-default-ns "http://www.tei-c.org/ns/1.0" q)))
+
+(defn tei-q "Run XQuery with TEI ns as default."
+  [q nd] (query (with-default-ns "http://www.tei-c.org/ns/1.0" q) nd))
+
 

@@ -7,8 +7,6 @@
 (defstruct entry :id :title :comp-date :sections :tags :doc)
 
 (defn last-mod [#^File f] (.lastModified f))
-(defn compile-tei-q 
-  [q] (compile-xquery (with-default-ns "http://www.tei-c.org/ns/1.0" q)))
 
 (let [specials {\á \a, \à \a, \â \a, \ä \a
                 \é \e, \è \e, \ê \e, \ë \e
@@ -28,13 +26,16 @@
   [title-fn (compile-tei-q
                 "/TEI/teiHeader/fileDesc/titleStmt/title[1]/string()")
    compile-tei-file
-            (comp (compile-xslt (compile-file "public/into-tei-ns.xsl")) compile-file)
+            (comp 
+              (compile-xslt (compile-file "public/name-gen.xsl"))
+              (compile-xslt (compile-file "public/into-tei-ns.xsl")) 
+              compile-file)
    entry-fns
       (struct entry
           (comp title->id title-fn) 
           title-fn
           (compile-tei-q
-              "//date[@type='composition'][1]/(@when|@notBefore|@from)/string()")
+              "(//date[@type='composition'])[1]/(@when|@notBefore|@from|@notAfter)[1]/string()")
           (comp set (compile-tei-q "/TEI/text/div/@type/string()"))
           (comp set (compile-tei-q "/TEI/text//element()/local-name()"))
           identity)] 
