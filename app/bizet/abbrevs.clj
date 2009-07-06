@@ -7,7 +7,7 @@
     (java.io.PushbackReader. (reader "public/abbrevs.oxford-music-online.json"))))
 
 (def lookups
-  [[#(re-find #"([A-Z]+)-(.*)" %),
+  [[(partial re-find #"([A-Z]+)-(.*)"),
     (fn [[_ country siglum]] 
       (let [libs (-> *abbrevs* (get "Library Sigla") (get country))
             lib  (libs siglum)]

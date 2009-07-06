@@ -42,25 +42,27 @@
   [#^String s]
   (apply str (Character/toUpperCase (first s)) (rest s)))
 
-(defn cat-if-vec
-  "Concatenates vector items to string, if arg is vector; 
+(defn cat-params
+  "Concatenates items to string, if arg is vector; 
   otherwise returns argument. Takes optional separator 
   argument."
-  ([arg] (cat-if-vec " " arg))
-  ([sep arg]
-    (let [f (if (vector? arg)
+  ([prms kkey] (cat-params " " prms kkey))
+  ([sep prms kkey]
+    (let [vval  (prms kkey)
+          f (if (vector? vval)
                 (partial str-join sep)
                 identity)]
-      (f arg))))
+      (f vval))))
 
-(defn first-if-vec
+(defn first-params
   "Returns first item in vector, if arg is vector; 
   otherwise returns argument."
-  [arg]
-    (let [f (if (vector? arg)
+  [prms kkey]
+    (let [vval (prms kkey)
+          f (if (vector? vval)
                   first
                   identity)]
-      (f arg)))
+      (f vval)))
 
 
 ;; -- path utilities --

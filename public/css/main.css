@@ -109,11 +109,12 @@ a, a:link, a:active {
 }
 
 a:visited {
-  color: #744; background-color: transparent;
+  color: #5C5197; background-color: transparent;
 }
 
 a:hover {
-  color: #700; background-color: #ddd;
+  color: inherit;
+  background-color: #eee;
   border: none;
 }
 
@@ -200,14 +201,15 @@ div.return-chunk {
 }
 .mousewindow a {
    text-decoration: none;
-   border: 2px solid #F99;
+   border: 2px solid #228;
    padding: 0.4em;
    -webkit-border-radius: 0.7em;
    -moz-border-radius: 0.7em;
    /*
    background: transparent url(../img/little-bg.gif) repeat-x fixed bottom center;
    */
-   background-color: white;
+   color: white;
+   background-color: #666;
    background-image: url('../img/little-bg.gif');
    background-attachment: fixed;
    background-repeat: repeat-x;

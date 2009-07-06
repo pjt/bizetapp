@@ -1,17 +1,12 @@
 (ns bizet.pages
-  (:use (bizet queries utilities web-utilities)
+  (:use (bizet queries utilities web-utilities abbrevs)
+        clojure.contrib.json.write
         compojure))
 
 (defn home [entries]
   (templ "Bizet Entries" 
     [:h2 "Search by Tag"]
-    (search-in-form entries)
-    [:h2 "Divisions"]
-    (unordered-list 
-      (map 
-        #(ctx-link-to (str "/section/" (key %)) 
-          (format "%s (%s)" (key %) (val %)))
-        (set-count (mapcat :sections (vals entries)))))))
+    (search-in-form entries)))
 
 (defn get-entry
   ([entries]
@@ -45,3 +40,6 @@
           results-map)
         [:p [:em "No results found."]]))))
 
+(defn abbrev-lookup
+  [abbr]
+  (json-str (lookup abbr)))

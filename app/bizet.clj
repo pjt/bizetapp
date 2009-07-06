@@ -1,5 +1,5 @@
 (ns bizet
-  (:use (bizet entries queries utilities web-utilities pages)
+  (:use (bizet entries utilities web-utilities pages)
         (clojure.contrib [shell-out :only (sh)])
         compojure))
 
@@ -20,24 +20,15 @@
 
   (GET "/entry/:id" (get-entry @entries (params :id)))
 
-  ;(GET "/section/:name"
-  ;  (let [section   (params :name)
-  ;        sections  (section-for-each @entries section)
-  ;        title     (format "%s Sections" (first-upcase section))]
-  ;      (templ title
-  ;          [:h1 title]
-  ;          (map (fn [[entry sec]] 
-  ;                [[:h2 (ctx-link-to 
-  ;                        (format "/entry/%s" (:id entry) (:title entry)))] 
-  ;                 sec]))
-  ;              sections)))
-
   (GET "/search/"
     (templ "Search"
         [:p "Search not yet implemented."]))
 
   (GET "/search/in/"
-    (search-in @entries (first-if-vec (params :tag)) (cat-if-vec (params :terms))))
+    (search-in @entries (first-params params :tag) (cat-params params :terms)))
+
+  (GET "/abbrevs/lookup/"
+    (abbrev-lookup (first-params params :q)))
 
   (GET "/rrr" 
     (do
