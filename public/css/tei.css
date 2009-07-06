@@ -59,7 +59,7 @@ span.tei-body,
 span.tei-back,
 span.tei-group,
 span.tei-titlePage {
-    margin: 2em 0;
+    margin: 2em 1.5em 2em 0em;
 }
 span.tei-item {
     display: list-item;
@@ -187,7 +187,20 @@ span.tei-head.teiatt-type\=gen-head2 {
     text-align: left;
     margin: 1.5em 0em 1.5em 1.5em;
 }
+
+
+/*Indenting sub headings of Summary to match below*/
+
+span.tei-div.teiatt-type\=summary  span.tei-div{
+    margin: 2em 1.5em 1em 2em;  
+}
+
+span.tei-div.teiatt-type\=instrumentation  span.tei-list{
+    margin: 2em 1.5em 1em 2.5em;  
+}
+
 /* Displaying Summary-CastList */
+
 span.tei-castItem {
     display: list-item;
     margin-left: 1.5em;
@@ -199,6 +212,7 @@ span.tei-list.teiatt-type\=instrumentation,
 span.tei-list.teiatt-type\type=stage-band {
     margin-left: 2 em;
 }
+
 
 
 /*DISPLAY FOR THE CONTENTS */
@@ -319,8 +333,40 @@ span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements > s
     margin: 1em 0em 1em 2em;
     text-decoration: underline;
     
-    
 }
+
+/* Manuscript/Publication Headings alignment and indentions*/
+
+span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=autographs, 
+span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-sources,
+span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-librettos {       
+    margin: 2em 1.5em 1em 2em;  
+}
+
+span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=autographs span.tei-div, 
+span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-sources span.tei-div,
+span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-librettos span.tei-div {       
+    margin: 2em 1.5em 1em 3em;  
+}
+
+
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=librettos, 
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=vocal-scores,
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=full-scores,
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=orchestral-scores,
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements{       
+    margin: 2em 1.5em 1em 2em;  
+}
+
+
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=librettos span.tei-div, 
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=vocal-scores span.tei-div,
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=full-scores span.tei-div,
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=orchestral-scores span.tei-div,
+span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements span.tei-div{       
+    margin: 2em 1.5em 1em 3em;  
+}
+
 
 /* LETTERS */
 span.tei-opener {
