@@ -64,6 +64,13 @@ jQuery(function(){
                         this.parentNode.removeChild(this);
                      }));
       });
+
+   // section toggling
+   $("span.tei-text span.tei-div span.tei-head").click(function(e){                     
+         e.preventDefault();                                          
+         $(this).toggleClass("expanded")
+            .parent().children().not(this).slideToggle("slow");
+   }); 
 });
 
 jQuery.extend({

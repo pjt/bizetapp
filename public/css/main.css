@@ -219,3 +219,15 @@ div.return-chunk {
 .mousewindow a:hover {
    cursor: pointer;
 }
+
+span.tei-text span.tei-div span.tei-head:after {
+   cursor: pointer;
+}
+span.tei-text span.tei-div span.tei-head:after {
+   content: ' \25AA';
+}
+span.tei-text span.tei-div span.tei-head.expanded:after {
+   content: ' \25AB';
+}
+
+
