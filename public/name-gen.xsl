@@ -5,6 +5,16 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     version="2.0">
     
+    
+    <xsl:template match="*:div[@type='summary']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <head type="gen-head">Summary</head>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
+    
     <xsl:template match="*:div[@type='castlist']">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>

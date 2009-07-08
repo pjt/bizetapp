@@ -3,6 +3,7 @@
      (bizet utilities web-utilities)))
 
 (defn search-in-form 
+  "Display HTML form for searching in tag."
   [entries]
   (form-to [:get (url "/search/in/")]
     [:p "Search in "

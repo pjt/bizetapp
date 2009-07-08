@@ -43,6 +43,7 @@
   "Navigation section."
   [heading & items]
   `(html
+    (ctx-link-to "/" [:img {:src (url "/img/bizet-water.gif")}])
     (if (not= "" ~heading) [:strong ~heading] "")
     [:ul
      (map (fn [[label# path#]] [:li (ctx-link-to path# label#)]) ~(vec items))]))
@@ -50,8 +51,9 @@
 (defn templ
   "HTML template."
   [title & body]
-  [{"Content-Type" "text/html;charset=UTF-8"}
-   (html (doctype :xhtml-strict)
+  ;[{"Content-Type" "text/html;charset=UTF-8"}
+  [{"Content-Type" "application/xhtml+xml;charset=UTF-8"}
+   (html 
     (xhtml-tag "en"
       [:head
        (apply include-css (map css-path [:main :tei :liquid-blueprint]))
@@ -59,9 +61,11 @@
        [:title title]]
       [:body
        [:div.container
+         ;[:div#top.column.span-24
+         ; [:div [:img {:src (url "/img/bizet-water.gif")}]]]
          [:div#nav.column.span-3 
             (nav "" ["Home" "/"] ["Entries" "/entries/"])]
-         [:div.column.span-18 body]
+         [:div.column.prepend-1.span-17 body]
          [:div#margin.column.prepend-1.span-2.last]]]))])
 
 ;; Docs

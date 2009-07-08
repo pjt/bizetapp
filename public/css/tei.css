@@ -116,7 +116,7 @@ span.tei-teiHeader {
     font-size: 80%;
 }
 span.tei-text {
-    color: #555;
+    color: black;
     margin-bottom: 2em;
 }
 .tei-body > .tei-title {
@@ -217,8 +217,12 @@ span.tei-list.teiatt-type\type=stage-band {
 
 /*DISPLAY FOR THE CONTENTS */
 
+span.tei-div.teiatt-type\=contents span.tei-list.teiatt-type\=contents{
+list-style-type: none;
+}
 
 span.tei-div.teiatt-type\=contents > span.tei-list.teiatt-type\=contents > span.tei-item > span.tei-list > span.tei-head{
+    
     text-align: left;
     font-size: 108%;
     font-weight: 600;

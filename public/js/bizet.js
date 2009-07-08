@@ -1,14 +1,4 @@
 jQuery(function(){
-   jQuery.fn.elem = function(){
-      var elem = this.attr("class").match(/tei-(\S+)/),
-          atts = this.attr("class").match(/teiatt-(\S+)/g),
-          atts = !atts ? "" :
-                  "@" + atts.map(function(val,i){ 
-                                    return val.replace(/^teiatt-/,'').replace(/__/g,' '); })
-                            .join("@");
-      return elem ? elem[1] + atts : false;
-   }
-
    var review = (function(){
       var stack = [];
 
@@ -54,39 +44,90 @@ jQuery(function(){
    if (window.location.search.search(/review/) > -1) {
       $(document).trigger("review");
    }
-   // or double-click-activated dialog
-   $(document).dblclick(function(e){
-         window.getSelection().removeAllRanges();
-         $.mousewindow(e, 
-            $("<a>" + (reviewing ? "Stop Review" : "Review") + "</a>")
+   // or mousewindow dialog
+   var review_mw = function(){
+      return $("<a>" + (reviewing ? "Stop Review" : "Review") + "</a>")
                .click(function(){ 
                         $(document).trigger(reviewing ? "noreview" : "review"); 
-                        this.parentNode.removeChild(this);
-                     }));
-      });
+               })
+   }
+
+   // abbrev checking
+   var abbrev_mw = function(){
+      return $("<a>Check Abbrevs</a>").click(function(){
+               $("span.tei-abbr").each(function(){
+                  var $t = $(this);
+                  $.getJSON("/bizet/abbrevs/lookup/", {"q": $t.text()},
+                        function(data){
+                           if (data.length > 0){
+                              $t.after(" <b>"+ data.join(" | ") +"</b>");
+                           } else {
+                              $t.css({"background-color": "red", "color": "white"});
+                           }
+                        });
+                  })
+               })
+   }
+
 
    // section toggling
-   $("span.tei-text span.tei-div span.tei-head").click(function(e){                     
+   $("span.tei-text span.tei-div > span.tei-head").click(function(e){                     
          e.preventDefault();                                          
          $(this).toggleClass("expanded")
             .parent().children().not(this).slideToggle("slow");
-   }); 
+      });
+   
+   // start w/ divs hidden
+   $("span.tei-body span.tei-div").children().not(".tei-div > span.tei-head").hide();
+   // shortcut for expanding all divs
+   var expandall_mw = function(){
+      return $("<a>Expand Divs</a>").click(function(){
+            $("span.tei-body span.tei-div").children().show();
+         });
+   }
+
+   // set up mousewindow HUD
+   $(document).dblclick(function(e){
+         window.getSelection().removeAllRanges();
+         $.mousewindow(e, review_mw, abbrev_mw, expandall_mw);
+      });
+
 });
+
+jQuery.fn.elem = function(){
+   var elem = this.attr("class").match(/tei-(\S+)/),
+       atts = this.attr("class").match(/teiatt-(\S+)/g),
+       atts = !atts ? "" :
+               "@" + atts.map(function(val,i){ 
+                                 return val.replace(/^teiatt-/,'').replace(/__/g,' '); })
+                         .join("@");
+   return elem ? elem[1] + atts : false;
+}
+
+function argslice(args) { 
+   // Slices arguments pseudo-array at index (or indices) given after args
+   return Array.prototype.slice.apply(args, 
+         Array.prototype.slice.apply(arguments, [1]));
+}
 
 jQuery.extend({
    mousewindow: (function(){
                   var mw = [],
                       killmw = function() { mw.length && mw.pop().remove(); },
                       clear = function() { killmw(); $(document).unbind("click",clear); };
-                  return function(e,arg) {
+                  return function(e) {
                      killmw();
                      var d = $("<div/>").css({position: "absolute", 
                                               top: Math.max(5,e.pageY - 20),
                                               //top: e.pageY,
                                               left: e.clientX + 10 })
                                        .addClass("mousewindow")
-                                       .append(arg)
                                        .appendTo(document.body);
+                     // append results of calling each argument after 
+                     // the first (e, the event object)
+                     $.each(argslice(arguments,1),
+                        function() { d.append(this()); }
+                     );
                      mw.push(d);
                      $(document).click(clear);
                   }

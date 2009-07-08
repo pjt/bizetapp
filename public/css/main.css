@@ -26,6 +26,7 @@ div.container {
 #nav {
    line-height: inherit;
    font-size: 90%;
+   text-align: center;
 }
 
 #nav ul {
@@ -41,6 +42,7 @@ div.container {
    color: #9E0100;
 }
 
+/*
 h1, h2, h3, h4, h5, h6 {
   color: #444; background-color: transparent;
   font-family: Helvetica, Arial, sans-serif;
@@ -88,18 +90,14 @@ h6 {
 p, ul {
   line-height: 145%;
 }
+*/
 
 ul {
-  list-style: none outside url(icons/grey_box_arrow.png);
+  list-style: none outside;
 }
 
-ul ul {
-  list-style: none outside url(icons/circle_arrow.png);
-}
-
-
-ul, ol					/*body > ul, body > ol*/ {
-  padding-left: 0; /*1.5em;*/
+ul, ol {
+  padding-left: 0; 
 }
 
 a, a:link, a:active {
@@ -134,6 +132,7 @@ pre code {
   font-size: 93%;
 }
 
+/*
 td, th {
   border: 1px solid #999;
   padding: .3em;
@@ -151,6 +150,7 @@ thead, thead th {
 table {
   width: 100%;
 }
+*/
 
 /* classes
 ------------------------------ */
@@ -193,18 +193,18 @@ div.return-chunk {
    font-family: Helvetica, Verdana, Arial, sans-serif;
    background-color: #FFF;
    margin: 0.5em;
-   /*
    border: 1px solid #DDD;
    border-right: 3px solid #DDD;
    border-bottom: 3px solid #DDD;
-   */
 }
 .mousewindow a {
    text-decoration: none;
-   border: 2px solid #228;
+   cursor: pointer;
    padding: 0.4em;
+   margin: 0.3em;
    -webkit-border-radius: 0.7em;
    -moz-border-radius: 0.7em;
+   display: block;
    /*
    background: transparent url(../img/little-bg.gif) repeat-x fixed bottom center;
    */
@@ -220,14 +220,14 @@ div.return-chunk {
    cursor: pointer;
 }
 
-span.tei-text span.tei-div span.tei-head:after {
+span.tei-text span.tei-div > span.tei-head {
    cursor: pointer;
 }
-span.tei-text span.tei-div span.tei-head:after {
-   content: ' \207B';
+span.tei-text span.tei-div > span.tei-head:before {
+   content: '\26AA  ';
 }
-span.tei-text span.tei-div span.tei-head.expanded:after {
-   content: ' \207A';
+span.tei-text span.tei-div > span.tei-head.expanded:before {
+   content: '\26AB  ';
 }
 
 
