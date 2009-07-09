@@ -116,7 +116,7 @@ span.tei-teiHeader {
     font-size: 80%;
 }
 span.tei-text {
-    color: black;
+    color: #555;
     margin-bottom: 2em;
 }
 .tei-body > .tei-title {
@@ -195,6 +195,10 @@ span.tei-div.teiatt-type\=summary  span.tei-div{
     margin: 2em 1.5em 1em 2em;  
 }
 
+span.tei-div.teiatt-type\=summary  span.tei-div.teiatt-type\=text span.tei-head.teiatt-type={
+    margin: 2em 1.5em 1em 2em;  
+}
+
 span.tei-div.teiatt-type\=instrumentation  span.tei-list{
     margin: 2em 1.5em 1em 2.5em;  
 }
@@ -264,6 +268,12 @@ span.tei-div.teiatt-type\=contents > span.tei-list.teiatt-type\=contents span.te
 
 }
 
+span.tei-div.teiatt-type\=contents > span.tei-list.teiatt-type\=contents span.tei-item span.tei-title{
+    font-size: 102%;
+    font-style:italic;
+    font-weight: 600;
+}
+
 span.tei-item.teiatt-type\=aria span.tei-list.teiatt-type\=cast-on-stage > span.tei-item{
     display: inline;
 }
@@ -274,6 +284,35 @@ span.tei-item.teiatt-type\=aria span.tei-quote{
 }
 
 
+/* Items in the contents but not contained by anything (Prelude, etc.)*/
+span.tei-list.teiatt-type\=contents > span.tei-item > span.tei-title{
+    font-style:italic;
+    display: block;
+    margin: 0em 0em 0em 3em;
+}
+
+span.tei-list.teiatt-type\=contents > span.tei-item > span.tei-measure{
+    display: block;
+    margin: 0em 0em 0em 3em;
+}
+
+span.tei-list.teiatt-type\=contents > span.tei-item > span.tei-note{
+    font-style:italic;
+    display: block;
+    margin: 0em 0em 0em 3em;
+}
+
+/* Dialogue and Notes - needs to be fixed in the xml to make it distinct */
+
+span.tei-list.teiatt-type\=contents  span.tei-item.teiatt-type\=directions{
+    display: inline;
+    margin-left: 3em;
+    font-size: 80%;
+    font-weight: 300;
+}
+
+
+
 span.tei-item.teiatt-type\=aria span.tei-list.teiatt-type\=cast-on-stage > span.tei-item > span:after{
     content: ", ";
 }
@@ -282,6 +321,13 @@ span.tei-item.teiatt-type\=aria span.tei-measure:before{
     content: " (";
 }
 span.tei-item.teiatt-type\=aria span.tei-measure:after{
+    content: ") ";
+}
+
+span.tei-list.teiatt-type\=contents span.tei-item span.tei-measure:before{
+    content: " (";
+}
+span.tei-list.teiatt-type\=contents span.tei-item span.tei-measure:after{
     content: ") ";
 }
 
@@ -449,7 +495,53 @@ span.tei-div.teiatt-type\=manuscripts span.tei-msContents > span.tei-note{
 
 }
 
+/* Vocal Parts display */
 
+
+span.tei-div.teiatt-type\=vocal-parts span.tei-listBibl span.tei-head{
+
+    margin: 2em 1.5em 1em 0em;  
+    text-decoration: underline;
+    text-align: left;
+    
+
+}
+
+span.tei-div.teiatt-type\=vocal-parts span.tei-listBibl{
+
+    margin: 2em 1.5em 1em 3.5em;  
+
+}
+
+/* Arrangments/Extracts Display */
+
+span.tei-div.teiatt-type\=arrangements span.tei-bibl{
+  margin: 1em 1.5em 1em 4em; 
+}
+
+
+span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-item span.tei-listBibl span.tei-head{
+
+    margin: 2em 1.5em 1em 0em;  
+    text-decoration: underline;
+    text-align: left;
+}
+
+span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-item{
+    display: inline;
+}
+
+span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-listBibl{
+
+    margin: 2em 1.5em 1em 3.5em;  
+
+}
+
+span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-listBibl span.tei-bibl{
+
+    margin: 1em 1.5em 1em 2em;  
+
+}
 
 
 
