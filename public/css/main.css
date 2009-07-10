@@ -42,6 +42,15 @@ div.container {
    color: #9E0100;
 }
 
+#abbrev-result > ul > li {
+   margin-bottom: 1em;
+}
+
+#abbrev-result li li {
+   list-style: disc outside;
+   margin-left: 1.5em;
+}
+
 /*
 h1, h2, h3, h4, h5, h6 {
   color: #444; background-color: transparent;
@@ -86,11 +95,11 @@ h6 {
   font-weight: bold;
   font-variant: small-caps;
 }
+*/
 
 p, ul {
   line-height: 145%;
 }
-*/
 
 ul {
   list-style: none outside;

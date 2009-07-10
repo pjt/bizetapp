@@ -1,6 +1,7 @@
 (ns bizet.queries
   (:use compojure saxon
-     (bizet utilities web-utilities)))
+     (clojure.contrib seq-utils)
+     (bizet abbrevs utilities web-utilities)))
 
 (defn search-in-form 
   "Display HTML form for searching in tag."
@@ -46,3 +47,20 @@
                     [(:entry result) (map #(htmlify % {:search-terms q}) 
                                             (:hits result))])
               results)))}))
+
+(defn test-abbrevs
+  [entries]
+  (let [get-abbrs (compile-tei-q "distinct-values(//abbr/string())")
+        abbrevs (apply merge-with (partial apply conj)
+                    (map (fn [entry] 
+                           (zipmap (as-coll (get-abbrs (:doc entry))) 
+                                      (repeat [entry])))
+                      (vals entries)))
+        abbrevs (remove (comp nil? key) abbrevs)]
+    (group-by #(count (lookup (key %))) abbrevs)))
+    ; returns map of count => vector of key-value pairs, where key is
+    ; the abbrev, value is a vector of entries in which abbrev appears,
+    ; e.g. 0 => ["us-nope" [entry1 entry8 ...]]
+
+
+

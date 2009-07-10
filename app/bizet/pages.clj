@@ -8,15 +8,22 @@
     [:h2 "Search by Tag"]
     (search-in-form entries)))
 
+(defn- entry-link
+  ([entry] (entry-link entry :title))
+  ([entry display-fn]
+    (ctx-link-to
+      (format "/entry/%s" (:id entry)) (display-fn entry))))
+
 (defn get-entry
   ([entries]
    (templ "Entries"
       [:h2 "Catalog Entries"]
        (ordered-list 
-         (map #(ctx-link-to (str "/entry/" (:id %)) 
-                 (format "%s" (:title %)) 
-                 (and (:comp-date %) 
-                      (format " (%s)" (:comp-date %))))
+         (map (fn [entry] 
+                (entry-link entry
+                 #(str (format "%s" (:title %)) 
+                     (and (:comp-date %) 
+                          (format " (%s)" (:comp-date %))))))
              (by-composition-date entries)))))
   ([entries id]
    (templ "Bizet Entry" 
@@ -31,8 +38,7 @@
       (if results-map
         (mapcat
           (fn [[entry results]]
-            (let [to-entry (ctx-link-to 
-                             (format "/entry/%s" (:id entry)) (:title entry))]
+            (let [to-entry (entry-link entry)]
               (map #(html
                       [:div.return-chunk %]
                       [:div.to-entry to-entry])
@@ -43,3 +49,19 @@
 (defn abbrev-lookup
   [abbr]
   (json-str (lookup abbr)))
+
+(defn abbrev-test
+  [entries]
+  (let [title "Abbreviation Test Results"
+        results (test-abbrevs entries)]
+    (templ title
+      [:h1 title]
+      (for [fnd (keys results)]
+        [:div#abbrev-result
+         [:h2 (format "Abbrevs for which %d match%s found" 
+                        fnd (if (= 1 fnd) " was" "es were"))]
+         (unordered-list
+           (for [abbr (results fnd)]
+             (html (key abbr)
+                (unordered-list (map entry-link (val abbr))))))]))))
+             

@@ -30,6 +30,9 @@
   (GET "/abbrevs/lookup/"
     (abbrev-lookup (first-params params :q)))
 
+  (GET "/abbrevs/test/"
+    (abbrev-test @entries))
+
   (GET "/rrr" 
     (do
       (sh "svn" "up" *data-dir*)

@@ -9,7 +9,7 @@ done
 
 classpath=app:$jars
 
-options='-server'
+options='-Dfile.encoding=UTF8 -server'
 
 if which rlwrap > /dev/null; then
    rlwrap=rlwrap

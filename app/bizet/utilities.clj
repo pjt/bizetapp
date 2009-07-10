@@ -64,6 +64,11 @@
                   identity)]
       (f vval)))
 
+(defn as-coll
+  "If x is collection, return it; if singleton, make one-item vector."
+  [x]
+  (if (coll? x) x [x]))
+
 
 ;; -- path utilities --
 

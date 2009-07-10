@@ -81,6 +81,16 @@
 .span-23	{ width: 95%; }
 .span-24	{ width: 100%; margin-right: 0; }
 
+/* SASS
+=column(!num)
+   !sixes = !num / 6
+   !inc = !sixes - (!sixes % 1)
+   :float left
+   :width= (!num * 4%) + !inc
+   @if !num == 24
+      :margin-right 0
+*/
+
 .span-1>div, .span-2>div, .span-3>div, .span-4>div, 
 .span-5>div, .span-6>div, .span-7>div, .span-8>div, 
 .span-9>div, .span-10>div, .span-11>div, .span-12>div,
@@ -116,6 +126,13 @@
 .append-22  { padding-right: 91%; }
 .append-23  { padding-right: 95%; }
 
+/* SASS
+=append(!num)
+   !sixes = !num / 6
+   !inc = !sixes - (!sixes % 1)
+   :padding-right= (!num * 4%) + !inc
+*/
+
 /* Add these to a column to prepend empty cols. */
 .prepend-1   { padding-left: 4%; }
 .prepend-2   { padding-left: 8%; }
@@ -140,6 +157,13 @@
 .prepend-21  { padding-left: 87%; }  
 .prepend-22  { padding-left: 91%; }  
 .prepend-23  { padding-left: 95%; }  
+
+/* SASS
+=prepend(!num)
+   !sixes = !num / 6
+   !inc = !sixes - (!sixes % 1)
+   :padding-left= (!num * 4%) + !inc
+*/
 
 
 /* Border on right hand side of a column. */
@@ -167,6 +191,11 @@
 .pull-3  { margin-left: -10em; }
 .pull-4  { margin-left: -13.333em; }
 
+/* SASS
+=pull(!num)
+   :margin-left= -3.333em * !num
+*/
+
 .push-0  { margin: 0 0 0 1.5em; }
 .push-1  { margin: 0 -3.333em 0 1.5em; }
 .push-2  { margin: 0 -6.666em 0 1.5em; }
@@ -174,6 +203,11 @@
 .push-4  { margin: 0 -13.333em 0 1.5em; }
 .push-0, .push-1, .push-2, .push-3, .push-4 { float: right; }
 
+/* SASS
+=push(!num)
+   !right = -3.333em * !num
+   :margin 0 !right 0 1.5em
+*/
 
 /* Misc classes and elements
 -------------------------------------------------------------- */

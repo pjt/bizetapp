@@ -9,7 +9,7 @@
 (def lookups
   [[(partial re-find #"([A-Z]+)-(.*)"),
     (fn [[_ country siglum]] 
-      (let [libs (-> *abbrevs* (get "Library Sigla") (get country))
+      (let [libs (-> *abbrevs* (get "Library Sigla") (get country {}))
             lib  (libs siglum)]
         (when lib (str (libs "_self") ": " lib))))]
    [identity,
