@@ -46,3 +46,5 @@
                   (dosync (commute entries pull-entries-from-fs)))])))
   (GET "*" (trimming-serve-file "public" (:uri request)))
   (ANY "*" (page-not-found)))
+
+(decorate-with add-trailing-slash bizetapp)

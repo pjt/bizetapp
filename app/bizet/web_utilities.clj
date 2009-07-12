@@ -4,7 +4,7 @@
           compojure
           saxon))
 
-;; HTML funcs
+;; Middleware
 
 (declare *context*) 
 
@@ -25,6 +25,20 @@
 (defn url [path] 
   "Make url relative to *context*."
   (str *context* path))
+
+(defn add-trailing-slash
+  "Middleware function that adds a trailing slash & retries request when handler 
+  returns 404 & :uri didn't already end with a slash."
+  [handler]
+  (fn [request]
+    (let [response (handler request)
+          uri      #^String (:uri request)]
+      (if (and (= (:status response) 404)
+               (not (.endsWith uri "/")))
+        (handler (assoc request :uri (str uri "/")))
+        response))))
+
+;; HTML funcs
 
 (defn ctx-link-to
   "Like Compojure's link-to, but with *context*-sensitive path."
@@ -67,6 +81,7 @@
             (nav "" ["Home" "/"] ["Entries" "/entries/"])]
          [:div.column.prepend-1.span-17 body]
          [:div#margin.column.prepend-1.span-2.last]]]))])
+
 
 ;; Docs
 
