@@ -34,6 +34,10 @@ div.container {
    margin: 0;
 }
 
+#nav li {
+   list-style-type: none;
+}
+
 #margin {
    height: 100%;
    line-height: inherit;
