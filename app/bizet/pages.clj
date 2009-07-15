@@ -60,7 +60,7 @@
         [:div#abbrev-result
          [:h2 (format "Abbrevs for which %d match%s found" 
                         fnd (if (= 1 fnd) " was" "es were"))]
-         (unordered-list
+         (ordered-list
            (for [abbr (results fnd)]
              (html (key abbr)
                 (unordered-list (map entry-link (val abbr))))))]))))
