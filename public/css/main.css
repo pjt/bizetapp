@@ -42,12 +42,12 @@ div.container {
    color: #9E0100;
 }
 
-#abbrev-result > ul > li {
+.abbrev-result > ol > li {
    margin-bottom: 1em;
 }
 
-#abbrev-result li li {
-   list-style: disc outside;
+.abbrev-result li li {
+   list-style: disc inside;
    margin-left: 1.5em;
 }
 
@@ -102,11 +102,15 @@ p, ul {
 }
 
 ul {
-  list-style: none outside;
+  list-style: disc inside;
+}
+
+ol {
+   list-style: decimal inside;
 }
 
 ul, ol {
-  padding-left: 0; 
+  padding-left: 0;
 }
 
 a, a:link, a:active {
