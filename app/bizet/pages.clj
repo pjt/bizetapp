@@ -57,7 +57,7 @@
     (templ title
       [:h1 title]
       (for [fnd (keys results)]
-        [:div#abbrev-result
+        [:div.abbrev-result
          [:h2 (format "Abbrevs for which %d match%s found" 
                         fnd (if (= 1 fnd) " was" "es were"))]
          (ordered-list
