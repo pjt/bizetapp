@@ -218,6 +218,13 @@ span.tei-list.teiatt-type\type=stage-band {
 }
 
 
+span.tei-list.teiatt-type\=instrumentation span.tei-item:after{
+    content: ", ";
+}
+
+
+
+
 
 /*DISPLAY FOR THE CONTENTS */
 
@@ -374,7 +381,7 @@ span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=vocal-extracts s
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=full-extracts span.tei-head,
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=orchestral-extracts span.tei-head {
     text-align: left;
-    margin: 2em 0em 1em 2.5em;
+    margin: 2em 0em 1em 2em;
     text-decoration: underline;
 }
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements > span.tei-listBibl > span.tei-head,
@@ -390,13 +397,13 @@ span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements > s
 span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=autographs, 
 span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-sources,
 span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-librettos {       
-    margin: 2em 1.5em 1em 2em;  
+    margin: 2em 1.5em 1em 1.75em;  
 }
 
 span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=autographs span.tei-div, 
 span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-sources span.tei-div,
 span.tei-div.teiatt-type\=manuscripts span.tei-div.teiatt-type\=manuscript-librettos span.tei-div {       
-    margin: 2em 1.5em 1em 3em;  
+    margin: 2em 1.5em 1em 2.25em;  
 }
 
 
@@ -405,7 +412,7 @@ span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=vocal-scores,
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=full-scores,
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=orchestral-scores,
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements{       
-    margin: 2em 1.5em 1em 2em;  
+    margin: 2em 1.5em 1em 1.75em;  
 }
 
 
@@ -414,7 +421,7 @@ span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=vocal-scores spa
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=full-scores span.tei-div,
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=orchestral-scores span.tei-div,
 span.tei-div.teiatt-type\=publication span.tei-div.teiatt-type\=arrangements span.tei-div{       
-    margin: 2em 1.5em 1em 3em;  
+    margin: 2em 1.5em 1em 2.25em;  
 }
 
 
@@ -528,6 +535,10 @@ span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-item span.tei-
 }
 
 span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-item{
+    display: inline;
+}
+
+span.tei-div.teiatt-type\=arrangements span.tei-listBibl span.tei-item span.tei-listBibl{
     display: inline;
 }
 

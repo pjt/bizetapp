@@ -58,9 +58,9 @@
 
 
 (defn pull-entries-from-fs
-  "Returns entries hash-map created with .xml files from 
-  filesystem; if entry already exists for file & file hasn't
-  been modified, keeps existing entry & doesn't read file."
+  "Returns entries hash-map created with .xml files from filesystem; if entry 
+  already exists for file & file hasn't been modified, keeps existing entry & 
+  doesn't read file."
   [entries]
   (let [e-with-file (transform-keyval entries [(:file (meta v)) v])]
     (apply conj {}

@@ -75,8 +75,6 @@
        [:title title]]
       [:body
        [:div.container
-         ;[:div#top.column.span-24
-         ; [:div [:img {:src (url "/img/bizet-water.gif")}]]]
          [:div#nav.column.span-3 
             (nav "" ["Home" "/"] ["Entries" "/entries/"])]
          [:div.column.prepend-1.span-17 body]
