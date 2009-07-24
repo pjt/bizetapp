@@ -65,20 +65,27 @@
 (defn templ
   "HTML template."
   [title & body]
-  ;[{"Content-Type" "text/html;charset=UTF-8"}
-  [{"Content-Type" "application/xhtml+xml;charset=UTF-8"}
-   (html 
-    (xhtml-tag "en"
-      [:head
-       (apply include-css (map css-path [:main :tei :liquid-blueprint]))
-       (apply include-js (map url ["/js/jquery.js" "/js/bizet.js"]))
-       [:title title]]
-      [:body
-       [:div.container
-         [:div#nav.column.span-3 
-            (nav "" ["Home" "/"] ["Entries" "/entries/"])]
-         [:div.column.prepend-1.span-17 body]
-         [:div#margin.column.prepend-1.span-2.last]]]))])
+  (let [opts? (first body)
+        opts  (when (and  (map? opts?)
+                          (every? #{:css :js} (keys opts?)))
+                      opts?)
+        css   (concat [:main :tei :liquid-blueprint] (as-coll (:css opts)))
+        js    (concat ["/js/jquery.js" "/js/bizet.js"] (as-coll (:js opts)))
+        body  (if opts (rest body) body)]
+    ;[{"Content-Type" "text/html;charset=UTF-8"}
+    [{"Content-Type" "application/xhtml+xml;charset=UTF-8"}
+     (html 
+      (xhtml-tag "en"
+        [:head
+         (apply include-css (map css-path css))
+         (apply include-js (map url js))
+         [:title title]]
+        [:body
+         [:div.container
+           [:div#nav.column.span-3 
+              (nav "" ["Home" "/"] ["Entries" "/entries/"])]
+           [:div.column.prepend-1.span-17 body]
+           [:div#margin.column.prepend-1.span-2.last]]]))]))
 
 
 ;; Docs

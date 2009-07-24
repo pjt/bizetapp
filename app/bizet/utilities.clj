@@ -65,9 +65,11 @@
       (f vval)))
 
 (defn as-coll
-  "If x is collection, return it; if singleton, make one-item vector."
+  "If x is collection, return it; if singleton, make one-item vector. Special case: if nil,
+  returns nil."
   [x]
-  (if (coll? x) x [x]))
+  (when x
+    (if (coll? x) x [x])))
 
 
 ;; -- path utilities --

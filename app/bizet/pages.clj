@@ -54,7 +54,7 @@
   [entries]
   (let [title "Abbreviation Test Results"
         results (test-abbrevs entries)]
-    (templ title
+    (templ title {:js "/js/abbrevtest.js"}
       [:h1 title]
       (for [fnd (keys results)]
         [:div.abbrev-result
