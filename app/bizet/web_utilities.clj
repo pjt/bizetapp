@@ -69,7 +69,7 @@
         opts  (when (and  (map? opts?)
                           (every? #{:css :js} (keys opts?)))
                       opts?)
-        css   (concat [:main :tei :liquid-blueprint] (as-coll (:css opts)))
+        css   (concat [:main :tei] (as-coll (:css opts)))
         js    (concat ["/js/jquery.js" "/js/bizet.js"] (as-coll (:js opts)))
         body  (if opts (rest body) body)]
     ;[{"Content-Type" "text/html;charset=UTF-8"}
@@ -80,12 +80,12 @@
          (apply include-css (map css-path css))
          (apply include-js (map url js))
          [:title title]]
-        [:body
-         [:div.container
-           [:div#nav.column.span-3 
+        [:body.bp
+         [:div#container
+           [:div#nav
               (nav "" ["Home" "/"] ["Entries" "/entries/"])]
-           [:div.column.prepend-1.span-17 body]
-           [:div#margin.column.prepend-1.span-2.last]]]))]))
+           [:div#main body]
+           [:div#margin]]]))]))
 
 
 ;; Docs

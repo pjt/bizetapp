@@ -1,0 +1,250 @@
+/*
+	Default Styles for Bizet App
+	Perry Trolard
+	Humanities Digital Workshop
+	Washington University in Saint Louis
+	September 2008
+*/
+
+/* last modified: Wed 13 May 2009 */
+
+
+/* main html elements
+------------------------------ */
+
+body { 
+   position: relative; 
+}
+
+div.container {
+  color: #000; background-color: #fff;
+  font-family: Georgia, Times, serif;
+  font-size: 90%;
+  line-height: 1.3em;
+}
+
+#nav {
+   line-height: inherit;
+   font-size: 90%;
+   text-align: center;
+}
+
+#nav ul {
+   padding: 0;
+   margin: 0;
+}
+
+#nav li {
+   list-style-type: none;
+}
+
+#margin {
+   height: 100%;
+   line-height: inherit;
+   font-family: Palatino, "Palatino Linotype", Georgia, serif;
+   font-size: 90%;
+   color: #9E0100;
+}
+
+.abbrev-result > ol > li {
+   margin-bottom: 1em;
+}
+
+.abbrev-result li li {
+   list-style: disc inside;
+   margin-left: 1.5em;
+}
+
+/*
+h1, h2, h3, h4, h5, h6 {
+  color: #444; background-color: transparent;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 150%;
+  padding-bottom: 0;
+  border-bottom: 2px solid #333;
+  margin-bottom: 1em;
+  color: #222; background-color: transparent;
+}
+
+h2 {
+  font-size: 130%;
+  color: #000; background-color: transparent;
+  padding-bottom: 0;
+  border-bottom: 1px solid #555;
+  width: 75%;
+}
+
+h3 {
+  font-size: 120%;
+}
+
+h4 {
+  font-size: 90%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 90%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h6 {
+  font-size: 90%;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+*/
+
+p, ul {
+  line-height: 145%;
+}
+
+ul {
+  list-style: disc inside;
+}
+
+ol {
+   list-style: decimal inside;
+}
+
+ul, ol {
+  padding-left: 0;
+}
+
+a, a:link, a:active {
+  color: navy; background-color: transparent;
+  border-bottom: 1px solid #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #5C5197; background-color: transparent;
+}
+
+a:hover {
+  color: inherit;
+  background-color: #eee;
+  border: none;
+}
+
+code { 
+  color: #a22; background-color: inherit; 
+}
+
+pre {
+  background-color: #f7f7f7;
+  padding: .6em .3em;
+  border: 1px solid #777;
+  overflow: auto;
+}
+
+pre code {
+  line-height: 140%;
+  font-size: 93%;
+}
+
+/*
+td, th {
+  border: 1px solid #999;
+  padding: .3em;
+}
+
+th {
+  text-align: left;
+}
+
+thead, thead th {
+  background-color: #ddd;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+*/
+
+/* classes
+------------------------------ */
+
+div.return-chunk {
+  font-size: 90%;
+  border-left: .4em solid #BBB;
+  padding-left: .6em;
+}
+
+.to-entry {
+  margin-left: 5em;
+  padding: .8em;
+}
+
+.to-entry a:after {
+  content: " \2197";
+}
+
+.search-match {
+  display: inline;
+  border-bottom: 2px solid red;
+}
+
+.with-marg-name {
+   background-color: #B0D4EE;
+   /*
+   padding: .1em 0;
+   */
+}
+
+.with-marg-name span {
+   background-color: #9CBCD3;
+   border: 1px dotted #FFF;
+}
+
+.mousewindow {
+   line-height: inherit;
+   font-size: 85%;
+   font-family: Helvetica, Verdana, Arial, sans-serif;
+   background-color: #FFF;
+   margin: 0.5em;
+   border: 1px solid #DDD;
+   border-right: 3px solid #DDD;
+   border-bottom: 3px solid #DDD;
+}
+.mousewindow a {
+   text-decoration: none;
+   cursor: pointer;
+   padding: 0.4em;
+   margin: 0.3em;
+   -webkit-border-radius: 0.7em;
+   -moz-border-radius: 0.7em;
+   display: block;
+   /*
+   background: transparent url(../img/little-bg.gif) repeat-x fixed bottom center;
+   */
+   color: white;
+   background-color: #666;
+   background-image: url('../img/little-bg.gif');
+   background-attachment: fixed;
+   background-repeat: repeat-x;
+   background-position: bottom left;
+}
+
+.mousewindow a:hover {
+   cursor: pointer;
+}
+
+span.tei-text span.tei-div > span.tei-head {
+   cursor: pointer;
+}
+span.tei-text span.tei-div > span.tei-head:before {
+   content: '\26AA  ';
+}
+span.tei-text span.tei-div > span.tei-head.expanded:before {
+   content: '\26AB  ';
+}
+
+
