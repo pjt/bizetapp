@@ -165,11 +165,42 @@ div.return-chunk
     &:hover
       cursor: pointer
 
-span.tei-text span.tei-div 
-  span.tei-head 
-    cursor: pointer
-  span.tei-head:before
-    content: '\26AA  '
-  span.tei-head.expanded:before
-    content: '\26AB  '
+/*
+  span.tei-text span.tei-div 
+    span.tei-head 
+      cursor: pointer
+    span.tei-head:before
+      content: '\26AA  '
+    span.tei-head.expanded:before
+      content: '\26AB  '
 
+/*
+  span.tei-div
+    margin-left: 2em
+    span.tei-head
+      font-size: 140%
+      text-transform: uppercase
+    span.tei-div
+      span.tei-head
+        font-size: 90%
+        margin-left: -2em
+        text-align: left
+
+span.tei-div > span.tei-head
+  font-size: 140%
+  text-transform: uppercase
+
+span.tei-div span.tei-div span.tei-head 
+  font-size: 90%
+  margin-left: -2em
+  text-align: left
+
+span.tei-head ~ *
+  margin-left: 2em
+
+span.tei-body > *
+  margin-left: 0
+
+
+// Import TEI-specific styles
+@import partials/tei.sass

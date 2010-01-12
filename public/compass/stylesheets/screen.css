@@ -349,6 +349,33 @@ div.return-chunk { font-size: 90%; border-left: .4em solid #BBB; padding-left: .
 .mousewindow a { padding: 0.35em; margin: 0.35em; -webkit-border-radius: 0.7em; -moz-border-radius: 0.7em; text-decoration: none; cursor: pointer; display: block; color: white; background-color: #666; background-image: url('../img/little-bg.gif'); background-attachment: fixed; background-repeat: repeat-x; background-position: bottom left; }
 .mousewindow a:hover { cursor: pointer; }
 
-span.tei-text span.tei-div span.tei-head { cursor: pointer; }
-span.tei-text span.tei-div span.tei-head:before { content: '\26AA  '; }
-span.tei-text span.tei-div span.tei-head.expanded:before { content: '\26AB  '; }
+/* span.tei-text span.tei-div    span.tei-head      cursor: pointer   span.tei-head:before     content: '\26AA  '   span.tei-head.expanded:before     content: '\26AB  ' */
+/* span.tei-div   margin-left: 2em   span.tei-head     font-size: 140%     text-transform: uppercase   span.tei-div     span.tei-head       font-size: 90%       margin-left: -2em       text-align: left */
+span.tei-div > span.tei-head { font-size: 140%; text-transform: uppercase; }
+
+span.tei-div span.tei-div span.tei-head { font-size: 90%; margin-left: -2em; text-align: left; }
+
+span.tei-head ~ * { margin-left: 2em; }
+
+span.tei-body > * { margin-left: 0; }
+
+span { display: block; }
+span.tei-reg, span.tei-corr, span.tei-orig, span.tei-sic, span.tei-abbr, span.tei-expan, span.tei-choice, span.tei-app, span.tei-rdg, span.tei-lem, span.tei-unclear, span.tei-persName, span.tei-addName, span.tei-name, span.tei-placeName, span.tei-date, span.tei-note, span.tei-bibl, span.tei-biblScope, span.tei-author, span.tei-composer, span.tei-editor, span.tei-title, span.tei-place, span.tei-pubPlace, span.tei-publisher, span.tei-institution, span.tei-idno, span.tei-extent, span.tei-measure, span.tei-material, span.tei-msIdentifier, span.tei-foreign, span.tei-quote, span.tei-emph, span.tei-hi, span.tei-roleDesc, span.tei-role { display: inline; }
+span.teiatt-type\=stage-band span.tei-item { display: inline; }
+span.tei-lg, span.tei-p, span.tei-respStmt, span.tei-argument { margin: .7em 0 1em; }
+span.tei-item { display: list-item; }
+span.tei-listBibl > span.tei-bibl { display: list-item; margin: 1em 0em 1em 1.5em; display: list-item; }
+span.tei-reg, span.tei-corr, span.tei-expan { border-bottom: 1px dotted #777; }
+span.tei-orig, span.tei-sic, span.tei-abbr { color: #777; font-style: italic; font-size: 93%; }
+span.tei-orig:before, span.tei-sic:before { content: "["; }
+span.tei-orig:after, span.tei-sic:after { content: "]"; }
+span.tei-rdg { color: #992F36; font-size: 96%; }
+span.tei-rdg:before { content: "\00B7  "; }
+span.tei-lem { border-bottom: 1px solid #444; }
+span.tei-teiHeader { color: #555; margin-bottom: 2em; font-size: 80%; }
+span.tei-text { margin-bottom: 2em; }
+span.tei-fw { display: block; font-size: 90%; padding: .5em .25em .25em .25em; color: #7b7b7b; text-align: right; }
+span.tei-fw ~ .tei-fw { padding: .25em; }
+span.tei-fw.teiatt-type\=head { text-align: center; }
+span.tei-titlePage { text-align: center; font-size: 110%; }
+span.tei-head { text-align: center; font-size: 107%; margin: .5em 0 1em; }

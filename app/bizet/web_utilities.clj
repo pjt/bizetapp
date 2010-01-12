@@ -69,7 +69,7 @@
         opts  (when (and  (map? opts?)
                           (every? #{:css :js} (keys opts?)))
                       opts?)
-        css   (concat [:main :tei] (as-coll (:css opts)))
+        css   (concat [:main] (as-coll (:css opts)))
         js    (concat ["/js/jquery.js" "/js/bizet.js"] (as-coll (:js opts)))
         body  (if opts (rest body) body)]
     ;[{"Content-Type" "text/html;charset=UTF-8"}

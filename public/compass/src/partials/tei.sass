@@ -1,0 +1,466 @@
+span
+  display: block
+
+  &.tei-reg,
+  &.tei-corr,
+  &.tei-orig,
+  &.tei-sic,
+  &.tei-abbr,
+  &.tei-expan,
+  &.tei-choice,
+  &.tei-app,
+  &.tei-rdg,
+  &.tei-lem,
+  &.tei-unclear,
+  &.tei-persName,
+  &.tei-addName,
+  &.tei-name,
+  &.tei-placeName,
+  &.tei-date,
+  &.tei-note,
+  &.tei-bibl,
+  &.tei-biblScope,
+  &.tei-author,
+  &.tei-composer,
+  &.tei-editor,
+  &.tei-title,
+  &.tei-place,
+  &.tei-pubPlace,
+  &.tei-publisher,
+  &.tei-institution,
+  &.tei-idno,
+  &.tei-extent,
+  &.tei-measure,
+  &.tei-material,
+  &.tei-msIdentifier,
+  &.tei-foreign,
+  &.tei-quote,
+  &.tei-emph,
+  &.tei-hi,
+  &.tei-roleDesc,
+  &.tei-role
+    display: inline
+
+  &.tei-div
+    &.teiatt-type\=text, 
+    &.teiatt-type\=composition,
+    &.teiatt-type\=dedicatee
+      //display: inline
+      // PJT: Why?
+
+  &.tei-div, 
+  &.tei-front, 
+  &.tei-body, 
+  &.tei-back, 
+  &.tei-group, 
+  &.tei-titlePage
+    //margin: 2em;
+
+
+  &.teiatt-type\=instrumentation span.tei-list
+  &.teiatt-type\=stage-band span.tei-item
+    display: inline
+
+  &.tei-lg, 
+  &.tei-p, 
+  &.tei-respStmt, 
+  &.tei-argument
+    margin: .7em 0 1em
+
+  &.tei-item
+    display: list-item
+
+  &.tei-listBibl > span.tei-bibl
+    display: list-item
+    margin: 1em 0em 1em 1.5em
+    display: list-item
+
+  // Choice components
+  &.tei-reg, 
+  &.tei-corr, 
+  &.tei-expan
+    border-bottom: 1px dotted #777
+
+  &.tei-orig, 
+  &.tei-sic, 
+  &.tei-abbr
+    color: #777
+    font-style: italic
+    font-size: 93%
+
+  &.tei-orig:before, 
+  &.tei-sic:before
+    content: "["
+
+  &.tei-orig:after, 
+  &.tei-sic:after
+    content: "]"
+
+  &.tei-rdg
+    color: #992F36
+    font-size: 96%
+
+    &:before
+      content: "\00B7  "
+
+  &.tei-lem
+    border-bottom: 1px solid #444
+
+  &.tei-teiHeader
+    color: #555
+    margin-bottom: 2em
+    font-size: 80%
+
+  &.tei-text
+    margin-bottom: 2em
+
+  &.tei-fw
+    display: block
+    font-size: 90%
+    padding: .5em .25em .25em .25em
+    color: #7b7b7b
+    text-align: right
+
+    ~ .tei-fw
+      padding: .25em
+
+    &.teiatt-type\=head
+      text-align: center
+
+  //&.tei-pb, &.tei-milestone
+  &.tei-titlePage
+    text-align: center
+    font-size: 110%
+
+  &.tei-head
+    text-align: center
+    font-size: 107%
+    margin: .5em 0 1em
+
+//  &.tei-note
+//    line-height: inherit
+//    padding: .2em
+//
+//    &.teiatt-place\=marg
+//      line-height: inherit
+//      font-size: 85%
+//      text-align: right
+//      clear: both
+//      float: left
+//      margin: 0 -11em 0 -12em
+//      width: 11em
+//
+//  &.tei-quote
+//    &:before
+//      content: ' "'
+//
+//    &:after
+//      content: '" '
+//
+//  &.tei-head
+//    &.teiatt-type\=gen-head
+//      font-size: 110%
+//      text-decoration: underline
+//      text-align: left
+//      margin: 1.5em 0em
+//
+//    &.teiatt-type\=gen-head2
+//      font-size: 105%
+//      text-decoration: underline
+//      text-align: left
+//      margin: 1.5em 0em 1.5em 1.5em
+//
+//  &.tei-div
+//    &.teiatt-type\=summary span.tei-div
+//      margin: 2em 1.5em 1em 2em
+//
+//      &.teiatt-type\=text span.tei-head.teiatt-type=
+//        margin: 2em 1.5em 1em 2em
+//
+//    &.teiatt-type\=instrumentation span.tei-list
+//      margin: 2em 1.5em 1em 2.5em
+//
+//  &.tei-castItem
+//    display: list-item
+//    margin-left: 1.5em
+//
+//  &.tei-role:after
+//    content: " - "
+//
+//  &.tei-list
+//    &.teiatt-type\=instrumentation, &.teiatt-type\type=stage-band
+//      margin-left: 2 em
+//
+//  &.tei-div.teiatt-type\=contents
+//    span.tei-list.teiatt-type\=contents
+//      list-style-type: none
+//
+//    > span.tei-list.teiatt-type\=contents
+//      > span.tei-item > span.tei-list > span
+//        &.tei-head
+//          text-align: left
+//          font-size: 108%
+//          font-weight: 600
+//          text-decoration: underline
+//          margin-left: 1em
+//
+//        &.tei-item > span.tei-list > span
+//          &.tei-head
+//            text-align: left
+//            font-size: 105%
+//            text-decoration: underline
+//            margin-left: 1.75em
+//
+//          &.tei-item > span.tei-list > span.tei-head
+//            text-align: left
+//            font-size: 104%
+//            text-decoration: underline
+//            font-style: italic
+//            margin-left: 2.5em
+//
+//      span.tei-item.teiatt-type\=aria
+//        display: block
+//        margin: 1em 0em 1em 3em
+//
+//  &.tei-list.teiatt-type\=contents > span.tei-item > span
+//    &.tei-title
+//      display: block
+//      margin: 1em 0em 1em 3em
+//
+//    &.tei-measure
+//      display: block
+//      margin: 1em 0em 1em 3em
+//
+//      &:before
+//        content: " - "
+//
+//  &.tei-div.teiatt-type\=contents > span.tei-list.teiatt-type\=contents span.tei-item
+//    &.teiatt-type\=aria span.tei-title, 
+//    span.tei-title
+//      font-size: 102%
+//      font-style: italic
+//      font-weight: 600
+//
+//  &.tei-item.teiatt-type\=aria span
+//    &.tei-list.teiatt-type\=cast-on-stage > span.tei-item
+//      display: inline
+//
+//    &.tei-quote
+//      font-style: italic
+//
+//  &.tei-list.teiatt-type\=contents
+//    > span.tei-item > span
+//      &.tei-title
+//        font-style: italic
+//        display: block
+//        margin: 0em 0em 0em 3em
+//
+//      &.tei-measure
+//        display: block
+//        margin: 0em 0em 0em 3em
+//
+//      &.tei-note
+//        font-style: italic
+//        display: block
+//        margin: 0em 0em 0em 3em
+//
+//    span.tei-item.teiatt-type\=directions
+//      display: inline
+//      margin-left: 3em
+//      font-size: 80%
+//      font-weight: 300
+//
+//  &.tei-item.teiatt-type\=aria span
+//    &.tei-list.teiatt-type\=cast-on-stage > span.tei-item > span:after
+//      content: ", "
+//
+//    &.tei-measure
+//      &:before
+//        content: " ("
+//
+//      &:after
+//        content: ") "
+//
+//  &.tei-list.teiatt-type\=contents span.tei-item span.tei-measure
+//    &:before
+//      content: " ("
+//
+//    &:after
+//      content: ") "
+//
+//  &.tei-div
+//    &.teiatt-type\=text span.tei-emph, 
+//    &.teiatt-type\=composition span.tei-emph, 
+//    &.teiatt-type\=dedicatee span.tei-emph, 
+//    &.teiatt-type\=text span.tei-title, 
+//    &.teiatt-type\=composition span.tei-title, 
+//    &.teiatt-type\=dedicatee span.tei-title, 
+//    &.teiatt-type\=text span.tei-quote, 
+//    &.teiatt-type\=composition span.tei-quote
+//      font-style: italic
+//
+//    &.teiatt-type\=dedicatee span
+//      &.tei-quote, 
+//      &.tei-persName
+//        font-style: italic
+//
+//    &.teiatt-type\=self-borrowing span
+//      &.tei-label
+//        font-size: 102%
+//        text-decoration: underline
+//        margin: .5em 0em 0em 1.5em
+//
+//      &.tei-item
+//        display: list-item
+//        margin-left: 2em
+//
+//  &.tei-list.teiatt-type\=copies span.tei-item
+//    display: inline
+//
+//  &.tei-publication span.tei-bibl, 
+//  &.tei-manuscripts span.tei-bibl
+//    display: list-item
+//
+//  &.tei-list.teiatt-type\=copies
+//    display: inline
+//
+//  &.tei-div
+//    &.teiatt-type\=publication span.tei-div
+//      &.teiatt-type\=arrangements span.tei-listBibl span.tei-bibl span.tei-head, 
+//      &.teiatt-type\=vocal-extracts span.tei-head, 
+//      &.teiatt-type\=full-extracts span.tei-head, 
+//      &.teiatt-type\=orchestral-extracts span.tei-head
+//        text-align: left
+//        margin: 2em 0em 1em 2.5em
+//        text-decoration: underline
+//
+//      &.teiatt-type\=arrangements > span
+//        &.tei-listBibl > span.tei-head, 
+//        &.tei-list span.tei-head
+//          text-align: left
+//          margin: 1em 0em 1em 2em
+//          text-decoration: underline
+//
+//    &.teiatt-type\=manuscripts span.tei-div
+//      &.teiatt-type\=autographs, 
+//      &.teiatt-type\=manuscript-sources, 
+//      &.teiatt-type\=manuscript-librettos
+//        margin: 2em 1.5em 1em 2em
+//
+//      &.teiatt-type\=autographs span.tei-div, 
+//      &.teiatt-type\=manuscript-sources span.tei-div, 
+//      &.teiatt-type\=manuscript-librettos span.tei-div
+//        margin: 2em 1.5em 1em 3em
+//
+//    &.teiatt-type\=publication span.tei-div
+//      &.teiatt-type\=librettos, 
+//      &.teiatt-type\=vocal-scores, 
+//      &.teiatt-type\=full-scores, 
+//      &.teiatt-type\=orchestral-scores, 
+//      &.teiatt-type\=arrangements
+//        margin: 2em 1.5em 1em 2em
+//
+//      &.teiatt-type\=librettos span.tei-div, 
+//      &.teiatt-type\=vocal-scores span.tei-div, 
+//      &.teiatt-type\=full-scores span.tei-div, 
+//      &.teiatt-type\=orchestral-scores span.tei-div, 
+//      &.teiatt-type\=arrangements span.tei-div
+//        margin: 2em 1.5em 1em 3em
+//
+//  &.tei-opener
+//    font-style: italic
+//    margin-left: 1.5em
+//
+//    span
+//      &.tei-date:before
+//        content: "Sent "
+//
+//      &.tei-name
+//        &.teiatt-type\=sender:before
+//          content: "from "
+//
+//        &.teiatt-type\=receiver
+//          &:before
+//            content: "to "
+//
+//          &:after
+//            content: ":"
+//
+//  &.tei-div
+//    &.teiatt-type\=letter span.tei-cit span.tei-bibl, 
+//    &.teiatt-type\=documents span.tei-cit span.tei-bibl
+//      display: block
+//      font-style: italic
+//      text-align: right
+//      margin-right: 5em
+//
+//      &:before
+//        content: "[ "
+//
+//      &:after
+//        content: " ]"
+//
+//    &.teiatt-type\=manuscripts span
+//      &.tei-msItem span
+//        &.tei-title
+//          display: block
+//          font-weight: 600
+//          font-style: italic
+//          text-align: left
+//          margin: 1em 0em 0em 2.5em
+//
+//        &.tei-locus
+//          display: inline
+//          font-weight: 400
+//          text-align: left
+//          margin: .3em 0em 1em 2.5em
+//
+//      &.tei-msContents > span.tei-note
+//        display: inline
+//        font-weight: 400
+//        text-align: left
+//        margin: 2em 0em 2em 2.5em
+//
+//    &.teiatt-type\=vocal-parts span.tei-listBibl
+//      margin: 2em 1.5em 1em 3.5em
+//
+//      span.tei-head
+//        margin: 2em 1.5em 1em 0em
+//        text-decoration: underline
+//        text-align: left
+//
+//    &.teiatt-type\=arrangements span
+//      &.tei-bibl
+//        margin: 1em 1.5em 1em 4em
+//
+//      &.tei-listBibl span
+//        &.tei-item
+//          display: inline
+//
+//          span.tei-listBibl
+//            display: inline
+//
+//            span.tei-head
+//              margin: 2em 1.5em 1em 0em
+//              text-decoration: underline
+//              text-align: left
+//
+//        &.tei-listBibl
+//          margin: 2em 1.5em 1em 3.5em
+//
+//          span.tei-bibl
+//            margin: 1em 1.5em 1em 2em
+//
+//.tei-body >
+//  .tei-title
+//    display: block
+//    text-align: center
+//
+//  .tei-head
+//    &.teiatt-type\=main
+//      font-size: 135%
+//
+//    &.teiatt-type\=sub
+//      font-size: 115%
+//
+//

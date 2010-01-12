@@ -71,14 +71,18 @@ jQuery(function(){
 
 
    // section toggling
+   // PJT hide
+   /*
    $("span.tei-text span.tei-div > span.tei-head").click(function(e){                     
          e.preventDefault();                                          
          $(this).toggleClass("expanded")
             .parent().children().not(this).slideToggle("slow");
       });
+      */
    
    // start w/ divs hidden
-   $("span.tei-body span.tei-div").children().not(".tei-div > span.tei-head").hide();
+   // PJT hide
+   //$("span.tei-body span.tei-div").children().not(".tei-div > span.tei-head").hide();
    // shortcut for expanding all divs
    var expandall_mw = function(){
       return $("<a>Expand Divs</a>").click(function(){
@@ -107,7 +111,7 @@ jQuery.fn.elem = function(){
 function argslice(args) { 
    // Slices arguments pseudo-array at index (or indices) given after args
    return Array.prototype.slice.apply(args, 
-         Array.prototype.slice.apply(arguments, [1]));
+         Array.prototype.slice.call(arguments, 1));
 }
 
 jQuery.extend({
