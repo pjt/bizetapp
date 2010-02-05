@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Make sure you're in the root Compojure dir
+cd `dirname $0`/..
+
+for file in `find lib -name *.jar`; do
+    jars=$jars:$file
+done
+
+classpath=src:$jars
+
+options='-Dfile.encoding=UTF8 -server'
+
+if which rlwrap > /dev/null; then
+   rlwrap=rlwrap
+else
+   rlwrap=
+fi
+
+if [ $# -gt 0 ]; then
+   $rlwrap java $options -cp $classpath clojure.main -e "(use 'bizet.run)(-main)" --repl 
+else
+   java $options -cp $classpath clojure.main -e "(use 'bizet.run)(-main)"
+fi
+

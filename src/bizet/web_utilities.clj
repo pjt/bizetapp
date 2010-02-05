@@ -1,7 +1,7 @@
 (ns bizet.web-utilities
-    (:use (bizet utilities)
-          (clojure.contrib str-utils)
-          compojure
+    (:use bizet.utilities
+          ;(clojure.contrib str-utils)
+          [compojure :exclude (with-context)]
           saxon))
 
 ;; Middleware

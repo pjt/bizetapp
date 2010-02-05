@@ -1,7 +1,11 @@
 (ns bizet.queries
-  (:use compojure saxon
-     (clojure.contrib seq-utils)
-     (bizet abbrevs utilities web-utilities)))
+  (:use 
+     compojure.html.form-helpers 
+     [compojure.html.gen :only (h)]
+     [saxon :as sax :only ()]
+     [clojure.contrib.seq-utils :as su :only ()]
+     [bizet.utilities :only (as-coll compile-tei-q)]
+     [bizet abbrevs web-utilities]))
 
 (defn search-in-form 
   "Display HTML form for searching in tag."
@@ -24,7 +28,7 @@
 (defn section-for-each
   "Returns seq of [entry section-html] pairs."
   [entries section]
-  (let [div (compile-xpath (format "id('%s')" section))]
+  (let [div (sax/compile-xpath (format "id('%s')" section))]
     (map (fn [[id entry]] 
             (if-let [sec (div (:doc entry))]
               [entry (htmlify sec)]))
@@ -57,10 +61,8 @@
                                       (repeat [entry])))
                       (vals entries)))
         abbrevs (remove (comp nil? key) abbrevs)]
-    (group-by #(count (lookup (key %))) abbrevs)))
+    (su/group-by #(count (lookup (key %))) abbrevs)))
     ; returns map of count => vector of key-value pairs, where key is
     ; the abbrev, value is a vector of entries in which abbrev appears,
     ; e.g. 0 => ["us-nope" [entry1 entry8 ...]]
-
-
 

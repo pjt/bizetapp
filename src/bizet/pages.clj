@@ -1,7 +1,8 @@
 (ns bizet.pages
-  (:use (bizet queries utilities web-utilities abbrevs)
-        clojure.contrib.json.write
-        compojure))
+  (:use 
+    [bizet queries utilities web-utilities abbrevs]
+    [clojure.contrib.json.write :only (json-str)]
+    [compojure.html gen page-helpers]))
 
 (defn home [entries]
   (templ "Bizet Entries" 

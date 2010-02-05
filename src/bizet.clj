@@ -1,7 +1,9 @@
 (ns bizet
-  (:use (bizet entries utilities web-utilities pages)
-        (clojure.contrib [shell-out :only (sh)])
-        compojure))
+  (:use [bizet entries utilities web-utilities pages]
+        [clojure.contrib [shell-out :only (sh)]]
+        [compojure.control :only (decorate-with)]
+        [compojure.http.helpers :only (page-not-found)]
+        compojure.http.routes))
 
 ;; Docs
 
