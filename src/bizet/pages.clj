@@ -30,6 +30,12 @@
    (templ "Bizet Entry" 
       (htmlify (:doc (entries id))))))
 
+(defn edit-entry
+  [entries id]
+  (templ "Bizet Entry"
+    {:js "/js/tei-and-html.js"}
+    (htmlify (:doc (entries id)))))
+
 (defn search-in
   [entries tag terms]
   (let [{:keys (n results-map)}

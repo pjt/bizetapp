@@ -1,5 +1,5 @@
 (ns bizet
-  (:use [bizet entries utilities web-utilities pages]
+  (:use [bizet entries edit utilities web-utilities pages]
         [clojure.contrib [shell-out :only (sh)]]
         [compojure.control :only (decorate-with)]
         [compojure.http.helpers :only (page-not-found)]
@@ -34,6 +34,8 @@
 
   (GET "/abbrevs/test/"
     (abbrev-test @entries))
+
+  (with-context "/edit" edit-routes)
 
   (GET "/rrr" 
     (do
