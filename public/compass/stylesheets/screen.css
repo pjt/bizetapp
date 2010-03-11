@@ -305,9 +305,16 @@ body { position: relative; }
 body #container { min-width: 950px; width: 80%; margin: 0 auto; overflow: hidden; display: inline-block; color: #000; background-color: #fff; font-family: Georgia, Times, serif; font-size: 90%; line-height: 1.3em; }
 body #container { display: block; }
 body #header, body #footer { display: inline; float: left; overflow: hidden; width: 100%; margin-right: 0.833em; }
-body #nav { display: inline; float: left; overflow: hidden; width: 12%; margin-right: 0.833em; line-height: inherit; font-size: 90%; text-align: center; }
+body #header { padding: .6em 0; }
+body #header #title { display: inline; float: left; overflow: hidden; width: 79%; margin-right: 0.833em; }
+body #header #title span { font-size: 1.6em; padding-bottom: .4em; }
+body #header #title span ~ span { font-size: 1.1em; padding-left: 4%; }
+body #header form { display: inline; float: left; overflow: hidden; width: 16%; margin-right: 0.833em; text-align: right; }
+body #header form #search { border: none; border-bottom: 1px solid #CCC; background-color: #BBB; color: #FFF; width: 12em; padding: 6; margin: 6; -webkit-border-radius: 12; -moz-border-radius: 12; padding: 3px 8px; }
+body #nav { padding-left: 4%; display: inline; float: left; overflow: hidden; width: 95%; margin-right: 0.833em; line-height: inherit; font-size: 90%; border-bottom: 2px solid #888; padding-bottom: 1em; margin: .5em 0 1em; }
 body #nav ul { padding: 0; margin: 0; }
-body #nav li { list-style-type: none; }
+body #nav li { list-style-type: none; display: inline; }
+body #nav li a { border-right: 1px solid #CCC; display: inline; float: left; overflow: hidden; width: 12%; margin-right: 0.833em; }
 body #main { display: inline; float: left; overflow: hidden; width: 66%; margin-right: 0.833em; padding-left: 4%; }
 body #margin { display: inline; float: left; overflow: hidden; width: 8%; margin-right: 0; padding-left: 4%; height: 100%; line-height: inherit; font-family: Palatino, "Palatino Linotype", Georgia, serif; font-size: 90%; color: #9E0100; }
 
@@ -319,7 +326,7 @@ ol { list-style: decimal inside; }
 
 ul, ol { padding-left: 0; }
 
-a, a:link, a:active { color: navy; background-color: transparent; border-bottom: 1px solid #000; text-decoration: none; }
+a, a:link, a:active { color: navy; background-color: transparent; text-decoration: none; }
 
 a:visited { color: #5C5197; background-color: transparent; }
 

@@ -56,7 +56,6 @@
           {:file file :modified (last-mod file)})))) 
             
 
-
 (defn pull-entries-from-fs
   "Returns entries hash-map created with .xml files from filesystem; if entry 
   already exists for file & file hasn't been modified, keeps existing entry & 

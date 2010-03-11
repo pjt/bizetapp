@@ -7,6 +7,12 @@
 
 +blueprint-liquid-grid
 
+=rounded(!width)
+  padding = !width / 2
+  margin = !width / 2
+  -webkit-border-radius = !width
+  -moz-border-radius = !width
+
 //Recommended Blueprint configuration with scoping and semantic layout:
 //+blueprint-typography("body.bp")
 //+blueprint-scaffolding("body.bp")
@@ -30,19 +36,54 @@ body
 
   #header, #footer
     +column(!blueprint_grid_columns)
+  #header
+    padding: .6em 0
+    #title
+      //+prepend(floor(3 * !blueprint_grid_columns / 24))
+      +column(19 * !blueprint_grid_columns / 24)
+      span
+        font-size: 1.6em
+        padding-bottom: .4em
+        ~ span
+          font-size: 1.1em
+          +prepend(!blueprint_grid_columns / 24)
+    //#search 
+    form
+      +column(4 * !blueprint_grid_columns / 24)
+      text-align: right
+      #search
+        border: none
+        border-bottom: 1px solid #CCC
+        background-color: #BBB
+        color: #FFF
+        width: 12em
+        +rounded(12)
+        padding: 3px 8px
 
   #nav
     // 3/24 of grid columns
-    !sidebar_columns = floor(3 * !blueprint_grid_columns / 24)
-    +column(!sidebar_columns)
+    //!sidebar_columns = floor(3 * !blueprint_grid_columns / 24)
+    //+column(!sidebar_columns)
+
+    // a whole row == 24 columns
+    +prepend(!blueprint_grid_columns / 24)
+    +column(23 * !blueprint_grid_columns / 24)
+    !section = floor(3 * !blueprint_grid_columns / 24)
     line-height: inherit
     font-size: 90%
-    text-align: center
+    border-bottom: 2px solid #888
+    padding-bottom: 1em
+    margin: .5em 0 1em
     ul
       padding: 0
       margin: 0
     li
       list-style-type: none
+      display: inline
+      a
+        border-right: 1px solid #CCC
+        //padding: 1.2em
+        +column(!section)
 
   #main
     // 17/24 of grid columns, with 1 column prepended
@@ -78,7 +119,7 @@ ul, ol
 a, a:link, a:active
   color: navy 
   background-color: transparent
-  border-bottom: 1px solid #000
+  //border-bottom: 1px solid #000
   text-decoration: none
 a:visited 
   color: #5C5197
@@ -104,12 +145,6 @@ pre code
 
 
 // Classes
-
-=rounded(!width)
-  padding = !width / 2
-  margin = !width / 2
-  -webkit-border-radius = !width
-  -moz-border-radius = !width
 
 
 .abbrev-result > ol > li 
