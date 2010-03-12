@@ -54,13 +54,11 @@
     (str prefix file ".css")))
 
 
-(defmacro nav
+(defn nav
   "Navigation section."
-  [heading & items]
-  `(html
-    (if (not= "" ~heading) [:strong ~heading] "")
-    [:ul
-     (map (fn [[label# path#]] [:li (ctx-link-to path# label#)]) ~(vec items))]))
+  [items]
+  (unordered-list
+   (map (fn [[label path]] (ctx-link-to path label)) items)))
 
 (defn templ
   "HTML template."
@@ -90,13 +88,13 @@
               (form-to [:get (url "/search")]
                 [:input#search {:name "q" :value "Search"}])]
            [:div#nav
-              (nav "" ["Home" "/"] 
-                      ["How to Use the Catalogue" "/howto"]
-                      ["List of Works" "/works"]
-                      ["Indices" "/indicies"]
-                      ["Compiler's Preface" "/preface"]
-                      ["Biography"  "/bio"]
-                      ["Contact Us" "/contact"])]
+              (nav {"Home" "/"
+                    "How to Use the Catalogue" "/howto"
+                    "List of Works" "/works"
+                    "Indices" "/indices"
+                    "Compiler's Preface" "/preface"
+                    "Biography"  "/bio"
+                    "Contact Us" "/contact"})]
            [:div#main body]
            [:div#margin]]]))]))
 

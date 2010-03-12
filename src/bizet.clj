@@ -18,9 +18,9 @@
 
   (GET "/" (home @entries))
 
-  (GET "/entries/" (get-entry @entries))
+  (GET "/works" (get-entry @entries))
 
-  (GET "/entry/:id" (get-entry @entries (params :id)))
+  (GET "/work/:id" (get-entry @entries (params :id)))
 
   (GET "/search/"
     (templ "Search"
