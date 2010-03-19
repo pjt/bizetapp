@@ -96,6 +96,11 @@ jQuery(function(){
          $.mousewindow(e, review_mw, abbrev_mw, expandall_mw);
       });
 
+   // Add <img/> for @facs
+   $(".tei-titlePage").addFacsImg();
+   // Add <img/> for <graphic>
+   $(".tei-graphic").addGraphicImg();
+
 });
 
 jQuery.fn.elem = function(){
@@ -106,6 +111,51 @@ jQuery.fn.elem = function(){
                                  return val.replace(/^teiatt-/,'').replace(/__/g,' '); })
                          .join("@");
    return elem ? elem[1] + atts : false;
+}
+
+jQuery.fn.toggler = function(target){
+   return this.each(function(){
+         var $t = $(this),
+             showhide = $t.text().search(/Show/) > -1 ? 
+                           {"Show":"Hide", "Hide":"Show"} :
+                              {"show":"hide", "hide":"show"};
+         $t
+            .click(function(){
+               var matched = $t.html().match(/show|hide/i),
+                   found = matched ? matched[0] : matched;
+               target.toggle();
+               if (found){
+                  $t.html( $t.html().replace(found, showhide[found]) );
+               }
+            })
+            .css({cursor:"pointer"});
+      });
+}
+
+var imgurl = "http://hdwdev.artsci.wustl.edu/bizet-static/";
+jQuery.fn.addFacsImg = function(){
+   return this.each(function(){
+         var $t = $(this),
+             facs = $t.attr("class").match(/teiatt-facs=(\S+)/),
+             val = facs ? facs[1] : facs;
+         if (val){
+            $t.before("<img src='"+ imgurl + val +"'/>");
+            $t.hide()
+            $("<span class='toggler'>Show transcript</span>")
+               .toggler($t)
+               .insertBefore($t);
+         }
+      });
+}
+jQuery.fn.addGraphicImg = function(){
+   return this.each(function(){
+         var $t = $(this),
+             uri = $t.attr("class").match(/teiatt-uri=(\S+)/),
+             val = uri ? uri[1] : uri;
+         if (val){
+            $t.after("<img src='"+ imgurl + val +"'/>");
+         }
+      });
 }
 
 function argslice(args) { 

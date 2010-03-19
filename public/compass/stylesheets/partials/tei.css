@@ -18,3 +18,4 @@ span.tei-fw ~ .tei-fw { padding: .25em; }
 span.tei-fw.teiatt-type\=head { text-align: center; }
 span.tei-titlePage { text-align: center; font-size: 110%; }
 span.tei-head { text-align: center; font-size: 107%; margin: .5em 0 1em; }
+span.tei-div.teiatt-type\=incipit { text-align: center; }

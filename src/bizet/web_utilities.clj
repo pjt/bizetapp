@@ -85,16 +85,16 @@
               [:div#title
                [:span "THE BIZET CATALOGUE"]
                [:span "by Hugh Macdonald"]]
+             [:div#nav
+                (nav {"Home" "/"
+                      "List of Works" "/works"
+                      "Indices" "/indices"})
+                (nav {"Using the Catalogue" "/howto"
+                      "Compiler's Preface" "/preface"
+                      "Biography" "/bio"
+                      "Contact Us" "/contact"})]
               (form-to [:get (url "/search")]
                 [:input#search {:name "q" :value "Search"}])]
-           [:div#nav
-              (nav {"Home" "/"
-                    "How to Use the Catalogue" "/howto"
-                    "List of Works" "/works"
-                    "Indices" "/indices"
-                    "Compiler's Preface" "/preface"
-                    "Biography"  "/bio"
-                    "Contact Us" "/contact"})]
            [:div#main body]
            [:div#margin]]]))]))
 

@@ -305,17 +305,16 @@ body { position: relative; }
 body #container { min-width: 950px; width: 80%; margin: 0 auto; overflow: hidden; display: inline-block; color: #000; background-color: #fff; font-family: Georgia, Times, serif; font-size: 90%; line-height: 1.3em; }
 body #container { display: block; }
 body #header, body #footer { display: inline; float: left; overflow: hidden; width: 100%; margin-right: 0.833em; }
-body #header { padding: .6em 0; }
-body #header #title { display: inline; float: left; overflow: hidden; width: 79%; margin-right: 0.833em; }
+body #header { padding: .6em 0; border-bottom: 1px solid #CCC; }
+body #header #title { display: inline; float: left; overflow: hidden; width: 33%; margin-right: 0.833em; }
 body #header #title span { font-size: 1.6em; padding-bottom: .4em; }
 body #header #title span ~ span { font-size: 1.1em; padding-left: 4%; }
+body #header #nav { display: inline; float: left; overflow: hidden; width: 45%; margin-right: 0.833em; line-height: inherit; font-size: 90%; margin: .5em 0 1em; }
+body #header #nav ul { display: inline; float: left; overflow: hidden; width: 33%; margin-right: 0.833em; padding: 0; margin: 0; }
+body #header #nav ul li { list-style-type: none; }
 body #header form { display: inline; float: left; overflow: hidden; width: 16%; margin-right: 0.833em; text-align: right; }
-body #header form #search { border: none; border-bottom: 1px solid #CCC; background-color: #BBB; color: #FFF; width: 12em; padding: 6; margin: 6; -webkit-border-radius: 12; -moz-border-radius: 12; padding: 3px 8px; }
-body #nav { padding-left: 4%; display: inline; float: left; overflow: hidden; width: 95%; margin-right: 0.833em; line-height: inherit; font-size: 90%; border-bottom: 2px solid #888; padding-bottom: 1em; margin: .5em 0 1em; }
-body #nav ul { padding: 0; margin: 0; }
-body #nav li { list-style-type: none; display: inline; }
-body #nav li a { border-right: 1px solid #CCC; display: inline; float: left; overflow: hidden; width: 12%; margin-right: 0.833em; }
-body #main { display: inline; float: left; overflow: hidden; width: 66%; margin-right: 0.833em; padding-left: 4%; }
+body #header form #search { border: none; border-bottom: 1px solid #CCC; background-color: #BBB; color: #FFF; width: 12em; padding: 6; margin: 6; border-radius: 12; -webkit-border-radius: 12; -moz-border-radius: 12; padding: 3px 8px; }
+body #main { display: inline; float: left; overflow: hidden; width: 79%; margin-right: 0.833em; padding-left: 4%; }
 body #margin { display: inline; float: left; overflow: hidden; width: 8%; margin-right: 0; padding-left: 4%; height: 100%; line-height: inherit; font-family: Palatino, "Palatino Linotype", Georgia, serif; font-size: 90%; color: #9E0100; }
 
 p, ul { line-height: 145%; }
@@ -350,21 +349,32 @@ div.return-chunk { font-size: 90%; border-left: .4em solid #BBB; padding-left: .
 .search-match { display: inline; border-bottom: 2px solid red; }
 
 .with-marg-name { background-color: #B0D4EE; }
-.with-marg-name span { background-color: #9CBCD3; border: 1px dotted #FFF; }
+.with-marg-name span { background-color: #baeec2; }
+.with-marg-name span ~ span { background-color: #eebfad; }
+.with-marg-name span ~ span ~ span { background-color: #baeec2; }
+.with-marg-name span ~ span ~ span ~ span { background-color: #eebfad; }
+.with-marg-name span ~ span ~ span ~ span ~ span { background-color: #baeec2; }
+.with-marg-name span ~ span ~ span ~ span ~ span ~ span { background-color: #eebfad; }
+.with-marg-name span ~ span ~ span ~ span ~ span ~ span ~ span { background-color: #baeec2; }
+.with-marg-name span ~ span ~ span ~ span ~ span ~ span ~ span ~ span { background-color: #eebfad; }
+.with-marg-name span ~ span ~ span ~ span ~ span ~ span ~ span ~ span ~ span { background-color: #baeec2; }
+.with-marg-name span ~ span ~ span ~ span ~ span ~ span ~ span ~ span ~ span ~ span { background-color: #eebfad; }
 
 .mousewindow { line-height: inherit; font-size: 85%; font-family: Helvetica, Verdana, Arial, sans-serif; background-color: #FFF; margin: 0.5em; border: 1px solid #DDD; border-right: 3px solid #DDD; border-bottom: 3px solid #DDD; }
-.mousewindow a { padding: 0.35em; margin: 0.35em; -webkit-border-radius: 0.7em; -moz-border-radius: 0.7em; text-decoration: none; cursor: pointer; display: block; color: white; background-color: #666; background-image: url('../img/little-bg.gif'); background-attachment: fixed; background-repeat: repeat-x; background-position: bottom left; }
+.mousewindow a { padding: 0.35em; margin: 0.35em; border-radius: 0.7em; -webkit-border-radius: 0.7em; -moz-border-radius: 0.7em; text-decoration: none; cursor: pointer; display: block; color: white; background-color: #666; background-image: url('../img/little-bg.gif'); background-attachment: fixed; background-repeat: repeat-x; background-position: bottom left; }
 .mousewindow a:hover { cursor: pointer; }
 
 /* span.tei-text span.tei-div    span.tei-head      cursor: pointer   span.tei-head:before     content: '\26AA  '   span.tei-head.expanded:before     content: '\26AB  ' */
 /* span.tei-div   margin-left: 2em   span.tei-head     font-size: 140%     text-transform: uppercase   span.tei-div     span.tei-head       font-size: 90%       margin-left: -2em       text-align: left */
-span.tei-div > span.tei-head { font-size: 140%; text-transform: uppercase; }
+span.tei-div > span.tei-head { font-size: 140%; text-transform: uppercase; text-align: left; }
 
 span.tei-div span.tei-div span.tei-head { font-size: 90%; margin-left: -2em; text-align: left; }
 
 span.tei-head ~ * { margin-left: 2em; }
 
 span.tei-body > * { margin-left: 0; }
+
+span.tei-teiHeader { display: none; }
 
 span { display: block; }
 span.tei-reg, span.tei-corr, span.tei-orig, span.tei-sic, span.tei-abbr, span.tei-expan, span.tei-choice, span.tei-app, span.tei-rdg, span.tei-lem, span.tei-unclear, span.tei-persName, span.tei-addName, span.tei-name, span.tei-placeName, span.tei-date, span.tei-note, span.tei-bibl, span.tei-biblScope, span.tei-author, span.tei-composer, span.tei-editor, span.tei-title, span.tei-place, span.tei-pubPlace, span.tei-publisher, span.tei-institution, span.tei-idno, span.tei-extent, span.tei-measure, span.tei-material, span.tei-msIdentifier, span.tei-foreign, span.tei-quote, span.tei-emph, span.tei-hi, span.tei-roleDesc, span.tei-role { display: inline; }
@@ -386,3 +396,4 @@ span.tei-fw ~ .tei-fw { padding: .25em; }
 span.tei-fw.teiatt-type\=head { text-align: center; }
 span.tei-titlePage { text-align: center; font-size: 110%; }
 span.tei-head { text-align: center; font-size: 107%; margin: .5em 0 1em; }
+span.tei-div.teiatt-type\=incipit { text-align: center; }

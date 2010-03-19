@@ -10,6 +10,7 @@
 =rounded(!width)
   padding = !width / 2
   margin = !width / 2
+  border-radius = !width
   -webkit-border-radius = !width
   -moz-border-radius = !width
 
@@ -38,15 +39,34 @@ body
     +column(!blueprint_grid_columns)
   #header
     padding: .6em 0
+    border-bottom: 1px solid #CCC
     #title
       //+prepend(floor(3 * !blueprint_grid_columns / 24))
-      +column(19 * !blueprint_grid_columns / 24)
+      +column(8 * !blueprint_grid_columns / 24)
       span
         font-size: 1.6em
         padding-bottom: .4em
         ~ span
           font-size: 1.1em
           +prepend(!blueprint_grid_columns / 24)
+    #nav
+      // 3/24 of grid columns
+      //!sidebar_columns = floor(3 * !blueprint_grid_columns / 24)
+      //+column(!sidebar_columns)
+
+      // a whole row == 24 columns
+      //+prepend(!blueprint_grid_columns / 24)
+      +column(11 * !blueprint_grid_columns / 24)
+      line-height: inherit
+      font-size: 90%
+      margin: .5em 0 1em
+      !section = floor(8 * !blueprint_grid_columns / 24)
+      ul
+        +column(!section)
+        padding: 0
+        margin: 0
+        li
+          list-style-type: none
     //#search 
     form
       +column(4 * !blueprint_grid_columns / 24)
@@ -60,39 +80,40 @@ body
         +rounded(12)
         padding: 3px 8px
 
-  #nav
-    // 3/24 of grid columns
-    //!sidebar_columns = floor(3 * !blueprint_grid_columns / 24)
-    //+column(!sidebar_columns)
+  //  
+    #nav
+      // 3/24 of grid columns
+      //!sidebar_columns = floor(3 * !blueprint_grid_columns / 24)
+      //+column(!sidebar_columns)
 
-    // a whole row == 24 columns
-    +prepend(!blueprint_grid_columns / 24)
-    +column(23 * !blueprint_grid_columns / 24)
-    !section = floor(3 * !blueprint_grid_columns / 24)
-    line-height: inherit
-    font-size: 90%
-    border-bottom: 2px solid #888
-    padding-bottom: 1em
-    margin: .5em 0 1em
-    ul
-      padding: 0
-      margin: 0
-    li
-      list-style-type: none
-      display: inline
-      a
-        border-right: 1px solid #CCC
-        //padding: 1.2em
-        +column(!section)
+      // a whole row == 24 columns
+      +prepend(!blueprint_grid_columns / 24)
+      +column(23 * !blueprint_grid_columns / 24)
+      !section = floor(3 * !blueprint_grid_columns / 24)
+      line-height: inherit
+      font-size: 90%
+      border-bottom: 2px solid #888
+      padding-bottom: 1em
+      margin: .5em 0 1em
+      ul
+        padding: 0
+        margin: 0
+      li
+        list-style-type: none
+        display: inline
+        a
+          border-right: 1px solid #CCC
+          //padding: 1.2em
+          +column(!section)
 
   #main
     // 17/24 of grid columns, with 1 column prepended
-    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
+    !content_columns = ceil(19 * !blueprint_grid_columns / 24)
     +column(!content_columns)
     +prepend(floor(!blueprint_grid_columns / 24))
 
   #margin
-    // 2/24 of grid columsn, with 1 prepended
+    // 2/24 of grid columns, with 1 prepended
     // true means it's the last column in the row
     !margin_columns = floor(2 * !blueprint_grid_columns / 24)
     +column(!margin_columns, true)
@@ -171,10 +192,27 @@ div.return-chunk
 
 .with-marg-name
   background-color: #B0D4EE
-  // padding: .1em 0
-  span
-    background-color: #9CBCD3
-    border: 1px dotted #FFF
+  !firstalt = #BAEEC2
+  !secondalt = #EEBFAD
+  !i = 10
+  !spans = "span"
+  @while !i > 0
+    #{!spans}
+      @if !i % 2 == 0
+        background-color = !firstalt
+      @else
+        background-color = !secondalt
+      !i = !i - 1
+      !spans = !spans + " ~ span"
+
+  //
+    span
+      background-color = !firstalt
+      //border: 1px dotted #FFF
+      ~ span
+        background-color = !secondalt
+        ~ span
+          background-color = !firstalt
 
 .mousewindow
   line-height: inherit
@@ -224,6 +262,7 @@ div.return-chunk
 span.tei-div > span.tei-head
   font-size: 140%
   text-transform: uppercase
+  text-align: left
 
 span.tei-div span.tei-div span.tei-head 
   font-size: 90%
@@ -235,7 +274,6 @@ span.tei-head ~ *
 
 span.tei-body > *
   margin-left: 0
-
 
 // Import TEI-specific styles
 @import partials/tei.sass

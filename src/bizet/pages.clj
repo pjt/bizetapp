@@ -13,7 +13,7 @@
   ([entry] (entry-link entry :title))
   ([entry display-fn]
     (ctx-link-to
-      (format "/work%s" (:id entry)) (display-fn entry))))
+      (format "/works/%s" (:id entry)) (display-fn entry))))
 
 (defn get-entry
   ([entries]
