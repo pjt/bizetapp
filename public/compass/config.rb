@@ -1,10 +1,10 @@
 # Require any additional compass plugins here.
 project_type = :stand_alone
 # Set this to the root of your project when deployed:
-http_path = "/"
+http_path = "/bizet/"
 css_dir = "stylesheets"
 sass_dir = "src"
-images_dir = "images"
+images_dir = "compass/images"
 output_style = :compact
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true

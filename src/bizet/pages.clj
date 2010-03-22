@@ -66,3 +66,11 @@
              (html (key abbr)
                 (unordered-list (map entry-link (val abbr))))))]))))
              
+(defn san-diego []
+  (templ "MLA Links"
+    [:h2 "MLA Links"]
+    [:p "Two test documents:"
+     (unordered-list 
+       [(ctx-link-to "/works/lachansondufou" "Short: Chanson du fou")
+        (ctx-link-to "/works/lespecheursdeperles" "Long: Pêcheurs de perles")])]))
+

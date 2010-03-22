@@ -90,10 +90,17 @@ jQuery(function(){
          });
    }
 
+   // grid toggling
+   var grid_mw = function(){
+      return $("<a>Toggle Grid</a>").click(function(){
+            $("#container").toggleClass("showgrid");
+         });
+   }
+
    // set up mousewindow HUD
    $(document).dblclick(function(e){
          window.getSelection().removeAllRanges();
-         $.mousewindow(e, review_mw, abbrev_mw, expandall_mw);
+         $.mousewindow(e, review_mw, abbrev_mw, expandall_mw, grid_mw);
       });
 
    // Add <img/> for @facs
@@ -120,15 +127,19 @@ jQuery.fn.toggler = function(target){
                            {"Show":"Hide", "Hide":"Show"} :
                               {"show":"hide", "hide":"show"};
          $t
+            .addClass("toggler")
             .click(function(){
                var matched = $t.html().match(/show|hide/i),
                    found = matched ? matched[0] : matched;
                target.toggle();
+               $t.toggleClass("open");
                if (found){
                   $t.html( $t.html().replace(found, showhide[found]) );
                }
             })
-            .css({cursor:"pointer"});
+         if (!target.is(":hidden")){
+            $t.addClass("open");
+         }
       });
 }
 
@@ -141,7 +152,7 @@ jQuery.fn.addFacsImg = function(){
          if (val){
             $t.before("<img src='"+ imgurl + val +"'/>");
             $t.hide()
-            $("<span class='toggler'>Show transcript</span>")
+            $("<span>Show transcript</span>")
                .toggler($t)
                .insertBefore($t);
          }
@@ -153,7 +164,7 @@ jQuery.fn.addGraphicImg = function(){
              uri = $t.attr("class").match(/teiatt-uri=(\S+)/),
              val = uri ? uri[1] : uri;
          if (val){
-            $t.after("<img src='"+ imgurl + val +"'/>");
+            $t.append("<img src='"+ imgurl + val +"'/>");
          }
       });
 }

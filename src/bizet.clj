@@ -35,6 +35,9 @@
   (GET "/abbrevs/test/"
     (abbrev-test @entries))
 
+  (GET "/sandiego"
+    (san-diego))
+
   (GET "/rrr" 
     (do
       (sh "svn" "up" *data-dir*)
