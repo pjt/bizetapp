@@ -7,7 +7,9 @@
 (defn home [entries]
   (templ "Bizet Entries" 
     [:h2 "Search by Tag"]
-    (search-in-form entries)))
+    (search-in-form entries)
+    [:h2 "Run Stylesheets"]
+    (ctx-link-to "/stylesheets/" "Run stylesheets on all works")))
 
 (defn- entry-link
   ([entry] (entry-link entry :title))
@@ -66,6 +68,34 @@
              (html (key abbr)
                 (unordered-list (map entry-link (val abbr))))))]))))
              
+(defn run-stylesheets
+  "Run stylesheets on all documents."
+  ([sheets]
+    (templ "Available stylesheets"
+      [:h2 "Stylesheets"]
+      [:p "Choose stylesheet to run over all documents."]
+      (ordered-list
+        (map #(ctx-link-to (format "/stylesheets/%s/" (:filename %)) (:filename %)) (vals sheets))))) 
+  ([docs sheets sheet]
+    (let [niller    (constantly nil)
+          sheet-fn  (get (sheets sheet) :fn niller)
+          results   (map (fn [doc] [doc (sheet-fn (:doc doc))]) (vals docs))
+          results   (filter #(not= "" (str (second %))) results)] 
+      (templ "Stylesheet Results"
+        (cond 
+          (= niller sheet-fn)
+            (html [:h2 "Error"] [:p (format "Stylesheet `%s` was not found 
+                                             in the list of sheets." sheet)])
+          (not (seq results))
+            (html [:h2 "No results"] [:p (format "The application of `%s` 
+                                                  produced no non-emtpy results." sheet)])
+          :else
+            (ordered-list
+              (for [[doc result] results]
+                [:div [:h3 "Results for " (ctx-link-to (format "/works/%s" (:id doc)) (:title doc))]
+                 [:pre (h result)]])))))))
+
+
 (defn san-diego []
   (templ "MLA Links"
     [:h2 "MLA Links"]

@@ -5,6 +5,10 @@
     (proxy [java.io.FilenameFilter] []
         (accept [dir name] (.endsWith name ".xml"))))
 
+(def dot-xsl
+    (proxy [java.io.FilenameFilter] []
+        (accept [dir name] (.endsWith name ".xsl"))))
+
 (defmacro transform-keyval
   "Transforms key-value pairs according to passed form.
   Passed form will have the vars 'k' & 'v' available to

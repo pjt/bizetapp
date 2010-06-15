@@ -8,8 +8,10 @@
 ;; Docs
 
 (def entries (ref {}))
+(def stylesheets (ref {}))
 (dosync 
-  (commute entries pull-entries-from-fs))
+  (commute entries pull-entries-from-fs)
+  (commute stylesheets pull-stylesheets-from-fs))
 
 ;; Servlet def, Route defs
 
@@ -35,6 +37,12 @@
   (GET "/abbrevs/test/"
     (abbrev-test @entries))
 
+  (GET "/stylesheets/"
+    (run-stylesheets @stylesheets))
+
+  (GET "/stylesheets/:sheet/"
+    (run-stylesheets @entries @stylesheets (params :sheet)))
+
   (GET "/sandiego"
     (san-diego))
 
@@ -48,7 +56,10 @@
                           (format "%s\n\t%tc\n"
                               (:file m)
                               (:modified m)))) 
-                  (dosync (commute entries pull-entries-from-fs)))])))
+                  (dosync 
+                    (commute stylesheets pull-stylesheets-from-fs)
+                    (commute entries pull-entries-from-fs)))])))
+
   (GET "*" (trimming-serve-file "public" (:uri request)))
   (ANY "*" (page-not-found)))
 

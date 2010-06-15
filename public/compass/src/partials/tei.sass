@@ -1,5 +1,6 @@
 // import blueprint grid defaults
 @import partials/base.sass
+@import blueprint
 
 !full_width    = !blueprint_grid_columns
 !unit          = !blueprint_grid_width + !blueprint_grid_margin
@@ -64,12 +65,33 @@ span
     //margin: 2em;
 
 
+  // #main is 20 grid units
   &.tei-body
     > .tei-head.teiatt-type\=main
       font-size: 2.5em
+      margin-bottom: .2em
       text-align: left
+    > .tei-head.teiatt-type\=sub
+      font-size: 1.2em
+      text-align: left
+      margin-bottom: .5em
+      //+prepend(1)
+      //+column(19,true)
+    > .tei-div.teiatt-type\=bars
+      font-size: 1.2em
+      text-align: left
+      margin: .5em 0 1em
+      //+prepend(3)
+      //+column(19,true)
     > .tei-div.teiatt-type\=incipit
-      text-align: center
+      margin: 1em 0
+      +prepend(1)
+      +column(19,true)
+
+  &.tei-div.teiatt-type\=summary
+    clear: both
+    > .tei-head.teiatt-type\=gen-head
+      display: none
 
   &.teiatt-type\=instrumentation span.tei-list,
   &.teiatt-type\=stage-band span.tei-item

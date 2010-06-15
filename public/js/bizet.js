@@ -71,7 +71,6 @@ jQuery(function(){
 
 
    // section toggling
-   // PJT hide
    /*
    $("span.tei-text span.tei-div > span.tei-head").click(function(e){                     
          e.preventDefault();                                          
@@ -81,7 +80,6 @@ jQuery(function(){
       */
    
    // start w/ divs hidden
-   // PJT hide
    //$("span.tei-body span.tei-div").children().not(".tei-div > span.tei-head").hide();
    // shortcut for expanding all divs
    var expandall_mw = function(){
@@ -123,13 +121,14 @@ jQuery.fn.elem = function(){
 jQuery.fn.toggler = function(target){
    return this.each(function(){
          var $t = $(this),
-             showhide = $t.text().search(/Show/) > -1 ? 
+             showhide = /Show/.test($t.text()) ? 
                            {"Show":"Hide", "Hide":"Show"} :
                               {"show":"hide", "hide":"show"};
          $t
             .addClass("toggler")
             .click(function(){
-               var matched = $t.html().match(/show|hide/i),
+               var $t = $(this),
+                   matched = $t.html().match(/show|hide/i),
                    found = matched ? matched[0] : matched;
                target.toggle();
                $t.toggleClass("open");
