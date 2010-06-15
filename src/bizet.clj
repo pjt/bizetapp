@@ -48,7 +48,7 @@
 
   (GET "/rrr" 
     (do
-      (sh "svn" "up" *data-dir*)
+      (sh "svn" "up" *data-dir* *xsl-dir*)
       (templ "Reload"
           [:pre (map
                   (fn [[k,v]] 
