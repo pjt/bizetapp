@@ -14,7 +14,7 @@
     [:p "Search in "
       (drop-down :tag
         (sort (set (mapcat :tags (vals entries)))))
-        "with " (text-field :terms)
+        " with " (text-field :terms)
                 (submit-button "Search")]))
 
 (defn by-composition-date
@@ -66,3 +66,19 @@
     ; the abbrev, value is a vector of entries in which abbrev appears,
     ; e.g. 0 => ["us-nope" [entry1 entry8 ...]]
 
+(defn apply-stylesheet
+  "Apply stylesheet to a document or all documents. Returns [entry result-doc], or seq of these."
+  ([entries entry-q sheets sheet-q]
+    (let [entry (entries entry-q)]
+      [entry ((:fn (sheets sheet-q)) (:doc entry))]))
+  ([entries sheets sheet-q]
+    (filter #(seq (str (second %)))
+      (map #(apply-stylesheet entries % sheets sheet-q) (keys entries)))))
+
+(defn apply-query
+  "Apply XQuery to a document or all documents. If all documents, return distinct seq of return
+  values."
+  ([entries entry q]
+    ((compile-tei-q q) (:doc (entries entry))))
+  ([entries q]
+    (distinct (mapcat #(apply-query entries % q) (keys entries)))))

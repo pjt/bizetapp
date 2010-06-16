@@ -43,6 +43,13 @@
   (GET "/stylesheets/:sheet/"
     (run-stylesheets @entries @stylesheets (params :sheet)))
 
+  (GET "/query/"
+    (if-not (seq (params :q))
+      (run-query)
+      (if (seq (params :entry))
+        (run-query @entries (params :entry) (params :q))
+        (run-query @entries (params :q)))))
+
   (GET "/sandiego"
     (san-diego))
 
