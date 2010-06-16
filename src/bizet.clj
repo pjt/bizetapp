@@ -44,7 +44,7 @@
     (run-stylesheets @entries @stylesheets (params :sheet)))
 
   (GET "/query/"
-    (if-not (seq (params :q))
+    (if-not (seq (.trim (params :q)))
       (run-query)
       (if (seq (params :entry))
         (run-query @entries (params :entry) (params :q))
