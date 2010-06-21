@@ -1,3 +1,11 @@
+// import blueprint grid defaults
+@import partials/base.sass
+@import blueprint
+
+!full_width    = !blueprint_grid_columns
+!unit          = !blueprint_grid_width + !blueprint_grid_margin
+
+
 span
   display: block
 
@@ -57,9 +65,37 @@ span
     //margin: 2em;
 
 
-  &.teiatt-type\=instrumentation span.tei-list
+  // #main is 20 grid units
+  &.tei-body
+    > .tei-head.teiatt-type\=main
+      font-size: 2.5em
+      margin-bottom: .2em
+      text-align: left
+    > .tei-head.teiatt-type\=sub
+      font-size: 1.2em
+      text-align: left
+      margin-bottom: .5em
+      //+prepend(1)
+      //+column(19,true)
+    > .tei-div.teiatt-type\=bars
+      font-size: 1.2em
+      text-align: left
+      margin: .5em 0 1em
+      //+prepend(3)
+      //+column(19,true)
+    > .tei-div.teiatt-type\=incipit
+      margin: 1em 0
+      +prepend(1)
+      +column(19,true)
+
+  &.tei-div.teiatt-type\=summary
+    clear: both
+    > .tei-head.teiatt-type\=gen-head
+      display: none
+
+  &.teiatt-type\=instrumentation span.tei-list,
   &.teiatt-type\=stage-band span.tei-item
-    display: inline
+    //display: inline
 
   &.tei-lg, 
   &.tei-p, 
@@ -67,13 +103,74 @@ span
   &.tei-argument
     margin: .7em 0 1em
 
+  // Lists
+  &.tei-list,
+  &.tei-listBibl
+    padding-left: 1.5em
+    > *
+      display: list-item
+      list-style: decimal outside
+    > .tei-head
+      display: block
+
   &.tei-item
+    padding: 0
+    margin: 0
     display: list-item
 
-  &.tei-listBibl > span.tei-bibl
-    display: list-item
-    margin: 1em 0em 1em 1.5em
-    display: list-item
+  //
+    &.tei-listBibl > span.tei-bibl,
+    &.tei-listBibl > span.tei-msDesc
+      display: list-item
+      //margin: 1em 0em 1em 1.5em
+      display: list-item
+      list-style: disc outside none
+
+  &.tei-teiHeader
+    color: #555
+    margin-bottom: 2em
+    font-size: 80%
+    display: none
+
+  &.tei-text
+    margin-bottom: 2em
+
+  //&.tei-pb, &.tei-milestone
+  &.tei-titlePage
+    text-align: center
+    font-size: 110%
+
+  &.tei-head
+    text-align: center
+    font-size: 107%
+    margin: .5em 0 1em
+
+  &.tei-title
+    font-style: italic
+
+  // Letters
+  &.tei-div.teiatt-type\=letter
+    margin-bottom: 1em
+    .tei-opener
+      color: #666
+      margin-bottom: .5em
+      .tei-date ~ *
+        &:before
+          content: "| "
+      .tei-name.teiatt-type\=receiver
+        &:before 
+          content: "to "
+
+    .tei-cit
+      margin = 0 !unit
+      .tei-quote
+        font-style: italic
+        &:before, &:after
+          // override global <quote> quoting
+          content: ""
+      .tei-bibl
+        display: block
+        text-align: right
 
   // Choice components
   &.tei-reg, 
@@ -106,14 +203,7 @@ span
   &.tei-lem
     border-bottom: 1px solid #444
 
-  &.tei-teiHeader
-    color: #555
-    margin-bottom: 2em
-    font-size: 80%
-
-  &.tei-text
-    margin-bottom: 2em
-
+  // Formeworks
   &.tei-fw
     display: block
     font-size: 90%
@@ -127,36 +217,13 @@ span
     &.teiatt-type\=head
       text-align: center
 
-  //&.tei-pb, &.tei-milestone
-  &.tei-titlePage
-    text-align: center
-    font-size: 110%
+  &.tei-quote
+    &:before
+      content: ' \201C'
 
-  &.tei-head
-    text-align: center
-    font-size: 107%
-    margin: .5em 0 1em
+    &:after
+      content: '\201D '
 
-//  &.tei-note
-//    line-height: inherit
-//    padding: .2em
-//
-//    &.teiatt-place\=marg
-//      line-height: inherit
-//      font-size: 85%
-//      text-align: right
-//      clear: both
-//      float: left
-//      margin: 0 -11em 0 -12em
-//      width: 11em
-//
-//  &.tei-quote
-//    &:before
-//      content: ' "'
-//
-//    &:after
-//      content: '" '
-//
 //  &.tei-head
 //    &.teiatt-type\=gen-head
 //      font-size: 110%

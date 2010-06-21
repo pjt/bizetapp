@@ -1,11 +1,24 @@
-// This import applies a global reset to any page that imports this stylesheet.
+// This import applies a global reset to any page that imports this styleshee
 @import blueprint/reset.sass
 // To configure blueprint, edit the partials/base.sass file.
 @import partials/base.sass
-// Import blueprint liquid
-@import blueprint/modules/liquid.sass
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
++blueprint
 
-+blueprint-liquid-grid
+// Import blueprint liquid
+//@import blueprint/modules/liquid.sass
+//+blueprint-liquid-grid
+
+=rounded(!width)
+  padding = !width / 2
+  margin = !width / 2
+  border-radius = !width
+  -webkit-border-radius = !width
+  -moz-border-radius = !width
+
+!full_width    = !blueprint_grid_columns
+!unit          = !blueprint_grid_width + !blueprint_grid_margin
 
 //Recommended Blueprint configuration with scoping and semantic layout:
 //+blueprint-typography("body.bp")
@@ -19,43 +32,61 @@ body.bp
 // Layout
 body
   position: relative
+  color: #000
+  background-color: #fff
+  font-family: Georgia, Times, serif
+  font-size: 80%
+  line-height: 1.3em
 
   #container
     +container
-    color: #000
-    background-color: #fff
-    font-family: Georgia, Times, serif
-    font-size: 90%
-    line-height: 1.3em
 
   #header, #footer
-    +column(!blueprint_grid_columns)
-
-  #nav
-    // 3/24 of grid columns
-    !sidebar_columns = floor(3 * !blueprint_grid_columns / 24)
-    +column(!sidebar_columns)
-    line-height: inherit
-    font-size: 90%
-    text-align: center
-    ul
-      padding: 0
-      margin: 0
-    li
-      list-style-type: none
+    +column(!full_width, true)
+  #header
+    padding: .6em 0
+    border-bottom: 1px solid #CCC
+    #title
+      +column(6)
+      +append(1)
+      span
+        font-size: 1.6em
+        padding-bottom: .4em
+        ~ span
+          font-size: 1.1em
+          +prepend(1)
+    #nav
+      +column(13)
+      line-height: inherit
+      font-size: 98%
+      margin: .5em 0 1em
+      ul
+        +column(4)
+        padding: 0
+        margin: 0
+        li
+          list-style-type: none
+    //#search 
+    form
+      text-align: left
+      +column(4, true)
+      #search
+        border: none
+        background-color: #518ABE
+        color: #FFF
+        width = (4 * !unit) - !blueprint_grid_margin
+        //width = 5 * !unit
+        +rounded(12px)
+        padding: 3px 8px
 
   #main
-    // 17/24 of grid columns, with 1 column prepended
-    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
-    +column(!content_columns)
-    +prepend(floor(!blueprint_grid_columns / 24))
+    +column(19)
+    +prepend(1)
 
   #margin
-    // 2/24 of grid columsn, with 1 prepended
     // true means it's the last column in the row
-    !margin_columns = floor(2 * !blueprint_grid_columns / 24)
-    +column(!margin_columns, true)
-    +prepend(floor(!blueprint_grid_columns / 24))
+    +column(4, true)
+    //+prepend(1)
     height: 100%
     line-height: inherit
     font-family: Palatino, "Palatino Linotype", Georgia, serif
@@ -78,7 +109,7 @@ ul, ol
 a, a:link, a:active
   color: navy 
   background-color: transparent
-  border-bottom: 1px solid #000
+  //border-bottom: 1px solid #000
   text-decoration: none
 a:visited 
   color: #5C5197
@@ -86,6 +117,10 @@ a:visited
 a:hover 
   color: inherit
   background-color: #eee
+  border: none
+
+img
+  display: block
   border: none
 
 code
@@ -102,15 +137,10 @@ pre code
   line-height: 140%
   font-size: 93%
 
+h1, h2
+  margin: .5em 0 .75em
 
 // Classes
-
-=rounded(!width)
-  padding = !width / 2
-  margin = !width / 2
-  -webkit-border-radius = !width
-  -moz-border-radius = !width
-
 
 .abbrev-result > ol > li 
   margin-bottom: 1em
@@ -134,12 +164,29 @@ div.return-chunk
   display: inline
   border-bottom: 2px solid red
 
+.toggler
+  cursor: pointer
+  color: #777
+  &:before
+    content: "\2295  "
+  &.open
+    &:before
+      content: "\2296  "
+
 .with-marg-name
   background-color: #B0D4EE
-  // padding: .1em 0
-  span
-    background-color: #9CBCD3
-    border: 1px dotted #FFF
+  !firstalt = #BAEEC2
+  !secondalt = #EEBFAD
+  !i = 10
+  !spans = "span"
+  @while !i > 0
+    #{!spans}
+      @if !i % 2 == 0
+        background-color = !firstalt
+      @else
+        background-color = !secondalt
+      !i = !i - 1
+      !spans = !spans + " ~ span"
 
 .mousewindow
   line-height: inherit
@@ -187,20 +234,34 @@ div.return-chunk
         text-align: left
 
 span.tei-div > span.tei-head
-  font-size: 140%
+  font-size: 120%
   text-transform: uppercase
-
-span.tei-div span.tei-div span.tei-head 
-  font-size: 90%
-  margin-left: -2em
   text-align: left
 
-span.tei-head ~ *
-  margin-left: 2em
+span.tei-div
+  margin-left = !unit
 
 span.tei-body > *
   margin-left: 0
 
+span.tei-div span.tei-div 
+  span.tei-head 
+    font-size: 90%
+    text-align: left
+    //margin-left: -2em
+    margin-left = -!unit
+  span.tei-list, span.tei-listBibl 
+    span.tei-head
+      font-size: 100%
+
+span.tei-list, span.tei-listBibl
+  > span.tei-head
+    padding-left: 1.5em
+
+//
+  span.tei-head ~ *
+    //margin-left: 2em
+    margin-left = !unit
 
 // Import TEI-specific styles
 @import partials/tei.sass

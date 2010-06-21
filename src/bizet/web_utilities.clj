@@ -53,14 +53,12 @@
          file (str* file)]
     (str prefix file ".css")))
 
-(defmacro nav
+
+(defn nav
   "Navigation section."
-  [heading & items]
-  `(html
-    (ctx-link-to "/" [:img {:src (url "/img/bizet-water.gif")}])
-    (if (not= "" ~heading) [:strong ~heading] "")
-    [:ul
-     (map (fn [[label# path#]] [:li (ctx-link-to path# label#)]) ~(vec items))]))
+  [items]
+  (unordered-list
+   (map (fn [[label path]] (ctx-link-to path label)) items)))
 
 (defn templ
   "HTML template."
@@ -82,12 +80,25 @@
          [:title title]]
         [:body.bp
          [:div#container
-           [:div#nav
-              (nav "" ["Home" "/"] ["Entries" "/entries/"])]
+           [:div#header
+              ;(ctx-link-to "/" [:img {:src (url "/img/bizet-water.gif")}])
+              [:div#title
+               [:span "THE BIZET CATALOGUE"]
+               [:span "by Hugh Macdonald"]]
+             [:div#nav
+                (nav {"Home" "/"
+                      "List of Works" "/works"
+                      "Indices" "/indices"})
+                (nav {"Using the Catalogue" "/howto"
+                      "Compiler's Preface" "/preface"
+                      "Biography" "/bio"
+                      "Contact Us" "/contact"})]
+              (form-to [:get (url "/search")]
+                [:input#search {:name "q" :value "Search"}])]
            [:div#main body]
            [:div#margin]]]))]))
 
-
+            
 ;; Docs
 
 (def htmlify 

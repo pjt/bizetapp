@@ -3,8 +3,10 @@
   (:import java.io.File java.util.Date))
 
 (def *data-dir* "../bz-repos/xml")
+(def *xsl-dir* "../bz-repos/xsl")
 
 (defstruct entry :id :title :comp-date :sections :tags :doc)
+(defstruct stylesheet :filename :fn)
 
 (defn last-mod [#^File f] (.lastModified f))
 
@@ -54,7 +56,13 @@
           ((:doc entry-fns) doc))
           ; metadata
           {:file file :modified (last-mod file)})))) 
-            
+
+(defn- xsl-builder
+  "Builds an individual xsl entry struct."
+  [file]
+  (with-meta
+    (struct stylesheet (basename (str file) ".xsl") (compile-xslt file))
+    {:file file :modified (last-mod file)}))
 
 
 (defn pull-entries-from-fs
@@ -63,12 +71,26 @@
   doesn't read file."
   [entries]
   (let [e-with-file (transform-keyval entries [(:file (meta v)) v])]
-    (apply conj {}
+    (into {}
       (map
-        #(let [e (find e-with-file %)]
-          (if (and e (>= (:modified (meta (val e))) (last-mod %)))
-            [(:id (val e)) (val e)]
+        #(let [[k v :as e] (find e-with-file %)]
+          (if (and e (>= (:modified (meta v)) (last-mod %)))
+            [(:id v) v]
             (let [new-entry (entry-builder %)]
                 [(:id new-entry) new-entry])))
         (.listFiles (java.io.File. *data-dir*) dot-xml)))))
- 
+
+(defn pull-stylesheets-from-fs
+  "Returns stylesheets hash-map created with .xsl files from filesystem; if entry 
+  already exists for file & file hasn't been modified, keeps existing entry & 
+  doesn't read file."
+  [entries]
+  (let [e-with-file (transform-keyval entries [(:file (meta v)) v])]
+    (into {}
+      (map
+        #(let [[k v :as e] (find e-with-file %)]
+          (if (and e (>= (:modified (meta v)) (last-mod %)))
+            [(:filename v) v]
+            (let [new-entry (xsl-builder %)]
+                [(:filename new-entry) new-entry])))
+        (.listFiles (java.io.File. *xsl-dir*) dot-xsl)))))

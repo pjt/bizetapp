@@ -1,9 +1,30 @@
 span { display: block; }
 span.tei-reg, span.tei-corr, span.tei-orig, span.tei-sic, span.tei-abbr, span.tei-expan, span.tei-choice, span.tei-app, span.tei-rdg, span.tei-lem, span.tei-unclear, span.tei-persName, span.tei-addName, span.tei-name, span.tei-placeName, span.tei-date, span.tei-note, span.tei-bibl, span.tei-biblScope, span.tei-author, span.tei-composer, span.tei-editor, span.tei-title, span.tei-place, span.tei-pubPlace, span.tei-publisher, span.tei-institution, span.tei-idno, span.tei-extent, span.tei-measure, span.tei-material, span.tei-msIdentifier, span.tei-foreign, span.tei-quote, span.tei-emph, span.tei-hi, span.tei-roleDesc, span.tei-role { display: inline; }
-span.teiatt-type\=stage-band span.tei-item { display: inline; }
+span.tei-body > .tei-head.teiatt-type\=main { font-size: 2.5em; margin-bottom: .2em; text-align: left; }
+span.tei-body > .tei-head.teiatt-type\=sub { font-size: 1.2em; text-align: left; margin-bottom: .5em; }
+span.tei-body > .tei-div.teiatt-type\=bars { font-size: 1.2em; text-align: left; margin: .5em 0 1em; }
+span.tei-body > .tei-div.teiatt-type\=incipit { margin: 1em 0; padding-left: 40px; display: inline; float: left; margin-right: 0; width: 750px; }
+* html span.tei-body > .tei-div.teiatt-type\=incipit { overflow-x: hidden; }
+span.tei-div.teiatt-type\=summary { clear: both; }
+span.tei-div.teiatt-type\=summary > .tei-head.teiatt-type\=gen-head { display: none; }
 span.tei-lg, span.tei-p, span.tei-respStmt, span.tei-argument { margin: .7em 0 1em; }
-span.tei-item { display: list-item; }
-span.tei-listBibl > span.tei-bibl { display: list-item; margin: 1em 0em 1em 1.5em; display: list-item; }
+span.tei-list, span.tei-listBibl { padding-left: 1.5em; }
+span.tei-list > *, span.tei-listBibl > * { display: list-item; list-style: decimal outside; }
+span.tei-list > .tei-head, span.tei-listBibl > .tei-head { display: block; }
+span.tei-item { padding: 0; margin: 0; display: list-item; }
+span.tei-teiHeader { color: #555; margin-bottom: 2em; font-size: 80%; display: none; }
+span.tei-text { margin-bottom: 2em; }
+span.tei-titlePage { text-align: center; font-size: 110%; }
+span.tei-head { text-align: center; font-size: 107%; margin: .5em 0 1em; }
+span.tei-title { font-style: italic; }
+span.tei-div.teiatt-type\=letter { margin-bottom: 1em; }
+span.tei-div.teiatt-type\=letter .tei-opener { color: #666; margin-bottom: .5em; }
+span.tei-div.teiatt-type\=letter .tei-opener .tei-date ~ *:before { content: "| "; }
+span.tei-div.teiatt-type\=letter .tei-opener .tei-name.teiatt-type\=receiver:before { content: "to "; }
+span.tei-div.teiatt-type\=letter .tei-cit { margin: 0 40px; }
+span.tei-div.teiatt-type\=letter .tei-cit .tei-quote { font-style: italic; }
+span.tei-div.teiatt-type\=letter .tei-cit .tei-quote:before, span.tei-div.teiatt-type\=letter .tei-cit .tei-quote:after { content: ""; }
+span.tei-div.teiatt-type\=letter .tei-cit .tei-bibl { display: block; text-align: right; }
 span.tei-reg, span.tei-corr, span.tei-expan { border-bottom: 1px dotted #777; }
 span.tei-orig, span.tei-sic, span.tei-abbr { color: #777; font-style: italic; font-size: 93%; }
 span.tei-orig:before, span.tei-sic:before { content: "["; }
@@ -11,10 +32,8 @@ span.tei-orig:after, span.tei-sic:after { content: "]"; }
 span.tei-rdg { color: #992F36; font-size: 96%; }
 span.tei-rdg:before { content: "\00B7  "; }
 span.tei-lem { border-bottom: 1px solid #444; }
-span.tei-teiHeader { color: #555; margin-bottom: 2em; font-size: 80%; }
-span.tei-text { margin-bottom: 2em; }
 span.tei-fw { display: block; font-size: 90%; padding: .5em .25em .25em .25em; color: #7b7b7b; text-align: right; }
 span.tei-fw ~ .tei-fw { padding: .25em; }
 span.tei-fw.teiatt-type\=head { text-align: center; }
-span.tei-titlePage { text-align: center; font-size: 110%; }
-span.tei-head { text-align: center; font-size: 107%; margin: .5em 0 1em; }
+span.tei-quote:before { content: ' \201C'; }
+span.tei-quote:after { content: '\201D '; }

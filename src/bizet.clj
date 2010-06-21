@@ -8,8 +8,10 @@
 ;; Docs
 
 (def entries (ref {}))
+(def stylesheets (ref {}))
 (dosync 
-  (commute entries pull-entries-from-fs))
+  (commute entries pull-entries-from-fs)
+  (commute stylesheets pull-stylesheets-from-fs))
 
 ;; Servlet def, Route defs
 
@@ -18,9 +20,9 @@
 
   (GET "/" (home @entries))
 
-  (GET "/entries/" (get-entry @entries))
+  (GET "/works/" (get-entry @entries))
 
-  (GET "/entry/:id" (get-entry @entries (params :id)))
+  (GET "/works/:id" (get-entry @entries (params :id)))
 
   (GET "/search/"
     (templ "Search"
@@ -37,9 +39,25 @@
 
   (with-context "/edit" edit-routes)
 
+  (GET "/stylesheets/"
+    (run-stylesheets @stylesheets))
+
+  (GET "/stylesheets/:sheet/"
+    (run-stylesheets @entries @stylesheets (params :sheet)))
+
+  (GET "/query/"
+    (if-not (seq (.trim (params :q)))
+      (run-query)
+      (if (seq (params :entry))
+        (run-query @entries (params :entry) (params :q))
+        (run-query @entries (params :q)))))
+
+  (GET "/sandiego"
+    (san-diego))
+
   (GET "/rrr" 
     (do
-      (sh "svn" "up" *data-dir*)
+      (sh "svn" "up" *data-dir* *xsl-dir*)
       (templ "Reload"
           [:pre (map
                   (fn [[k,v]] 
@@ -47,7 +65,10 @@
                           (format "%s\n\t%tc\n"
                               (:file m)
                               (:modified m)))) 
-                  (dosync (commute entries pull-entries-from-fs)))])))
+                  (dosync 
+                    (commute stylesheets pull-stylesheets-from-fs)
+                    (commute entries pull-entries-from-fs)))])))
+
   (GET "*" (trimming-serve-file "public" (:uri request)))
   (ANY "*" (page-not-found)))
 

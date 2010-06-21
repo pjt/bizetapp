@@ -71,7 +71,6 @@ jQuery(function(){
 
 
    // section toggling
-   // PJT hide
    /*
    $("span.tei-text span.tei-div > span.tei-head").click(function(e){                     
          e.preventDefault();                                          
@@ -81,7 +80,6 @@ jQuery(function(){
       */
    
    // start w/ divs hidden
-   // PJT hide
    //$("span.tei-body span.tei-div").children().not(".tei-div > span.tei-head").hide();
    // shortcut for expanding all divs
    var expandall_mw = function(){
@@ -90,11 +88,23 @@ jQuery(function(){
          });
    }
 
+   // grid toggling
+   var grid_mw = function(){
+      return $("<a>Toggle Grid</a>").click(function(){
+            $("#container").toggleClass("showgrid");
+         });
+   }
+
    // set up mousewindow HUD
    $(document).dblclick(function(e){
          window.getSelection().removeAllRanges();
-         $.mousewindow(e, review_mw, abbrev_mw, expandall_mw);
+         $.mousewindow(e, review_mw, abbrev_mw, expandall_mw, grid_mw);
       });
+
+   // Add <img/> for @facs
+   $(".tei-titlePage").addFacsImg();
+   // Add <img/> for <graphic>
+   $(".tei-graphic").addGraphicImg();
 
 });
 
@@ -106,6 +116,56 @@ jQuery.fn.elem = function(){
                                  return val.replace(/^teiatt-/,'').replace(/__/g,' '); })
                          .join("@");
    return elem ? elem[1] + atts : false;
+}
+
+jQuery.fn.toggler = function(target){
+   return this.each(function(){
+         var $t = $(this),
+             showhide = /Show/.test($t.text()) ? 
+                           {"Show":"Hide", "Hide":"Show"} :
+                              {"show":"hide", "hide":"show"};
+         $t
+            .addClass("toggler")
+            .click(function(){
+               var $t = $(this),
+                   matched = $t.html().match(/show|hide/i),
+                   found = matched ? matched[0] : matched;
+               target.toggle();
+               $t.toggleClass("open");
+               if (found){
+                  $t.html( $t.html().replace(found, showhide[found]) );
+               }
+            })
+         if (!target.is(":hidden")){
+            $t.addClass("open");
+         }
+      });
+}
+
+var imgurl = "http://hdwdev.artsci.wustl.edu/bizet-static/";
+jQuery.fn.addFacsImg = function(){
+   return this.each(function(){
+         var $t = $(this),
+             facs = $t.attr("class").match(/teiatt-facs=(\S+)/),
+             val = facs ? facs[1] : facs;
+         if (val){
+            $t.before("<img src='"+ imgurl + val +"'/>");
+            $t.hide()
+            $("<span>Show transcript</span>")
+               .toggler($t)
+               .insertBefore($t);
+         }
+      });
+}
+jQuery.fn.addGraphicImg = function(){
+   return this.each(function(){
+         var $t = $(this),
+             uri = $t.attr("class").match(/teiatt-uri=(\S+)/),
+             val = uri ? uri[1] : uri;
+         if (val){
+            $t.append("<img src='"+ imgurl + val +"'/>");
+         }
+      });
 }
 
 function argslice(args) { 
