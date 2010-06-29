@@ -2,8 +2,11 @@
   (:use
      [clojure.contrib.shell-out :only (sh)]
      [clojure.contrib.str-utils :only (str-join)]
-     [xml-service.paths :only (basename dirname dirname-seq reduce-path-by)]
-     [xml-service.utilities :only (as-abs-path throw-fmt uuid)]))
+     [bizet.utilities :only 
+      (basename dirname dirname-seq reduce-path-by as-abs-path throw-fmt uuid)]))
+
+(def *remote-repos*
+  "http://svn.hdwdev.artsci.wustl.edu/bizet/")
 
 (defn make-co-path-root
   [session-id]

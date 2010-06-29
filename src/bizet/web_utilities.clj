@@ -6,7 +6,7 @@
 
 ;; Middleware
 
-(declare *context*) 
+(def *context* nil)
 
 (defn with-context 
   "Wrap handler in URL-context code, making routes match only URLs that begin
@@ -19,7 +19,7 @@
         pattern (re-pattern (str "^" ctx "(/.*)?"))] 
     (fn [request] 
       (if-let [[_ uri] (re-matches pattern (:uri request))] 
-        (binding [*context* ctx] 
+        (binding [*context* (str *context* ctx)] 
           (handler (assoc request :uri uri))))))) 
 
 (defn url [path] 
@@ -71,7 +71,7 @@
         js    (concat ["/js/jquery.js" "/js/bizet.js"] (as-coll (:js opts)))
         body  (if opts (rest body) body)]
     ;[{"Content-Type" "text/html;charset=UTF-8"}
-    [{"Content-Type" "application/xhtml+xml;charset=UTF-8"}
+    [{:headers {"Content-Type" "application/xhtml+xml;charset=UTF-8"}}
      (html 
       (xhtml-tag "en"
         [:head
@@ -103,8 +103,9 @@
 
 (def htmlify 
   (comp str 
-        #(serialize % (java.io.StringWriter.) {:method "xhtml"})
-        (compile-xslt (compile-file "public/tei-to-html.xsl"))))
+        #(serialize % (java.io.StringWriter.) 
+                    {:method "xhtml" :omit-xml-declaration "yes"})
+        (compile-xslt (java.io.File. "public/tei-to-html.xsl"))))
 
 ;; Error handling
 

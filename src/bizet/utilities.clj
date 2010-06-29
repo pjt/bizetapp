@@ -75,6 +75,19 @@
   (when x
     (if (coll? x) x [x])))
 
+(defn uuid
+  "Returns randomly generated UUID (as string)."
+  []
+  (.toString (java.util.UUID/randomUUID)))
+
+(defn as-abs-path
+  {:tag String}
+  [p]
+  (if (instance? java.io.File p) (.getAbsolutePath #^java.io.File p) p))
+
+(defn throw-fmt
+  [fmt-str & args]
+  (throw (Exception. (apply format fmt-str args))))
 
 ;; -- path utilities --
 

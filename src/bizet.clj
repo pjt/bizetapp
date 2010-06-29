@@ -7,8 +7,8 @@
 
 ;; Docs
 
-(def entries (ref {}))
-(def stylesheets (ref {}))
+;(def entries (ref {}))
+;(def stylesheets (ref {}))
 (dosync 
   (commute entries pull-entries-from-fs)
   (commute stylesheets pull-stylesheets-from-fs))
@@ -69,6 +69,8 @@
                     (commute stylesheets pull-stylesheets-from-fs)
                     (commute entries pull-entries-from-fs)))])))
 
+  (GET "/static/*" 
+       (trimming-serve-file (str *data-dir* "/../xmlserver-static") (params :*)))
   (GET "*" (trimming-serve-file "public" (:uri request)))
   (ANY "*" (page-not-found)))
 

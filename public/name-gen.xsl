@@ -6,7 +6,7 @@
     version="2.0">
     
     
-    <xsl:template match="*:div[@type='summary']">
+    <xsl:template match="*:div[@type='summary'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Summary</head>
@@ -15,7 +15,7 @@
     </xsl:template>
     
     
-    <xsl:template match="*:div[@type='castlist']">
+    <xsl:template match="*:div[@type='castlist'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Cast List</head>
@@ -23,7 +23,7 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="*:div[@type='instrumentation']">
+    <xsl:template match="*:div[@type='instrumentation'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Instrumentation</head>
@@ -31,7 +31,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:list[@type='instrumentation']">
+    <xsl:template match="*:list[@type='instrumentation'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">General Instrumentation</head>
@@ -39,7 +39,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:list[@type='stage-band']">
+    <xsl:template match="*:list[@type='stage-band'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Stage Band</head>
@@ -47,7 +47,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='contents']">
+    <xsl:template match="*:div[@type='contents'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Contents</head>
@@ -55,7 +55,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='text']">
+    <xsl:template match="*:div[@type='text'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Poem/Libretto</head>
@@ -63,7 +63,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='composition']">
+    <xsl:template match="*:div[@type='composition'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Composition</head>
@@ -71,7 +71,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='dedicatee']">
+    <xsl:template match="*:div[@type='dedicatee'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Dedicatee</head>
@@ -79,7 +79,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='to']">
+    <xsl:template match="*:div[@type='to'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Self Borrowing To</head>
@@ -87,7 +87,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='from']">
+    <xsl:template match="*:div[@type='from'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Self Borrowing From</head>
@@ -95,42 +95,42 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='manuscripts']">
+    <xsl:template match="*:div[@type='manuscripts'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Manuscript Sources</head>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="*:div[@type='autographs']">
+    <xsl:template match="*:div[@type='autographs'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Autograph Manuscripts</head>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="*:div[@type='full-scores']">
+    <xsl:template match="*:div[@type='full-scores'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Full Scores</head>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="*:div[@type='arrangements']">
+    <xsl:template match="*:div[@type='arrangements'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Arrangements</head>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="*:div[@type='vocal-scores']">
+    <xsl:template match="*:div[@type='vocal-scores'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Vocal Scores</head>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="*:div[@type='part-scores']">
+    <xsl:template match="*:div[@type='part-scores'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Parts</head>
@@ -138,7 +138,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='manuscript-sources']">
+    <xsl:template match="*:div[@type='manuscript-sources'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Non-Autograph Manuscripts</head>
@@ -146,7 +146,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='mises-en-scene']">
+    <xsl:template match="*:div[@type='mises-en-scene'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Mises-en-Scène</head>
@@ -154,7 +154,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='manuscript-librettos']">
+    <xsl:template match="*:div[@type='manuscript-librettos'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Manuscript Librettos</head>
@@ -162,7 +162,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='publication']">
+    <xsl:template match="*:div[@type='publication'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Publication</head>
@@ -170,7 +170,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='librettos']">
+    <xsl:template match="*:div[@type='librettos'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Librettos</head>
@@ -178,7 +178,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='vocal-complete']">
+    <xsl:template match="*:div[@type='vocal-complete'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Complete</head>
@@ -186,7 +186,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='vocal-extracts']">
+    <xsl:template match="*:div[@type='vocal-extracts'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Extracts</head>
@@ -194,7 +194,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='vocal-parts']">
+    <xsl:template match="*:div[@type='vocal-parts'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Vocal Parts</head>
@@ -202,7 +202,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='full-complete']">
+    <xsl:template match="*:div[@type='full-complete'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Complete</head>
@@ -210,7 +210,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='full-extracts']">
+    <xsl:template match="*:div[@type='full-extracts'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Extracts</head>
@@ -218,7 +218,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='orchestral-scores']">
+    <xsl:template match="*:div[@type='orchestral-scores'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Orchestral Scores</head>
@@ -226,7 +226,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='orchestral-full']">
+    <xsl:template match="*:div[@type='orchestral-full'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Complete</head>
@@ -234,7 +234,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='orchestral-extracts']">
+    <xsl:template match="*:div[@type='orchestral-extracts'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Extracts</head>
@@ -242,7 +242,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='references']">
+    <xsl:template match="*:div[@type='references'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">References</head>
@@ -250,7 +250,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='all-letters']">
+    <xsl:template match="*:div[@type='all-letters'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Letters</head>
@@ -258,7 +258,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='documents']">
+    <xsl:template match="*:div[@type='documents'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Documents</head>
@@ -266,7 +266,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='articles']">
+    <xsl:template match="*:div[@type='articles'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head2">Articles</head>
@@ -274,7 +274,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='performances']">
+    <xsl:template match="*:div[@type='performances'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Performances</head>
@@ -282,7 +282,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='discography']">
+    <xsl:template match="*:div[@type='discography'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Discography</head>
@@ -290,7 +290,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="*:div[@type='bibliography']">
+    <xsl:template match="*:div[@type='bibliography'][not(*:head[@type='gen-head'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <head type="gen-head">Bibliography</head>

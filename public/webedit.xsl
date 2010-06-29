@@ -15,14 +15,15 @@
      ============================================================
   -->
 
+  <!-- import tei-to-html rules: using <span>s, @class, @id -->
+  <xsl:import href="tei-to-html.xsl"/>
+  <xsl:param name="with-xpath" select="true"/>
+
   <xsl:output 
      method="xhtml" 
      encoding="utf-8" 
      omit-xml-declaration="no"
      indent="yes"/>
-
-  <!-- import tei-to-html rules: using <span>s, @class, @id -->
-  <xsl:include href="tei-to-html.xsl"/>
 
   <!-- Add xml-server specific files: this (SVN repo) is the wrong place
   to add these server-specific paths to css and js files; will change
@@ -30,16 +31,16 @@
   <xsl:template match="/">
      <html>
         <head>
-           <link rel="stylesheet" type="text/css" href="/static/css/tei.css" />
-           <link rel="stylesheet" type="text/css" href="/static/facebox/facebox.css" />
+           <link rel="stylesheet" type="text/css" href="/bizet/static/css/tei.css" />
+           <link rel="stylesheet" type="text/css" href="/bizet/static/facebox/facebox.css" />
            <script type="application/javascript" 
             Xsrc="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js">
               <!-- --></script>
-           <script type="application/javascript" src="/static/js/jquery.js">
+           <script type="application/javascript" src="/bizet/static/js/jquery.js">
               <!-- --></script>
-           <script type="application/javascript" src="/static/facebox/facebox.js">
+           <script type="application/javascript" src="/bizet/static/facebox/facebox.js">
               <!-- --></script>
-           <script type="application/javascript" src="/static/js/tei-and-html.js">
+           <script type="application/javascript" src="/bizet/static/js/tei-and-html.js">
               <!-- --></script>
         </head>
         <body>
@@ -47,5 +48,7 @@
         </body>
      </html>
     </xsl:template>
+
+
 
 </xsl:stylesheet>

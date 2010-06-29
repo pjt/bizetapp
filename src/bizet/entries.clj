@@ -2,13 +2,18 @@
   (:use bizet.utilities saxon)
   (:import java.io.File java.util.Date))
 
-(def *data-dir* "../bz-repos/xml")
-(def *xsl-dir* "../bz-repos/xsl")
+(def *base-dir* "../bz-repos")
+(def *data-dir* (str *base-dir* "/xml"))
+(def *xsl-dir*  (str *base-dir* "/xsl"))
+(def entries (ref {}))
+(def stylesheets (ref {}))
 
 (defstruct entry :id :title :comp-date :sections :tags :doc)
 (defstruct stylesheet :filename :fn)
 
-(defn last-mod [#^File f] (.lastModified f))
+(defn- as-file {:tag File} [f] (if (string? f) (File. f) f))
+(defn- last-mod [f] (.lastModified (as-file f)))
+(defn- canon-path [f] (.getCanonicalPath (as-file f)))
 
 (let [specials {\á \a, \à \a, \â \a, \ä \a
                 \é \e, \è \e, \ê \e, \ë \e
@@ -29,9 +34,9 @@
                 "/TEI/teiHeader/fileDesc/titleStmt/title[1]/string()")
    compile-tei-file
             (comp 
-              (compile-xslt (compile-file "public/name-gen.xsl"))
-              (compile-xslt (compile-file "public/into-tei-ns.xsl")) 
-              compile-file)
+              (compile-xslt (java.io.File. "public/name-gen.xsl"))
+              (compile-xslt (java.io.File. "public/into-tei-ns.xsl")) 
+              compile-xml)
    entry-fns
       (struct entry
           (comp title->id title-fn) 
@@ -45,7 +50,7 @@
   (defn- entry-builder
     "Builds an individual entry struct."
     [file]
-    (let [doc (compile-tei-file (str file))]
+    (let [doc (compile-tei-file file)]
       (with-meta
         (struct entry
           ((:id entry-fns) doc)
@@ -55,7 +60,9 @@
           ((:tags entry-fns) doc)
           ((:doc entry-fns) doc))
           ; metadata
-          {:file file :modified (last-mod file)})))) 
+          {:file file 
+           :modified (last-mod file) 
+           :repos-path (reduce-path-by (canon-path file) (canon-path *base-dir*))})))) 
 
 (defn- xsl-builder
   "Builds an individual xsl entry struct."

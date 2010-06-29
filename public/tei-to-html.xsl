@@ -52,13 +52,20 @@
               <xsl:value-of select="concat(' teiatt-',name(),'=',replace(.,' ','__'))"/>
            </xsl:for-each>
         </xsl:attribute>
-	<xsl:if test="$with-xpath">
-		<xsl:attribute name="id">
-		   <xsl:call-template name="xpath_for_html">
-		      <xsl:with-param name="path" select="nav:getPath(.)"/>
-		   </xsl:call-template>
-		</xsl:attribute>
-	</xsl:if>
+        <xsl:variable name="has-with-xpath">
+           <xsl:value-of select="$with-xpath"/>
+           <!-- checking $with-xpath through value-of@select 
+                makes check happen dynamically (each time through template),
+                and thus override-able by an importing sheet...
+            -->
+        </xsl:variable>
+        <xsl:if test="$has-with-xpath">
+           <xsl:attribute name="id">
+              <xsl:call-template name="xpath_for_html">
+                 <xsl:with-param name="path" select="nav:getPath(.)"/>
+              </xsl:call-template>
+           </xsl:attribute>
+        </xsl:if>
         <xsl:apply-templates/>
      </span>
   </xsl:template>

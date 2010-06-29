@@ -95,10 +95,17 @@ jQuery(function(){
          });
    }
 
+   // editing
+   var edit_mw = function(){
+      return $("<a>Edit Document</a>").click(function(){
+            window.location.href = window.location.href.replace(/\/works\//,"/edit/");
+         });
+   }
+
    // set up mousewindow HUD
    $(document).dblclick(function(e){
          window.getSelection().removeAllRanges();
-         $.mousewindow(e, review_mw, abbrev_mw, expandall_mw, grid_mw);
+         $.mousewindow(e, review_mw, edit_mw, abbrev_mw, expandall_mw, grid_mw);
       });
 
    // Add <img/> for @facs

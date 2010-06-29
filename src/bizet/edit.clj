@@ -1,6 +1,13 @@
 (ns bizet.edit
-  (:use saxon
+  (:use saxon bizet.svn
+     [bizet.entries :only (entries)]
      [bizet.pages :only (edit-entry)]
+     [bizet.web-utilities :only (templ url)]
+     [compojure.http.session :only (alter-session session-assoc with-session)]
+     [compojure.http.helpers :only (redirect-to)]
+     [compojure.control :only (decorate)]
+     [compojure.html.gen :only (html)]
+     compojure.html.form-helpers
      compojure.http.routes))
 
 (def update-tmpl
@@ -21,7 +28,7 @@
 
 (defn- prep-update
   [#^String update]
-  (-> update (.replace "<!--(.*?)-->" "<xsl:comment>$1</xsl:comment>")))
+  (-> update (.replaceAll "<!--(.*?)-->" "<xsl:comment>$1</xsl:comment>")))
 
 (let [root-el (compile-xquery "/element()")]
   (defn- root-ns
@@ -44,37 +51,43 @@
         nmspce (root-ns doc)]
     (query (with-default-ns nmspce parent) doc)))
 
+(defn- as-xhtml-type
+  [& args]
+  (apply vector 
+         {:headers {"Content-Type" "application/xhtml+xml;charset=UTF-8"}} args))
+
+(let [webeditor (compile-xslt (java.io.File. "public/webedit.xsl"))]
+  (def webedit 
+    (comp as-xhtml-type 
+          str
+          #(serialize % (java.io.StringWriter.) {:method "xhtml"})
+          webeditor)))
+
+
 ; routes
 
 (defn retrieve-for-edit
   "Retrieve & return XML document, run through the editing stylesheet. 
   Also, as side-effects, check out file to filesystem, associate document
   & checkout location in session map."
-  [session entries id]
-  (let [xml     (find-xml @xml-entries q-xml)
-        co-file (future (svn-co config/remote-repos
-                  (:repos-path xml) (make-co-path-root (:id session))
+  [session works id]
+  (let [xml     (works id)
+        co-file (future (svn-co *remote-repos*
+                  (:repos-path (meta xml)) (make-co-path-root (:id session))
                     (:svn-user session) (:svn-pword session)))]
     [(session-assoc :editing-doc xml :svn-co-file co-file)
-     (handle-doc (xsl-fn (:doc xml)))]))
+     (webedit (:doc xml))]))
 
 (defn make-edit
   "Apply an edit to the currently edited document (:editing-doc).
   Update reference in session map, re-serialize doc to checkout location,
   and return the HTML for the edited node's parent."
-  [session select update update-style post-style]
+  [session select update]
   (let [xml     (:editing-doc session) 
-        update  (if update-style 
-                  (str ((find-multiple-xsl xml @xsl-entries update-style)
-                          (compile-string update)))
-                  update)
-        post-fn (if post-style
-                  (find-multiple-xsl xml @xsl-entries post-style)
-                  identity)
         edited  (apply-edit (-> session :editing-doc :doc) select update)]
     (future (serialize edited @(:svn-co-file session) {:indent "yes"}))
     [(alter-session assoc-in [:editing-doc :doc] edited)
-     (handle-doc (post-fn (return-parent edited select)))]))
+     (webedit (return-parent edited select))]))
 
 (defn commit
   "Commit changes from checked-out file."
@@ -90,7 +103,7 @@
 (defn svn-login
   "Authenticate against remote SVN repository."
   [session params]
-  (if (svn-auth config/remote-repos (params :svn-user) (params :svn-pword))
+  (if (svn-auth *remote-repos* (params :svn-user) (params :svn-pword))
     [(session-assoc :svn-user (params :svn-user) :svn-pword (params :svn-pword))
      (redirect-to (or (params :edit-url) "/"))]
     :next))
@@ -99,32 +112,34 @@
 
 (defroutes edit-routes "Routes for editing."
 
-  (ANY "*" ; svn authenticate beyond this point
-    (if (not (:svn-user session))
-      (templ "Log in"
-        (form-to [:post "/edit/svn-login"]
-          (label "svn-user" "Username") " " (text-field "svn-user")
-          (label "svn-pword" "Password") " " (password-field "svn-pword")
-          (submit-button "Go")
-          (hidden-field "edit-url" (or (params :edit-url) (:uri request)))))
-      :next))
-
   (POST "/svn-login"
     (if (every? identity (map params [:svn-user :svn-pword]))
       (svn-login session params)
       :next))
 
-  (GET "/*"
-    (retrieve-for-edit session request (params :*)))
-
-  (POST "/"
-    (if (and (params :select) (-> session :editing-doc :doc))
-      (make-edit session (params :select) (params :update))
+  (ANY "*" ; svn authenticate beyond this point
+    (if (not (:svn-user session))
+      (html
+        [:html [:head [:title "Log in"]]
+         [:body
+          (form-to [:post (url "/svn-login")]
+            (label "svn-user" "Username") " " (text-field "svn-user")
+            (label "svn-pword" "Password") " " (password-field "svn-pword")
+            (submit-button "Go")
+            (hidden-field "edit-url" (or (params :edit-url) (url (:uri request)))))]])
       :next))
 
   (GET "/diff"
     (if-let [co-file @(:svn-co-file session)]
       (diff co-file)
+      :next))
+
+  (GET "/*"
+    (retrieve-for-edit session @entries (params :*)))
+
+  (POST "/"
+    (if (and (params :select) (-> session :editing-doc :doc))
+      (make-edit session (params :select) (params :update))
       :next))
 
   (POST "/commit"
@@ -135,7 +150,7 @@
   (GET "/bounce"
     ; TODO: these interfering with stuff at /edit/* -- investigate!
     #_(dosync
-      (commute session dissoc :editing-doc :svn-co-file)) "")
+      (commute session dissoc :editing-doc :svn-co-file)) ""))
 
 (decorate edit-routes (with-session {:type :memory :expires (* 8 60 60)}))
 
