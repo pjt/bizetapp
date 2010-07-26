@@ -70,9 +70,10 @@
         css   (concat [:main] (as-coll (:css opts)))
         js    (concat ["/js/jquery.js" "/js/bizet.js"] (as-coll (:js opts)))
         body  (if opts (rest body) body)]
-    ;[{"Content-Type" "text/html;charset=UTF-8"}
-    [{:headers {"Content-Type" "application/xhtml+xml;charset=UTF-8"}}
+    [{:headers {"Content-Type" "text/html;charset=UTF-8"}}
+    ;[{:headers {"Content-Type" "application/xhtml+xml;charset=UTF-8"}}
      (html 
+      (doctype :html5)
       (xhtml-tag "en"
         [:head
          (apply include-css (map css-path css))
@@ -104,7 +105,7 @@
 (def htmlify 
   (comp str 
         #(serialize % (java.io.StringWriter.) 
-                    {:method "xhtml" :omit-xml-declaration "yes"})
+                    {:method "html" :omit-xml-declaration "yes"})
         (compile-xslt (java.io.File. "public/tei-to-html.xsl"))))
 
 ;; Error handling

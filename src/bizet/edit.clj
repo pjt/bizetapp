@@ -54,13 +54,14 @@
 (defn- as-xhtml-type
   [& args]
   (apply vector 
-         {:headers {"Content-Type" "application/xhtml+xml;charset=UTF-8"}} args))
+         ;{:headers {"Content-Type" "application/xhtml+xml;charset=UTF-8"}} args))
+         {:headers {"Content-Type" "text/html;charset=UTF-8"}} args))
 
 (let [webeditor (compile-xslt (java.io.File. "public/webedit.xsl"))]
   (def webedit 
     (comp as-xhtml-type 
           str
-          #(serialize % (java.io.StringWriter.) {:method "xhtml"})
+          #(serialize % (java.io.StringWriter.) {:method "html"})
           webeditor)))
 
 
