@@ -521,9 +521,10 @@ span { display: block; }
 span.tei-reg, span.tei-corr, span.tei-orig, span.tei-sic, span.tei-abbr, span.tei-expan, span.tei-choice, span.tei-app, span.tei-rdg, span.tei-lem, span.tei-unclear, span.tei-seg, span.tei-persName, span.tei-addName, span.tei-name, span.tei-placeName, span.tei-date, span.tei-note, span.tei-bibl, span.tei-biblScope, span.tei-author, span.tei-composer, span.tei-editor, span.tei-translator, span.tei-arranger, span.tei-title, span.tei-place, span.tei-pubPlace, span.tei-publisher, span.tei-institution, span.tei-repository, span.tei-idno, span.tei-extent, span.tei-measure, span.tei-material, span.tei-msIdentifier, span.tei-foreign, span.tei-quote, span.tei-emph, span.tei-hi, span.tei-roleDesc, span.tei-role { display: inline; }
 span.tei-body > .tei-head.teiatt-type\=main { font-size: 2.5em; margin-bottom: .2em; text-align: center; }
 span.tei-body > .tei-head.teiatt-type\=sub { font-size: 1.8em; text-align: center; margin-bottom: .5em; }
-span.tei-body > .tei-div.teiatt-type\=bars { font-size: 1.2em; text-align: left; margin: .5em 0 1em; }
-span.tei-body > .tei-div.teiatt-type\=incipit { margin: 1em 0; padding-left: 40px; display: inline; float: left; margin-right: 0; width: 750px; }
+span.tei-body > .tei-div.teiatt-type\=incipit { margin: 1em 0 0; padding-left: 120px; display: inline; float: left; margin-right: 0; width: 670px; }
 * html span.tei-body > .tei-div.teiatt-type\=incipit { overflow-x: hidden; }
+span.tei-body > .tei-div.teiatt-type\=bars { font-size: 1.1em; text-align: left; margin: 0.5em 0 2em; padding-left: 120px; display: inline; float: left; margin-right: 0; width: 670px; }
+* html span.tei-body > .tei-div.teiatt-type\=bars { overflow-x: hidden; }
 span.tei-div.teiatt-type\=summary { clear: both; }
 span.tei-div.teiatt-type\=summary > .tei-head.teiatt-type\=gen-head { display: none; }
 span.tei-lg, span.tei-p, span.tei-respStmt, span.tei-argument { margin: .7em 0 1em; }
