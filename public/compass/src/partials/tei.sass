@@ -20,6 +20,7 @@ span
   &.tei-rdg,
   &.tei-lem,
   &.tei-unclear,
+  &.tei-seg,
   &.tei-persName,
   &.tei-addName,
   &.tei-name,
@@ -38,6 +39,7 @@ span
   &.tei-pubPlace,
   &.tei-publisher,
   &.tei-institution,
+  &.tei-repository,
   &.tei-idno,
   &.tei-extent,
   &.tei-measure,
@@ -72,10 +74,10 @@ span
     > .tei-head.teiatt-type\=main
       font-size: 2.5em
       margin-bottom: .2em
-      text-align: left
+      text-align: center
     > .tei-head.teiatt-type\=sub
-      font-size: 1.2em
-      text-align: left
+      font-size: 1.8em
+      text-align: center
       margin-bottom: .5em
       //+prepend(1)
       //+column(19,true)
@@ -95,10 +97,6 @@ span
     > .tei-head.teiatt-type\=gen-head
       display: none
 
-  &.teiatt-type\=instrumentation span.tei-list,
-  &.teiatt-type\=stage-band span.tei-item
-    //display: inline
-
   &.tei-lg, 
   &.tei-p, 
   &.tei-respStmt, 
@@ -109,24 +107,34 @@ span
   &.tei-list,
   &.tei-listBibl
     padding-left: 1.5em
+    margin: .5em 0 
     > *
       display: list-item
       list-style: decimal outside
     > .tei-head
       display: block
+    &.teiatt-type\=copies > *
+      list-style: disc outside
+
+  &.tei-div.teiatt-type\=bibliography,
+  &.tei-div.teiatt-type\=discography
+    .tei-list > *
+      list-style: disc outside
 
   &.tei-item
     padding: 0
     margin: 0
     display: list-item
 
-  //
-    &.tei-listBibl > span.tei-bibl,
-    &.tei-listBibl > span.tei-msDesc
-      display: list-item
-      //margin: 1em 0em 1em 1.5em
-      display: list-item
-      list-style: disc outside none
+  &.teiatt-type\=instrumentation,
+  &.teiatt-type\=stage-band
+    padding-left: 0
+    span.tei-item
+      display: inline
+      &:after
+        content: ", "
+      &:last-child:after
+        content: ""
 
   &.tei-teiHeader
     color: #555
@@ -140,7 +148,9 @@ span
   //&.tei-pb, &.tei-milestone
   &.tei-titlePage
     text-align: center
+    font-style: italic
     font-size: 110%
+    padding: 3%
 
   &.tei-head
     text-align: center
@@ -149,6 +159,58 @@ span
 
   &.tei-title
     font-style: italic
+
+  // bibliographical formatting
+  &.tei-bibl.teiatt-type\=titlepage >,
+  &.tei-listBibl > span.tei-bibl
+    .tei-idno.teiatt-type\=plate
+      display: block
+      &:before 
+        content: "plate "
+        font-size: 95%
+        font-variant: small-caps
+        display: inline-block
+        width: 4em
+    .tei-extent
+      display: block
+      &:before
+        content: "pages "
+        font-size: 95%
+        font-variant: small-caps
+        display: inline-block
+        width: 4em
+    .tei-date
+      display: block
+      &:before
+        content: "date "
+        font-size: 95%
+        font-variant: small-caps
+        display: inline-block
+        width: 4em
+    .tei-note
+      display: block
+      &:before
+        content: "note "
+        font-size: 95%
+        font-variant: small-caps
+        display: inline-block
+        width: 4em
+    .tei-div.teiatt-type\=announce
+      //margin-left: 0
+      &:before
+        display: block
+        content: "announcements "
+        font-variant: small-caps
+      .tei-bibl
+        display: block
+        padding-left: 3.5em
+    .tei-list.teiatt-type\=copies
+      margin: 0 0 .5em 2em
+      &:before
+        display: block
+        content: "copies "
+        font-variant: small-caps
+        margin-left: -3.5em
 
   // Letters
   &.tei-div.teiatt-type\=letter
@@ -170,54 +232,11 @@ span
         &:before, &:after
           // override global <quote> quoting
           content: ""
+        .tei-title
+          font-style: normal
       .tei-bibl
         display: block
         text-align: right
-
-  // Choice components
-  &.tei-reg, 
-  &.tei-corr, 
-  &.tei-expan
-    border-bottom: 1px dotted #777
-
-  &.tei-orig, 
-  &.tei-sic, 
-  &.tei-abbr
-    color: #777
-    font-style: italic
-    font-size: 93%
-
-  &.tei-orig:before, 
-  &.tei-sic:before
-    content: "["
-
-  &.tei-orig:after, 
-  &.tei-sic:after
-    content: "]"
-
-  &.tei-rdg
-    color: #992F36
-    font-size: 96%
-
-    &:before
-      content: "\00B7  "
-
-  &.tei-lem
-    border-bottom: 1px solid #444
-
-  // Formeworks
-  &.tei-fw
-    display: block
-    font-size: 90%
-    padding: .5em .25em .25em .25em
-    color: #7b7b7b
-    text-align: right
-
-    ~ .tei-fw
-      padding: .25em
-
-    &.teiatt-type\=head
-      text-align: center
 
   &.tei-quote
     &:before
@@ -225,6 +244,10 @@ span
 
     &:after
       content: '\201D '
+
+  &.teiatt-rend\=superscript
+    font-size: 75%
+    vertical-align: top
 
 //  &.tei-head
 //    &.teiatt-type\=gen-head

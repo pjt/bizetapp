@@ -212,26 +212,7 @@ div.return-chunk
     &:hover
       cursor: pointer
 
-/*
-  span.tei-text span.tei-div 
-    span.tei-head 
-      cursor: pointer
-    span.tei-head:before
-      content: '\26AA  '
-    span.tei-head.expanded:before
-      content: '\26AB  '
-
-/*
-  span.tei-div
-    margin-left: 2em
-    span.tei-head
-      font-size: 140%
-      text-transform: uppercase
-    span.tei-div
-      span.tei-head
-        font-size: 90%
-        margin-left: -2em
-        text-align: left
+// basic tei headings, indentation
 
 span.tei-div > span.tei-head
   font-size: 120%
@@ -242,13 +223,17 @@ span.tei-div
   margin-left = !unit
 
 span.tei-body > *
+  margin-bottom: 2em
+
+span.tei-body > *, 
+span.tei-div.teiatt-type\=letter,
+span.tei-div.teiatt-type\=announce
   margin-left: 0
 
 span.tei-div span.tei-div 
   span.tei-head 
     font-size: 90%
     text-align: left
-    //margin-left: -2em
     margin-left = -!unit
   span.tei-list, span.tei-listBibl 
     span.tei-head
@@ -257,11 +242,6 @@ span.tei-div span.tei-div
 span.tei-list, span.tei-listBibl
   > span.tei-head
     padding-left: 1.5em
-
-//
-  span.tei-head ~ *
-    //margin-left: 2em
-    margin-left = !unit
 
 // Import TEI-specific styles
 @import partials/tei.sass

@@ -31,6 +31,7 @@
         </xsl:copy>
     </xsl:template>
     
+    <!--
     <xsl:template match="*:list[@type='instrumentation'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
@@ -38,6 +39,7 @@
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
+    -->
     
     <xsl:template match="*:list[@type='stage-band'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
@@ -112,7 +114,7 @@
     <xsl:template match="*:div[@type='full-scores'][not(*:head[@type='gen-head2'])]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <head type="gen-head2">Full Scores</head>
+            <head type="gen-head2">Scores</head>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
