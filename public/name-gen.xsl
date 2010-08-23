@@ -301,6 +301,12 @@
     </xsl:template>
     
     
+    <!-- bibl@type=titlepage elements 
+    <xsl:template match="*:bibl[@type='titlepage']/element()[name()..."> 
+
+    </xsl:template>
+    -->
+
     <xsl:template match="@*|node()">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()"/>

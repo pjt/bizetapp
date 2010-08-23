@@ -26,15 +26,19 @@ span.tei-head { text-align: center; font-size: 107%; margin: .5em 0 1em; }
 span.tei-title { font-style: italic; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-idno.teiatt-type\=plate, span.tei-listBibl > span.tei-bibl > .tei-idno.teiatt-type\=plate { display: block; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-idno.teiatt-type\=plate:before, span.tei-listBibl > span.tei-bibl > .tei-idno.teiatt-type\=plate:before { content: "plate "; font-size: 95%; font-variant: small-caps; display: inline-block; width: 4em; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-idno.teiatt-type\=plate + .tei-idno.teiatt-type\=plate:before, span.tei-listBibl > span.tei-bibl > .tei-idno.teiatt-type\=plate + .tei-idno.teiatt-type\=plate:before { content: ""; width: 4em; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-extent, span.tei-listBibl > span.tei-bibl > .tei-extent { display: block; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-extent:before, span.tei-listBibl > span.tei-bibl > .tei-extent:before { content: "pages "; font-size: 95%; font-variant: small-caps; display: inline-block; width: 4em; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-biblScope, span.tei-listBibl > span.tei-bibl > .tei-biblScope { display: block; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-biblScope:before, span.tei-listBibl > span.tei-bibl > .tei-biblScope:before { content: "in "; font-size: 95%; font-variant: small-caps; display: inline-block; width: 4em; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-date, span.tei-listBibl > span.tei-bibl > .tei-date { display: block; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-date:before, span.tei-listBibl > span.tei-bibl > .tei-date:before { content: "date "; font-size: 95%; font-variant: small-caps; display: inline-block; width: 4em; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-note, span.tei-listBibl > span.tei-bibl > .tei-note { display: block; }
-span.tei-bibl.teiatt-type\=titlepage > .tei-note:before, span.tei-listBibl > span.tei-bibl > .tei-note:before { content: "note "; font-size: 95%; font-variant: small-caps; display: inline-block; width: 4em; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-note:before, span.tei-listBibl > span.tei-bibl > .tei-note:before { content: "notes "; font-size: 95%; font-variant: small-caps; display: inline-block; width: 4em; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-note + .tei-note:before, span.tei-listBibl > span.tei-bibl > .tei-note + .tei-note:before { content: ""; width: 4em; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-div.teiatt-type\=announce:before, span.tei-listBibl > span.tei-bibl > .tei-div.teiatt-type\=announce:before { display: block; content: "announcements "; font-variant: small-caps; }
-span.tei-bibl.teiatt-type\=titlepage > .tei-div.teiatt-type\=announce .tei-bibl, span.tei-listBibl > span.tei-bibl > .tei-div.teiatt-type\=announce .tei-bibl { display: block; padding-left: 3.5em; }
-span.tei-bibl.teiatt-type\=titlepage > .tei-list.teiatt-type\=copies, span.tei-listBibl > span.tei-bibl > .tei-list.teiatt-type\=copies { margin: 0 0 .5em 2em; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-div.teiatt-type\=announce .tei-bibl, span.tei-listBibl > span.tei-bibl > .tei-div.teiatt-type\=announce .tei-bibl { display: block; padding-left: 3.8em; }
+span.tei-bibl.teiatt-type\=titlepage > .tei-list.teiatt-type\=copies, span.tei-listBibl > span.tei-bibl > .tei-list.teiatt-type\=copies { margin: 0 0 .5em 2.0em; }
 span.tei-bibl.teiatt-type\=titlepage > .tei-list.teiatt-type\=copies:before, span.tei-listBibl > span.tei-bibl > .tei-list.teiatt-type\=copies:before { display: block; content: "copies "; font-variant: small-caps; margin-left: -3.5em; }
 span.tei-div.teiatt-type\=letter { margin-bottom: 1em; }
 span.tei-div.teiatt-type\=letter .tei-opener { color: #666; margin-bottom: .5em; }

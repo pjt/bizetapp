@@ -169,10 +169,22 @@ span
         font-variant: small-caps
         display: inline-block
         width: 4em
+      + .tei-idno.teiatt-type\=plate
+        &:before
+          content: ""
+          width: 4em
     .tei-extent
       display: block
       &:before
         content: "pages "
+        font-size: 95%
+        font-variant: small-caps
+        display: inline-block
+        width: 4em
+    .tei-biblScope
+      display: block
+      &:before
+        content: "in "
         font-size: 95%
         font-variant: small-caps
         display: inline-block
@@ -188,11 +200,15 @@ span
     .tei-note
       display: block
       &:before
-        content: "note "
+        content: "notes "
         font-size: 95%
         font-variant: small-caps
         display: inline-block
         width: 4em
+      + .tei-note
+        &:before
+          content: ""
+          width: 4em
     .tei-div.teiatt-type\=announce
       //margin-left: 0
       &:before
@@ -201,9 +217,9 @@ span
         font-variant: small-caps
       .tei-bibl
         display: block
-        padding-left: 3.5em
+        padding-left: 3.8em
     .tei-list.teiatt-type\=copies
-      margin: 0 0 .5em 2em
+      margin: 0 0 .5em 2.0em
       &:before
         display: block
         content: "copies "
