@@ -3,7 +3,6 @@
      compojure.html.form-helpers 
      [compojure.html.gen :only (h)]
      [saxon :as sax :only ()]
-     [clojure.contrib.seq-utils :as su :only ()]
      [bizet.utilities :only (as-coll compile-tei-q)]
      [bizet abbrevs web-utilities]))
 
@@ -61,7 +60,7 @@
                                       (repeat [entry])))
                       (vals entries)))
         abbrevs (remove (comp nil? key) abbrevs)]
-    (su/group-by #(count (lookup (key %))) abbrevs)))
+    (group-by #(count (lookup (key %))) abbrevs)))
     ; returns map of count => vector of key-value pairs, where key is
     ; the abbrev, value is a vector of entries in which abbrev appears,
     ; e.g. 0 => ["us-nope" [entry1 entry8 ...]]

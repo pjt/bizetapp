@@ -1,7 +1,7 @@
 (ns bizet.svn
   (:use
-     [clojure.contrib.shell-out :only (sh)]
-     [clojure.contrib.str-utils :only (str-join)]
+     [clojure.java.shell :only (sh)]
+     [clojure.string :only (join)]
      [bizet.utilities :only 
       (basename dirname dirname-seq reduce-path-by as-abs-path throw-fmt uuid)]))
 
@@ -10,7 +10,7 @@
 
 (defn make-co-path-root
   [session-id]
-  (str-join "/" 
+  (join "/" 
         ["/tmp/webedit-tmp" session-id (uuid)]))
 
 (defn co-path-session-root

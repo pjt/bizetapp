@@ -1,10 +1,9 @@
 (ns bizet.abbrevs
-    (:use clojure.contrib.duck-streams
-          (clojure.contrib.json read write)))
+    (:use [clojure.java.io :only (reader)]
+          [clojure.contrib.json :only (read-json)]))
 
 (def *abbrevs* 
-  (read-json 
-    (java.io.PushbackReader. (reader "public/abbrevs.oxford-music-online.json"))))
+  (read-json (reader "public/abbrevs.oxford-music-online.json")))
 
 (def lookups
   [[(partial re-find #"([A-Z]+)-(.*)"),
@@ -24,8 +23,4 @@
     (for [[candidate? retrieve] lookups]
       (if-let [candidate (candidate? abbr)]
         (retrieve candidate)))))
-
-
-
-
 
