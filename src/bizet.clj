@@ -1,7 +1,7 @@
 (ns bizet
   (:use [bizet entries edit utilities web-utilities pages]
         [clojure.contrib [shell-out :only (sh)]]
-        [compojure.control :only (decorate-with)]
+        [compojure.control :only (decorate decorate-with)]
         [compojure.http.helpers :only (page-not-found)]
         compojure.http.routes))
 
@@ -74,4 +74,6 @@
   (GET "*" (trimming-serve-file "public" (:uri request)))
   (ANY "*" (page-not-found)))
 
-(decorate-with add-trailing-slash bizetapp)
+(decorate bizetapp 
+          (restrict-to-ip #"128\.252\..*")
+          add-trailing-slash)

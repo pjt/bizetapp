@@ -38,6 +38,15 @@
         (handler (assoc request :uri (str uri "/")))
         response))))
 
+(defn restrict-to-ip
+  "Middleware function that restricts requests to clients whose IP address
+  matches the pattern (which should be a regex pattern)."
+  [handler ip-pattern]
+  (fn [request]
+    (if (re-matches ip-pattern (:remote-addr request))
+      (handler request)
+      {:status 403 :headers {} :body "This is not for you."})))
+
 ;; HTML funcs
 
 (defn ctx-link-to
