@@ -6,5 +6,5 @@
 
 (defn -main
   [& args]
-  (run-server {:port 8080}
+  (run-server {:port 8079}
     "/bizet/*" (servlet (with-context "/bizet" bizet/bizetapp))))

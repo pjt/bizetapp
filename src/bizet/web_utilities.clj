@@ -43,9 +43,10 @@
   matches the pattern (which should be a regex pattern)."
   [handler ip-pattern]
   (fn [request]
-    (if (re-matches ip-pattern (:remote-addr request))
-      (handler request)
-      {:status 403 :headers {} :body "This is not for you."})))
+    (let [ip (get (:headers request) "x-forwarded-for" (:remote-addr request))]
+       (if (re-matches ip-pattern ip)
+         (handler request)
+         {:status 403 :headers {} :body "This is not for you."}))))
 
 ;; HTML funcs
 

@@ -2,3 +2,5 @@
 .sass-cache/
 lib
 *.jar
+bz-repos
+log.txt

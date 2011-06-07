@@ -2,7 +2,7 @@
   (:use bizet.utilities saxon)
   (:import java.io.File java.util.Date))
 
-(def *base-dir* "../bz-repos")
+(def *base-dir* "bz-repos")
 (def *data-dir* (str *base-dir* "/xml"))
 (def *xsl-dir*  (str *base-dir* "/xsl"))
 (def entries (ref {}))

@@ -75,5 +75,5 @@
   (ANY "*" (page-not-found)))
 
 (decorate bizetapp 
-          (restrict-to-ip #"128\.252\..*")
+          (restrict-to-ip #"(128\.252\..*)|(172\.(1[6-9]|2[0-9]|3[0-1])\..*)")
           add-trailing-slash)
