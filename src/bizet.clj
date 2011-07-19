@@ -64,7 +64,7 @@
 
   (GET "/rrr" 
     (do
-      (sh "svn" "up" "--username" "public" "--password" "bizet" *works-dir* *transcripts-dir *xsl-dir*)
+      (sh "svn" "up" "--username" "public" "--password" "bizet" *works-dir* *transcripts-dir* *xsl-dir*)
       (templ "Reload"
           [:pre (map
                   (fn [[k,v]] 
