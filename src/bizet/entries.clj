@@ -3,7 +3,8 @@
   (:import java.io.File java.util.Date))
 
 (def *base-dir* "../bz-repos")
-(def *data-dir* (str *base-dir* "/xml"))
+(def *works-dir* (str *base-dir* "/xml"))
+(def *transcripts-dir* (str *base-dir* "/transcripts"))
 (def *xsl-dir*  (str *base-dir* "/xsl"))
 (def entries (ref {}))
 (def stylesheets (ref {}))
@@ -62,7 +63,8 @@
           ; metadata
           {:file file 
            :modified (last-mod file) 
-           :repos-path (reduce-path-by (canon-path file) (canon-path *base-dir*))})))) 
+           :repos-path (reduce-path-by (canon-path file) (canon-path *base-dir*))
+           :transcript? (.contains (.getCanonicalPath file) "/transcripts/")})))) 
 
 (defn- xsl-builder
   "Builds an individual xsl entry struct."
@@ -85,7 +87,23 @@
             [(:id v) v]
             (let [new-entry (entry-builder %)]
                 [(:id new-entry) new-entry])))
-        (.listFiles (java.io.File. *data-dir*) dot-xml)))))
+        (concat 
+          (.listFiles (java.io.File. *works-dir*) dot-xml)
+          (.listFiles (java.io.File. *transcripts-dir*) dot-xml))))))
+
+(defn transcript?
+  [entry]
+  (:transcript? (meta entry)))
+
+(defn only-transcripts
+  [entries]
+  (into {}
+        (filter (fn [[id entry]] (transcript? entry)) entries)))
+
+(defn only-works
+  [entries]
+  (into {}
+        (filter (fn [[id entry]] ((complement transcript?) entry)) entries)))
 
 (defn pull-stylesheets-from-fs
   "Returns stylesheets hash-map created with .xsl files from filesystem; if entry 

@@ -1,7 +1,8 @@
 (ns bizet.pages
   (:use 
-    [bizet queries utilities web-utilities abbrevs]
+    [bizet entries queries utilities web-utilities abbrevs]
     [clojure.contrib.json :only (json-str)]
+    [saxon :as sax :only ()]
     [compojure.html gen page-helpers form-helpers]))
 
 (defn home [entries]
@@ -22,8 +23,9 @@
 (defn- entry-link
   ([entry] (entry-link entry :title))
   ([entry display-fn]
-    (ctx-link-to
-      (format "/works/%s" (:id entry)) (display-fn entry))))
+   (let [type (if (transcript? entry) "transcripts" "works")]
+     (ctx-link-to
+        (format "/%s/%s" type (:id entry)) (display-fn entry)))))
 
 (defn get-entry
   ([entries]
@@ -129,4 +131,17 @@
      (unordered-list 
        [(ctx-link-to "/works/lachansondufou" "Short: Chanson du fou")
         (ctx-link-to "/works/lespecheursdeperles" "Long: Pêcheurs de perles")])]))
+
+(defn timeline
+  [entries]
+  (let [dates (get-all-dates entries)]
+    (templ 
+      "Bizet Timeline"
+      [:h2 "Catalog Timeline"]
+      [:div.timeline 
+        (for [[date entry] dates]
+          [:div.date 
+           [:span.text (sax/query "string()" date)]
+           [:div.context [:span (:title entry)] [:div (sax/query ".." date)]]])])))
+
 

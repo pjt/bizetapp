@@ -71,8 +71,8 @@
   "Retrieve & return XML document, run through the editing stylesheet. 
   Also, as side-effects, check out file to filesystem, associate document
   & checkout location in session map."
-  [session works id]
-  (let [xml     (works id)
+  [session entries id]
+  (let [xml     (entries id)
         co-file (future (svn-co *remote-repos*
                   (:repos-path (meta xml)) (make-co-path-root (:id session))
                     (:svn-user session) (:svn-pword session)))]

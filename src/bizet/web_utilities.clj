@@ -98,6 +98,7 @@
              [:div#nav
                 (nav {"Home" "/"
                       "List of Works" "/works"
+                      "List of Transcripts" "/transcripts"
                       "Indices" "/indices"})
                 (nav {"Using the Catalogue" "/howto"
                       "Compiler's Preface" "/preface"

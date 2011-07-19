@@ -20,9 +20,13 @@
 
   (GET "/" (home @entries))
 
-  (GET "/works/" (get-entry @entries))
+  (GET "/works/" (get-entry (only-works @entries)))
 
   (GET "/works/:id" (get-entry @entries (params :id)))
+
+  (GET "/transcripts/" (get-entry (only-transcripts @entries)))
+
+  (GET "/transcripts/:id" (get-entry @entries (params :id)))
 
   (GET "/search/"
     (templ "Search"
@@ -55,9 +59,12 @@
   (GET "/sandiego"
     (san-diego))
 
+  (GET "/timeline"
+    (timeline @entries))
+
   (GET "/rrr" 
     (do
-      (sh "svn" "up" *data-dir* *xsl-dir*)
+      (sh "svn" "up" *works-dir* *transcripts-dir* *xsl-dir*)
       (templ "Reload"
           [:pre (map
                   (fn [[k,v]] 
@@ -70,7 +77,7 @@
                     (commute entries pull-entries-from-fs)))])))
 
   (GET "/static/*" 
-       (trimming-serve-file (str *data-dir* "/../xmlserver-static") (params :*)))
+       (trimming-serve-file (str *base-dir* "/xmlserver-static") (params :*)))
   (GET "*" (trimming-serve-file "public" (:uri request)))
   (ANY "*" (page-not-found)))
 

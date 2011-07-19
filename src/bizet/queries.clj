@@ -65,6 +65,17 @@
     ; the abbrev, value is a vector of entries in which abbrev appears,
     ; e.g. 0 => ["us-nope" [entry1 entry8 ...]]
 
+(defn get-all-dates
+  "Return all dates mentioned in entries, as sorted list of [date entry]."
+  [entries]
+  (let  [get-dates (compile-tei-q "/TEI/text//date")
+         dates  (mapcat (fn [entry]
+                          (zipmap (as-coll (get-dates (:doc entry)))
+                                  (repeat entry)))
+                        (vals entries))
+        dates (remove (comp nil? key) dates)]
+    (sort-by (comp str key) dates)))
+
 (defn apply-stylesheet
   "Apply stylesheet to a document or all documents. Returns [entry result-doc], or seq of these."
   ([entries entry-q sheets sheet-q]
