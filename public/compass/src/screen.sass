@@ -1,5 +1,5 @@
 // This import applies a global reset to any page that imports this styleshee
-@import blueprint/reset.sass
+@import blueprint/reset.scss
 // To configure blueprint, edit the partials/base.sass file.
 @import partials/base.sass
 // Import all the default blueprint modules so that we can access their mixins.
@@ -10,15 +10,15 @@
 //@import blueprint/modules/liquid.sass
 //+blueprint-liquid-grid
 
-=rounded(!width)
-  padding = !width / 2
-  margin = !width / 2
-  border-radius = !width
-  -webkit-border-radius = !width
-  -moz-border-radius = !width
+=rounded($width)
+  padding: $width / 2
+  margin: $width / 2
+  border-radius: $width
+  -webkit-border-radius: $width
+  -moz-border-radius: $width
 
-!full_width    = !blueprint_grid_columns
-!unit          = !blueprint_grid_width + !blueprint_grid_margin
+$full_width:     $blueprint_grid_columns
+$unit:           $blueprint_grid_width + $blueprint_grid_margin
 
 //Recommended Blueprint configuration with scoping and semantic layout:
 //+blueprint-typography("body.bp")
@@ -42,7 +42,7 @@ body
     +container
 
   #header, #footer
-    +column(!full_width, true)
+    +column($full_width, true)
   #header
     padding: .6em 0
     border-bottom: 1px solid #CCC
@@ -74,8 +74,8 @@ body
         border: none
         background-color: #518ABE
         color: #FFF
-        width = (4 * !unit) - !blueprint_grid_margin
-        //width = 5 * !unit
+        width: (4 * $unit) - $blueprint_grid_margin
+        //width: 5 * $unit
         +rounded(12px)
         padding: 3px 8px
 
@@ -175,18 +175,18 @@ div.return-chunk
 
 .with-marg-name
   background-color: #B0D4EE
-  !firstalt = #BAEEC2
-  !secondalt = #EEBFAD
-  !i = 10
-  !spans = "span"
-  @while !i > 0
-    #{!spans}
-      @if !i % 2 == 0
-        background-color = !firstalt
+  $firstalt:  #BAEEC2
+  $secondalt: #EEBFAD
+  $i: 10
+  $spans: "span"
+  @while $i > 0
+    #{$spans}
+      @if $i % 2 == 0
+        background-color: $firstalt
       @else
-        background-color = !secondalt
-      !i = !i - 1
-      !spans = !spans + " ~ span"
+        background-color: $secondalt
+      $i: $i - 1
+      $spans: $spans + " ~ span"
 
 .mousewindow
   line-height: inherit
@@ -220,7 +220,7 @@ span.tei-div > span.tei-head
   text-align: left
 
 span.tei-div
-  margin-left = !unit
+  margin-left: $unit
 
 span.tei-body > *
   margin-bottom: 2em
@@ -234,7 +234,7 @@ span.tei-div span.tei-div
   span.tei-head 
     font-size: 90%
     text-align: left
-    margin-left = -!unit
+    margin-left: -$unit
   span.tei-list, span.tei-listBibl 
     span.tei-head
       font-size: 100%

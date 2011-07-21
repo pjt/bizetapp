@@ -2,8 +2,8 @@
 @import partials/base.sass
 @import blueprint
 
-!full_width    = !blueprint_grid_columns
-!unit          = !blueprint_grid_width + !blueprint_grid_margin
+$full_width:     $blueprint_grid_columns
+$unit:           $blueprint_grid_width + $blueprint_grid_margin
 
 
 span
@@ -240,7 +240,7 @@ span
           content: "to "
 
     .tei-cit
-      margin = 0 !unit
+      margin: 0 $unit
       .tei-quote
         font-style: italic
         &:before, &:after
@@ -255,13 +255,119 @@ span
   &.tei-quote
     &:before
       content: ' \201C'
-
     &:after
       content: '\201D '
 
   &.teiatt-rend\=superscript
     font-size: 75%
     vertical-align: top
+  &.teiatt-rend\=strikethrough
+    text-decoration: line-through
+  &.teiatt-rend\=underline 
+    text-decoration: underline
+  &.teiatt-rend\=italics 
+    font-style: italic
+  &.teiatt-rend\=bold 
+    font-weight: bold
+  &.tei-emph 
+    font-style: italic
+  &.teiatt-rend\=indent\+1
+    margin-left: 1em
+
+  &.tei-list
+    .teiatt-rend\=labeled * 
+      list-style-type: none
+    .teiatt-type\=extBib
+      margin-top: 3em
+  &.tei-label 
+    display: inline 
+    padding-right: .5em
+  &.tei-label.teiatt-type\=empty 
+    padding-right: 1.35em
+  &.tei-list.teiatt-rend\=roman 
+    list-style-type: upper-roman
+
+  &.tei-list.teiatt-type\=cast-on-stage 
+    display: inline
+    .tei-item 
+      display: inline
+  &.teiatt-type\=cast-on-stage 
+    padding-left: .5em
+    padding-right: .5em
+    &:before 
+      content: " ("
+    &:after 
+      content: ") "
+    .tei-item:after 
+      content: ","
+    .tei-item:last-child:after 
+      content: ""
+  &.teiatt-type\=contents .tei-measure .teiatt-unit\=bars:before
+    content: " - "
+  &.teiatt-type\=act >*:last-child 
+    padding-bottom: .5em
+
+
+  &.tei-list.teiatt-rend\=table
+    display: table
+    list-style-type: none
+    *
+      list-style-type: none
+    .tei-item, .tei-msItem
+      display: table-row
+    .tei-item > *, .tei-msItem > *
+      display: table-cell
+      padding-left: .5em
+      padding-right: .5em
+    .tei-item.teiatt-type\=headings, .tei-msItem.teiatt-type\=headings
+      padding-bottom: 30em
+  &.tei-titlePage
+    .teiatt-rend\=table
+      margin-left: auto
+      margin-right: auto
+      text-align: left
+    .tei-note
+      font-style: normal
+      &.teiatt-type\=side
+        padding-right: 30em
+        display: block
+        padding-bottom: 1em
+        text-align: left
+        padding-top: .5em
+  &.tei-listBibl .tei-head
+    text-align: left
+  &.tei-list
+    &.teiatt-type\=subact
+      position: relative
+      bottom: 1.7em
+      right: 1.5em
+      margin-bottom: -1.2em
+      .tei-head
+        position: relative
+        right: .5em
+    &.teiatt-rend\=labeled .tei-list.teiatt-type\=subact
+      position: relative
+      bottom: 1.7em
+      left: .5em
+      .tei-head
+        position: relative
+        left: 1.5em
+    &.teiatt-type\=subact .tei-head
+      margin-bottom: 0em
+  &.tei-del, &.tei-titlePart, &.tei-docTitle
+    display: inline
+  &.teiatt-xml\:space\=preserve
+    white-space: pre
+  &.tei-quote.teiatt-type\=block
+    display: table
+    margin-left: auto
+    margin-right: auto
+    &:before, &:after
+      content: ""
+  &.tei-title.teiatt-type\=sub
+    font-style: normal
+  &.tei-org
+    display: inline
 
 //  &.tei-head
 //    &.teiatt-type\=gen-head
