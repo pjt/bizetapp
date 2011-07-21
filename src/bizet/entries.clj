@@ -2,7 +2,7 @@
   (:use bizet.utilities saxon)
   (:import java.io.File java.util.Date))
 
-(def *base-dir* "../bz-repos")
+(def *base-dir* "bz-repos")
 (def *works-dir* (str *base-dir* "/xml"))
 (def *transcripts-dir* (str *base-dir* "/transcripts"))
 (def *xsl-dir*  (str *base-dir* "/xsl"))
@@ -35,8 +35,8 @@
                 "/TEI/teiHeader/fileDesc/titleStmt/title[1]/string()")
    compile-tei-file
             (comp 
-              (compile-xslt (java.io.File. "public/name-gen.xsl"))
-              (compile-xslt (java.io.File. "public/into-tei-ns.xsl")) 
+              (compile-xslt (File. (str *xsl-dir* "/name-gen.xsl")))
+              (compile-xslt (File. (str *xsl-dir* "/into-tei-ns.xsl")))
               compile-xml)
    entry-fns
       (struct entry
